@@ -1,0 +1,51 @@
+from fastapi import APIRouter, status
+
+from app.api.deps import DB, CurrentHousehold
+from app.models.enums import StorageLocation
+from app.schemas.planning import (
+    CheckoutOut,
+    OptimizeOut,
+    OptimizeRequest,
+    ShoppingItemIn,
+    ShoppingItemOut,
+    ShoppingItemUpdate,
+    ShoppingListOut,
+)
+from app.services import pricing_service, recipe_service
+from app.services import shopping_service as svc
+from app.services.mappers import shopping_item_out
+
+router = APIRouter(prefix="/shopping", tags=["Alışveriş Listesi & Fiyat"])
+
+
+@router.get("", response_model=ShoppingListOut)
+def get_list(db: DB, household: CurrentHousehold):
+    return svc.get_list(db, household)
+
+
+@router.post("/items", response_model=ShoppingItemOut, status_code=status.HTTP_201_CREATED)
+def add_item(data: ShoppingItemIn, db: DB, household: CurrentHousehold):
+    return shopping_item_out(svc.add_item(db, household, data))
+
+
+@router.patch("/items/{item_id}", response_model=ShoppingItemOut)
+def update_item(item_id: int, data: ShoppingItemUpdate, db: DB, household: CurrentHousehold):
+    return shopping_item_out(svc.update_item(db, household, item_id, data))
+
+
+@router.delete("/items/{item_id}", status_code=status.HTTP_204_NO_CONTENT)
+def delete_item(item_id: int, db: DB, household: CurrentHousehold):
+    svc.delete_item(db, household, item_id)
+
+
+@router.post("/checkout", response_model=CheckoutOut)
+def checkout(db: DB, household: CurrentHousehold, location: StorageLocation = StorageLocation.fridge):
+    """Alındı işaretli ürünleri envantere (SKT tahminiyle) aktarır ve listeden kaldırır."""
+    return svc.checkout(db, household, location)
+
+
+@router.post("/optimize", response_model=OptimizeOut)
+def optimize(data: OptimizeRequest, db: DB, household: CurrentHousehold):
+    """Eksik malzemeleri market fiyatlarıyla eşleştirir; istenirse listeye ekler."""
+    missing = recipe_service.missing_for(db, household, data.selections, data.plan_from, data.plan_to)
+    return pricing_service.optimize_missing(db, household, missing, data.strategy, data.store_ids, data.add_to_list)
