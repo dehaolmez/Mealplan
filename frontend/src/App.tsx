@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useState } from "react";
+import { lazy, Suspense, useCallback, useEffect, useState } from "react";
 import { api } from "./api/client";
 import type { Alerts, Ingredient, Recipe, Store } from "./api/types";
 import { AlertBanner } from "./components/AlertBanner";
@@ -8,12 +8,16 @@ import { ProfilePage } from "./features/ProfilePage";
 import { RecommendationsPage } from "./features/RecommendationsPage";
 import { ShoppingPage } from "./features/ShoppingPage";
 
-type Tab = "suggest" | "inventory" | "plan" | "shopping" | "profile";
+// Leaflet yalnız harita sekmesi açılınca yüklenir
+const NearbyPage = lazy(() => import("./features/NearbyPage").then((m) => ({ default: m.NearbyPage })));
+
+type Tab = "suggest" | "inventory" | "plan" | "shopping" | "nearby" | "profile";
 const TABS: { key: Tab; label: string; icon: string }[] = [
   { key: "suggest", label: "Öneriler", icon: "🍳" },
   { key: "inventory", label: "Envanter", icon: "🧊" },
   { key: "plan", label: "Plan", icon: "📅" },
   { key: "shopping", label: "Liste", icon: "🛒" },
+  { key: "nearby", label: "Yakında", icon: "📍" },
   { key: "profile", label: "Profil", icon: "👤" },
 ];
 
@@ -71,6 +75,7 @@ export default function App() {
         {tab === "inventory" && <InventoryPage ingredients={ingredients} onChanged={refreshMeta} />}
         {tab === "plan" && <PlanPage recipes={recipes} onChanged={refreshMeta} />}
         {tab === "shopping" && <ShoppingPage ingredients={ingredients} onChanged={refreshMeta} />}
+        {tab === "nearby" && <Suspense fallback={<div className="skeleton-list"><div /></div>}><NearbyPage /></Suspense>}
         {tab === "profile" && <ProfilePage stores={stores} onChanged={refreshMeta} />}
       </main>
 

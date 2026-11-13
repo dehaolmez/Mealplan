@@ -5,7 +5,7 @@ from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 
-from app.api.routes import catalog, household, inventory, plan, recipes, shopping
+from app.api.routes import catalog, household, inventory, places, plan, recipes, shopping
 from app.core.config import get_settings
 from app.core.database import Base, SessionLocal, engine
 from app.services.errors import BadRequest, NotFound
@@ -44,7 +44,7 @@ def create_app() -> FastAPI:
     async def _bad_request(_: Request, exc: BadRequest):
         return JSONResponse(status_code=400, content={"detail": str(exc)})
 
-    for module in (household, catalog, inventory, recipes, plan, shopping):
+    for module in (household, catalog, inventory, recipes, plan, shopping, places):
         app.include_router(module.router, prefix="/api")
 
     @app.get("/api/health", tags=["Sistem"])

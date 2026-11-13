@@ -1,4 +1,5 @@
 import type {
+  Chain, Nearby, PriceImportResult,
   Alerts, Household, HouseholdTargets, Ingredient, InventoryItem, Location, Member, MemberIn, MealType,
   MissingLine, OptimizeResult, PlanEntry, Recipe, Recommendations, ShoppingItem, ShoppingList, Store, Strategy,
 } from "./types";
@@ -11,11 +12,11 @@ export class ApiError extends Error {
   }
 }
 
-async function request<T>(method: string, path: string, body?: unknown): Promise<T> {
+async function request<T>(method: string, path: string, body?: unknown, rawCsv?: string): Promise<T> {
   const res = await fetch(`${BASE}${path}`, {
     method,
-    headers: body !== undefined ? { "Content-Type": "application/json" } : undefined,
-    body: body !== undefined ? JSON.stringify(body) : undefined,
+    headers: rawCsv !== undefined ? { "Content-Type": "text/csv" } : body !== undefined ? { "Content-Type": "application/json" } : undefined,
+    body: rawCsv !== undefined ? rawCsv : body !== undefined ? JSON.stringify(body) : undefined,
   });
   if (!res.ok) {
     let message = `${res.status} ${res.statusText}`;
@@ -51,7 +52,7 @@ export interface PlanRange {
 
 export const api = {
   household: () => request<Household>("GET", "/household"),
-  updateHousehold: (data: Partial<Omit<Household, "id">>) => request<Household>("PATCH", "/household", data),
+  updateHousehold: (data: Partial<Omit<Household, "id" | "home_lat" | "home_lon">> & { home_lat?: number | null; home_lon?: number | null }) => request<Household>("PATCH", "/household", data),
   targets: () => request<HouseholdTargets>("GET", "/household/targets"),
   addMember: (m: MemberIn) => request<Member>("POST", "/household/members", m),
   updateMember: (id: number, m: MemberIn) => request<Member>("PUT", `/household/members/${id}`, m),
@@ -87,6 +88,12 @@ export const api = {
     request<ShoppingItem>("PATCH", `/shopping/items/${id}`, data),
   deleteShopping: (id: number) => request<void>("DELETE", `/shopping/items/${id}`),
   checkout: () => request<{ moved_to_inventory: number; cleared: number }>("POST", "/shopping/checkout"),
-  optimize: (p: PlanRange & { strategy: Strategy; store_ids?: number[]; add_to_list?: boolean }) =>
+  optimize: (p: PlanRange & { strategy: Strategy; store_ids?: number[]; add_to_list?: boolean; nearby_only?: boolean }) =>
     request<OptimizeResult>("POST", "/shopping/optimize", { selections: [], ...p }),
+
+  chains: () => request<Chain[]>("GET", "/chains"),
+  nearby: (p: { lat?: number; lon?: number; radius_m?: number; only_chains?: boolean; refresh?: boolean }) =>
+    request<Nearby>("GET", `/places/nearby${qs(p)}`),
+  importPrices: (csv: string) => request<PriceImportResult>("POST", "/prices/import", undefined, csv),
+  priceTemplateUrl: `${BASE}/prices/template.csv`,
 };

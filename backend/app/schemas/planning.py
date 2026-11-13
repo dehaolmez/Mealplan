@@ -35,6 +35,8 @@ class StoreOut(BaseModel):
     id: int
     name: str
     color: str
+    chain_id: int | None = None
+    is_demo: bool = False
 
 
 class OptimizeRequest(BaseModel):
@@ -44,6 +46,13 @@ class OptimizeRequest(BaseModel):
     strategy: Strategy = Strategy.cheapest
     store_ids: list[int] | None = Field(default=None, description="Boşsa hanenin seçili marketleri")
     add_to_list: bool = False
+    nearby_only: bool = Field(
+        default=False,
+        description="Yalnız ev konumuna (veya lat/lon'a) yakın şubesi olan zincirlerin fiyatlarını kullan",
+    )
+    lat: float | None = None
+    lon: float | None = None
+    radius_m: int | None = Field(default=None, ge=200, le=10_000)
 
 
 class PurchaseOut(BaseModel):

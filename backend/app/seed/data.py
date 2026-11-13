@@ -233,3 +233,36 @@ DEMO_MEMBERS = [
     ("Ayşe", "1990-04-12", "female", 165, 62, "moderate", "lose"),
     ("Mehmet", "1987-09-03", "male", 180, 84, "light", "maintain"),
 ]
+
+# Türkiye'deki büyük gıda perakende zincirleri.
+# slug, ad, tür, bağlı grup, OSM eşleştirme takma adları, web, renk, Market Fiyatı platformunda mı
+# Not: mağaza sayıları hızla değiştiği için koda yazılmaz; güncel rakamlar docs/ROADMAP.md'de kaynaklı verilir.
+CHAINS = [
+    ("bim", "BİM", "discount", "BİM Birleşik Mağazalar A.Ş.", "bim,bim market,bim birlesik magazalar",
+     "bim.com.tr", "#e30613", True),
+    ("a101", "A101", "discount", "Yeni Mağazacılık A.Ş.", "a101,a 101,a-101", "a101.com.tr", "#00a0e3", True),
+    ("sok", "ŞOK", "discount", "Şok Marketler Ticaret A.Ş.", "sok,sok market,şok,şok market",
+     "sokmarket.com.tr", "#ffcc00", True),
+    ("migros", "Migros", "supermarket", "Migros Ticaret A.Ş.",
+     "migros,mmigros,mm migros,mmm migros,migros jet,mjet,m jet,5m migros,5m",
+     "migros.com.tr", "#ff7f00", True),
+    ("macrocenter", "Macrocenter", "premium", "Migros Ticaret A.Ş.", "macrocenter,macro center",
+     "macrocenter.com.tr", "#1f2937", False),
+    ("carrefoursa", "CarrefourSA", "hypermarket", "Yeni Mağazacılık A.Ş. (A101) devraldı",
+     "carrefoursa,carrefour sa,carrefour,carrefoursa express,carrefoursa mini,carrefoursa gurme",
+     "carrefoursa.com", "#004e9f", True),
+    ("hakmar", "Hakmar Express", "discount", "Hakmar Mağazacılık", "hakmar,hakmar express",
+     "hakmarexpress.com.tr", "#d7141a", True),
+    ("tarim-kredi", "Tarım Kredi Kooperatif Market", "cooperative", "Türkiye Tarım Kredi Kooperatifleri",
+     "tarim kredi,tarim kredi kooperatif,tarim kredi kooperatif market,tarim kredi market,koop market",
+     "tarimkredi.org.tr", "#2e7d32", True),
+    ("file", "File", "supermarket", "BİM Birleşik Mağazalar A.Ş.", "file,file market", "file.com.tr", "#c2185b", False),
+    ("metro", "Metro Toptancı Market", "wholesale", "Metro Group", "metro,metro toptanci,metro cash carry",
+     "metro-tr.com", "#002d72", False),
+    ("bizim-toptan", "Bizim Toptan", "wholesale", "Bizim Toptan Satış Mağazaları A.Ş.", "bizim toptan,bizim toptan satis",
+     "bizimtoptan.com.tr", "#e2001a", False),
+    ("onur", "Onur Market", "regional", "Onur Market (İstanbul/Trakya)", "onur market", "onurmarket.com",
+     "#d32f2f", False),
+    ("happy-center", "Happy Center", "regional", "Happy Center (Trakya)", "happy center,happycenter",
+     "happycenter.com.tr", "#f57c00", False),
+]

@@ -7,8 +7,8 @@ from sqlalchemy import func, select
 from sqlalchemy.orm import Session
 
 from app.domain.shelf_life import resolve_expiry
-from app.models import Household, Ingredient, InventoryItem, Member, Recipe, RecipeIngredient, Store, StorePrice
-from app.models.enums import ActivityLevel, Goal, Sex, StorageLocation
+from app.models import Chain, Household, Ingredient, InventoryItem, Member, Recipe, RecipeIngredient, Store, StorePrice
+from app.models.enums import ActivityLevel, ChainKind, Goal, Sex, StorageLocation
 from app.seed import data
 from app.services import clock
 
@@ -16,6 +16,8 @@ log = logging.getLogger(__name__)
 
 
 def seed(db: Session, with_demo: bool = True) -> None:
+    if db.scalar(select(func.count(Chain.id))) == 0:
+        _seed_chains(db)
     if db.scalar(select(func.count(Ingredient.id))) == 0:
         _seed_catalog(db)
         log.info("Katalog, tarifler ve fiyatlar yüklendi")
@@ -48,7 +50,7 @@ def _seed_catalog(db: Session) -> None:
 
     stores = []
     for name, color in data.STORES:
-        store = Store(name=name, color=color)
+        store = Store(name=name, color=color, is_demo=True)
         db.add(store)
         stores.append(store)
     db.flush()
@@ -81,3 +83,10 @@ def _seed_demo_household(db: Session) -> None:
         est = resolve_expiry(ing, location, added, label, opened=False)
         db.add(InventoryItem(household_id=1, ingredient_id=ing.id, location=location, quantity=qty,
                              added_on=added, expiry_date=est.expiry_date, expiry_estimated=est.estimated))
+
+
+def _seed_chains(db: Session) -> None:
+    for slug, name, kind, parent, aliases, website, color, in_mf in data.CHAINS:
+        db.add(Chain(slug=slug, name=name, kind=ChainKind(kind), parent=parent, aliases=aliases,
+                     website=website, color=color, in_market_fiyati=in_mf))
+    db.flush()

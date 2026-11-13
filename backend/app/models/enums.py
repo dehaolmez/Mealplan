@@ -52,3 +52,13 @@ class MealType(StrEnum):
     lunch = "lunch"
     dinner = "dinner"
     snack = "snack"
+
+
+class ChainKind(StrEnum):
+    discount = "discount"          # indirim marketi (BİM, A101, ŞOK…)
+    supermarket = "supermarket"    # süpermarket (Migros, CarrefourSA…)
+    hypermarket = "hypermarket"    # hipermarket formatı (5M Migros, CarrefourSA Hiper…)
+    premium = "premium"            # gurme/premium (Macrocenter)
+    wholesale = "wholesale"        # toptan / cash & carry (Metro, Bizim Toptan)
+    cooperative = "cooperative"    # kooperatif (Tarım Kredi)
+    regional = "regional"          # bölgesel zincir

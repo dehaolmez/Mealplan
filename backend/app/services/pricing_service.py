@@ -33,12 +33,22 @@ def optimize_missing(
     strategy: Strategy,
     store_ids: list[int] | None,
     add_to_list: bool,
+    nearby_chains: set[int] | None = None,
 ) -> OptimizeOut:
-    all_stores = {s.id: s.name for s in list_stores(db)}
+    store_rows = list_stores(db)
+    all_stores = {s.id: s.name for s in store_rows}
     chosen_ids = store_ids or household_service.store_ids(household) or list(all_stores)
     unknown = set(chosen_ids) - set(all_stores)
     if unknown:
         raise BadRequest(f"Bilinmeyen market: {sorted(unknown)}")
+    if nearby_chains is not None:
+        chain_of = {s.id: s.chain_id for s in store_rows}
+        chosen_ids = [sid for sid in chosen_ids if chain_of[sid] in nearby_chains]
+        if not chosen_ids:
+            raise BadRequest(
+                "Yakınındaki zincirler için fiyat verisi yok. Gerçek fiyatları /api/prices/import ile yükleyin "
+                "veya 'yalnız yakındakiler' seçeneğini kapatın."
+            )
     stores = {sid: all_stores[sid] for sid in chosen_ids}
 
     by_id = {m.ingredient.id: m for m in missing}

@@ -37,6 +37,9 @@ def household_out(household: Household) -> HouseholdOut:
         name=household.name,
         preferred_store_id=household.preferred_store_id,
         selected_store_ids=store_ids(household),
+        home_lat=household.home_lat,
+        home_lon=household.home_lon,
+        search_radius_m=household.search_radius_m,
     )
 
 
@@ -53,6 +56,15 @@ def update_settings(db: Session, household: Household, data: HouseholdSettingsIn
         if data.preferred_store_id is not None and data.preferred_store_id not in known:
             raise BadRequest("Bilinmeyen market")
         household.preferred_store_id = data.preferred_store_id
+    fields = data.model_fields_set
+    if "home_lat" in fields or "home_lon" in fields:
+        if (data.home_lat is None) != (data.home_lon is None):
+            raise BadRequest("Konum için enlem ve boylam birlikte verilmeli")
+        # Gizlilik: ev konumunu ~110 m hassasiyetle sakla
+        household.home_lat = round(data.home_lat, 3) if data.home_lat is not None else None
+        household.home_lon = round(data.home_lon, 3) if data.home_lon is not None else None
+    if data.search_radius_m is not None:
+        household.search_radius_m = data.search_radius_m
     db.commit()
     return household
 

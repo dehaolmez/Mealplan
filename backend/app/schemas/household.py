@@ -51,6 +51,9 @@ class HouseholdSettingsIn(BaseModel):
     name: str | None = None
     preferred_store_id: int | None = None
     selected_store_ids: list[int] | None = None
+    home_lat: float | None = Field(default=None, ge=-90, le=90)
+    home_lon: float | None = Field(default=None, ge=-180, le=180)
+    search_radius_m: int | None = Field(default=None, ge=200, le=10_000)
 
 
 class HouseholdOut(BaseModel):
@@ -58,3 +61,6 @@ class HouseholdOut(BaseModel):
     name: str
     preferred_store_id: int | None
     selected_store_ids: list[int]
+    home_lat: float | None
+    home_lon: float | None
+    search_radius_m: int

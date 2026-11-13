@@ -60,6 +60,9 @@ export interface Household {
   name: string;
   preferred_store_id: number | null;
   selected_store_ids: number[];
+  home_lat: number | null;
+  home_lon: number | null;
+  search_radius_m: number;
 }
 
 export interface InventoryItem {
@@ -157,6 +160,8 @@ export interface Store {
   id: number;
   name: string;
   color: string;
+  chain_id: number | null;
+  is_demo: boolean;
 }
 
 export interface Purchase {
@@ -206,4 +211,48 @@ export interface ShoppingList {
   estimated_total: number;
   categories: { category: Category; items: ShoppingItem[] }[];
   recently_bought: ShoppingItem[];
+}
+
+export type ChainKind = "discount" | "supermarket" | "hypermarket" | "premium" | "wholesale" | "cooperative" | "regional";
+
+export interface Chain {
+  id: number;
+  slug: string;
+  name: string;
+  kind: ChainKind;
+  parent: string;
+  website: string;
+  color: string;
+  in_market_fiyati: boolean;
+  has_prices: boolean;
+}
+
+export interface Place {
+  id: number;
+  name: string;
+  brand: string;
+  shop: string;
+  lat: number;
+  lon: number;
+  address: string;
+  opening_hours: string;
+  distance_m: number;
+  chain: Chain | null;
+  osm_url: string;
+}
+
+export interface Nearby {
+  lat: number;
+  lon: number;
+  radius_m: number;
+  from_cache: boolean;
+  chains: { chain: Chain; count: number; nearest_m: number; nearest_place_id: number }[];
+  places: Place[];
+}
+
+export interface PriceImportResult {
+  created: number;
+  updated: number;
+  stores_created: string[];
+  errors: { line: number; error: string }[];
 }

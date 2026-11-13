@@ -5,6 +5,7 @@ from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from app.core.database import Base
 from app.models.catalog import Ingredient
+from app.models.chain import Chain
 
 
 class Store(Base):
@@ -13,6 +14,12 @@ class Store(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     name: Mapped[str] = mapped_column(String(80), unique=True)
     color: Mapped[str] = mapped_column(String(9), default="#64748b")
+    # Fiyat listesi gerçek bir zincire aitse bağlanır (konum filtresi bunu kullanır)
+    chain_id: Mapped[int | None] = mapped_column(ForeignKey("chains.id", ondelete="SET NULL"), index=True)
+    # Demo (hayali) market mi? Gerçek fiyat verisi gelince False olan kayıtlar oluşur.
+    is_demo: Mapped[bool] = mapped_column(default=False)
+
+    chain: Mapped[Chain | None] = relationship(lazy="joined")
 
 
 class StorePrice(Base):

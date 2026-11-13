@@ -17,6 +17,7 @@ export function PlanPage({ recipes, onChanged }: { recipes: Recipe[]; onChanged:
   const [optimized, setOptimized] = useState<OptimizeResult | null>(null);
   const [strategy, setStrategy] = useState<Strategy>("cheapest");
   const [busy, setBusy] = useState(false);
+  const [nearbyOnly, setNearbyOnly] = useState(false);
 
   const byDay = useMemo(() => {
     const map = new Map<string, PlanEntry[]>();
@@ -30,7 +31,7 @@ export function PlanPage({ recipes, onChanged }: { recipes: Recipe[]; onChanged:
   const runOptimize = async (addToList: boolean) => {
     setBusy(true);
     try {
-      const res = await api.optimize({ plan_from: start, plan_to: end, strategy, add_to_list: addToList });
+      const res = await api.optimize({ plan_from: start, plan_to: end, strategy, add_to_list: addToList, nearby_only: nearbyOnly });
       setOptimized(res);
       if (addToList) { toast(`${res.added_to_list} ürün alışveriş listesine eklendi`); onChanged(); }
     } catch (e) {
@@ -84,6 +85,10 @@ export function PlanPage({ recipes, onChanged }: { recipes: Recipe[]; onChanged:
           <select value={strategy} onChange={(e) => { setStrategy(e.target.value as Strategy); setOptimized(null); }} aria-label="Strateji">
             {(Object.keys(STRATEGY_LABELS) as Strategy[]).map((s) => <option key={s} value={s}>{STRATEGY_LABELS[s]}</option>)}
           </select>
+          <label className="check" title="Ev konumuna yakın şubesi olan zincirlerin gerçek fiyatlarını kullan">
+            <input type="checkbox" checked={nearbyOnly} onChange={(e) => { setNearbyOnly(e.target.checked); setOptimized(null); }} />
+            📍 Yalnız yakındakiler
+          </label>
           <button className="btn btn-ghost" disabled={busy || !data?.length} onClick={() => runOptimize(false)}>Hesapla</button>
           <button className="btn btn-primary" disabled={busy || !data?.length} onClick={() => runOptimize(true)}>🛒 Listeye ekle</button>
         </div>

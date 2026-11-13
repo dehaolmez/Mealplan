@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { api } from "../api/client";
-import type { Activity, Goal, Member, MemberIn, Sex, Store } from "../api/types";
+import type { Activity, Chain, ChainKind, Goal, Member, MemberIn, PriceImportResult, Sex, Store } from "../api/types";
 import { useAsync } from "../hooks/useAsync";
-import { ACTIVITY_LABELS, GOAL_LABELS } from "../lib";
+import { ACTIVITY_LABELS, GOAL_LABELS, KIND_LABELS } from "../lib";
 import { ErrorBox, Section } from "../components/ui";
 import { useToast } from "../components/Toast";
 
@@ -91,8 +91,11 @@ export function ProfilePage({ stores, onChanged }: { stores: Store[]; onChanged:
         {household.data && (
           <StorePrefs stores={stores} selected={household.data.selected_store_ids} preferred={household.data.preferred_store_id} onSave={saveStores} />
         )}
-        <p className="muted small">Fiyatlar örnek (demo) veridir; gerçek fiyat kaynağı bağlanabilir.</p>
+        <p className="muted small">"Demo" etiketli marketlerin fiyatları örnek veridir. Gerçek fiyatları aşağıdan CSV ile yükleyebilirsin.</p>
       </Section>
+
+      <PriceImport onDone={onChanged} />
+      <ChainList />
     </div>
   );
 }
@@ -144,7 +147,7 @@ function StorePrefs({ stores, selected, preferred, onSave }: {
             <label>
               <input type="checkbox" checked={on}
                 onChange={() => onSave(on ? selected.filter((x) => x !== s.id) : [...selected, s.id], preferred)} />
-              {s.name}
+              {s.name}{s.is_demo && <small className="muted"> demo</small>}
             </label>
             <button className={`star ${preferred === s.id ? "on" : ""}`} title="Tercih edilen market"
               onClick={() => onSave(on ? selected : [...selected, s.id], preferred === s.id ? null : s.id)}>★</button>
@@ -152,5 +155,75 @@ function StorePrefs({ stores, selected, preferred, onSave }: {
         );
       })}
     </div>
+  );
+}
+
+function PriceImport({ onDone }: { onDone: () => void }) {
+  const toast = useToast();
+  const [result, setResult] = useState<PriceImportResult | null>(null);
+  const [busy, setBusy] = useState(false);
+
+  const onFile = async (file: File) => {
+    setBusy(true);
+    try {
+      const buf = await file.arrayBuffer();
+      let text = new TextDecoder("utf-8", { fatal: false }).decode(buf);
+      if (text.includes("\uFFFD")) text = new TextDecoder("windows-1254").decode(buf); // Excel Türkçe kodlaması
+      const r = await api.importPrices(text);
+      setResult(r);
+      toast(`${r.created} yeni, ${r.updated} güncellenen fiyat`);
+      onDone();
+    } catch (e) { toast((e as Error).message, "err"); } finally { setBusy(false); }
+  };
+
+  return (
+    <Section title="Gerçek fiyatları yükle (CSV)">
+      <div className="card add-form">
+        <p className="muted small">
+          Sütunlar: <code>chain, ingredient, package_size, unit, price, brand, date</code>.{" "}
+          <a href={api.priceTemplateUrl} download="mealbird-fiyat-sablonu.csv">Şablonu indir</a>
+        </p>
+        <input type="file" accept=".csv,text/csv" disabled={busy}
+          onChange={(e) => { const f = e.target.files?.[0]; if (f) void onFile(f); e.target.value = ""; }} />
+        {result && (
+          <div className="small">
+            <p>✅ {result.created} yeni · {result.updated} güncellendi{result.stores_created.length > 0 && ` · yeni market: ${result.stores_created.join(", ")}`}</p>
+            {result.errors.length > 0 && (
+              <ul className="import-errors">
+                {result.errors.slice(0, 10).map((e) => <li key={e.line}>Satır {e.line}: {e.error}</li>)}
+                {result.errors.length > 10 && <li>… ve {result.errors.length - 10} hata daha</li>}
+              </ul>
+            )}
+          </div>
+        )}
+      </div>
+    </Section>
+  );
+}
+
+function ChainList() {
+  const { data } = useAsync(() => api.chains(), []);
+  if (!data) return null;
+  const groups = new Map<ChainKind, Chain[]>();
+  for (const c of data) groups.set(c.kind, [...(groups.get(c.kind) ?? []), c]);
+  return (
+    <Section title="Türkiye'deki büyük market zincirleri">
+      <div className="chain-groups">
+        {(Object.keys(KIND_LABELS) as ChainKind[]).filter((k) => groups.has(k)).map((kind) => [kind, groups.get(kind)!] as const).map(([kind, chains]) => (
+          <div key={kind}>
+            <h3 className="cat-title">{KIND_LABELS[kind]}</h3>
+            <div className="chips">
+              {chains.map((c) => (
+                <span key={c.id} className="chip chain-tag" style={{ ["--chain" as string]: c.color }}
+                  title={`${c.parent}${c.in_market_fiyati ? " · TÜBİTAK Market Fiyatı platformunda" : ""}`}>
+                  {c.name}{c.has_prices ? " 💰" : ""}{c.in_market_fiyati ? " ✓" : ""}
+                </span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+      <p className="muted small">✓ TÜBİTAK "Market Fiyatı" platformunda fiyatları yayımlanan zincir · 💰 uygulamada fiyat verisi var</p>
+    </Section>
   );
 }

@@ -49,7 +49,7 @@ backend/app/
   schemas/    API giriş/çıkış şemaları (Pydantic)
   api/routes/ HTTP uç noktaları
   seed/       örnek veri
-backend/tests/  33 test (domain + uçtan uca API akışı)
+backend/tests/  46 test (domain + uçtan uca API akışı + harita/fiyat içe aktarma)
 
 frontend/src/
   api/        tipli API istemcisi ve tipler
@@ -137,10 +137,23 @@ export MEALBIRD_AI_ENABLED=true
 Varsayılan model `claude-opus-5-5`, yapılandırılmış çıktı (Pydantic) ile. Güvenlik sınıflandırıcısı bir isteği reddederse
 sunucu tarafı yedek model (`fallbacks: "default"`) devreye girer.
 
+## v0.2: Market zincirleri, harita ve gerçek fiyat verisi
+
+- **Zincir kataloğu** (`GET /api/chains`): BİM, A101, ŞOK, Migros, Macrocenter, CarrefourSA, Hakmar Express,
+  Tarım Kredi, File, Metro, Bizim Toptan, Onur, Happy Center.
+- **Yakındaki marketler** (`GET /api/places/nearby`, arayüzde 📍 Yakında): OpenStreetMap/Overpass verisi, Leaflet harita,
+  zincir eşleştirme, mesafe sıralama, yol tarifi bağlantısı, 24 saat önbellek. Konum ~110 m'ye yuvarlanır.
+- **Gerçek fiyat içe aktarma** (`POST /api/prices/import`, `GET /api/prices/template.csv`, Profil ekranında dosya yükleme).
+- **Yalnız yakındaki marketlerle optimizasyon** (`"nearby_only": true`).
+
+Ayrıntılı yol haritası, dinamik kullanım planı ve ihtiyaç listesi: [docs/ROADMAP.md](docs/ROADMAP.md).
+
+> ⚠️ v0.1'den güncellerken şema değişti: `backend/mealbird.db` dosyasını silip yeniden başlatın (Alembic sonraki adımda).
+
 ## Bilinen sınırlar / sonraki adımlar
 
-- Fiyatlar **demo** veridir ve hayali marketlere aittir. Gerçek market fiyatları için `StorePrice.source` alanı üzerinden
-  bir içe aktarma (CSV / market API'si / scraper) işi eklenmeli.
+- Hazır gelen fiyatlar **demo** veridir ve hayali marketlere aittir. Gerçek zincir fiyatları CSV ile yüklenir;
+  otomatik kaynak (ör. TÜBİTAK Market Fiyatı) için izin/erişim gerekir — bkz. docs/ROADMAP.md.
 - Tek hane, kimlik doğrulama yok (`api/deps.py::current_household` tek değiştirilecek nokta).
 - Şema `create_all` ile oluşturuluyor; üretime geçmeden Alembic migrasyonları eklenmeli.
 - Bildirimler tarayıcı bildirimi; mobil push için servis çalışanı (PWA) veya mobil istemci gerekir.

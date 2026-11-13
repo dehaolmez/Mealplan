@@ -15,6 +15,10 @@ class Household(Base):
     preferred_store_id: Mapped[int | None] = mapped_column(ForeignKey("stores.id", ondelete="SET NULL"))
     # Virgülle ayrılmış market id'leri (MVP için yeterli; ileride ilişki tablosuna taşınabilir)
     selected_store_ids: Mapped[str] = mapped_column(String(200), default="")
+    # Ev konumu (isteğe bağlı). Gizlilik için ~100 m hassasiyete yuvarlanarak saklanır.
+    home_lat: Mapped[float | None]
+    home_lon: Mapped[float | None]
+    search_radius_m: Mapped[int] = mapped_column(default=2000)
 
     members: Mapped[list["Member"]] = relationship(back_populates="household", cascade="all, delete-orphan")
 

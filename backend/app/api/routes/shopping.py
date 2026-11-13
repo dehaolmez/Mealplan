@@ -11,7 +11,8 @@ from app.schemas.planning import (
     ShoppingItemUpdate,
     ShoppingListOut,
 )
-from app.services import pricing_service, recipe_service
+from app.services import places_service, pricing_service, recipe_service
+from app.services.errors import BadRequest
 from app.services import shopping_service as svc
 from app.services.mappers import shopping_item_out
 
@@ -48,4 +49,13 @@ def checkout(db: DB, household: CurrentHousehold, location: StorageLocation = St
 def optimize(data: OptimizeRequest, db: DB, household: CurrentHousehold):
     """Eksik malzemeleri market fiyatlarıyla eşleştirir; istenirse listeye ekler."""
     missing = recipe_service.missing_for(db, household, data.selections, data.plan_from, data.plan_to)
-    return pricing_service.optimize_missing(db, household, missing, data.strategy, data.store_ids, data.add_to_list)
+    nearby_chains = None
+    if data.nearby_only:
+        lat = data.lat if data.lat is not None else household.home_lat
+        lon = data.lon if data.lon is not None else household.home_lon
+        if lat is None or lon is None:
+            raise BadRequest("Yakındaki marketler için konum verin veya profilde ev konumunu kaydedin")
+        nearby_chains = places_service.nearby_chain_ids(db, lat, lon, data.radius_m or household.search_radius_m)
+    return pricing_service.optimize_missing(
+        db, household, missing, data.strategy, data.store_ids, data.add_to_list, nearby_chains
+    )

@@ -86,6 +86,7 @@ main { padding: 0 16px; }
 .cards { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr)); }
 .cards.is-loading { opacity: 0.6; transition: opacity 0.2s; }
 
+a.btn { text-decoration: none; color: inherit; }
 .btn { border: 1px solid transparent; border-radius: 10px; padding: 9px 14px; cursor: pointer; font-weight: 600; white-space: nowrap; }
 .btn:disabled { opacity: 0.5; cursor: default; }
 .btn-primary { background: var(--primary); color: var(--primary-ink); }
@@ -271,3 +272,32 @@ main { padding: 0 16px; }
 .toasts { position: fixed; left: 16px; right: 16px; bottom: 84px; z-index: 20; display: grid; gap: 6px; justify-items: center; pointer-events: none; }
 .toast { padding: 10px 14px; border-radius: 12px; background: var(--text); color: var(--bg); box-shadow: 0 6px 20px rgb(0 0 0 / 0.2); max-width: 520px; }
 .toast-err { background: var(--danger); color: #fff; }
+
+/* Harita & yakındaki marketler */
+.map-wrap { position: relative; }
+.map { height: min(52vh, 440px); border-radius: var(--radius); border: 1px solid var(--border); overflow: hidden; z-index: 0; }
+.map-loading { position: absolute; top: 10px; left: 50%; transform: translateX(-50%); z-index: 500; background: var(--surface); padding: 4px 12px; border-radius: 999px; box-shadow: var(--shadow); font-size: 0.85rem; }
+.map-pin span {
+  display: grid; place-items: center; width: 30px; height: 30px; border-radius: 50%; background: var(--pin); color: #fff;
+  font-size: 0.68rem; font-weight: 800; border: 2px solid #fff; box-shadow: 0 1px 4px rgb(0 0 0 / 0.35);
+}
+.leaflet-container { font: inherit; background: var(--surface-2); }
+@media (prefers-color-scheme: dark) { .leaflet-tile-pane { filter: brightness(0.75) contrast(1.1) saturate(0.8); } }
+.chain-summary { display: grid; gap: 8px; grid-template-columns: repeat(auto-fill, minmax(min(100%, 180px), 1fr)); }
+.chain-chip {
+  display: grid; gap: 2px; text-align: left; padding: 10px 12px; border-radius: 12px; cursor: pointer;
+  background: var(--surface); border: 1px solid var(--border); border-left: 5px solid var(--chain);
+}
+.chain-chip span, .chain-chip small { color: var(--muted); font-size: 0.82rem; }
+.place-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.place-list li { display: flex; gap: 8px; align-items: center; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 6px 8px; }
+.place-list li.on { border-color: var(--primary); }
+.place-main { flex: 1; display: flex; gap: 10px; align-items: center; text-align: left; background: none; border: 0; cursor: pointer; min-width: 0; padding: 4px; }
+.place-main > span:nth-child(2) { flex: 1; min-width: 0; display: grid; }
+.place-main small { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.place-dot { width: 12px; height: 12px; border-radius: 50%; flex: none; }
+.place-dist { font-weight: 700; white-space: nowrap; }
+.chain-groups { display: grid; gap: 10px; }
+.chain-tag { border-left: 4px solid var(--chain); }
+.import-errors { margin: 4px 0 0; padding-left: 18px; color: var(--danger); }
+code { background: var(--surface-2); padding: 1px 5px; border-radius: 5px; font-size: 0.85em; }

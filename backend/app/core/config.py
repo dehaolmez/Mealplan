@@ -19,6 +19,17 @@ class Settings(BaseSettings):
     expiry_critical_days: int = 1
     expiry_warning_days: int = 3
 
+    # Harita / yakındaki marketler (OpenStreetMap Overpass API). Sırayla denenir.
+    overpass_endpoints: list[str] = [
+        "https://overpass-api.de/api/interpreter",
+        "https://overpass.kumi.systems/api/interpreter",
+    ]
+    overpass_timeout_s: int = 25
+    # Overpass kullanım kuralları uygulamanın kendini tanıtmasını ister
+    http_user_agent: str = "Mealbird/0.2 (+https://github.com/dehaolmez/mealplan)"
+    places_cache_hours: int = 24
+    places_max_radius_m: int = 10_000
+
     # Yapay zekâ (Claude) ile öneri sıralama/açıklama. Kapalıyken kural tabanlı motor çalışır.
     ai_enabled: bool = False
     ai_model: str = "claude-opus-5-5"

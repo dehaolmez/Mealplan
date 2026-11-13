@@ -1,4 +1,4 @@
-import type { Activity, Category, ExpiryStatus, Goal, MealType, Strategy } from "./api/types";
+import type { Activity, Category, ChainKind, ExpiryStatus, Goal, MealType, Strategy } from "./api/types";
 
 export const MEAL_LABELS: Record<MealType, string> = {
   breakfast: "Kahvaltı",
@@ -79,3 +79,13 @@ export function dayLabel(iso: string): string {
   const [y, m, d] = iso.split("-").map(Number);
   return new Date(y, m - 1, d).toLocaleDateString("tr-TR", { weekday: "short", day: "numeric", month: "short" });
 }
+
+export const KIND_LABELS: Record<ChainKind, string> = {
+  discount: "İndirim marketi",
+  supermarket: "Süpermarket",
+  hypermarket: "Hipermarket",
+  premium: "Premium",
+  wholesale: "Toptan",
+  cooperative: "Kooperatif",
+  regional: "Bölgesel",
+};
