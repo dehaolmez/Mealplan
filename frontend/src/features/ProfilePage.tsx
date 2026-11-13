@@ -240,7 +240,7 @@ function ChainList() {
 const CONSENT_LABELS: { kind: ConsentKind; title: string; desc: string }[] = [
   { kind: "health_data", title: "Sağlık verisi", desc: "Boy, kilo, hedef → kalori hesabı. Kapatınca bireyler silinir." },
   { kind: "location", title: "Ev konumu", desc: "~11 m hassasiyetle saklanır. Kapatınca konum silinir." },
-  { kind: "ai_transfer", title: "Yapay zekâ önerisi", desc: "Ürün adları yurt dışındaki sağlayıcıya gönderilir (kimlik gönderilmez)." },
+  { kind: "ai_transfer", title: "Yapay zekâ (Gemini)", desc: "Fiş fotoğrafı ve envanter ürün adları Google'a (yurt dışı) gönderilir; kimlik gönderilmez." },
   { kind: "marketing", title: "Ticari ileti", desc: "Kampanya/yenilik e-postaları." },
 ];
 

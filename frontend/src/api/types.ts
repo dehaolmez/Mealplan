@@ -187,6 +187,8 @@ export interface OptimizeResult {
   store_totals: { store_id: number; store_name: string; total: number; available_items: number; missing_items: string[] }[];
   savings_vs_worst_single_store: number | null;
   added_to_list: number;
+  price_mode: "live" | "real" | "demo";
+  price_note: string | null;
 }
 
 export interface ShoppingItem {
@@ -288,4 +290,24 @@ export interface RegisterIn {
   marketing_consent: boolean;
   with_sample_data: boolean;
   invite_code?: string;
+}
+
+export interface ReceiptLine {
+  raw_text: string;
+  ingredient_id: number | null;
+  ingredient_name: string | null;
+  emoji: string;
+  quantity: number | null;
+  unit: string | null;
+  quantity_label: string | null;
+  line_total: number | null;
+  location: Location;
+  selected: boolean;
+}
+
+export interface ReceiptDraft {
+  store_name: string | null;
+  chain: { id: number; name: string } | null;
+  date: string | null;
+  lines: ReceiptLine[];
 }

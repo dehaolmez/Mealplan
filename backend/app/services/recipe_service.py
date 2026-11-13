@@ -56,8 +56,8 @@ def recommendations(
 
     settings = get_settings()
     ai_used, ai_error = False, None
-    if use_ai and not settings.ai_enabled:
-        ai_error = "Yapay zekâ kapalı (MEALBIRD_AI_ENABLED=true ile açılabilir); kural tabanlı sıralama kullanıldı."
+    if use_ai and not settings.ai_available:
+        ai_error = "Yapay zekâ yapılandırılmamış (API anahtarı yok); kural tabanlı sıralama kullanıldı."
     elif use_ai and not ai_consent:
         ai_error = "Yapay zekâ önerisi için Profil › Gizlilik bölümünden izin vermelisiniz; kural tabanlı sıralama kullanıldı."
     elif use_ai:
@@ -71,13 +71,16 @@ def recommendations(
             }
             for i in inventory_service.list_items(db, household)
         ]
-        result = ai_planner.rerank_with_claude(
-            candidates,
-            inventory_summary=inventory_summary,
-            limit=limit,
-            model=settings.ai_model,
-            effort=settings.ai_effort,
-        )
+        if settings.ai_provider == "gemini":
+            result = ai_planner.rerank_with_gemini(candidates, inventory_summary=inventory_summary, limit=limit)
+        else:
+            result = ai_planner.rerank_with_claude(
+                candidates,
+                inventory_summary=inventory_summary,
+                limit=limit,
+                model=settings.ai_model,
+                effort=settings.ai_effort,
+            )
         candidates, ai_used, ai_error = result.matches, result.used, result.error
 
     return RecommendationsOut(

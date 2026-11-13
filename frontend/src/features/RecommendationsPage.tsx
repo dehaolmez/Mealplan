@@ -74,6 +74,7 @@ function RecipeCard({ rec, onChanged }: { rec: Recommendation; onChanged: () => 
   };
 
   const addMissing = async () => {
+    toast("Güncel fiyatlar alınıyor…");
     setBusy(true);
     try {
       const res = await api.optimize({

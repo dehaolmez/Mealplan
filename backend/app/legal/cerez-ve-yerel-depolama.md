@@ -1,6 +1,6 @@
 # Çerez ve Yerel Depolama Politikası
 
-**Sürüm:** 2026-11-13 · **TASLAK — hukuki incelemeden geçirilmelidir**
+**Sürüm:** 2026-11-13.2 · **TASLAK — hukuki incelemeden geçirilmelidir**
 
 Mealbird **reklam, analitik veya takip çerezi kullanmaz.** Yalnızca hizmetin çalışması için zorunlu olan
 aşağıdaki kayıtları kullanır. Kişisel Verileri Koruma Kurumu'nun Çerez Uygulamaları Hakkında Rehberi'ne göre

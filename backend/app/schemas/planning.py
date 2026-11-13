@@ -53,6 +53,7 @@ class OptimizeRequest(BaseModel):
     lat: float | None = None
     lon: float | None = None
     radius_m: int | None = Field(default=None, ge=200, le=10_000)
+    live_prices: bool = Field(default=True, description="Konum için Market Fiyatı'ndan canlı fiyat çek")
 
 
 class PurchaseOut(BaseModel):
@@ -86,6 +87,9 @@ class OptimizeOut(BaseModel):
     store_totals: list[StoreTotalOut]
     savings_vs_worst_single_store: float | None
     added_to_list: int
+    # "live": Market Fiyatı canlı verisi · "real": içe aktarılmış gerçek fiyat · "demo": örnek fiyat
+    price_mode: str = "demo"
+    price_note: str | None = None
 
 
 class ShoppingItemIn(BaseModel):

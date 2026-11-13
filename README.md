@@ -50,7 +50,7 @@ backend/app/
   schemas/    API giriş/çıkış şemaları (Pydantic)
   api/routes/ HTTP uç noktaları
   seed/       örnek veri
-backend/tests/  68 test (domain, API akışı, harita/fiyat, hesap/KVKK, migrasyon)
+backend/tests/  85 test (domain, API, harita/fiyat, canlı fiyat, fiş okuma, hesap/KVKK, migrasyon)
 
 frontend/src/
   api/        tipli API istemcisi ve tipler
@@ -148,6 +148,15 @@ sunucu tarafı yedek model (`fallbacks: "default"`) devreye girer.
 - **Yalnız yakındaki marketlerle optimizasyon** (`"nearby_only": true`).
 
 Ayrıntılı yol haritası, dinamik kullanım planı ve ihtiyaç listesi: [docs/ROADMAP.md](docs/ROADMAP.md).
+
+## v0.4: Canlı fiyat, fiş okuma, ücretsiz yayın
+
+- **Canlı fiyat:** TÜBİTAK Market Fiyatı verisi; yakın şubelerdeki gerçek ürün ve fiyatlarla optimizasyon.
+- **Fiş tara (Gemini):** fiş fotoğrafı → ürünler katalogla eşlenir → kontrol edip envantere ekle.
+- **Yapay zekâ önerileri** Gemini ile (Claude seçeneği duruyor).
+- **PostgreSQL** desteği; testler SQLite ve PostgreSQL'de koşar.
+- **Tek Docker imajı** (API + arayüz), **Render blueprint**, **GitHub Actions CI**.
+- Yayına alma rehberi: [docs/DEPLOY.md](docs/DEPLOY.md).
 
 ## v0.3: Hesaplar, KVKK, PWA, otomatik veritabanı
 

@@ -8,3 +8,4 @@ httpx==0.28.1
 PyJWT[crypto]==2.15.1
 alembic==1.20.1
 email-validator==2.3.0
+psycopg[binary]==3.3.9

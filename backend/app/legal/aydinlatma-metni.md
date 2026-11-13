@@ -1,6 +1,6 @@
 # Kişisel Verilerin İşlenmesine İlişkin Aydınlatma Metni
 
-**Sürüm:** 2026-11-13 · **TASLAK — hukuki incelemeden geçirilmelidir**
+**Sürüm:** 2026-11-13.2 · **TASLAK — hukuki incelemeden geçirilmelidir**
 
 Bu metin, 6698 sayılı Kişisel Verilerin Korunması Kanunu'nun ("KVKK") 10. maddesi ve Aydınlatma Yükümlülüğünün
 Yerine Getirilmesinde Uyulacak Usul ve Esaslar Hakkında Tebliğ uyarınca, Mealbird uygulamasını ("Uygulama")
@@ -26,6 +26,7 @@ Bu metin bir **bilgilendirmedir**; açık rızanız ayrıca ve ayrı bir metinle
 | **Sağlık verisi (özel nitelikli)** | Hane bireylerinin doğum tarihi, cinsiyeti, boyu, kilosu, aktivite düzeyi, beslenme hedefi ve bunlardan hesaplanan kalori/makro ihtiyaçları | **Yalnızca açık rızanızla** |
 | **Konum** | Kaydettiğiniz ev konumu (yaklaşık 11 metre hassasiyete yuvarlanarak); yakın market aramasında anlık konum | Ev konumu **yalnızca açık rızanızla** saklanır; anlık konum siz istediğinizde, tarayıcı izniyle kullanılır ve saklanmaz |
 | Ev/alışveriş verileri | Buzdolabı/buzluk envanteri, son kullanma tarihleri, yemek planı, alışveriş listesi, market tercihleri | Uygulamayı kullanırken |
+| Fiş fotoğrafı | Yüklediğiniz market fişinin görüntüsü (fişte market adı, tarih, ürünler, tutarlar ve varsa kartın son haneleri bulunabilir) | **Yalnızca yapay zekâ iznini verip fiş taradığınızda; sunucuda saklanmaz** |
 | Onay kayıtları | Hangi metni, hangi sürümde, ne zaman onayladığınız / geri çektiğiniz | Her onay işleminde |
 | Pazarlama | Ticari elektronik ileti onayı | **Yalnızca ayrıca onay verirseniz** |
 
@@ -42,7 +43,8 @@ olarak siz girebilirsiniz.
 | Onay/geri çekme kayıtlarının ispatı | m.5/2-ç ve m.5/2-e: bir hakkın tesisi, kullanılması veya korunması |
 | Kalori ve makro besin ihtiyacının hesaplanması, tarif önerilerinin buna göre sıralanması | **m.6/3: açık rıza** (sağlık verisi) |
 | Ev konumunun saklanıp yakın marketlerin listelenmesi | **m.5/1: açık rıza** |
-| Yapay zekâ destekli tarif önerisi (isteğe bağlı) | **m.5/1: açık rıza** ve yurt dışı aktarım için m.9 (bkz. 4. bölüm) |
+| Yapay zekâ destekli tarif önerisi ve fiş fotoğrafından envantere ekleme (isteğe bağlı) | **m.5/1: açık rıza** ve yurt dışı aktarım için m.9 (bkz. 4. bölüm) |
+| Yakın marketlerdeki güncel fiyatların gösterilmesi | m.5/2-c: sözleşmenin ifası (konum kimliğinizle ilişkilendirilmeden, ~1 km'ye yuvarlanarak kullanılır) |
 | Kampanya/bilgilendirme e-postaları | **Açık rıza** ve 6563 sayılı Kanun kapsamında ticari ileti onayı |
 
 Sağlık verisi ve konum için rıza vermemeniz Uygulamanın temel özelliklerini (envanter, son kullanma tarihi
@@ -52,11 +54,12 @@ uyarıları, alışveriş listesi, fiyat karşılaştırma) kullanmanıza engel 
 
 | Alıcı | Aktarılan | Amaç | Konum |
 |---|---|---|---|
-| Barındırma hizmeti sağlayıcısı | Uygulamadaki tüm veriler | Altyapı | **Türkiye** ([SAĞLAYICI ADI]) |
+| Barındırma: Render Services, Inc. (uygulama sunucusu) ve Neon (veritabanı) | Uygulamadaki tüm veriler | Altyapı | **Yurt dışı** (Frankfurt, Almanya bölgesi) |
 | OpenStreetMap hizmetleri (Overpass, Nominatim, harita karoları) | Yaklaşık konum (~11 m'ye yuvarlanmış koordinat) veya yazdığınız adres; harita karoları için tarayıcınızın IP adresi | Yakın marketleri ve haritayı göstermek | **Yurt dışı** (Almanya/Birleşik Krallık) |
 | Google LLC (yalnız Google ile girişi seçerseniz) | Google'ın size ait kimlik doğrulama bilgisi | Oturum açma | **Yurt dışı** |
-| Yapay zekâ sağlayıcısı (yalnız özelliği açarsanız) | Envanterdeki ürün adları, kalan gün sayıları, aday tarif listesi. **Kimlik, e-posta, boy/kilo gönderilmez.** | Tarif önerisi | **Yurt dışı** |
-| E-posta gönderim hizmeti | E-posta adresiniz | Doğrulama ve şifre sıfırlama | [SAĞLAYICI ve ÜLKE] |
+| Google LLC — Gemini API (yalnız yapay zekâ iznini verirseniz) | Fiş fotoğrafı; envanterdeki ürün adları, kalan gün sayıları, aday tarif listesi. **Kimlik, e-posta, boy/kilo gönderilmez.** | Fiş okuma, tarif önerisi | **Yurt dışı** |
+| TÜBİTAK BİLGEM — Market Fiyatı (marketfiyati.org.tr) | Yaklaşık konum (~1 km'ye yuvarlanmış koordinat) ve aranan ürün adları; kimlik bilgisi gönderilmez | Yakın şubelerdeki güncel fiyatları almak | Türkiye |
+| E-posta gönderim hizmeti (Google LLC — Gmail) | E-posta adresiniz | Doğrulama ve şifre sıfırlama | Yurt dışı |
 | Yetkili kamu kurum ve kuruluşları | Talep edilen veriler | Hukuki yükümlülük | Türkiye |
 
 Yurt dışına aktarımlar KVKK m.9 uyarınca; yeterlilik kararı bulunan ülkelere, bulunmuyorsa Kurulca ilan edilen

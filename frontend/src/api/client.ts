@@ -1,5 +1,5 @@
 import type {
-  Chain, Me, Nearby, PriceImportResult, RegisterIn, ConsentKind,
+  Chain, Me, Nearby, PriceImportResult, RegisterIn, ConsentKind, ReceiptDraft,
   Alerts, Household, HouseholdTargets, Ingredient, InventoryItem, Location, Member, MemberIn, MealType,
   MissingLine, OptimizeResult, PlanEntry, Recipe, Recommendations, ShoppingItem, ShoppingList, Store, Strategy,
 } from "./types";
@@ -128,6 +128,11 @@ export const api = {
     request<OptimizeResult>("POST", "/shopping/optimize", { selections: [], ...p }),
 
   chains: () => request<Chain[]>("GET", "/chains"),
+  health: () => request<{ ai_available: boolean; ai_provider: string; live_prices: boolean }>("GET", "/health"),
+  scanReceipt: (image_base64: string, mime_type: string) =>
+    request<ReceiptDraft>("POST", "/receipts/scan", { image_base64, mime_type }),
+  confirmReceipt: (date: string | null, lines: { ingredient_id: number; quantity: number; unit: string | null; location: Location }[]) =>
+    request<{ added: number }>("POST", "/receipts/confirm", { date, lines }),
   nearby: (p: { lat?: number; lon?: number; radius_m?: number; only_chains?: boolean; refresh?: boolean }) =>
     request<Nearby>("GET", `/places/nearby${qs(p)}`),
   importPrices: (csv: string) => request<PriceImportResult>("POST", "/prices/import", undefined, csv),

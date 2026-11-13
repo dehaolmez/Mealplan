@@ -1,6 +1,6 @@
 # Mealbird — Yol Haritası, Dinamik Kullanım ve İhtiyaç Listesi
 
-Son güncelleme: 13 Kasım 2026 (v0.3)
+Son güncelleme: 13 Kasım 2026 (v0.4)
 
 Bu belge üç şeyi anlatır:
 1. MVP'den sonraki adımların **sabit kod yerine dinamik veriyle** nasıl çalışacağı,
@@ -9,11 +9,36 @@ Bu belge üç şeyi anlatır:
 
 ---
 
-## 0. Kararlar ve durum (v0.3 — 13 Kasım 2026)
+## 0. Kararlar ve durum (v0.4 — 13 Kasım 2026)
 
 | Konu | Karar | Durum |
 |---|---|---|
-| Fiyat kaynağı | Kurumsal erişim yok. Market Fiyatı'nın belgelenmemiş API'si denendi (bkz. §0.1) | ⏸ Proje sahibinin kararını bekliyor |
+| Fiyat kaynağı | **TÜBİTAK Market Fiyatı API'si** (kamuya açık; uygulama kendini tanıtarak, saniyede ≤1 istek, 12 saat önbellekle kullanır) | ✅ Canlı; Etimesgut'ta 48 malzemeden 599 ürün eşleşti |
+| Yapay zekâ | **Gemini** (anahtar verildi): fiş fotoğrafından envantere ekleme + tarif önerisi | ✅ Canlı denendi |
+| Yayın | **Sunucu satın almadan**: GitHub (kod + CI) → Render (ücretsiz uygulama) + Neon (ücretsiz PostgreSQL) | ✅ Hazır; hesapların açılması sizde (`docs/DEPLOY.md`) |
+| E-posta | **Gmail uygulama şifresi** (ücretsiz) | ✅ Hazır; şifre sizde |
+| Test fiyatları | Canlı veri geldiği için **kapalı** (`MEALBIRD_LOAD_TEST_PRICES=true` ile açılabilir) | ✅ |
+
+### 0.0 Market Fiyatı entegrasyonu nasıl çalışır?
+
+1. Konum (ev konumu yoksa pilot bölge) ~1 km'lik ızgaraya yuvarlanır → `/api/v2/nearest` ile yakın şubeler.
+2. Her eksik malzeme için şubelerle sınırlı `/api/v2/search` → `backend/app/seed/marketfiyati_rules.py`
+   kurallarıyla (kategori + anahtar sözcük + dışlama listesi) doğru ürünler seçilir (ör. "domates" araması
+   salçaları değil 1 kg taze domatesi alır).
+3. Paket bilgisi ("1.65 KG", "30 Adet") malzemenin birimine çevrilir; aynı zincirde farklı paketler tutulur ve
+   optimizasyon ihtiyaca göre toplamı en düşük olanı seçer (30 ml yağ için 5 L bidon önerilmez).
+4. Gerçek fiyat varsa örnek/demo fiyatlar hiç karıştırılmaz; yanıtta "🟢 Canlı fiyat" yazar.
+5. Uygulama açılışında pilot bölgenin fiyatları arka planda tazelenir (~90 sn, önbellek tazeyse 0 istek).
+
+**Risk:** API belgelenmiş/resmî bir hizmet değil; değişirse veya erişim kısıtlanırsa uygulama önbellekteki
+fiyatlarla çalışmaya devam eder ve kullanıcıya bunu söyler. CSV içe aktarma yedek yol olarak duruyor.
+
+## 0.v3 Önceki kararlar (v0.3)
+
+
+| Konu | Karar | Durum |
+|---|---|---|
+| Fiyat kaynağı | (v0.4'te çözüldü — yukarıya bakın) | ✅ |
 | Pilot bölge | **Ankara / Etimesgut** | ✅ Harita varsayılan merkezi, adres araması, test fiyatları |
 | Test fiyatları | Gerçek veri gelene kadar üretilmiş, **"test" etiketli** fiyatlar | ✅ `backend/scripts/generate_test_prices.py` |
 | Platform | **PWA** (web uygulaması, telefona kurulabilir, çevrimdışı açılır) | ✅ Manifest + servis çalışanı |
@@ -157,17 +182,20 @@ Kuru gıdalar için üçüncü saklama alanı; raf ömrü kuralları zaten malze
 
 ---
 
-## 3. Senden gerekenler (v0.3 güncel)
+## 3. Senden gerekenler (v0.4 güncel)
 
-| # | Ne | Neden | Not |
-|---|---|---|---|
-| 1 | **Market Fiyatı API'si kararı** | Gerçek fiyat | Seçenekler §0.1'de. Bireysel izin e-postasını gönderebilir veya hazır bir taslak isteyebilirsin |
-| 2 | **Google OAuth istemci kimliği** (ücretsiz) | Google ile giriş | Google Cloud Console › API'ler ve Hizmetler › Kimlik bilgileri › OAuth istemci kimliği (Web uygulaması); "Yetkili JavaScript kaynakları"na sitenin adresi. Kimlik `MEALBIRD_GOOGLE_CLIENT_ID`'ye yazılır (gizli değildir) |
-| 3 | **Barındırma sağlayıcısı + alan adı (Türkiye)** | Yayına çıkış, APK, Google girişi, e-posta | Küçük bir sanal sunucu yeterli |
-| 4 | **E-posta gönderim hesabı (SMTP)** | Doğrulama ve şifre sıfırlama | Alan adınla kurulacak bir e-posta hizmeti |
-| 5 | **KVKK metinlerindeki köşeli parantezli alanlar** ve hukukçu incelemesi | Yayına çıkmadan önce | `docs/legal/README.md` |
-| 6 | Gemini API anahtarı (sonra) | Fiş fotoğrafı okuma, öneriler | Sohbete yapıştırma; sunucuya ortam değişkeni olarak eklenir |
-| 7 | Marka/tasarım onayı | Simge ve ad | Yeni simge `frontend/public/icons/` altında |
+Yayına almak için yalnız **hesap açma ve değer kopyalama** kalıyor (adımlar `docs/DEPLOY.md`'de, ~15 dk):
+
+| # | Ne | Not |
+|---|---|---|
+| 1 | Çalışma dalını `main`'e birleştirmek | İsterseniz PR'ı ben açarım |
+| 2 | **Neon** hesabı (GitHub ile giriş) → bağlantı adresi | Kart istemez |
+| 3 | **Render** hesabı (GitHub ile giriş) → Blueprint → değerleri girmek | Kart istemez |
+| 4 | **Gmail uygulama şifresi** | 2 adımlı doğrulama açık olmalı |
+| 5 | (İsteğe bağlı) Google OAuth istemci kimliği | Google ile giriş için |
+| 6 | KVKK metinlerindeki köşeli parantezli alanlar + hukukçu incelemesi | `docs/legal/README.md` |
+
+Bu hesapları sizin adınıza açamam: hepsi kimlik/telefon doğrulaması ve sizin onayınızı gerektiren sözleşmeler içeriyor.
 
 ---
 

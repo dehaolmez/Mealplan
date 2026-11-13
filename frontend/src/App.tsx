@@ -84,6 +84,7 @@ function Shell({ me, setMe }: { me: Me; setMe: (m: Me | null) => void }) {
   const [alerts, setAlerts] = useState<Alerts | null>(null);
   const [shopCount, setShopCount] = useState(0);
   const [offline, setOffline] = useState(false);
+  const [aiAvailable, setAiAvailable] = useState(false);
 
   const refreshMeta = useCallback(async () => {
     try {
@@ -101,6 +102,7 @@ function Shell({ me, setMe }: { me: Me; setMe: (m: Me | null) => void }) {
       .then(([i, r, s]) => { setIngredients(i); setRecipes(r); setStores(s); })
       .catch(() => setOffline(true));
     void refreshMeta();
+    api.health().then((h) => setAiAvailable(h.ai_available)).catch(() => {});
     const onHash = () => setTab(tabFromHash());
     const onOnline = () => { setOffline(false); void refreshMeta(); };
     const onOffline = () => setOffline(true);
@@ -136,7 +138,7 @@ function Shell({ me, setMe }: { me: Me; setMe: (m: Me | null) => void }) {
 
       <main>
         {tab === "suggest" && <RecommendationsPage onChanged={refreshMeta} />}
-        {tab === "inventory" && <InventoryPage ingredients={ingredients} onChanged={refreshMeta} />}
+        {tab === "inventory" && <InventoryPage ingredients={ingredients} onChanged={refreshMeta} me={me} aiAvailable={aiAvailable} />}
         {tab === "plan" && <PlanPage recipes={recipes} onChanged={refreshMeta} />}
         {tab === "shopping" && <ShoppingPage ingredients={ingredients} onChanged={refreshMeta} />}
         {tab === "nearby" && <Suspense fallback={<div className="skeleton-list"><div /></div>}><NearbyPage me={me} /></Suspense>}

@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { api } from "../api/client";
-import type { Ingredient, InventoryItem, Location } from "../api/types";
+import type { Ingredient, InventoryItem, Location, Me } from "../api/types";
+import { ReceiptScanner } from "../components/ReceiptScanner";
 import { useAsync } from "../hooks/useAsync";
 import { Empty, ErrorBox, ExpiryBadge } from "../components/ui";
 import { IngredientPicker } from "../components/IngredientPicker";
@@ -11,7 +12,10 @@ const LOCATIONS: { key: Location; label: string; icon: string }[] = [
   { key: "freezer", label: "Buzluk", icon: "❄️" },
 ];
 
-export function InventoryPage({ ingredients, onChanged }: { ingredients: Ingredient[]; onChanged: () => void }) {
+export function InventoryPage({ ingredients, onChanged, me, aiAvailable }: {
+  ingredients: Ingredient[]; onChanged: () => void; me: Me; aiAvailable: boolean;
+}) {
+  const aiConsent = me.consents.find((c) => c.kind === "ai_transfer")?.granted ?? false;
   const [location, setLocation] = useState<Location>("fridge");
   const { data, error, loading, reload } = useAsync(() => api.inventory(), []);
   const items = useMemo(() => (data ?? []).filter((i) => i.location === location), [data, location]);
@@ -37,6 +41,11 @@ export function InventoryPage({ ingredients, onChanged }: { ingredients: Ingredi
         ))}
       </div>
 
+      <div className="toolbar">
+        <ReceiptScanner onDone={refresh} enabled={aiAvailable && aiConsent}
+          reason={!aiAvailable ? "Fiş okuma için sunucuda Gemini anahtarı tanımlı olmalı."
+            : "Fiş okuma için Profil › Gizlilik'ten yapay zekâ iznini aç."} />
+      </div>
       <AddItemForm ingredients={ingredients} location={location} onAdded={refresh} />
 
       {error && <ErrorBox message={error} onRetry={reload} />}

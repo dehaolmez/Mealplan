@@ -2,7 +2,7 @@
 
 from pathlib import Path
 
-LEGAL_VERSION = "2026-11-13"
+LEGAL_VERSION = "2026-11-13.2"
 LEGAL_DIR = Path(__file__).parent
 
 DOCUMENTS = {

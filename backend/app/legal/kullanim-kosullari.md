@@ -1,6 +1,6 @@
 # Kullanım Koşulları
 
-**Sürüm:** 2026-11-13 · **TASLAK — hukuki incelemeden geçirilmelidir**
+**Sürüm:** 2026-11-13.2 · **TASLAK — hukuki incelemeden geçirilmelidir**
 
 ## 1. Taraflar ve kapsam
 
@@ -22,11 +22,14 @@ listesi, market fiyat karşılaştırması ve yakın market bilgisi sunar. Hizme
 - **Beslenme hesapları:** Kalori ve makro hedefleri standart formüllerle hesaplanan **genel bilgilerdir**;
   tıbbi tavsiye, tanı veya tedavi yerine geçmez. Hamilelik, kronik hastalık, yeme bozukluğu gibi durumlarda
   bir sağlık profesyoneline danışın.
-- **Fiyatlar:** Fiyatlar üçüncü taraf kaynaklardan veya kullanıcı yüklemelerinden gelir; raftaki fiyattan,
+- **Fiyatlar:** Canlı fiyatlar TÜBİTAK'ın kamuya açık "Market Fiyatı" platformundan (marketfiyati.org.tr) alınır;
+  ürün eşleştirmesi otomatik yapıldığından farklı marka/gramaj seçilmiş olabilir. Diğer fiyatlar kullanıcı
+  yüklemelerinden gelir; raftaki fiyattan,
   kampanyadan veya stok durumundan farklı olabilir. "Demo" ve "test" etiketli fiyatlar örnek veridir.
 - **Harita verisi:** Market konumları OpenStreetMap topluluğu tarafından sağlanır; eksik veya güncel olmayan
   kayıtlar bulunabilir.
-- Yapay zekâ önerileri hata içerebilir; alerji ve diyet kısıtlarınızı tarife bakarak kendiniz doğrulayın.
+- Yapay zekâ önerileri ve fiş okuma sonuçları hata içerebilir; envantere eklemeden önce kontrol edin, alerji ve
+  diyet kısıtlarınızı tarife bakarak kendiniz doğrulayın.
 
 Mevzuatın izin verdiği ölçüde, bu bilgilere dayanılarak verilen kararlardan doğan dolaylı zararlardan
 sorumlu değiliz. Kasıt ve ağır kusur hâlleri ile tüketici mevzuatından doğan haklarınız saklıdır.

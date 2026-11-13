@@ -1,4 +1,4 @@
-"""Yapay zekâ (Claude) destekli öneri katmanı.
+"""Yapay zekâ (Gemini veya Claude) destekli öneri katmanı.
 
 Kural tabanlı motorun ürettiği aday tarifleri; envanter, SKT durumu ve beslenme hedefleriyle birlikte
 Claude'a verir. Model adaylar arasından seçim yapar, yeniden sıralar ve her öneri için kısa bir gerekçe
@@ -66,6 +66,61 @@ def _candidate_payload(matches: list[RecipeMatch]) -> list[dict]:
     ]
 
 
+RANKING_SCHEMA = {
+    "type": "object",
+    "properties": {
+        "picks": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {"recipe_id": {"type": "integer"}, "reason": {"type": "string"}},
+                "required": ["recipe_id", "reason"],
+            },
+        }
+    },
+    "required": ["picks"],
+}
+
+
+def _apply_picks(matches: list[RecipeMatch], picks: list[AiPick], limit: int) -> AiResult:
+    by_id = {m.recipe.id: m for m in matches}
+    ranked: list[RecipeMatch] = []
+    for pick in picks:
+        match = by_id.pop(pick.recipe_id, None)
+        if match is None:
+            continue  # aday dışı / tekrar eden ID'leri yok say
+        match.ai_reason = pick.reason
+        ranked.append(match)
+        if len(ranked) >= limit:
+            break
+    if not ranked:
+        return AiResult(matches, used=False, error="Yapay zekâ geçerli bir öneri döndürmedi")
+    return AiResult(ranked, used=True)
+
+
+def _user_payload(matches: list[RecipeMatch], inventory_summary: list[dict], limit: int) -> str:
+    return json.dumps(
+        {"inventory": inventory_summary, "candidates": _candidate_payload(matches), "return_at_most": limit},
+        ensure_ascii=False,
+    )
+
+
+def rerank_with_gemini(matches: list[RecipeMatch], *, inventory_summary: list[dict], limit: int) -> AiResult:
+    if not matches:
+        return AiResult(matches, used=False)
+    from app.services import gemini
+
+    try:
+        data = gemini.generate_json(SYSTEM_PROMPT, _user_payload(matches, inventory_summary, limit), RANKING_SCHEMA,
+                                    name="ranking")
+        picks = AiRanking.model_validate(data).picks
+    except gemini.GeminiError as exc:
+        return AiResult(matches, used=False, error=str(exc))
+    except ValueError:
+        return AiResult(matches, used=False, error="Yapay zekâ yanıtı beklenen biçimde değil")
+    return _apply_picks(matches, picks, limit)
+
+
 def rerank_with_claude(
     matches: list[RecipeMatch],
     *,
@@ -81,14 +136,7 @@ def rerank_with_claude(
     except ImportError:  # pragma: no cover
         return AiResult(matches, used=False, error="anthropic paketi kurulu değil")
 
-    user_content = json.dumps(
-        {
-            "inventory": inventory_summary,
-            "candidates": _candidate_payload(matches),
-            "return_at_most": limit,
-        },
-        ensure_ascii=False,
-    )
+    user_content = _user_payload(matches, inventory_summary, limit)
 
     try:
         client = anthropic.Anthropic()
@@ -119,16 +167,4 @@ def rerank_with_claude(
     if response.stop_reason == "refusal" or response.parsed_output is None:
         return AiResult(matches, used=False, error="Yapay zekâ bu isteğe yanıt vermedi")
 
-    by_id = {m.recipe.id: m for m in matches}
-    ranked: list[RecipeMatch] = []
-    for pick in response.parsed_output.picks:
-        match = by_id.pop(pick.recipe_id, None)
-        if match is None:
-            continue  # aday dışı / tekrar eden ID'leri yok say
-        match.ai_reason = pick.reason
-        ranked.append(match)
-        if len(ranked) >= limit:
-            break
-    if not ranked:
-        return AiResult(matches, used=False, error="Yapay zekâ geçerli bir öneri döndürmedi")
-    return AiResult(ranked, used=True)
+    return _apply_picks(matches, response.parsed_output.picks, limit)

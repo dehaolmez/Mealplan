@@ -341,3 +341,11 @@ code { background: var(--surface-2); padding: 1px 5px; border-radius: 5px; font-
 .markdown table { border-collapse: collapse; width: 100%; font-size: 0.85rem; margin: 6px 0; }
 .markdown th, .markdown td { border: 1px solid var(--border); padding: 6px 8px; text-align: left; vertical-align: top; }
 .markdown th { background: var(--surface-2); }
+
+/* Fiş okuma */
+.receipt-lines { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.receipt-lines li { display: flex; gap: 8px; align-items: center; padding: 6px 0; border-bottom: 1px solid var(--border); }
+.receipt-name { flex: 1; min-width: 0; display: grid; }
+.receipt-name small { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.receipt-qty { width: 72px; }
+.modal-foot { display: flex; justify-content: flex-end; gap: 8px; padding: 10px 16px; border-top: 1px solid var(--border); }

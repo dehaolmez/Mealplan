@@ -16,9 +16,19 @@ class Base(DeclarativeBase):
     pass
 
 
+def normalize_url(url: str) -> str:
+    """Barındırma servislerinin verdiği "postgres://" / "postgresql://" adreslerini psycopg 3 sürücüsüne yönlendirir."""
+    for prefix in ("postgres://", "postgresql://"):
+        if url.startswith(prefix):
+            return "postgresql+psycopg://" + url[len(prefix):]
+    return url
+
+
 def make_engine(url: str) -> Engine:
+    url = normalize_url(url)
     connect_args = {"check_same_thread": False} if url.startswith("sqlite") else {}
-    engine = create_engine(url, connect_args=connect_args)
+    # pool_pre_ping: ücretsiz bulut veritabanları boşta bağlantıları kapatabilir
+    engine = create_engine(url, connect_args=connect_args, pool_pre_ping=True)
     if url.startswith("sqlite"):
 
         @event.listens_for(engine, "connect")

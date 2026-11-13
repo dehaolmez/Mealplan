@@ -89,7 +89,7 @@ export function PlanPage({ recipes, onChanged }: { recipes: Recipe[]; onChanged:
             <input type="checkbox" checked={nearbyOnly} onChange={(e) => { setNearbyOnly(e.target.checked); setOptimized(null); }} />
             📍 Yalnız yakındakiler
           </label>
-          <button className="btn btn-ghost" disabled={busy || !data?.length} onClick={() => runOptimize(false)}>Hesapla</button>
+          <button className="btn btn-ghost" disabled={busy || !data?.length} onClick={() => runOptimize(false)}>{busy ? "Fiyatlar alınıyor…" : "Hesapla"}</button>
           <button className="btn btn-primary" disabled={busy || !data?.length} onClick={() => runOptimize(true)}>🛒 Listeye ekle</button>
         </div>
         {!data?.length && <Empty icon="📅">Önce plana tarif ekle.</Empty>}
@@ -136,8 +136,10 @@ function AddPlanForm({ recipes, days, onAdded }: { recipes: Recipe[]; days: stri
 
 function OptimizeView({ res }: { res: OptimizeResult }) {
   if (res.purchases.length === 0) return <p className="ok-line">✅ Plan için eksik malzeme yok.</p>;
+  const modeLabel = { live: "🟢 Canlı fiyat · Market Fiyatı (TÜBİTAK)", real: "Yüklenen gerçek fiyatlar", demo: "⚠️ Örnek (demo) fiyatlar" }[res.price_mode];
   return (
     <div className="card optimize">
+      <p className={`note ${res.price_mode === "demo" ? "" : "note-ok"}`}>{modeLabel}{res.price_note && ` — ${res.price_note}`}</p>
       <div className="opt-total">
         <span>Tahmini toplam</span>
         <b>{tl(res.total)}</b>
@@ -151,7 +153,7 @@ function OptimizeView({ res }: { res: OptimizeResult }) {
           <li key={p.ingredient_id}>
             <span>{p.emoji || CATEGORY_EMOJI[p.category]} {p.name} <small className="muted">eksik {p.missing_label}</small></span>
             <span className="muted small">
-              {p.store_name ? `${p.packages}× ${p.package_label} · ${p.store_name}` : "bulunamadı"}
+              {p.store_name ? `${p.packages}× ${p.brand && res.price_mode !== "demo" ? p.brand : p.package_label} · ${p.store_name}` : "bulunamadı"}
             </span>
             <b>{p.cost ? tl(p.cost) : "—"}</b>
           </li>

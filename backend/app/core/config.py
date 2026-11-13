@@ -11,13 +11,24 @@ class Settings(BaseSettings):
     app_name: str = "Mealbird API"
     database_url: str = "sqlite:///./mealbird.db"
     cors_origins: list[str] = ["http://localhost:5173", "http://127.0.0.1:5173"]
+    # Derlenmiş arayüz (frontend/dist) bu klasördeyse API ile aynı adresten sunulur (tek servisli dağıtım)
+    static_dir: str = ""
 
     # Açılışta veritabanını otomatik migrasyonla güncelle (testlerde kapalı)
     auto_migrate: bool = True
     # Uygulama ilk açıldığında örnek katalog/tarif/fiyat verisini yükle
     seed_on_startup: bool = True
-    # Pilot bölge (Etimesgut) için "test" etiketli fiyatları yükle. Gerçek veri gelince/üretimde False yapın.
-    load_test_prices: bool = True
+    # Pilot bölge (Etimesgut) için "test" etiketli fiyatları yükle. Canlı fiyat kaynağı çalıştığı için varsayılan kapalı.
+    load_test_prices: bool = False
+
+    # Canlı fiyat: TÜBİTAK "Market Fiyatı" (marketfiyati.org.tr) kamuya açık verisi
+    live_prices_enabled: bool = True
+    marketfiyati_url: str = "https://api.marketfiyati.org.tr"
+    live_prices_ttl_hours: int = 12
+    live_prices_min_interval_s: float = 1.0  # kaynağı yormamak için istekler arası en az süre
+    live_prices_radius_km: int = 3
+    # Açılışta pilot bölgenin tüm katalog fiyatlarını arka planda tazele
+    live_prices_prefetch_pilot: bool = True
 
     # SKT uyarı eşikleri (gün)
     expiry_critical_days: int = 1
@@ -56,10 +67,23 @@ class Settings(BaseSettings):
     smtp_password: str = ""
     smtp_from: str = "Mealbird <no-reply@localhost>"
 
-    # Yapay zekâ (Claude) ile öneri sıralama/açıklama. Kapalıyken kural tabanlı motor çalışır.
-    ai_enabled: bool = False
+    # Yapay zekâ. Sağlayıcının anahtarı yoksa kural tabanlı motor çalışır.
+    ai_enabled: bool = True
+    ai_provider: str = "gemini"  # "gemini" | "claude"
+    # Gemini (Google AI Studio anahtarı). OpenAI uyumlu uç nokta: anahtar Authorization: Bearer ile gider.
+    gemini_api_key: str = ""
+    gemini_base_url: str = "https://generativelanguage.googleapis.com/v1beta/openai"
+    # Sırayla denenir (yoğunluk/erişim hatasında bir sonrakine geçilir)
+    gemini_models: list[str] = ["gemini-3.8-flash", "gemini-3.5-flash", "gemini-3.1-flash-lite"]
+    # Claude (ANTHROPIC_API_KEY ortam değişkeni)
     ai_model: str = "claude-opus-5-5"
     ai_effort: str = "medium"
+
+    @property
+    def ai_available(self) -> bool:
+        if not self.ai_enabled:
+            return False
+        return bool(self.gemini_api_key) if self.ai_provider == "gemini" else True
 
 
 @lru_cache

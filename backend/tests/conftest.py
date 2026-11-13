@@ -1,3 +1,4 @@
+import os
 from datetime import date
 
 import pytest
@@ -7,7 +8,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
 
 import app.models  # noqa: F401
-from app.core.database import Base, get_db
+from app.core.database import Base, get_db, make_engine
 from app.main import create_app
 from app.seed.loader import seed
 from app.services import clock
@@ -23,6 +24,7 @@ def isolated_settings(monkeypatch):
 
     monkeypatch.setenv("MEALBIRD_AUTO_MIGRATE", "false")
     monkeypatch.setenv("MEALBIRD_SEED_ON_STARTUP", "false")
+    monkeypatch.setenv("MEALBIRD_LIVE_PRICES_ENABLED", "false")  # testler dış servise gitmez
     monkeypatch.setenv("MEALBIRD_SECRET_KEY", "test-secret-key-0123456789-abcdefghijklmnop")
     get_settings.cache_clear()
     security.secret_key.cache_clear()
@@ -37,10 +39,17 @@ def fixed_today(monkeypatch):
     return TODAY
 
 
+TEST_DB_URL = os.environ.get("MEALBIRD_TEST_DATABASE_URL")  # ör. PostgreSQL ile çalıştırmak için
+
+
 @pytest.fixture
 def session_factory():
-    engine = create_engine("sqlite://", connect_args={"check_same_thread": False}, poolclass=StaticPool)
-    event.listen(engine, "connect", lambda conn, _: conn.execute("PRAGMA foreign_keys=ON"))
+    if TEST_DB_URL:
+        engine = make_engine(TEST_DB_URL)
+        Base.metadata.drop_all(engine)
+    else:
+        engine = create_engine("sqlite://", connect_args={"check_same_thread": False}, poolclass=StaticPool)
+        event.listen(engine, "connect", lambda conn, _: conn.execute("PRAGMA foreign_keys=ON"))
     Base.metadata.create_all(engine)
     factory = sessionmaker(bind=engine, autoflush=False, expire_on_commit=False)
     yield factory

@@ -16,14 +16,15 @@ tablosunda silinmeden saklanır.
 ## Doldurulması gereken alanlar
 
 `[AD SOYAD / ŞİRKET ÜNVANI]`, `[AÇIK ADRES]`, `[MERSİS NO veya VKN]`, `[KVKK BAŞVURU E-POSTASI]`, `[KEP ADRESİ]`,
-`[DESTEK E-POSTASI]`, barındırma sağlayıcısı adı, e-posta gönderim sağlayıcısı ve ülkesi, yapay zekâ sağlayıcısı
-adı ve ülkesi.
+`[DESTEK E-POSTASI]`. Sağlayıcılar (Render + Neon / Frankfurt, Gmail, Google Gemini, TÜBİTAK Market Fiyatı,
+OpenStreetMap) v0.4'te metinlere işlendi.
 
 ## Hukukçunun özellikle bakması önerilen noktalar
 
 1. **Boy/kilo/hedef bilgisinin "sağlık verisi" sayılması** — taslak ihtiyatlı davranıp özel nitelikli kabul etti
    ve açık rızaya bağladı (KVKK m.6/3). Kurum'un Şubat 2025 tarihli özel nitelikli veri rehberi ile kontrol edilmeli.
-2. **Yurt dışı aktarım (m.9, 7499 s. Kanunla değişik):** Yapay zekâ sağlayıcısı, Google ile giriş ve OpenStreetMap
+2. **Yurt dışı aktarım (m.9, 7499 s. Kanunla değişik):** v0.4'te ücretsiz barındırma (Render + Neon, Frankfurt)
+   seçildiği için **tüm veriler** yurt dışında tutuluyor; ayrıca Gemini, Gmail, Google ile giriş ve OpenStreetMap
    servisleri. Açık rıza artık yalnız arızi aktarımlar için; düzenli aktarımlar için standart sözleşme + imzadan
    itibaren 5 iş günü içinde Kurum'a bildirim gerekir. Overpass/Nominatim'i Türkiye'deki kendi sunucumuzda
    çalıştırmak bu aktarımı ortadan kaldırır (yazılımlar ücretsiz, açık kaynak).
