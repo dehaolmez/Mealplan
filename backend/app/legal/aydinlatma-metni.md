@@ -1,9 +1,9 @@
 # Kişisel Verilerin İşlenmesine İlişkin Aydınlatma Metni
 
-**Sürüm:** 2026-11-13.2 · **TASLAK — hukuki incelemeden geçirilmelidir**
+**Sürüm:** 2026-11-13.3 · **TASLAK — hukuki incelemeden geçirilmelidir**
 
 Bu metin, 6698 sayılı Kişisel Verilerin Korunması Kanunu'nun ("KVKK") 10. maddesi ve Aydınlatma Yükümlülüğünün
-Yerine Getirilmesinde Uyulacak Usul ve Esaslar Hakkında Tebliğ uyarınca, Mealbird uygulamasını ("Uygulama")
+Yerine Getirilmesinde Uyulacak Usul ve Esaslar Hakkında Tebliğ uyarınca, Meall uygulamasını ("Uygulama")
 kullanırken kişisel verilerinizin nasıl işlendiği konusunda sizi bilgilendirmek amacıyla hazırlanmıştır.
 Bu metin bir **bilgilendirmedir**; açık rızanız ayrıca ve ayrı bir metinle istenir.
 

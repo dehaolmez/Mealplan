@@ -1,11 +1,12 @@
 import { lazy, Suspense, useCallback, useEffect, useState } from "react";
 import { api } from "./api/client";
-import type { Alerts, Ingredient, Me, Recipe, Store } from "./api/types";
+import type { Alerts, Ingredient, Me, Preferences, Recipe, Store } from "./api/types";
 import { AlertBanner } from "./components/AlertBanner";
 import { LegalLink, LegalModal } from "./components/LegalModal";
 import { useToast } from "./components/Toast";
 import { AuthPage } from "./features/AuthPage";
 import { InventoryPage } from "./features/InventoryPage";
+import { Onboarding } from "./features/Onboarding";
 import { PlanPage } from "./features/PlanPage";
 import { ProfilePage } from "./features/ProfilePage";
 import { RecommendationsPage } from "./features/RecommendationsPage";
@@ -50,11 +51,11 @@ export default function App() {
     }
     api.me().then(setMe).catch(() => setMe(null)).finally(() => setAuthChecked(true));
     const onUnauthorized = () => setMe(null);
-    window.addEventListener("mealbird:unauthorized", onUnauthorized);
-    return () => window.removeEventListener("mealbird:unauthorized", onUnauthorized);
+    window.addEventListener("meall:unauthorized", onUnauthorized);
+    return () => window.removeEventListener("meall:unauthorized", onUnauthorized);
   }, [toast]);
 
-  if (!authChecked) return <div className="splash">🐦</div>;
+  if (!authChecked) return <div className="splash">🍽️</div>;
   if (!me) return <AuthPage resetToken={resetToken} onAuthed={(m) => { setMe(m); history.replaceState(null, "", "#suggest"); }} />;
   if (me.needs_reconsent) return <ReconsentGate onAccepted={setMe} />;
   return <Shell me={me} setMe={setMe} />;
@@ -85,6 +86,9 @@ function Shell({ me, setMe }: { me: Me; setMe: (m: Me | null) => void }) {
   const [shopCount, setShopCount] = useState(0);
   const [offline, setOffline] = useState(false);
   const [aiAvailable, setAiAvailable] = useState(false);
+  const [prefs, setPrefs] = useState<Preferences | null>(null);
+  const [onboarding, setOnboarding] = useState(false);
+  const [planVersion, setPlanVersion] = useState(0);
 
   const refreshMeta = useCallback(async () => {
     try {
@@ -103,6 +107,7 @@ function Shell({ me, setMe }: { me: Me; setMe: (m: Me | null) => void }) {
       .catch(() => setOffline(true));
     void refreshMeta();
     api.health().then((h) => setAiAvailable(h.ai_available)).catch(() => {});
+    api.preferences().then((p) => { setPrefs(p); if (!p.onboarding_done) setOnboarding(true); }).catch(() => {});
     const onHash = () => setTab(tabFromHash());
     const onOnline = () => { setOffline(false); void refreshMeta(); };
     const onOffline = () => setOffline(true);
@@ -118,10 +123,24 @@ function Shell({ me, setMe }: { me: Me; setMe: (m: Me | null) => void }) {
 
   const go = (t: Tab) => { window.location.hash = t; setTab(t); };
 
+  if (onboarding) {
+    return (
+      <Onboarding me={me} ingredients={ingredients} initial={prefs}
+        onClose={prefs?.onboarding_done ? () => setOnboarding(false) : undefined}
+        onDone={async () => {
+          setOnboarding(false);
+          setPrefs(await api.preferences());
+          setPlanVersion((v) => v + 1);
+          void refreshMeta();
+          go("plan");
+        }} />
+    );
+  }
+
   return (
     <div className="app">
       <header className="topbar">
-        <span className="brand">🐦 Mealbird</span>
+        <span className="brand">🍽️ Meall</span>
         {alerts && alerts.expired + alerts.critical > 0 && (
           <button className="pill pill-danger" onClick={() => go("inventory")}>⏳ {alerts.expired + alerts.critical}</button>
         )}
@@ -137,12 +156,13 @@ function Shell({ me, setMe }: { me: Me; setMe: (m: Me | null) => void }) {
       {tab !== "inventory" && <AlertBanner alerts={alerts} onOpen={() => go("inventory")} />}
 
       <main>
-        {tab === "suggest" && <RecommendationsPage onChanged={refreshMeta} />}
+        {tab === "suggest" && <RecommendationsPage onChanged={refreshMeta} recipes={recipes} me={me} aiAvailable={aiAvailable}
+          onRecipesChanged={() => api.recipes().then(setRecipes).catch(() => {})} />}
         {tab === "inventory" && <InventoryPage ingredients={ingredients} onChanged={refreshMeta} me={me} aiAvailable={aiAvailable} />}
-        {tab === "plan" && <PlanPage recipes={recipes} onChanged={refreshMeta} />}
+        {tab === "plan" && <PlanPage key={planVersion} recipes={recipes} onChanged={refreshMeta} />}
         {tab === "shopping" && <ShoppingPage ingredients={ingredients} onChanged={refreshMeta} />}
         {tab === "nearby" && <Suspense fallback={<div className="skeleton-list"><div /></div>}><NearbyPage me={me} /></Suspense>}
-        {tab === "profile" && <ProfilePage me={me} setMe={setMe} stores={stores} onChanged={refreshMeta} />}
+        {tab === "profile" && <ProfilePage me={me} setMe={setMe} stores={stores} onChanged={refreshMeta} onEditPreferences={() => setOnboarding(true)} />}
       </main>
 
       <nav className="tabbar">

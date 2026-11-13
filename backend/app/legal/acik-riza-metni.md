@@ -1,6 +1,6 @@
 # Açık Rıza Metni
 
-**Sürüm:** 2026-11-13.2 · **TASLAK — hukuki incelemeden geçirilmelidir**
+**Sürüm:** 2026-11-13.3 · **TASLAK — hukuki incelemeden geçirilmelidir**
 
 Aydınlatma Metni'ni okudum. Aşağıdaki her bir izni **ayrı ayrı**, özgür irademle ve bilgilendirilmiş olarak
 veriyorum. Bu izinlerin hiçbiri hesap açmanın veya Uygulamanın temel özelliklerini kullanmanın şartı değildir.
@@ -34,7 +34,7 @@ Taradığım **market fişi fotoğraflarının** envantere eklenmek üzere okunm
 açıklanması amacıyla, fiş fotoğrafının ve **envanterimdeki ürün adlarının, kalan gün sayılarının, aday tarif
 listesinin** yurt dışındaki yapay zekâ hizmet sağlayıcısına (**Google LLC — Gemini API, ABD**) aktarılmasına
 **açık rıza veriyorum**. Fişte kart numarasının son haneleri gibi bilgiler bulunabileceğini, fotoğrafın
-Mealbird sunucusunda saklanmadığını biliyorum. Kimliğim, e-posta adresim ve boy/kilo gibi sağlık verilerim bu
+Meall sunucusunda saklanmadığını biliyorum. Kimliğim, e-posta adresim ve boy/kilo gibi sağlık verilerim bu
 aktarıma dahil değildir.
 
 ## 4. Ticari elektronik ileti (ayrı onay)

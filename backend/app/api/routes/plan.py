@@ -3,7 +3,7 @@ from datetime import date, timedelta
 from fastapi import APIRouter, status
 
 from app.api.deps import DB, CurrentHousehold
-from app.schemas.planning import CookOut, MealPlanIn, MealPlanOut
+from app.schemas.planning import CookOut, MealPlanIn, MealPlanOut, StatusIn
 from app.services import clock
 from app.services import plan_service as svc
 
@@ -31,3 +31,9 @@ def delete_entry(entry_id: int, db: DB, household: CurrentHousehold):
 def cook(entry_id: int, db: DB, household: CurrentHousehold):
     """Öğünü pişirildi işaretler; malzemeleri ilk bozulacak partiden başlayarak envanterden düşer."""
     return svc.cook(db, household, entry_id)
+
+
+@router.post("/{entry_id}/status", response_model=MealPlanOut)
+def set_status(entry_id: int, data: StatusIn, db: DB, household: CurrentHousehold):
+    """Öğünü "yapılmadı" (skipped) / "dışarıda yendi" (ate_out) olarak işaretle ya da planlandıya geri al."""
+    return svc.entry_out(svc.set_status(db, household, entry_id, data.status))

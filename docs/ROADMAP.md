@@ -1,4 +1,4 @@
-# Mealbird — Yol Haritası, Dinamik Kullanım ve İhtiyaç Listesi
+# Meall — Yol Haritası, Dinamik Kullanım ve İhtiyaç Listesi
 
 Son güncelleme: 13 Kasım 2026 (v0.4)
 
@@ -9,7 +9,24 @@ Bu belge üç şeyi anlatır:
 
 ---
 
-## 0. Kararlar ve durum (v0.4 — 13 Kasım 2026)
+## 0. Kararlar ve durum (v0.5 — 14 Kasım 2026)
+
+| Konu | Karar | Durum |
+|---|---|---|
+| Uygulama adı | **Meall** (geçici) | ✅ |
+| Tarif sayısı | 18 → **162**; Gemini ile özgün üretim, katalogla kısıtlı malzeme, elle temizlik | ✅ |
+| yemek.com / nefisyemektarifleri.com | **Kullanılmadı**: tarif metinleri ve fotoğrafları telif kapsamında, siteler otomatik toplamayı kullanım koşullarında yasaklıyor. Klasik yemek adları ortak; metinler özgün yazıldı | — |
+| Öğün durumu | Başlangıçta "yemiyorum / kendim hallederim", planda "yapmadım / dışarıda yedim" | ✅ |
+| Otomatik plan | Başlangıç akışı + haftalık planlayıcı | ✅ |
+
+### Malzeme kataloğu neden 54'tü, şimdi nasıl?
+İlk 54 malzeme, MVP tariflerini ve Türk ev mutfağının temelini karşılayan elle seçilmiş bir başlangıç setiydi.
+v0.5'te Gemini'ye mevcut katalog verilip eksik kalan yaygın malzemeler (sebze-meyve, bakliyat, süt ürünleri, et-balık,
+baharat-sos) gruplar hâlinde istendi; kalori ↔ makro tutarlılığı otomatik denetlendi, tekrarlar ve anlamsızlar elle
+çıkarıldı → **170 malzeme**. Her malzemenin diyet/alerjen etiketi var (vejetaryen/vegan/pesketaryen ve 11 dışlama
+filtresi bunlardan çalışır). Market Fiyatı eşleştirme kuralları yeni malzemeler için gerçek veriden çıkarıldı.
+
+## 0.v4 Önceki kararlar (v0.4 — 13 Kasım 2026)
 
 | Konu | Karar | Durum |
 |---|---|---|

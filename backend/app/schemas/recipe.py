@@ -23,6 +23,9 @@ class RecipeOut(BaseModel):
     prep_minutes: int
     meal_type: MealType
     tags: list[str]
+    equipment: list[str] = []
+    source: str = "seed"
+    own: bool = False  # hanenin kendi ürettiği tarif
     per_serving: MacrosOut
     ingredients: list[RecipeIngredientOut]
 

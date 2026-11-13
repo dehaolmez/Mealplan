@@ -1,6 +1,6 @@
 from datetime import date
 
-from sqlalchemy import select
+from sqlalchemy import or_, select
 from sqlalchemy.orm import Session
 
 from app.core.config import get_settings
@@ -17,16 +17,20 @@ from app.services.errors import BadRequest, NotFound
 from app.services.mappers import recommendation_out
 
 
-def list_recipes(db: Session, meal_type: MealType | None = None) -> list[Recipe]:
-    stmt = select(Recipe).order_by(Recipe.name)
+def list_recipes(db: Session, meal_type: MealType | None = None, household: Household | None = None) -> list[Recipe]:
+    """Ortak katalog + (varsa) hanenin kendi ürettiği tarifler. Başka hanelerin tarifleri asla dönmez."""
+    owner = Recipe.household_id.is_(None)
+    if household is not None:
+        owner = or_(owner, Recipe.household_id == household.id)
+    stmt = select(Recipe).where(owner).order_by(Recipe.name)
     if meal_type is not None:
         stmt = stmt.where(Recipe.meal_type == meal_type)
     return list(db.scalars(stmt))
 
 
-def get_recipe(db: Session, recipe_id: int) -> Recipe:
+def get_recipe(db: Session, recipe_id: int, household: Household | None = None) -> Recipe:
     recipe = db.get(Recipe, recipe_id)
-    if recipe is None:
+    if recipe is None or (recipe.household_id is not None and (household is None or recipe.household_id != household.id)):
         raise NotFound("Tarif", recipe_id)
     return recipe
 
@@ -46,7 +50,7 @@ def recommendations(
     servings = servings or (len(targets.members) or None)
 
     candidates = recommend(
-        list_recipes(db, meal_type),
+        list_recipes(db, meal_type, household),
         stock,
         servings=servings,
         meal_kcal_target=targets.meal_kcal_target,
@@ -100,7 +104,7 @@ def resolve_selections(
     plan_to: date | None,
 ) -> list[tuple[Recipe, int | None]]:
     """Açık tarif seçimleri ve/veya bir tarih aralığındaki (pişirilmemiş) plan kayıtlarını birleştirir."""
-    resolved: list[tuple[Recipe, int | None]] = [(get_recipe(db, s.recipe_id), s.servings) for s in selections]
+    resolved: list[tuple[Recipe, int | None]] = [(get_recipe(db, s.recipe_id, household), s.servings) for s in selections]
     if plan_from or plan_to:
         start = plan_from or plan_to
         end = plan_to or plan_from
@@ -112,6 +116,8 @@ def resolve_selections(
                 MealPlanEntry.day >= start,
                 MealPlanEntry.day <= end,
                 MealPlanEntry.cooked.is_(False),
+                MealPlanEntry.status == "planned",
+                MealPlanEntry.is_leftover.is_(False),
             )
         )
         resolved.extend((e.recipe, e.servings) for e in entries)

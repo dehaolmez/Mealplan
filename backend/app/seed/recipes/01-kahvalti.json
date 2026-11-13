@@ -1,0 +1,1353 @@
+[
+ {
+  "name": "Sahanda Yumurta",
+  "description": "Tereyağında hafifçe pişmiş, sarısı akışkan nefis bir klasik kahvaltılık.",
+  "meal_type": "breakfast",
+  "servings": 2,
+  "prep_minutes": 10,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "pratik",
+   "ekonomik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Yumurta",
+    "quantity": 4,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 1,
+    "unit": "g",
+    "optional": true
+   }
+  ],
+  "steps": [
+   "Sahana tereyağını alıp orta ateşte eritin.",
+   "Yağ kızmaya başlayınca yumurtaları sarılarını patlatmadan sahana kırın.",
+   "Üzerine tuzu ve isteğe bağlı karabiberi serpiştirin.",
+   "Beyazları tamamen pişene kadar yaklaşık 3-4 dakika kadar kısık ateşte pişirin."
+  ],
+  "group": "Kahvaltılık (yumurtalı, hamur işi, kahvaltı tabakları, kahvaltılık sıcaklar)"
+ },
+ {
+  "name": "Peynirli Su Böreği",
+  "description": "Kat kat incecik hamuru ve bol peynirli iç harcıyla sofraların baş tacı.",
+  "meal_type": "breakfast",
+  "servings": 6,
+  "prep_minutes": 90,
+  "equipment": [
+   "stovetop",
+   "oven"
+  ],
+  "tags": [
+   "vejetaryen",
+   "geleneksel"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Un",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yumurta",
+    "quantity": 5,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Beyaz peynir",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 10,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 100,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Un, yumurta, tuz ve su ile sert bir hamur yoğurup bezelere ayırın.",
+   "Bezeleri ince açıp kaynayan tuzlu suda 30 saniye haşlayın ve hemen soğuk suya alın.",
+   "Fırın tepsisini yağlayın ve her kata eritilmiş tereyağı sürerek yufkaları dizin.",
+   "Orta kata ulaştığınızda peynirli harcı yayın.",
+   "Kalan yufkaları da aynı şekilde dizip en üste tereyağı sürerek 180 derece fırında kızarana kadar pişirin."
+  ],
+  "group": "Kahvaltılık (yumurtalı, hamur işi, kahvaltı tabakları, kahvaltılık sıcaklar)"
+ },
+ {
+  "name": "Sigara Böreği",
+  "description": "Çıtır çıtır dokusuyla her öğüne eşlik edebilen vazgeçilmez bir lezzet.",
+  "meal_type": "breakfast",
+  "servings": 4,
+  "prep_minutes": 30,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "pratik",
+   "ekonomik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Yufka",
+    "quantity": 3,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Beyaz peynir",
+    "quantity": 200,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Maydanoz",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Ayçiçek yağı",
+    "quantity": 200,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Peyniri ufalayıp ince kıyılmış maydanozla karıştırın.",
+   "Yufkaları üst üste koyup üçgen şeklinde 8 eşit parçaya bölün.",
+   "Geniş kısımlarına peynirli harcı koyup yanları içe katlayarak rulo yapın.",
+   "Uç kısımlarını suyla ıslatarak yapıştırın.",
+   "Kızgın ayçiçek yağında altın sarısı olana kadar her tarafını kızartın."
+  ],
+  "group": "Kahvaltılık (yumurtalı, hamur işi, kahvaltı tabakları, kahvaltılık sıcaklar)"
+ },
+ {
+  "name": "Peynirli Gözleme",
+  "description": "İncecik yufka içerisinde erimiş peynirin enfes uyumu.",
+  "meal_type": "breakfast",
+  "servings": 2,
+  "prep_minutes": 25,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Yufka",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Beyaz peynir",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Taze Soğan",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Peyniri çatalla ezin ve ince kıyılmış taze soğanla harmanlayın.",
+   "Yufkayı düz bir zemine serin ve ortasına peynirli harcı yayın.",
+   "Yufkanın kenarlarını içe doğru katlayarak kare şekli verin.",
+   "Isınmış tavaya tereyağını sürün ve gözlemeleri her iki yüzü de nar gibi kızarana dek pişirin."
+  ],
+  "group": "Kahvaltılık (yumurtalı, hamur işi, kahvaltı tabakları, kahvaltılık sıcaklar)"
+ },
+ {
+  "name": "Pastırmalı Yumurta",
+  "description": "Pastırmanın kendine has aroması ve yumurtanın mükemmel uyumuyla güne enerjik başlayın.",
+  "meal_type": "breakfast",
+  "servings": 2,
+  "prep_minutes": 10,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "yüksek-protein",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Pastırma",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yumurta",
+    "quantity": 4,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 1,
+    "unit": "g",
+    "optional": true
+   }
+  ],
+  "steps": [
+   "Küçük bir tavada tereyağını eritin.",
+   "Pastırmaları hafifçe önlü arkalı çevirerek pişirin.",
+   "Yumurtaları pastırmaların üzerine dikkatlice kırın.",
+   "Karabiber serpiştirin ve yumurtaların sarısı istediğiniz kıvama gelene kadar pişirin.",
+   "Tuzu kontrollü ekleyin çünkü pastırma yeterince tuzlu olabilir.",
+   "Sıcakken servis yapın."
+  ],
+  "group": "Kahvaltılık (yumurtalı, hamur işi, kahvaltı tabakları, kahvaltılık sıcaklar)"
+ },
+ {
+  "name": "Kuymak",
+  "description": "Mısır unu ve peynirin eşsiz buluşmasıyla uzayan, bol tereyağlı lezzet bombası.",
+  "meal_type": "breakfast",
+  "servings": 2,
+  "prep_minutes": 15,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Mısır unu",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 60,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Köy peyniri",
+    "quantity": 200,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 250,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Tereyağını bakır tavada eritin.",
+   "Mısır ununu ekleyip rengi hafif dönene kadar kavurun.",
+   "Suyu yavaşça ilave ederek sürekli karıştırın.",
+   "Kıvam almaya başlayınca peyniri ekleyin.",
+   "Peynir eriyip yağ üste çıkana kadar kısık ateşte karıştırın.",
+   "Sıcak servis edin."
+  ],
+  "group": "Kahvaltılık (yumurtalı, hamur işi, kahvaltı tabakları, kahvaltılık sıcaklar)"
+ },
+ {
+  "name": "Mıhlama",
+  "description": "Karadeniz yöresinin en sevilen kahvaltılığı, tam kıvamında uzayan peyniriyle sofralarınızda.",
+  "meal_type": "breakfast",
+  "servings": 2,
+  "prep_minutes": 15,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Mısır unu",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 70,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Çeçil peyniri",
+    "quantity": 200,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 300,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Tereyağını tavada yakmadan eritin.",
+   "Mısır ununu ekleyip kokusu çıkana kadar kavurun.",
+   "Suyu ekleyip un topaklanmaması için hızlıca karıştırın.",
+   "Peyniri ekleyin ve kısık ateşte peynirler tamamen eriyene dek pişirin.",
+   "Yağ üste çıkmaya başladığında ocaktan alın.",
+   "Taze ekmekle sıcak olarak tüketin."
+  ],
+  "group": "Kahvaltılık (yumurtalı, hamur işi, kahvaltı tabakları, kahvaltılık sıcaklar)"
+ },
+ {
+  "name": "Susamlı Çıtır Ekmek Halka",
+  "description": "Sokak lezzetini evinize taşıyan, pekmezli ve bol susamlı nefis çıtır halkalar.",
+  "meal_type": "breakfast",
+  "servings": 4,
+  "prep_minutes": 60,
+  "equipment": [
+   "oven",
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "geleneksel"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Un",
+    "quantity": 400,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 200,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Pekmez",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Susam",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Un ve su ile sertçe bir hamur yoğurun.",
+   "Hamuru şeritler haline getirip halka şekli verin.",
+   "Pekmezi biraz suyla açıp halkaları önce bu karışıma sonra susama batırın.",
+   "Yağlı kağıt serili tepside 200 derece fırında kızarana kadar pişirin."
+  ],
+  "group": "Kahvaltılık (yumurtalı, hamur işi, kahvaltı tabakları, kahvaltılık sıcaklar)"
+ },
+ {
+  "name": "Pratik Katmer Poğaça (Boyoz Tarzı)",
+  "description": "İzmir'in meşhur lezzetini anımsatan, kat kat ayrılan pratik kahvaltılık.",
+  "meal_type": "breakfast",
+  "servings": 4,
+  "prep_minutes": 50,
+  "equipment": [
+   "oven"
+  ],
+  "tags": [
+   "vejetaryen",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Un",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 150,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Un, su ve tuzu yoğurup küçük bezelere ayırın.",
+   "Bezeleri tabak kadar açıp aralarına eritilmiş tereyağı sürün.",
+   "Üst üste dizdiğiniz hamurları rulo yapıp tekrar küçük parçalara bölün.",
+   "Üzerlerine hafif bastırıp yağlı kağıtlı tepsiye dizin.",
+   "200 derece fırında nar gibi kızarana kadar pişirin."
+  ],
+  "group": "Kahvaltılık (yumurtalı, hamur işi, kahvaltı tabakları, kahvaltılık sıcaklar)"
+ },
+ {
+  "name": "Klasik Peynir Tabağı",
+  "description": "En taze peynirler ve zeytinlerle hazırlanan, güne zinde başlatan bir klasik.",
+  "meal_type": "breakfast",
+  "servings": 2,
+  "prep_minutes": 5,
+  "equipment": [
+   "none"
+  ],
+  "tags": [
+   "vejetaryen",
+   "hafif",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Ezine Peyniri",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kaşar peyniri",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Siyah zeytin",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytin",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Ezine peynirini küp veya üçgen şeklinde dilimleyin.",
+   "Kaşar peynirini ince dilimler halinde servis tabağına yerleştirin.",
+   "Zeytinleri bir kaseye alın veya peynirlerin yanına boşluklara dizin.",
+   "İsteğe bağlı taze yeşilliklerle süsleyerek servis yapın."
+  ],
+  "group": "Kahvaltılık (yumurtalı, hamur işi, kahvaltı tabakları, kahvaltılık sıcaklar)"
+ },
+ {
+  "name": "Patatesli Yumurta",
+  "description": "Kızarmış patateslerin yumurta ile buluştuğu efsanevi doyurucu kahvaltılık.",
+  "meal_type": "breakfast",
+  "servings": 2,
+  "prep_minutes": 20,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Patates",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Yumurta",
+    "quantity": 3,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 30,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Pul biber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": true
+   }
+  ],
+  "steps": [
+   "Patatesleri küçük küpler halinde doğrayın.",
+   "Zeytinyağını tavada kızdırın ve patatesleri yumuşayana kadar kızartın.",
+   "Üzerine tuz ve pul biberi ekleyip karıştırın.",
+   "Yumurtaları patateslerin üzerine kırın.",
+   "Sarısını hafifçe bozarak pişirin ve ocaktan alıp sıcak servis edin."
+  ],
+  "group": "Kahvaltılık (yumurtalı, hamur işi, kahvaltı tabakları, kahvaltılık sıcaklar)"
+ },
+ {
+  "name": "Çılbır",
+  "description": "Yoğurdun serinliği ve sarımsağın aromasıyla buluşan mükemmel poşe yumurta.",
+  "meal_type": "breakfast",
+  "servings": 2,
+  "prep_minutes": 20,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "hafif",
+   "geleneksel"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Yumurta",
+    "quantity": 4,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Yoğurt",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Pul biber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Yoğurdu sarımsak ve tuzla karıştırıp servis tabağına yayın.",
+   "Tencerede suyu kaynatın ve içine biraz tuz atın, ardından yumurtaları dikkatlice suyun içine kırın.",
+   "Yumurtaların beyazları pişip sarıları hafif akışkan kalınca bir kevgirle sudan alın.",
+   "Yoğurdun üzerine yerleştirdiğiniz yumurtaların üzerine, tavada kızdırdığınız pul biberli tereyağını gezdirin."
+  ],
+  "group": "Kahvaltılık (yumurtalı, hamur işi, kahvaltı tabakları, kahvaltılık sıcaklar)"
+ },
+ {
+  "name": "Akıtma",
+  "description": "Kahvaltı sofralarına neşe katan incecik, yumuşacık bir hamur işi.",
+  "meal_type": "breakfast",
+  "servings": 4,
+  "prep_minutes": 30,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "ekonomik",
+   "çocuk-dostu"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Un",
+    "quantity": 200,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yumurta",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Süt",
+    "quantity": 300,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Ayçiçek yağı",
+    "quantity": 20,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Un, süt, yumurta ve tuzu pürüzsüz bir kıvam alana kadar iyice çırpın.",
+   "Yanmaz yapışmaz tavayı hafifçe yağlayın ve ısıtın.",
+   "Bir kepçe kadar harcı tavanın ortasına döküp yayın.",
+   "Her iki yüzünü de göz göz olana kadar pişirip sıcak servis yapın."
+  ],
+  "group": "Kahvaltılık (yumurtalı, hamur işi, kahvaltı tabakları, kahvaltılık sıcaklar)"
+ },
+ {
+  "name": "Peynirli Poğaça",
+  "description": "Taze peynir dolgulu, çayın yanına en çok yakışan ev yapımı lezzet.",
+  "meal_type": "breakfast",
+  "servings": 6,
+  "prep_minutes": 50,
+  "equipment": [
+   "oven"
+  ],
+  "tags": [
+   "vejetaryen",
+   "fırın",
+   "geleneksel"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Un",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Beyaz peynir",
+    "quantity": 200,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yumurta",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kabartma tozu",
+    "quantity": 10,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Un, tereyağı, bir adet yumurta ve kabartma tozunu karıştırıp yumuşak bir hamur yoğurun.",
+   "Hamurdan parçalar koparıp içine ezilmiş beyaz peyniri koyun ve kapatın.",
+   "Yağlı kağıt serili tepsiye dizdiğiniz poğaçaların üzerine yumurta sarısı sürün.",
+   "Önceden ısıtılmış 180 derece fırında üzerleri kızarana kadar pişirin."
+  ],
+  "group": "Kahvaltılık (yumurtalı, hamur işi, kahvaltı tabakları, kahvaltılık sıcaklar)"
+ },
+ {
+  "name": "Pişi",
+  "description": "Kahvaltı sofralarının vazgeçilmezi olan yumuşacık ve kabarmış pişi.",
+  "meal_type": "breakfast",
+  "servings": 4,
+  "prep_minutes": 30,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "ekonomik",
+   "vejetaryen",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Un",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yoğurt",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yumurta",
+    "quantity": 60,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kabartma tozu",
+    "quantity": 10,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Ayçiçek yağı",
+    "quantity": 150,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Bir kapta un, kabartma tozu ve tuzu karıştırın.",
+   "Orta kısmı açıp yumurta, yoğurt ve suyu ekleyerek yumuşak bir hamur yoğurun.",
+   "Hamurdan ceviz büyüklüğünde parçalar koparıp merdane ile hafifçe açın.",
+   "Tavada ayçiçek yağını ısıtın ve hazırladığınız hamurları arkalı önlü kızartın.",
+   "Fazla yağını süzdürerek sıcak servis yapın."
+  ],
+  "group": "Kahvaltılık (yumurtalı, hamur işi, kahvaltı tabakları, kahvaltılık sıcaklar)"
+ },
+ {
+  "name": "Boyoz",
+  "description": "İzmir kültürünün simgesi olan, kat kat hamuruyla enfes geleneksel boyoz.",
+  "meal_type": "breakfast",
+  "servings": 3,
+  "prep_minutes": 50,
+  "equipment": [
+   "oven",
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "fırın",
+   "vejetaryen"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Un",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 120,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Ayçiçek yağı",
+    "quantity": 100,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Un, su ve tuzu yoğurarak pürüzsüz bir hamur elde edin ve dinlendirin.",
+   "Hamuru bezelere ayırıp un yardımıyla tabak büyüklüğünde açın.",
+   "Eritilmiş tereyağı ve ayçiçek yağı karışımını aralarına sürerek bezeleri üst üste dizin.",
+   "Yağlı hamurları rulo yapıp parmak kalınlığında keserek şekil verin.",
+   "Önceden ısıtılmış fırında üzerleri kızarana kadar pişirin."
+  ],
+  "group": "Kahvaltılık (yumurtalı, hamur işi, kahvaltı tabakları, kahvaltılık sıcaklar)"
+ },
+ {
+  "name": "Ev Yapımı Pratik Simit",
+  "description": "Geleneksel lezzeti evde yakalayabileceğiniz, çıtır çıtır pekmezli susamlı nefis simit.",
+  "meal_type": "breakfast",
+  "servings": 4,
+  "prep_minutes": 45,
+  "equipment": [
+   "stovetop",
+   "oven"
+  ],
+  "tags": [
+   "geleneksel",
+   "ekonomik",
+   "fırın"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Un",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 180,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Ayçiçek yağı",
+    "quantity": 30,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Pekmez",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Susam",
+    "quantity": 80,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Un, su, ayçiçek yağı ve tuzu derin bir kapta karıştırarak yumuşak bir hamur yoğurun.",
+   "Yoğurduğunuz hamurdan eşit bezeler kopararak un serpipli tezgaha dizin.",
+   "Her bezeyi ikiye bölüp uzun şeritler yapın ve birbirine dolayarak simit halkası şeklini verin.",
+   "Bir kasede pekmezi bir miktar su ile açın, başka bir kasede ise susamı hazırlayın.",
+   "Şekil verdiğiniz simitleri önce pekmezli suya ardından bol susama batırın.",
+   "Yağlı kağıt serili fırın tepsisine dizdiğiniz simitleri önceden ısıtılmış fırında kızarana kadar pişirin."
+  ],
+  "group": "Kahvaltılık (yumurtalı, hamur işi, kahvaltı tabakları, kahvaltılık sıcaklar)"
+ },
+ {
+  "name": "Klasik Domatesli Yumurta",
+  "description": "Güne enerjik başlamak için domates ve biberle zenginleştirilmiş lezzetli bir yumurta.",
+  "meal_type": "breakfast",
+  "servings": 2,
+  "prep_minutes": 15,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "pratik",
+   "ekonomik",
+   "vejetaryen",
+   "yüksek-protein"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Yumurta",
+    "quantity": 3,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sivri biber",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": true
+   }
+  ],
+  "steps": [
+   "Biberleri ince ince doğrayın ve tereyağında hafifçe soteleyin.",
+   "Kabuklarını soyup küp doğradığınız domatesleri tavaya ilave edin.",
+   "Domatesler yumuşayıp suyunu biraz çekene kadar pişirin.",
+   "Ayrı bir kapta çırptığınız yumurtaları sebzelerin üzerine gezdirin.",
+   "Tuz ve karabiber ekleyip yumurtalar dilediğiniz kıvama gelene kadar karıştırarak pişirin."
+  ],
+  "group": "Kahvaltılık (yumurtalı, hamur işi, kahvaltı tabakları, kahvaltılık sıcaklar)"
+ },
+ {
+  "name": "Sucuklu Kaşarlı Tost",
+  "description": "Eritilmiş kaşar ve lezzetli sucuk dilimleriyle hazırlanan nefis bir kahvaltı klasiği.",
+  "meal_type": "breakfast",
+  "servings": 2,
+  "prep_minutes": 10,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "pratik",
+   "çocuk-dostu",
+   "ekonomik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Ekmek",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sucuk",
+    "quantity": 60,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kaşar peyniri",
+    "quantity": 80,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 10,
+    "unit": "g",
+    "optional": true
+   }
+  ],
+  "steps": [
+   "Ekmek dilimlerini tost makinesine yerleştirin.",
+   "Sucuk dilimlerini ekmeklerin üzerine dizip biraz ısıtın.",
+   "Sucukların üzerine kaşar peyniri dilimlerini yerleştirin.",
+   "İkinci ekmek dilimini üzerlerine kapatın ve makinenin kapağını bastırın.",
+   "Ekmekler kızarıp peynir eriyene kadar tost makinesinde pişirin."
+  ],
+  "group": "Kahvaltılık (yumurtalı, hamur işi, kahvaltı tabakları, kahvaltılık sıcaklar)"
+ },
+ {
+  "name": "Peynirli Omlet",
+  "description": "Beyaz peynir ve taze yeşilliklerle zenginleştirilmiş yumuşacık pratik bir omlet.",
+  "meal_type": "breakfast",
+  "servings": 2,
+  "prep_minutes": 10,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "pratik",
+   "vejetaryen",
+   "yüksek-protein",
+   "hafif"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Yumurta",
+    "quantity": 4,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Beyaz peynir",
+    "quantity": 60,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Süt",
+    "quantity": 30,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 15,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Maydanoz",
+    "quantity": 10,
+    "unit": "g",
+    "optional": true
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Yumurtaları bir kapta süt ve tuz ile birlikte iyice çırpın.",
+   "İçerisine ufaladığınız beyaz peyniri ve kıyılmış maydanozu ekleyip karıştırın.",
+   "Tavada tereyağını eritin ve kızdırın.",
+   "Yumurta karışımını tavaya dökün ve yayın.",
+   "Alt kısmı pişince omleti ikiye katlayıp sıcak servis yapın."
+  ],
+  "group": "Kahvaltılık (yumurtalı, hamur işi, kahvaltı tabakları, kahvaltılık sıcaklar)"
+ },
+ {
+  "name": "Tavada Kabak Mücveri",
+  "description": "Taze kabak ve yeşilliklerle hazırlanan, kahvaltılara çok yakışan nefis mücver.",
+  "meal_type": "breakfast",
+  "servings": 4,
+  "prep_minutes": 30,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "hafif",
+   "pratik",
+   "ekonomik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kabak",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yumurta",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Un",
+    "quantity": 60,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Taze Soğan",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Maydanoz",
+    "quantity": 25,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Beyaz peynir",
+    "quantity": 50,
+    "unit": "g",
+    "optional": true
+   },
+   {
+    "ingredient": "Ayçiçek yağı",
+    "quantity": 30,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kabakları rendeleyin ve suyunu ellerinizle iyice sıkın.",
+   "İnce kıyılmış taze soğan, maydanoz ve ufalanmış beyaz peyniri derin bir kaba alın.",
+   "Üzerine rendelenmiş kabakları, yumurtaları, un, tuz ve karabiberi ekleyip karıştırın.",
+   "Tavada ayçiçek yağını ısıtın.",
+   "Hazırladığınız harçtan kaşık yardımıyla porsiyonlar alarak tavaya dökün ve hafifçe üzerine bastırın.",
+   "Orta ateşte her iki yüzünü de kızartarak sıcak servis tabağına alın."
+  ],
+  "group": "Kahvaltılık (yumurtalı, hamur işi, kahvaltı tabakları, kahvaltılık sıcaklar)"
+ },
+ {
+  "name": "Sahanda Kaşar Peyniri",
+  "description": "Eriyip uzayan kaşar peyniri ve üzerine eklenen baharatlarla hazırlanan, kahvaltı sofralarının vazgeçilmez sıcak lezzeti.",
+  "meal_type": "breakfast",
+  "servings": 2,
+  "prep_minutes": 10,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "pratik",
+   "ekonomik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kaşar peyniri",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Pul biber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kekik",
+    "quantity": 2,
+    "unit": "g",
+    "optional": true
+   }
+  ],
+  "steps": [
+   "Kaşar peynirini yaklaşık 1 cm kalınlığında dilimler halinde kesin.",
+   "Küçük bir sahanı orta ateşe alın ve tereyağını eritin.",
+   "Eriyen tereyağının üzerine kaşar dilimlerini yan yana dizin.",
+   "Kaşarların alt kısımları kızarmaya başlayınca bir spatula yardımıyla diğer yüzlerini çevirin.",
+   "Peynirler tamamen eriyip hafif kızarınca üzerlerine pul biber ve kekiği serpiştirin.",
+   "Sıcak servis yaparak peynirler donmadan hemen tüketin."
+  ],
+  "group": "Kahvaltılık (yumurtalı, hamur işi, kahvaltı tabakları, kahvaltılık sıcaklar)"
+ },
+ {
+  "name": "Kıymalı Yumurta",
+  "description": "Güne zinde ve tok başlamanızı sağlayacak protein deposu nefis bir kahvaltılık.",
+  "meal_type": "breakfast",
+  "servings": 2,
+  "prep_minutes": 15,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "pratik",
+   "yüksek-protein",
+   "ekonomik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kıyma",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yumurta",
+    "quantity": 4,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Pul biber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": true
+   }
+  ],
+  "steps": [
+   "Tereyağını tavaya alıp eritin ve kıymayı ekleyerek suyunu çekene kadar kavurun.",
+   "Kavrulan kıymaya tuz, karabiber ve arzuya göre pul biberi serpiştirin.",
+   "Kıymaları tavanın tabanına yayın ve üzerlerine yumurtaları bütün halde kırın.",
+   "Yumurtaların sarıları hafif akışkan kalacak şekilde kısık ateşte pişirip servis yapın."
+  ],
+  "group": "Kahvaltılık (yumurtalı, hamur işi, kahvaltı tabakları, kahvaltılık sıcaklar)"
+ },
+ {
+  "name": "Peynirli Krep",
+  "description": "İncecik dokusu ve içindeki erimiş beyaz peynirle kahvaltılarınızın vazgeçilmezi olacak.",
+  "meal_type": "breakfast",
+  "servings": 4,
+  "prep_minutes": 25,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "çocuk-dostu",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Un",
+    "quantity": 200,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Süt",
+    "quantity": 300,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Yumurta",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Beyaz peynir",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Ayçiçek yağı",
+    "quantity": 10,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Derin bir kapta yumurta, süt ve unu pürüzsüz bir kıvam alana kadar çırpın.",
+   "Tavayı hafifçe yağlayın ve bir kepçe krep hamurunu tavaya döküp yayın.",
+   "Hamurun altı kızarınca üzerine ufalanmış beyaz peyniri serpiştirin ve ikiye katlayın.",
+   "Peynirler hafifçe eriyene kadar her iki tarafı da kısa süre pişirip sıcak servis edin."
+  ],
+  "group": "Kahvaltılık (yumurtalı, hamur işi, kahvaltı tabakları, kahvaltılık sıcaklar)"
+ }
+]

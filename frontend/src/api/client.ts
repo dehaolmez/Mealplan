@@ -1,4 +1,5 @@
 import type {
+  GenerateResult, Preferences,
   Chain, Me, Nearby, PriceImportResult, RegisterIn, ConsentKind, ReceiptDraft,
   Alerts, Household, HouseholdTargets, Ingredient, InventoryItem, Location, Member, MemberIn, MealType,
   MissingLine, OptimizeResult, PlanEntry, Recipe, Recommendations, ShoppingItem, ShoppingList, Store, Strategy,
@@ -20,7 +21,7 @@ async function request<T>(method: string, path: string, body?: unknown, rawCsv?:
   });
   if (res.status === 401 && !path.startsWith("/auth/")) {
     // Oturum düştü: uygulama giriş ekranına dönsün
-    window.dispatchEvent(new Event("mealbird:unauthorized"));
+    window.dispatchEvent(new Event("meall:unauthorized"));
   }
   if (!res.ok) {
     let message = `${res.status} ${res.statusText}`;
@@ -121,6 +122,7 @@ export const api = {
   alerts: () => request<Alerts>("GET", "/inventory/alerts"),
 
   recipes: () => request<Recipe[]>("GET", "/recipes"),
+  generateRecipe: (meal_type?: MealType, wish?: string) => request<Recipe>("POST", "/recipes/generate", { meal_type, wish }),
   recommendations: (p: { meal_type?: MealType; servings?: number; limit?: number; ai?: boolean }) =>
     request<Recommendations>("GET", `/recipes/recommendations${qs(p)}`),
   missing: (p: PlanRange) => request<{ lines: MissingLine[] }>("POST", "/recipes/missing", { selections: [], ...p }),
@@ -129,6 +131,11 @@ export const api = {
   addPlan: (data: { day: string; meal_type: MealType; recipe_id: number; servings: number }) =>
     request<PlanEntry>("POST", "/plan", data),
   deletePlan: (id: number) => request<void>("DELETE", `/plan/${id}`),
+  setPlanStatus: (id: number, status: "planned" | "skipped" | "ate_out") =>
+    request<PlanEntry>("POST", `/plan/${id}/status`, { status }),
+  preferences: () => request<Preferences>("GET", "/preferences"),
+  savePreferences: (p: Preferences) => request<Preferences>("PUT", "/preferences", p),
+  generatePlan: (p: { start?: string; days?: number; seed?: number }) => request<GenerateResult>("POST", "/plan/generate", p),
   cook: (id: number) => request<{ consumed: string[]; shortages: string[] }>("POST", `/plan/${id}/cook`),
 
   shopping: () => request<ShoppingList>("GET", "/shopping"),

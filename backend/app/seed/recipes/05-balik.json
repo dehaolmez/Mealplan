@@ -1,0 +1,482 @@
+[
+ {
+  "name": "Hamsi Tava",
+  "description": "Mısır ununa bulanıp çıtır çıtır kızartılan geleneksel Karadeniz usulü hamsi tava.",
+  "meal_type": "dinner",
+  "servings": 3,
+  "prep_minutes": 25,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "pratik",
+   "ekonomik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Hamsi",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Mısır unu",
+    "quantity": 80,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Ayçiçek yağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Limon",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": true
+   }
+  ],
+  "steps": [
+   "Hamsileri ayıklayıp kılçıklarını çıkarın ve bol suda yıkayıp süzün.",
+   "Süzülen hamsileri tuzlayarak hafifçe harmanlayın.",
+   "Balıkları mısır ununa bulayarak fazla ununu silkeleyin.",
+   "Tavaya sıvı yağı döküp kızdırın ve hamsileri daire şeklinde dizin.",
+   "Orta ateşte altları altın sarısı olana kadar kızartın.",
+   "Bir kapak yardımıyla balıkları ters çevirip diğer yüzünü de aynı şekilde pişirin.",
+   "Sıcakken dilimlenmiş limon ile servis yapın."
+  ],
+  "group": "Balık ve deniz ürünleri yemekleri"
+ },
+ {
+  "name": "Fırında Patatesli Levrek",
+  "description": "Fırında sebzelerle birlikte nar gibi kızaran, sağlıklı ve lezzetli bir deniz mahsulü akşam yemeği.",
+  "meal_type": "dinner",
+  "servings": 2,
+  "prep_minutes": 40,
+  "equipment": [
+   "oven"
+  ],
+  "tags": [
+   "fırın",
+   "hafif",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Levrek",
+    "quantity": 600,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Patates",
+    "quantity": 340,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Limon",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 40,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Fırını 190 derecede önceden ısıtın.",
+   "Patatesleri ve kuru soğanı ince halkalar halinde doğrayıp fırın tepsisine yayın.",
+   "Temizlenmiş balıkları sebzelerin üzerine yerleştirin ve tuzlayıp karabiber serp.",
+   "Balıkların üzerine zeytinyağı gezdirin ve dilimlenmiş limonları yerleştirin.",
+   "Önceden ısıtılmış fırında balıklar ve patatesler yumuşayana kadar yaklaşık 35 dakika pişirin.",
+   "Sıcak olarak servis tabağına alın."
+  ],
+  "group": "Balık ve deniz ürünleri yemekleri"
+ },
+ {
+  "name": "Balık Buğulama",
+  "description": "Bol sebze ve kendi suyuyla hafifçe haşlanan, en yumuşak ve sağlıklı balık pişirme yöntemi.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 35,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "hafif",
+   "geleneksel",
+   "glutensiz"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Çipura",
+    "quantity": 800,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 240,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 10,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Maydanoz",
+    "quantity": 25,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Limon",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 150,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 6,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Geniş ve yayvan bir tencerenin tabanına halka doğranmış soğanları ve sarımsakları dizin.",
+   "Temizlenmiş balıkları soğanların üzerine yerleştirin.",
+   "Balıkların etrafına küp doğranmış domatesleri ekleyin ve tuz serp.",
+   "Zeytinyağını, suyu ve limon dilimlerini tencereye ilave edin.",
+   "Kıyılmış maydanozları en üste serpiştirip tencerenin kapağını kapatın.",
+   "Orta ateşte kaynamaya başladıktan sonra kısık ateşte balıklar yumuşayana dek 25 dakika pişirin.",
+   "Sıcak servis yapın."
+  ],
+  "group": "Balık ve deniz ürünleri yemekleri"
+ },
+ {
+  "name": "Karides Güveç",
+  "description": "Fırında eriyen kaşar peyniri ve domatesin eşsiz uyumuyla hazırlanan nefis bir karides güveç tarifidir.",
+  "meal_type": "dinner",
+  "servings": 3,
+  "prep_minutes": 30,
+  "equipment": [
+   "stovetop",
+   "oven"
+  ],
+  "tags": [
+   "fırın",
+   "yüksek-protein"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Karides",
+    "quantity": 400,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kırmızı biber",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 3,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 40,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kaşar peyniri",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Fırını 200 dereceye ısıtın ve sebzeleri küçük küçük doğrayın.",
+   "Tavada tereyağını eritin ve kıyılmış sarımsakları ekleyip kokusu çıkana kadar soteleyin.",
+   "Doğranmış kırmızı biber ile domatesleri ekleyip yumuşayana kadar pişirin.",
+   "Temizlenmiş karidesleri tencereye ilave edin, tuz ve karabiber ekleyip birkaç dakika soteleyin.",
+   "Karışımı güveç kaplarına paylaştırın.",
+   "Üzerlerine rendelenmiş kaşar peyniri serpiştirin.",
+   "Peynirler eriyip kızarana kadar fırında pişirin ve sıcak servis yapın."
+  ],
+  "group": "Balık ve deniz ürünleri yemekleri"
+ },
+ {
+  "name": "Hamsi Kuşu",
+  "description": "Mısır ununa bulanarak tavada çıtır çıtır kızartılan geleneksel hamsi kuşu tarifi.",
+  "meal_type": "dinner",
+  "servings": 3,
+  "prep_minutes": 25,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Hamsi",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Mısır unu",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Ayçiçek yağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Limon",
+    "quantity": 100,
+    "unit": "g",
+    "optional": true
+   }
+  ],
+  "steps": [
+   "Hamsilerin kılçıklarını temizleyin ve bol suyla yıkayıp süzgece alın.",
+   "İki adet hamsiyi iç kısımları birbirine bakacak şekilde açarak birleştirin.",
+   "Ayıklanan hamsileri hafifçe tuzlayın.",
+   "Geniş bir tabakta mısır ununu hazırlayın.",
+   "Birleştirilmiş hamsi çiftlerini mısır ununa bulayın.",
+   "Tavada ayçiçek yağını ısıtın.",
+   "Hamsileri tavaya dizip her iki yüzünü de altın sarısı renk alana kadar kızartın.",
+   "Limon dilimleri ile sıcak servis edin."
+  ],
+  "group": "Balık ve deniz ürünleri yemekleri"
+ },
+ {
+  "name": "Fırında Limonlu Levrek",
+  "description": "Limon ve taze sebzelerle fırınlanmış, sofraların vazgeçilmezi sağlıklı ve hafif bir balık ziyafeti.",
+  "meal_type": "dinner",
+  "servings": 2,
+  "prep_minutes": 40,
+  "equipment": [
+   "oven"
+  ],
+  "tags": [
+   "hafif",
+   "glutensiz",
+   "fırın"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Levrek",
+    "quantity": 600,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Limon",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 30,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Maydanoz",
+    "quantity": 25,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Balıkları güzelce yıkayıp kurulayın ve fırın tepsisine dizin.",
+   "Soğanları halka halka doğrayıp balıkların üzerine ve aralarına yerleştirin.",
+   "Limonu ince dilimler halinde kesin ve balıkların üzerine dizin.",
+   "Zeytinyağı, tuz ve karabiberi küçük bir kapta karıştırıp balıkların her yerine gezdirin.",
+   "Önceden ısıtılmış 200 derece fırında yaklaşık 25-30 dakika pişirin.",
+   "Fırından çıkardıktan sonra kıyılmış maydanoz serperek sıcak servis yapın."
+  ],
+  "group": "Balık ve deniz ürünleri yemekleri"
+ },
+ {
+  "name": "Hamsi Pilaki",
+  "description": "Bol soğan ve domatesle harmanlanmış, sebzeli pişirme yöntemiyle hazırlanan geleneksel bir lezzet.",
+  "meal_type": "dinner",
+  "servings": 2,
+  "prep_minutes": 45,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "ekonomik",
+   "yüksek-protein"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Hamsi",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 40,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Maydanoz",
+    "quantity": 25,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Hamsileri temizleyip kılçıklarını ayıklayın ve yıkayın.",
+   "Soğanları piyazlık doğrayıp zeytinyağında pembeleşene kadar soteleyin.",
+   "Doğranmış domatesleri ve ezilmiş sarımsakları tavaya ekleyip yumuşayana kadar pişirin.",
+   "Hamsileri sebzelerin üzerine tek sıra halinde dizin.",
+   "Tuz ve karabiberi serpip kısık ateşte balıklar pişene kadar yaklaşık 20 dakika demlendirin.",
+   "Üzerine ince kıyılmış maydanoz serperek servis yapın."
+  ],
+  "group": "Balık ve deniz ürünleri yemekleri"
+ }
+]

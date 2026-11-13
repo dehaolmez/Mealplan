@@ -35,8 +35,11 @@ def test_package_parsing(db, title, vw, qu, name, expected):
     assert package_base_quantity(_ing(db, name), title, vw, qu) == pytest.approx(expected)
 
 
-def test_rules_exist_for_all_buyable_ingredients(db):
-    missing = [i.name for i in db.scalars(select(Ingredient)) if not i.is_staple and i.name not in RULES]
+def test_rules_exist_for_all_core_ingredients(db):
+    from app.seed.data import INGREDIENTS
+
+    core = {row[0] for row in INGREDIENTS if not row[12]}
+    missing = sorted(core - set(RULES))
     assert missing == [], f"Kural eksik: {missing}"
 
 

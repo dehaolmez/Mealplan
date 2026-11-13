@@ -11,24 +11,24 @@ from app.models.enums import MealType as M
 # ad, reyon, birim, g/adet, yoğunluk, kcal, protein, karb, yağ, buzdolabı, dondurucu, açık, temel?, emoji
 INGREDIENTS = [
     # Manav
-    ("Domates", C.produce, U.g, None, None, 18, 0.9, 3.9, 0.2, 7, 60, 2, False, "🍅"),
-    ("Salatalık", C.produce, U.g, None, None, 15, 0.7, 3.6, 0.1, 7, None, 2, False, "🥒"),
-    ("Kuru soğan", C.produce, U.g, None, None, 40, 1.1, 9.3, 0.1, 30, 180, 7, False, "🧅"),
-    ("Sarımsak", C.produce, U.g, None, None, 149, 6.4, 33, 0.5, 60, 180, 10, False, "🧄"),
-    ("Patates", C.produce, U.g, None, None, 77, 2.0, 17, 0.1, 30, 300, 3, False, "🥔"),
-    ("Havuç", C.produce, U.g, None, None, 41, 0.9, 9.6, 0.2, 21, 300, 5, False, "🥕"),
-    ("Kabak", C.produce, U.g, None, None, 17, 1.2, 3.1, 0.3, 6, 240, 2, False, "🥒"),
-    ("Patlıcan", C.produce, U.g, None, None, 25, 1.0, 6.0, 0.2, 6, 240, 2, False, "🍆"),
-    ("Sivri biber", C.produce, U.g, None, None, 20, 0.9, 4.6, 0.2, 7, 240, 3, False, "🌶️"),
-    ("Kırmızı biber", C.produce, U.g, None, None, 31, 1.0, 6.0, 0.3, 7, 240, 3, False, "🫑"),
+    ("Domates", C.produce, U.g, 150, None, 18, 0.9, 3.9, 0.2, 7, 60, 2, False, "🍅"),
+    ("Salatalık", C.produce, U.g, 150, None, 15, 0.7, 3.6, 0.1, 7, None, 2, False, "🥒"),
+    ("Kuru soğan", C.produce, U.g, 120, None, 40, 1.1, 9.3, 0.1, 30, 180, 7, False, "🧅"),
+    ("Sarımsak", C.produce, U.g, 5, None, 149, 6.4, 33, 0.5, 60, 180, 10, False, "🧄"),
+    ("Patates", C.produce, U.g, 170, None, 77, 2.0, 17, 0.1, 30, 300, 3, False, "🥔"),
+    ("Havuç", C.produce, U.g, 80, None, 41, 0.9, 9.6, 0.2, 21, 300, 5, False, "🥕"),
+    ("Kabak", C.produce, U.g, 250, None, 17, 1.2, 3.1, 0.3, 6, 240, 2, False, "🥒"),
+    ("Patlıcan", C.produce, U.g, 300, None, 25, 1.0, 6.0, 0.2, 6, 240, 2, False, "🍆"),
+    ("Sivri biber", C.produce, U.g, 15, None, 20, 0.9, 4.6, 0.2, 7, 240, 3, False, "🌶️"),
+    ("Kırmızı biber", C.produce, U.g, 150, None, 31, 1.0, 6.0, 0.3, 7, 240, 3, False, "🫑"),
     ("Ispanak", C.produce, U.g, None, None, 23, 2.9, 3.6, 0.4, 4, 300, 2, False, "🥬"),
     ("Marul", C.produce, U.g, 400, None, 15, 1.4, 2.9, 0.2, 5, None, 2, False, "🥬"),
     ("Maydanoz", C.produce, U.g, 50, None, 36, 3.0, 6.3, 0.8, 5, 180, 3, False, "🌿"),
     ("Limon", C.produce, U.piece, 100, None, 29, 1.1, 9.3, 0.3, 21, 120, 5, False, "🍋"),
     ("Elma", C.produce, U.piece, 180, None, 52, 0.3, 14, 0.2, 30, None, 1, False, "🍎"),
     ("Muz", C.produce, U.piece, 120, None, 89, 1.1, 23, 0.3, 5, 90, 1, False, "🍌"),
-    ("Mantar", C.produce, U.g, None, None, 22, 3.1, 3.3, 0.3, 5, 240, 2, False, "🍄"),
-    ("Brokoli", C.produce, U.g, None, None, 34, 2.8, 6.6, 0.4, 6, 300, 3, False, "🥦"),
+    ("Mantar", C.produce, U.g, 20, None, 22, 3.1, 3.3, 0.3, 5, 240, 2, False, "🍄"),
+    ("Brokoli", C.produce, U.g, 400, None, 34, 2.8, 6.6, 0.4, 6, 300, 3, False, "🥦"),
     # Süt ürünleri
     ("Süt", C.dairy, U.ml, None, 1.03, 61, 3.2, 4.8, 3.3, 7, 90, 3, False, "🥛"),
     ("Yoğurt", C.dairy, U.g, None, None, 61, 3.5, 4.7, 3.3, 14, None, 4, False, "🥣"),
@@ -266,3 +266,15 @@ CHAINS = [
     ("happy-center", "Happy Center", "regional", "Happy Center (Trakya)", "happy center,happycenter",
      "happycenter.com.tr", "#f57c00", False),
 ]
+
+# Mevcut malzemelerin diyet/alerjen etiketleri (genişletilmiş katalogdakiler catalog_extra.json içinde)
+DIET_TAGS: dict[str, str] = {
+    "Patates": "carb", "Muz": "carb",
+    "Süt": "dairy", "Yoğurt": "dairy", "Beyaz peynir": "dairy", "Kaşar peyniri": "dairy", "Tereyağı": "dairy",
+    "Krema": "dairy", "Yumurta": "egg",
+    "Tavuk göğsü": "poultry", "Tavuk but": "poultry", "Kıyma": "red_meat", "Kuşbaşı et": "red_meat",
+    "Somon": "fish", "Sucuk": "red_meat",
+    "Ekmek": "gluten,carb", "Lavaş": "gluten,carb", "Pirinç": "carb", "Bulgur": "gluten,carb",
+    "Makarna": "gluten,carb", "Un": "gluten,carb", "Yulaf": "gluten,carb", "Bal": "honey",
+    "Kırmızı mercimek": "", "Nohut": "",
+}

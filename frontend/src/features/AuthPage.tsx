@@ -98,7 +98,7 @@ export function AuthPage({ onAuthed, resetToken }: { onAuthed: (me: Me) => void;
   return (
     <div className="auth">
       <div className="auth-card card">
-        <div className="auth-brand">🐦 Mealbird</div>
+        <div className="auth-brand">🍽️ Meall</div>
         <p className="muted auth-tag">Buzdolabındakini israf etme, alışverişi akıllı yap.</p>
 
         {(mode === "login" || mode === "register") && (

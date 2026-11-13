@@ -1,10 +1,10 @@
-# Mealbird'ü ücretsiz yayına alma (GitHub + Render + Neon)
+# Meall'ü ücretsiz yayına alma (GitHub + Render + Neon)
 
 Sunucu satın almadan, GitHub deposundan otomatik yayın. Toplam tıklama süresi ~15 dakika.
 
 ## Neden yalnız GitHub yetmiyor?
 
-GitHub Pages yalnız **statik** dosya sunar (HTML/JS). Mealbird'ün sunucu tarafı (Python API + veritabanı)
+GitHub Pages yalnız **statik** dosya sunar (HTML/JS). Meall'ün sunucu tarafı (Python API + veritabanı)
 çalışan bir süreç ister. Bu yüzden:
 
 | Parça | Nerede | Ücret | Not |
@@ -43,7 +43,7 @@ Tabloları uygulama ilk açılışta kendisi kurar; elle bir şey yapmayın.
 | Değişken | Değer |
 |---|---|
 | `MEALBIRD_DATABASE_URL` | Neon'dan kopyaladığınız adres |
-| `MEALBIRD_PUBLIC_BASE_URL` | Render'ın verdiği adres, ör. `https://mealbird.onrender.com` (ilk kurulumdan sonra öğrenilir; sonradan girilebilir) |
+| `MEALBIRD_PUBLIC_BASE_URL` | Render'ın verdiği adres, ör. `https://meall.onrender.com` (ilk kurulumdan sonra öğrenilir; sonradan girilebilir) |
 | `MEALBIRD_GEMINI_API_KEY` | Gemini anahtarınız (fiş okuma ve yapay zekâ önerileri) |
 | `MEALBIRD_GOOGLE_CLIENT_ID` | Adım 5 (isteğe bağlı) |
 | `MEALBIRD_ADMIN_EMAIL` / `MEALBIRD_ADMIN_PASSWORD` | Yönetici hesabınız (Profil'de "🛠️ Yönetim" bölümü açılır) |
@@ -58,19 +58,19 @@ Sonrasında `main`'e her push otomatik yayınlanır; GitHub'daki CI testleri kı
 Doğrulama ve şifre sıfırlama e-postaları için:
 
 1. Google hesabınızda **2 adımlı doğrulama** açık olmalı.
-2. https://myaccount.google.com/apppasswords → uygulama adı "Mealbird" → **16 karakterlik şifreyi** kopyalayın.
+2. https://myaccount.google.com/apppasswords → uygulama adı "Meall" → **16 karakterlik şifreyi** kopyalayın.
 3. Render'da: `MEALBIRD_SMTP_USER` = Gmail adresiniz, `MEALBIRD_SMTP_PASSWORD` = bu şifre,
-   `MEALBIRD_SMTP_FROM` = `Mealbird <adresiniz@gmail.com>`.
+   `MEALBIRD_SMTP_FROM` = `Meall <adresiniz@gmail.com>`.
 
 Bu adımı atlarsanız uygulama çalışır; e-postalar yalnız sunucu günlüğüne yazılır (şifre sıfırlama çalışmaz).
 Daha sonra alan adınızla profesyonel bir adrese geçmek yalnız bu üç değeri değiştirmektir.
 
 ## Adım 5 — Google ile giriş (isteğe bağlı, 4 dk)
 
-1. https://console.cloud.google.com → yeni proje "Mealbird".
-2. **API'ler ve Hizmetler → OAuth izin ekranı**: Harici, uygulama adı Mealbird, destek e-postanız.
+1. https://console.cloud.google.com → yeni proje "Meall".
+2. **API'ler ve Hizmetler → OAuth izin ekranı**: Harici, uygulama adı Meall, destek e-postanız.
 3. **Kimlik bilgileri → Kimlik bilgisi oluştur → OAuth istemci kimliği → Web uygulaması**.
-   "Yetkili JavaScript kaynakları"na Render adresinizi ekleyin (ör. `https://mealbird.onrender.com`).
+   "Yetkili JavaScript kaynakları"na Render adresinizi ekleyin (ör. `https://meall.onrender.com`).
 4. Oluşan **istemci kimliğini** (`...apps.googleusercontent.com`) Render'da `MEALBIRD_GOOGLE_CLIENT_ID`'ye girin.
    Bu kimlik gizli değildir; istemci gizli anahtarına (client secret) gerek yoktur.
 
@@ -92,6 +92,6 @@ Render adresini telefonda açın: Android'de Chrome menüsü → **Uygulamayı y
 ## Yerelde Docker ile çalıştırma
 
 ```bash
-docker build -t mealbird .
-docker run -p 8000:8000 -e MEALBIRD_COOKIE_SECURE=false mealbird   # http://localhost:8000
+docker build -t meall .
+docker run -p 8000:8000 -e MEALBIRD_COOKIE_SECURE=false meall   # http://localhost:8000
 ```

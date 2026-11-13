@@ -1,0 +1,1048 @@
+[
+ {
+  "name": "Haydari",
+  "description": "Süzme yoğurt ve ferahlatıcı taze nane ile hazırlanan, sofraların vazgeçilmez klasik mezesi.",
+  "meal_type": "snack",
+  "servings": 4,
+  "prep_minutes": 15,
+  "equipment": [
+   "none"
+  ],
+  "tags": [
+   "vejetaryen",
+   "pratik",
+   "hafif"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Süzme yoğurt",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Beyaz peynir",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Nane (taze)",
+    "quantity": 10,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 3,
+    "unit": "g",
+    "optional": true
+   }
+  ],
+  "steps": [
+   "Beyaz peyniri bir çatal yardımıyla pürüzsüz olana kadar ezin.",
+   "Tereyağını küçük bir tavada hafifçe yakın ve soğumaya bırakın.",
+   "Sarımsakları ezin ve süzme yoğurtla karıştırın.",
+   "Ezilmiş peyniri, yoğurtlu karışıma ilave edin.",
+   "İnce kıyılmış taze naneleri ve soğuyan tereyağını ekleyerek iyice harmanlayın.",
+   "Buzdolabında 30 dakika dinlendirip servis edin."
+  ],
+  "group": "Salatalar, mezeler ve ara öğün atıştırmalıkları"
+ },
+ {
+  "name": "Humus",
+  "description": "Nohut ve tahinin mükemmel uyumuyla hazırlanan, besleyici ve lezzetli bir klasik.",
+  "meal_type": "snack",
+  "servings": 4,
+  "prep_minutes": 20,
+  "equipment": [
+   "blender"
+  ],
+  "tags": [
+   "vegan",
+   "yüksek-protein",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Nohut",
+    "quantity": 400,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tahin",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Limon",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 40,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Kimyon",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Haşlanmış nohutları blender haznesine alın.",
+   "Üzerine tahin, zeytinyağı, limon suyu ve sarımsakları ekleyin.",
+   "Kimyon ve tuzu ilave edip pürüzsüz bir kıvam alana kadar blenderdan geçirin.",
+   "Kıvam çok katı gelirse çok az soğuk su ekleyerek açın.",
+   "Servis tabağına yayın ve üzerini zeytinyağı ile süsleyerek servis yapın."
+  ],
+  "group": "Salatalar, mezeler ve ara öğün atıştırmalıkları"
+ },
+ {
+  "name": "Şakşuka",
+  "description": "Kızarmış patlıcan ve biberlerin domates sosuyla buluştuğu iştah açıcı bir lezzet.",
+  "meal_type": "snack",
+  "servings": 4,
+  "prep_minutes": 40,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "geleneksel",
+   "zeytinyağlı"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Patlıcan",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Kırmızı biber",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 3,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 3,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 60,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 10,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Patlıcanları küp küp doğrayın ve acısının çıkması için tuzlu suda bekletin.",
+   "Doğranan patlıcanları ve biberleri tavada zeytinyağı ile kızartıp kenara alın.",
+   "Aynı tavaya ezilmiş sarımsakları ekleyip hafifçe çevirin.",
+   "Domates salçasını ve küp doğranmış domatesleri ekleyerek sos kıvamına gelene kadar pişirin.",
+   "Kızaran sebzeleri sosla birleştirip birkaç dakika daha pişirin ve soğuk servis edin."
+  ],
+  "group": "Salatalar, mezeler ve ara öğün atıştırmalıkları"
+ },
+ {
+  "name": "Muhammara",
+  "description": "Közlenmiş biber ve ceviz ile hazırlanan, sofraların en iştah açıcı ve besleyici mezesi.",
+  "meal_type": "snack",
+  "servings": 4,
+  "prep_minutes": 15,
+  "equipment": [
+   "none"
+  ],
+  "tags": [
+   "vejetaryen",
+   "pratik",
+   "ekonomik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Közlenmiş Biber",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Ceviz",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Biber salçası",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Galeta unu",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 30,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Nar ekşisi",
+    "quantity": 20,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kimyon",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Közlenmiş biberlerin suyunu iyice süzün.",
+   "Cevizleri elinizle veya havanda çok inceltmeden parçalayın.",
+   "Sarımsağı ezin ve biber salçası ile karıştırın.",
+   "Tüm malzemeleri bir kasede birleştirip çatalla ezerek birbirine yedirin.",
+   "Üzerine biraz zeytinyağı gezdirerek servis edin."
+  ],
+  "group": "Salatalar, mezeler ve ara öğün atıştırmalıkları"
+ },
+ {
+  "name": "Acılı Ezme",
+  "description": "Taze sebzelerin ince ince kıyılmasıyla hazırlanan, acı severlerin vazgeçilmez eşlikçisi.",
+  "meal_type": "snack",
+  "servings": 4,
+  "prep_minutes": 20,
+  "equipment": [
+   "none"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "pratik",
+   "hafif"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Domates",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 60,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sivri biber",
+    "quantity": 45,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Maydanoz",
+    "quantity": 25,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Biber salçası",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Nar ekşisi",
+    "quantity": 15,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 20,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Pul biber",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Domates, soğan, biber ve maydanozu mümkün olduğunca ince doğrayın.",
+   "Sebzelerin suyunu hafifçe süzerek bir kaba alın.",
+   "Biber salçası, baharatlar, nar ekşisi ve zeytinyağını ekleyin.",
+   "Tüm malzemeleri iyice harmanlayıp salçanın sebzelerle özdeşleşmesini sağlayın.",
+   "Soğuk servis yapın."
+  ],
+  "group": "Salatalar, mezeler ve ara öğün atıştırmalıkları"
+ },
+ {
+  "name": "Ferahlatıcı Cacık",
+  "description": "Yemeklerin yanına çok yakışan, serinletici ve süzme yoğurtla lezzetlendirilmiş klasik bir meze.",
+  "meal_type": "snack",
+  "servings": 3,
+  "prep_minutes": 10,
+  "equipment": [
+   "none"
+  ],
+  "tags": [
+   "vejetaryen",
+   "hafif",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Süzme yoğurt",
+    "quantity": 400,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Salatalık",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 100,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Nane (taze)",
+    "quantity": 10,
+    "unit": "g",
+    "optional": true
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 20,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Salatalıkları soyup rendeleyin veya küçük küpler halinde doğrayın.",
+   "Sarımsakları tuz ile ezip bir macun kıvamına getirin.",
+   "Bir kasede süzme yoğurdu ve suyu pürüzsüz olana kadar çırpın.",
+   "Yoğurdun içerisine rendelenmiş salatalıkları, ezilmiş sarımsağı ve tuzu ekleyip karıştırın.",
+   "Üzerine zeytinyağı gezdirip taze nane yaprakları ile süsleyerek servis yapın."
+  ],
+  "group": "Salatalar, mezeler ve ara öğün atıştırmalıkları"
+ },
+ {
+  "name": "Rus Salatası",
+  "description": "Klasik sebzelerin mayonez benzeri yoğurt sosuyla buluştuğu doyurucu ve ferah bir lezzet.",
+  "meal_type": "snack",
+  "servings": 4,
+  "prep_minutes": 30,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "pratik",
+   "ekonomik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Patates",
+    "quantity": 340,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Havuç",
+    "quantity": 160,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Dondurulmuş bezelye",
+    "quantity": 200,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Süzme yoğurt",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Siyah zeytin",
+    "quantity": 50,
+    "unit": "g",
+    "optional": true
+   }
+  ],
+  "steps": [
+   "Patates ve havuçların kabuklarını soyup küp küp doğrayın.",
+   "Doğranan sebzeleri ve dondurulmuş bezelyeleri yumuşayana kadar ayrı tencerelerde haşlayın.",
+   "Haşlanan sebzeleri süzüp oda sıcaklığında soğumaya bırakın.",
+   "Geniş bir kapta süzme yoğurt ve tuzu pürüzsüz olana kadar karıştırın.",
+   "Soğuyan sebzeleri yoğurtlu karışıma ekleyip nazikçe harmanlayın.",
+   "Servis tabağına alın, üzerine dilerseniz siyah zeytinler dizerek servis edin."
+  ],
+  "group": "Salatalar, mezeler ve ara öğün atıştırmalıkları"
+ },
+ {
+  "name": "Amerikan Salatası",
+  "description": "Kornişon turşu yerine taze salatalık ve dereotu ile hafifletilmiş, herkesin sevdiği pratik bir meze.",
+  "meal_type": "snack",
+  "servings": 4,
+  "prep_minutes": 25,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Patates",
+    "quantity": 510,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Salatalık",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Dondurulmuş bezelye",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Dereotu",
+    "quantity": 25,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Süzme yoğurt",
+    "quantity": 200,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 4,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Patatesleri haşlayıp kabuklarını soyun ve küçük küpler halinde kesin.",
+   "Bezelyeleri yumuşayana dek haşlayıp suyunu süzün.",
+   "Salatalığı ince küçük küpler halinde, dereotunu ise ince ince kıyın.",
+   "Bir kasede süzme yoğurt ve tuzu çırparak pürüzsüz bir sos elde edin.",
+   "Tüm malzemeleri sos kabına alıp ezmeden karıştırın.",
+   "Servis öncesi buzdolabında yarım saat dinlendirin."
+  ],
+  "group": "Salatalar, mezeler ve ara öğün atıştırmalıkları"
+ },
+ {
+  "name": "Gavurdağı Salatası",
+  "description": "İnce kıyılmış sebzeler ve bol cevizle hazırlanan, nar ekşisinin imzasını taşıyan nefis bir salata.",
+  "meal_type": "snack",
+  "servings": 4,
+  "prep_minutes": 20,
+  "equipment": [
+   "none"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "hafif",
+   "salata"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Domates",
+    "quantity": 450,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Ceviz",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Maydanoz",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Nar ekşisi",
+    "quantity": 30,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 40,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Pul biber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Domatesleri çok minik küpler halinde doğrayın.",
+   "Kuru soğanı piyazlık doğrayıp hafifçe tuzla ovun ve acısını alın.",
+   "Maydanozları olabildiğince ince kıyın.",
+   "Cevizleri elinizle veya bıçakla iri parçalar kalacak şekilde ufalayın.",
+   "Tüm malzemeyi salata kasesine alın.",
+   "Üzerine zeytinyağı, nar ekşisi, pul biber ve tuzu ekleyip karıştırın."
+  ],
+  "group": "Salatalar, mezeler ve ara öğün atıştırmalıkları"
+ },
+ {
+  "name": "Cevizli Muhammara",
+  "description": "Biber ve cevizin muhteşem aromasıyla damaklarda iz bırakan nefis bir meze.",
+  "meal_type": "snack",
+  "servings": 4,
+  "prep_minutes": 15,
+  "equipment": [
+   "blender"
+  ],
+  "tags": [
+   "vegan",
+   "pratik",
+   "yüksek-protein"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Közlenmiş Biber",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Ceviz",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Galeta unu",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Biber salçası",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Nar ekşisi",
+    "quantity": 30,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Pul biber",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Cevizleri blenderdan geçirerek hafif iri kalacak şekilde parçalayın.",
+   "Közlenmiş biberleri ve sarımsakları ekleyip tekrar çekin.",
+   "Biber salçası, galeta unu, nar ekşisi ve pul biberi karışıma ilave edin.",
+   "Zeytinyağını yavaş yavaş ekleyerek tüm malzemeler özleşene kadar blenderdan geçirin.",
+   "Hazırladığınız karışımı bir servis tabağına yayın ve üzerine zeytinyağı gezdirerek servis edin."
+  ],
+  "group": "Salatalar, mezeler ve ara öğün atıştırmalıkları"
+ },
+ {
+  "name": "Babagannuş",
+  "description": "Közlenmiş patlıcanın sarımsak ve süzme yoğurtla buluştuğu iştah açıcı geleneksel bir meze.",
+  "meal_type": "snack",
+  "servings": 4,
+  "prep_minutes": 30,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "pratik",
+   "hafif",
+   "geleneksel"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Patlıcan",
+    "quantity": 900,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kırmızı biber",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Süzme yoğurt",
+    "quantity": 200,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 30,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Limon",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Patlıcanları ve kırmızı biberleri ocak üzerinde köz tavası kullanarak yumuşayana kadar közleyin.",
+   "Közlenen sebzelerin kabuklarını soyun ve iç kısımlarını bıçakla ince ince kıyın.",
+   "Sarımsakları ezin ve küçük bir kasede süzme yoğurt ile pürüzsüz olana kadar karıştırın.",
+   "Kıyılmış sebzeleri bir karıştırma kabına alın, üzerine yoğurtlu karışımı, zeytinyağını, tuzu ve limon suyunu ekleyin.",
+   "Tüm malzemeleri birbirine geçene kadar güzelce karıştırıp servis tabağına yayın."
+  ],
+  "group": "Salatalar, mezeler ve ara öğün atıştırmalıkları"
+ },
+ {
+  "name": "Patlıcan Salatası",
+  "description": "Közlenmiş patlıcanın sarımsak ve zeytinyağı ile buluştuğu eşsiz bir meze.",
+  "meal_type": "snack",
+  "servings": 4,
+  "prep_minutes": 30,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "pratik",
+   "hafif"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Patlıcan",
+    "quantity": 900,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 10,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 40,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Limon",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Maydanoz",
+    "quantity": 25,
+    "unit": "g",
+    "optional": true
+   }
+  ],
+  "steps": [
+   "Patlıcanları ocak üzerinde közleyerek kabuklarının yanmasını sağlayın.",
+   "Közlenen patlıcanları bir poşete alıp terletin ve daha sonra kabuklarını soyun.",
+   "Soyduğunuz patlıcanları bıçak yardımıyla ince ince kıyın.",
+   "Ezilmiş sarımsak, zeytinyağı, limon suyu ve tuzu bir kapta karıştırın.",
+   "Hazırladığınız sosu patlıcanlarla harmanlayın.",
+   "Servis tabağına alıp üzerini maydanoz ile süsleyerek servis yapın."
+  ],
+  "group": "Salatalar, mezeler ve ara öğün atıştırmalıkları"
+ },
+ {
+  "name": "Kısır",
+  "description": "Bol yeşillikli, nar ekşili ve tam kıvamında geleneksel bir lezzet.",
+  "meal_type": "snack",
+  "servings": 6,
+  "prep_minutes": 40,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "geleneksel",
+   "ekonomik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Bulgur",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Biber salçası",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Nar ekşisi",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 60,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Taze Soğan",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Maydanoz",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 8,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Bulguru geniş bir kaba alın ve üzerine sıcak su ekleyerek şişmeye bırakın.",
+   "Küçük bir tavada zeytinyağı ile salçaları hafifçe kavurun.",
+   "Kavurduğunuz salçalı sosu şişen bulgurun üzerine ekleyip iyice karıştırın.",
+   "İnce kıyılmış taze soğan ve maydanozu ekleyin.",
+   "Nar ekşisi, tuz ve arzuya göre baharatları ilave ederek tüm malzemeyi harmanlayın.",
+   "Servis tabağına alarak soğuk şekilde servis edin."
+  ],
+  "group": "Salatalar, mezeler ve ara öğün atıştırmalıkları"
+ },
+ {
+  "name": "Patates Salatası",
+  "description": "Haşlanmış patateslerin taze yeşillikler ve zeytinyağı ile buluştuğu nefis bir ev salatası.",
+  "meal_type": "snack",
+  "servings": 4,
+  "prep_minutes": 25,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "pratik",
+   "ekonomik",
+   "salata",
+   "hafif"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Patates",
+    "quantity": 680,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Maydanoz",
+    "quantity": 25,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 45,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Limon",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": true
+   }
+  ],
+  "steps": [
+   "Patatesleri yumuşayana kadar haşlayın ve kabuklarını soyup küp küp doğrayın.",
+   "Kuru soğanı ince ince kıyın ve tuzla ovarak acısını alın.",
+   "Maydanozları da ince bir şekilde doğrayın.",
+   "Geniş bir kapta patates, soğan ve maydanozu harmanlayın.",
+   "Ayrı bir kapta zeytinyağı, limon suyu, tuz ve karabiberi karıştırıp sos hazırlayın.",
+   "Sosu salatanın üzerine dökün ve nazikçe karıştırarak servis yapın."
+  ],
+  "group": "Salatalar, mezeler ve ara öğün atıştırmalıkları"
+ },
+ {
+  "name": "Piyaz",
+  "description": "Kuru fasulye, soğan ve yumurtanın geleneksel lezzetiyle hazırlanan nefis bir meze.",
+  "meal_type": "snack",
+  "servings": 4,
+  "prep_minutes": 20,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "geleneksel",
+   "yüksek-protein",
+   "ekonomik",
+   "salata"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kuru fasulye",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yumurta",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Maydanoz",
+    "quantity": 25,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Sirke",
+    "quantity": 30,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sumak",
+    "quantity": 3,
+    "unit": "g",
+    "optional": true
+   }
+  ],
+  "steps": [
+   "Kuru fasulyeleri haşlayıp süzün.",
+   "Yumurtaları haşlayıp dilimleyin.",
+   "Kuru soğanı piyazlık doğrayın ve sumakla ovun.",
+   "Maydanozları ince kıyın.",
+   "Fasulyeleri servis tabağına alın, üzerine soğan ve maydanozu ekleyin.",
+   "Zeytinyağı, sirke ve tuzu karıştırıp sosu üzerine gezdirin ve yumurta dilimleriyle süsleyin."
+  ],
+  "group": "Salatalar, mezeler ve ara öğün atıştırmalıkları"
+ }
+]

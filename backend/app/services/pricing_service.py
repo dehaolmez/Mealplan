@@ -58,8 +58,14 @@ def optimize_missing(
     real_ids = [s.id for s in store_rows if not s.is_demo and s.id in offered]
     price_mode = "real" if real_ids else "demo"
     if real_ids:
+        from app.services.preferences_service import preferred_chain_ids
+
         selection = store_ids or [i for i in household_service.store_ids(household) if i in real_ids]
         chosen_ids = [i for i in (selection or real_ids) if i in real_ids] or real_ids
+        favorite = preferred_chain_ids(db, household)
+        if favorite and not store_ids:  # yalnız alışveriş yapılan zincirler (en az biri teklif veriyorsa)
+            chain_of = {s.id: s.chain_id for s in store_rows}
+            chosen_ids = [i for i in chosen_ids if chain_of[i] in favorite] or chosen_ids
     elif nearby_chains is not None and not store_ids:
         # Konum modunda hanenin market seçimi yerine yakındaki tüm zincirler aday olur
         chosen_ids = list(all_stores)

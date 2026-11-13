@@ -2,7 +2,7 @@
 # Veritabanı olarak Neon (ücretsiz PostgreSQL) önerilir; bağlantı adresi MEALBIRD_DATABASE_URL'ye girilir.
 services:
   - type: web
-    name: mealbird
+    name: meall
     runtime: docker
     plan: free
     region: frankfurt
@@ -15,7 +15,7 @@ services:
       - key: MEALBIRD_SECRET_KEY
         generateValue: true    # Render rastgele üretir
       - key: MEALBIRD_PUBLIC_BASE_URL
-        sync: false            # ör. https://mealbird.onrender.com
+        sync: false            # ör. https://meall.onrender.com
       - key: MEALBIRD_GEMINI_API_KEY
         sync: false
       - key: MEALBIRD_ADMIN_EMAIL
@@ -33,4 +33,4 @@ services:
       - key: MEALBIRD_SMTP_PASSWORD
         sync: false            # Gmail uygulama şifresi (16 karakter)
       - key: MEALBIRD_SMTP_FROM
-        sync: false            # ör. Mealbird <adresiniz@gmail.com>
+        sync: false            # ör. Meall <adresiniz@gmail.com>

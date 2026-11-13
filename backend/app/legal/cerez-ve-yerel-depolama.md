@@ -1,8 +1,8 @@
 # Çerez ve Yerel Depolama Politikası
 
-**Sürüm:** 2026-11-13.2 · **TASLAK — hukuki incelemeden geçirilmelidir**
+**Sürüm:** 2026-11-13.3 · **TASLAK — hukuki incelemeden geçirilmelidir**
 
-Mealbird **reklam, analitik veya takip çerezi kullanmaz.** Yalnızca hizmetin çalışması için zorunlu olan
+Meall **reklam, analitik veya takip çerezi kullanmaz.** Yalnızca hizmetin çalışması için zorunlu olan
 aşağıdaki kayıtları kullanır. Kişisel Verileri Koruma Kurumu'nun Çerez Uygulamaları Hakkında Rehberi'ne göre
 zorunlu çerezler için açık rıza gerekmez; yine de sizi bilgilendiriyoruz.
 
@@ -11,7 +11,7 @@ zorunlu çerezler için açık rıza gerekmez; yine de sizi bilgilendiriyoruz.
 | Ad | Tür | Amaç | Süre |
 |---|---|---|---|
 | `mb_session` | Birinci taraf çerez (HttpOnly, SameSite=Lax) | Oturumunuzu açık tutmak | 30 gün veya çıkış yapana kadar |
-| `mealbird:lastNotified` | Tarayıcı yerel depolaması | Son kullanma tarihi bildirimini günde bir kez göstermek | Siz silene kadar |
+| `meall:lastNotified` | Tarayıcı yerel depolaması | Son kullanma tarihi bildirimini günde bir kez göstermek | Siz silene kadar |
 | Çevrimdışı önbellek (servis çalışanı) | Tarayıcı önbelleği | Uygulama dosyalarının ve son açılan sayfaların internet yokken açılması | Uygulama güncellenene veya siz silene kadar |
 
 ## Üçüncü taraf istekler

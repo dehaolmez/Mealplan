@@ -1,5 +1,7 @@
 from datetime import date, datetime
 
+from typing import Literal
+
 from pydantic import BaseModel, Field
 
 from app.domain.price_optimizer import Strategy
@@ -22,7 +24,14 @@ class MealPlanOut(BaseModel):
     recipe_name: str
     servings: int
     cooked: bool
+    status: str = "planned"
+    is_leftover: bool = False
+    auto_generated: bool = False
     kcal_per_serving: float
+
+
+class StatusIn(BaseModel):
+    status: Literal["planned", "skipped", "ate_out"]
 
 
 class CookOut(BaseModel):

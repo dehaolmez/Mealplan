@@ -206,7 +206,7 @@ def forgot_password(db: Session, email: str) -> None:
         return  # hesap var/yok bilgisini sızdırma
     token = security.create_token(user.id, RESET_PURPOSE, timedelta(hours=1), version=user.token_version)
     link = f"{get_settings().public_base_url}/#reset={token}"
-    mailer.send(user.email, "Mealbird şifre sıfırlama",
+    mailer.send(user.email, "Meall şifre sıfırlama",
                 f"Şifrenizi sıfırlamak için bağlantı (1 saat geçerli):\n{link}\n\nBu isteği siz yapmadıysanız yok sayın.")
 
 
@@ -226,7 +226,7 @@ def send_verification(user: User) -> None:
         return
     token = security.create_token(user.id, VERIFY_PURPOSE, timedelta(days=3))
     link = f"{get_settings().public_base_url}/#verify={token}"
-    mailer.send(user.email, "Mealbird e-posta doğrulama", f"E-posta adresinizi doğrulamak için:\n{link}")
+    mailer.send(user.email, "Meall e-posta doğrulama", f"E-posta adresinizi doğrulamak için:\n{link}")
 
 
 def verify_email(db: Session, token: str) -> None:

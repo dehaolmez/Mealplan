@@ -1,0 +1,1591 @@
+[
+ {
+  "name": "Zeytinyağlı Taze Fasulye",
+  "description": "Yaz aylarının vazgeçilmezi olan, soğuk servis edildiğinde lezzetine doyum olmayan klasik bir zeytinyağlı sebze yemeğidir.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 45,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "zeytinyağlı",
+   "hafif",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Taze Fasulye",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": true
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 100,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Soğanları piyazlık doğrayıp zeytinyağında hafifçe pembeleşene kadar kavurun.",
+   "Kılçıklarını ayıkladığınız taze fasulyeleri ekleyip renkleri değişene kadar soteleyin.",
+   "Rendelenmiş domatesleri ve ince kıyılmış sarımsakları tencereye ilave edin.",
+   "Tuzu ve suyu ekleyip tencerenin kapağını kapatın.",
+   "Fasulyeler yumuşayana kadar kısık ateşte yaklaşık 30 dakika pişirin ve soğumaya bırakın."
+  ],
+  "group": "Sebze yemekleri ve zeytinyağlılar"
+ },
+ {
+  "name": "Zeytinyağlı İmam Bayıldı",
+  "description": "Bol soğanlı ve sarımsaklı iç harcıyla yumuşacık pişen, sofraların en iştah açıcı patlıcan yemeği.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 60,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "zeytinyağlı",
+   "geleneksel"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Patlıcan",
+    "quantity": 4,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 240,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 4,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 80,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Kırmızı biber",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Patlıcanları alacalı soyup saplarını kesin, acısını almak için tuzlu suda bekletin.",
+   "Süzdüğünüz patlıcanları zeytinyağında her iki tarafını hafifçe kızartın.",
+   "Aynı tencerede piyazlık soğanları, biberleri ve sarımsakları yumuşayana kadar kavurun.",
+   "Doğranmış domatesleri ve tuzu ekleyip iç harcı kısa süre pişirin.",
+   "Patlıcanların ortasını yarıp hazırladığınız harcı içine yerleştirin.",
+   "Tencereye az miktarda su ekleyip kapağı kapalı olarak 20 dakika kısık ateşte pişirin."
+  ],
+  "group": "Sebze yemekleri ve zeytinyağlılar"
+ },
+ {
+  "name": "Zeytinyağlı Pırasa",
+  "description": "Havuçla tatlanan, zeytinyağının dokunuşuyla sofralara renk katan geleneksel bir kış yemeği.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 40,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "zeytinyağlı",
+   "ekonomik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Pırasa",
+    "quantity": 750,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Havuç",
+    "quantity": 240,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Pirinç",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 200,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Pırasaları yıkayıp halka halka doğrayın, havuçları ise ince dilimleyin.",
+   "Geniş bir tencerede zeytinyağını ısıtıp havuçları hafifçe soteleyin.",
+   "Pırasaları ekleyip birkaç dakika daha çevirin.",
+   "Pirinç, tuz ve suyu ekleyerek tencerenin kapağını kapatın.",
+   "Kısık ateşte pırasalar yumuşayana kadar pişirin ve soğumaya bırakın."
+  ],
+  "group": "Sebze yemekleri ve zeytinyağlılar"
+ },
+ {
+  "name": "Zeytinyağlı Barbunya",
+  "description": "Bol zeytinyağlı, sarımsak ve domatesin muhteşem uyumuyla tam bir klasik.",
+  "meal_type": "dinner",
+  "servings": 6,
+  "prep_minutes": 70,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "zeytinyağlı",
+   "yüksek-protein"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Barbunya (kuru)",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Havuç",
+    "quantity": 160,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 10,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 80,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 8,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Önceden ıslattığınız barbunyaları haşlayıp süzün.",
+   "Soğanı ve sarımsağı ince ince doğrayıp zeytinyağında pembeleşene kadar kavurun.",
+   "Havuç küplerini ve salçayı ekleyip birkaç dakika daha çevirin.",
+   "Haşlanmış barbunyaları tencereye alın, üzerini geçecek kadar sıcak su ekleyin.",
+   "Tuzu ilave edip sebzeler tamamen yumuşayana kadar pişirin."
+  ],
+  "group": "Sebze yemekleri ve zeytinyağlılar"
+ },
+ {
+  "name": "Zeytinyağlı Bamya",
+  "description": "Limon ve domatesin ferahlığıyla pişmiş, sofraların vazgeçilmez zeytinyağlı lezzeti.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 45,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "zeytinyağlı",
+   "hafif"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Bamya",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 60,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Limon",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Bamyaları yıkayıp kuruladıktan sonra baş kısımlarını koni şeklinde dikkatlice kesin.",
+   "Soğanı yemeklik doğrayın ve zeytinyağında hafifçe pembeleşene kadar kavurun.",
+   "Üzerine rendelenmiş domatesleri ve ezilmiş sarımsakları ekleyip birkaç dakika daha pişirin.",
+   "Bamyaları tencereye ekleyip üzerine limon suyunu ve tuzu ilave edin.",
+   "Sıcak su eklemeden, kısık ateşte bamyalar yumuşayana kadar yaklaşık 30 dakika pişirin.",
+   "Oda sıcaklığına gelene kadar dinlendirip servis yapın."
+  ],
+  "group": "Sebze yemekleri ve zeytinyağlılar"
+ },
+ {
+  "name": "Zeytinyağlı Kereviz",
+  "description": "Havuç ve patatesin eşlik ettiği, kış aylarının şifalı ve hafif zeytinyağlı tencere yemeği.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 50,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "zeytinyağlı",
+   "hafif"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kereviz",
+    "quantity": 1000,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Havuç",
+    "quantity": 160,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Patates",
+    "quantity": 170,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Limon",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 200,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kerevizleri soyup küp şeklinde doğrayın ve kararmamaları için limonlu suda bekletin.",
+   "Havuç ve patatesleri de küp küp doğrayarak hazırlayın.",
+   "Geniş bir tencerede soğanları zeytinyağı ile hafifçe çevirin.",
+   "Havuçları ekleyip 2 dakika kavurduktan sonra kereviz ve patatesleri ilave edin.",
+   "Limon suyu, tuz ve suyu ekleyerek sebzeler yumuşayana kadar kısık ateşte pişirin.",
+   "Pişen yemeği soğumaya bırakın ve tercihen taze dereotu ile süsleyerek servis edin."
+  ],
+  "group": "Sebze yemekleri ve zeytinyağlılar"
+ },
+ {
+  "name": "Zeytinyağlı Lahana",
+  "description": "Lahana ile hazırlanan, bol limonlu ve zeytinyağlı iştah açıcı pratik bir sebze yemeği.",
+  "meal_type": "dinner",
+  "servings": 6,
+  "prep_minutes": 40,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "zeytinyağlı",
+   "ekonomik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Lahana",
+    "quantity": 750,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Limon",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 8,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Lahanayı ince ince kıyın ve bol suda yıkayıp süzün.",
+   "Soğanları yemeklik doğrayın ve geniş bir tencerede zeytinyağı ile şeffaflaşana kadar kavurun.",
+   "Salçayı ekleyip kokusu çıkana kadar karıştırın.",
+   "Kıydığınız lahanaları tencereye ekleyip hacimleri azalana kadar yüksek ateşte çevirin.",
+   "Üzerine tuz, karabiber, limon suyu ve yarım çay bardağı su ekleyip kapağını kapatın.",
+   "Lahanalar iyice yumuşayana kadar yaklaşık 25 dakika kısık ateşte pişirin."
+  ],
+  "group": "Sebze yemekleri ve zeytinyağlılar"
+ },
+ {
+  "name": "Zeytinyağlı Yer Elması",
+  "description": "Hafif topraksı aroması ve zeytinyağının ipeksi dokusuyla buluşan zeytinyağlı yer elması, sofralarınıza çok şık bir alternatif.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 40,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "zeytinyağlı",
+   "hafif",
+   "glutensiz"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Yer Elması",
+    "quantity": 600,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Havuç",
+    "quantity": 80,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Portakal",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 200,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Dereotu",
+    "quantity": 20,
+    "unit": "g",
+    "optional": true
+   }
+  ],
+  "steps": [
+   "Yer elmalarını soyup kararmamaları için limonlu suda bekletin, ardından dilimleyin.",
+   "Geniş bir tencerede zeytinyağında yemeklik doğranmış soğanları ve halka doğranmış havuçları soteleyin.",
+   "Yer elmalarını tencereye dizin ve üzerine portakal suyu ile suyu ekleyin.",
+   "Tuzunu atıp tencerenin kapağını kapatın ve kısık ateşte sebzeler yumuşayana kadar pişirin.",
+   "Yemeği oda sıcaklığına gelene kadar tencerede dinlendirin.",
+   "Üzerini kıyılmış dereotu ile süsleyerek soğuk servis yapın."
+  ],
+  "group": "Sebze yemekleri ve zeytinyağlılar"
+ },
+ {
+  "name": "Zeytinyağlı Patlıcan Oturtma",
+  "description": "Klasik lezzetin zeytinyağlı ve daha hafif yorumu olan bu yemek, patlıcan severlerin favorisi olacak.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 45,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "zeytinyağlı",
+   "geleneksel",
+   "glutensiz"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Patlıcan",
+    "quantity": 900,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kıyma",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 15,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Biber salçası",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 70,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Sivri biber",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 6,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Patlıcanları alacalı soyup kalın halkalar şeklinde doğrayın ve tuzlu suda bekletin.",
+   "Patlıcanların suyunu süzüp kurulayın, ardından zeytinyağının bir kısmıyla tavada hafifçe yumuşayana kadar çevirin.",
+   "Ayrı bir tavada kıymayı, yemeklik doğranmış soğanı ve sarımsağı kavurun.",
+   "Kıymaya salçayı, küp doğranmış domatesleri, tuzu ve karabiberi ekleyip birkaç dakika soteleyin.",
+   "Geniş bir tencerenin tabanına patlıcanları dizin, üzerine kıymalı harcı yayın.",
+   "Üzerine doğranmış sivri biberleri yerleştirin ve kalan suyu ekleyin.",
+   "Kısık ateşte patlıcanlar tamamen yumuşayana kadar yaklaşık 25 dakika pişirin."
+  ],
+  "group": "Sebze yemekleri ve zeytinyağlılar"
+ },
+ {
+  "name": "Zeytinyağlı Ispanak Yemeği",
+  "description": "Semizotu yerine taze ıspanak ile hazırlanan, zeytinyağının lezzetiyle hafiflemiş klasik ve ferah bir sebze yemeği.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 30,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "zeytinyağlı",
+   "hafif",
+   "ekonomik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Ispanak",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Pirinç",
+    "quantity": 40,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 100,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kuru soğanı ince ince doğrayıp zeytinyağında şeffaflaşana kadar kavurun.",
+   "Yıkanmış ve irice doğranmış ıspanakları tencereye ekleyip sönene kadar çevirin.",
+   "Yıkanmış pirinci ve tuzu ilave edip karıştırın.",
+   "Suyu ekleyip kısık ateşte pirinçler yumuşayana kadar pişirin.",
+   "Ocağı kapatıp yemeği oda sıcaklığında dinlendirin."
+  ],
+  "group": "Sebze yemekleri ve zeytinyağlılar"
+ },
+ {
+  "name": "Fırında Sebzeli Mücver",
+  "description": "Bol yeşillikli ve hafif, fırında nar gibi kızarmış sağlıklı bir mücver alternatifi.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 45,
+  "equipment": [
+   "oven"
+  ],
+  "tags": [
+   "vejetaryen",
+   "pratik",
+   "fırın",
+   "çocuk-dostu"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kabak",
+    "quantity": 750,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yumurta",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Un",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Taze Soğan",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Dereotu",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Beyaz peynir",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 20,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kabakları rendeleyip suyunu iyice sıkın.",
+   "Doğranmış taze soğanı, dereotunu ve ufalanmış beyaz peyniri ekleyin.",
+   "Yumurtaları ve unu ilave edip kıvamlı bir harç elde edene kadar karıştırın.",
+   "Yağlı kağıt serili tepsiye harcı yayın ve üzerine zeytinyağı gezdirin.",
+   "Önceden ısıtılmış 180 derece fırında üzeri kızarana kadar yaklaşık 30 dakika pişirin."
+  ],
+  "group": "Sebze yemekleri ve zeytinyağlılar"
+ },
+ {
+  "name": "Zeytinyağlı Biber Dolması",
+  "description": "İç harcındaki kuş üzümü ve fıstık ile tam bir şölen olan, akşam yemeklerinizin baş tacı olacak dolma.",
+  "meal_type": "dinner",
+  "servings": 6,
+  "prep_minutes": 60,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "geleneksel",
+   "zeytinyağlı"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kırmızı biber",
+    "quantity": 900,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Pirinç",
+    "quantity": 200,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 240,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Çam fıstığı",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuş üzümü",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 100,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 10,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Soğanları yemeklik doğrayıp zeytinyağında çam fıstığı ile kavurun.",
+   "Yıkanmış pirinçleri ekleyip şeffaflaşana kadar kavurmaya devam edin.",
+   "Baharatları, kuş üzümünü ve bir miktar su ekleyip pirinçler yarı pişmiş hale gelene kadar demleyin.",
+   "Biberlerin içlerini temizleyip hazırladığınız harçla doldurun.",
+   "Tencereye dizdiğiniz dolmaların üzerine biraz daha zeytinyağı ve su ekleyip yumuşayana kadar pişirin."
+  ],
+  "group": "Sebze yemekleri ve zeytinyağlılar"
+ },
+ {
+  "name": "Zeytinyağlı Domates Dolması",
+  "description": "Yaz aylarının vazgeçilmezi olan, içi nefis pirinç harcıyla dolgulu zeytinyağlı domates dolması.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 45,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "zeytinyağlı",
+   "hafif",
+   "geleneksel"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Domates",
+    "quantity": 600,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Pirinç",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 60,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru üzüm",
+    "quantity": 20,
+    "unit": "g",
+    "optional": true
+   },
+   {
+    "ingredient": "Nane (taze)",
+    "quantity": 10,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 200,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Domateslerin üst kısımlarını kapak şeklinde kesip içini dikkatlice oyun.",
+   "Kuru soğanı yemeklik doğrayıp zeytinyağında pembeleşene kadar kavurun.",
+   "Yıkanmış pirinci, kuru üzümü, tuzu ve karabiberi ekleyip birkaç dakika daha kavurun.",
+   "İç harca suyu ekleyip kısık ateşte pirinçler suyu çekene kadar pişirin.",
+   "Oda sıcaklığına gelen harçla domatesleri doldurun ve kapaklarını kapatın.",
+   "Tencereye dizdiğiniz dolmaların arasına biraz zeytinyağı ve su ekleyerek kısık ateşte yumuşayana kadar pişirin."
+  ],
+  "group": "Sebze yemekleri ve zeytinyağlılar"
+ },
+ {
+  "name": "Zeytinyağlı Fasulye Pilaki",
+  "description": "Kuru fasulyenin en hafif ve zeytinyağlı hali, nefis sebzelerle buluşuyor.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 50,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "zeytinyağlı",
+   "geleneksel",
+   "ekonomik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kuru fasulye",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Havuç",
+    "quantity": 160,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Patates",
+    "quantity": 170,
+    "unit": "g",
+    "optional": true
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 75,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Şeftali",
+    "quantity": 5,
+    "unit": "g",
+    "optional": true
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 500,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kuru fasulyeleri önceden gece boyunca suda bekletin ve sonra hafifçe haşlayın.",
+   "Kuru soğanı ve havuçları doğrayarak zeytinyağında tencerede soteleyin.",
+   "Domates salçasını ekleyip kokusu çıkana kadar kavurmaya devam edin.",
+   "Haşlanmış fasulyeleri ve küp doğranmış patatesleri tencereye ilave edin.",
+   "Suyu ve tuzu ekleyip sebzeler ve fasulyeler yumuşayana kadar orta ateşte pişirin.",
+   "Oda sıcaklığına geldikten sonra soğuk servis yapın."
+  ],
+  "group": "Sebze yemekleri ve zeytinyağlılar"
+ },
+ {
+  "name": "Zeytinyağlı Havuç Tarator",
+  "description": "Havuç ve yoğurdun muazzam uyumuyla hazırlanan, sofraların favori mezesi.",
+  "meal_type": "dinner",
+  "servings": 3,
+  "prep_minutes": 20,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "pratik",
+   "hafif",
+   "zeytinyağlı",
+   "glutensiz"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Havuç",
+    "quantity": 400,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 45,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Süzme yoğurt",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Ceviz",
+    "quantity": 30,
+    "unit": "g",
+    "optional": true
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 4,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Havuçları rendeleyin.",
+   "Geniş bir tavada zeytinyağını ısıtıp rendelenmiş havuçları yumuşayana kadar soteleyin.",
+   "Sotelenen havuçları ocaktan alıp oda sıcaklığında soğumaya bırakın.",
+   "Ayrı bir kapta süzme yoğurdu ezilmiş sarımsak ve tuz ile çırpın.",
+   "Soğuyan havuçları yoğurtla harmanlayıp servis tabağına alın.",
+   "Üzerini dövülmüş ceviz ile süsleyerek servis edin."
+  ],
+  "group": "Sebze yemekleri ve zeytinyağlılar"
+ },
+ {
+  "name": "Zeytinyağlı Patates Salatası",
+  "description": "Hafif ve lezzetli zeytinyağı ile harmanlanmış geleneksel patates salatası.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 30,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "zeytinyağlı",
+   "hafif",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Patates",
+    "quantity": 680,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Maydanoz",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Limon",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Patatesleri tencereye alıp yumuşayana kadar haşlayın.",
+   "Haşlanan patateslerin kabuklarını soyup küp şeklinde doğrayın.",
+   "Kuru soğanı ince ince kıyın ve maydanozu doğrayın.",
+   "Geniş bir kapta patates, soğan ve maydanozu karıştırın.",
+   "Ayrı bir kapta zeytinyağı, limon suyu, tuz ve karabiberi çırparak sos hazırlayın.",
+   "Sosu salatanın üzerine döküp nazikçe harmanlayarak servis yapın."
+  ],
+  "group": "Sebze yemekleri ve zeytinyağlılar"
+ },
+ {
+  "name": "Zeytinyağlı Şakşuka",
+  "description": "Kızarmış sebzelerin nefis domates sosu ile buluştuğu iştah açıcı zeytinyağlı.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 40,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "zeytinyağlı",
+   "geleneksel"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Patlıcan",
+    "quantity": 600,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kabak",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kırmızı biber",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 450,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 10,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Ayçiçek yağı",
+    "quantity": 80,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 40,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 6,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Patlıcan ve kabakları alacalı soyup küp küp doğrayın.",
+   "Kırmızı biberleri doğrayın ve tüm sebzeleri ayçiçek yağında hafifçe kızartıp kağıt havlu üzerine alın.",
+   "Ayrı bir tavada zeytinyağında ezilmiş sarımsakları soteleyin.",
+   "Üzerine küp doğranmış domatesleri ekleyip sos kıvamına gelene kadar pişirin.",
+   "Kızaran sebzeleri domates sosunun içine ilave edin.",
+   "Tuzunu ekleyip kısık ateşte birkaç dakika daima karıştırarak pişirin ve soğuk servis edin."
+  ],
+  "group": "Sebze yemekleri ve zeytinyağlılar"
+ },
+ {
+  "name": "Zeytinyağlı Ezme",
+  "description": "İnce kıyılmış sebzeler ve zeytinyağının muazzam uyumuyla hazırlanan geleneksel meze.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 20,
+  "equipment": [
+   "none"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "pratik",
+   "zeytinyağlı",
+   "salata"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Domates",
+    "quantity": 450,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sivri biber",
+    "quantity": 60,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Maydanoz",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Biber salçası",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Sirke",
+    "quantity": 20,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 4,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Pul biber",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Domateslerin kabuklarını soyup çok küçük küpler halinde zırhtan veya bıçakla incecik kıyın.",
+   "Kuru soğan, sivri biber ve maydanozu da aynı şekilde olabildiğince küçük doğrayın.",
+   "Derin bir kapta kıyılmış domates, soğan, biber ve maydanozu birleştirin.",
+   "Ayrı bir kasede biber salçası, zeytinyağı, sirke, tuz ve pul biberi pürüzsüz olana kadar karıştırın.",
+   "Hazırladığınız sosu sebzelerin üzerine dökün ve iyice harmanlayın.",
+   "Ezmedeki fazla suyu hafifçe süzerek servis tabağına alın."
+  ],
+  "group": "Sebze yemekleri ve zeytinyağlılar"
+ },
+ {
+  "name": "Zeytinyağlı Kuru Soğanlı Sarma",
+  "description": "Bol zeytinyağı ve aromatik baharatlarla ağır ağır pişmiş, her sofranın baş tacı geleneksel bir lezzet.",
+  "meal_type": "dinner",
+  "servings": 6,
+  "prep_minutes": 90,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "zeytinyağlı",
+   "geleneksel",
+   "vejetaryen",
+   "vegan"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Pirinç",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 3,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 100,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuş üzümü",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Çam fıstığı",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 10,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tarçın",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 400,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Pirinçleri yıkayıp süzün, kuru soğanları ince yemeklik doğrayın.",
+   "Zeytinyağının yarısını tencereye alın, soğanları ve fıstıkları kavurun.",
+   "Pirinçleri, kuş üzümünü ve baharatları ekleyip birkaç dakika daha çevirin.",
+   "Üzerine sıcak suyun yarısını ekleyip pirinçler suyu çekene kadar pişirin ve soğutun.",
+   "Hazırladığınız harcı yapraklara paylaştırıp kalem gibi sıkıca sarın.",
+   "Sarmaları tencereye dizin, kalan zeytinyağı ve suyu ekleyip kısık ateşte pişirin."
+  ],
+  "group": "Sebze yemekleri ve zeytinyağlılar"
+ },
+ {
+  "name": "Zeytinyağlı Börülce",
+  "description": "Tazeliği ve hafifliği ile yaz akşamlarının vazgeçilmez, çok sağlıklı bir sebze yemeği.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 45,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "zeytinyağlı",
+   "hafif",
+   "vejetaryen",
+   "vegan",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Börülce",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 3,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 60,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 8,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 200,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Börülceleri temizleyip uçlarını alın ve ikiye bölün.",
+   "Soğanları ve sarımsakları yemeklik doğrayın, domatesleri küp küp kesin.",
+   "Geniş bir tencerede soğanları zeytinyağı ile şeffaflaşana kadar kavurun.",
+   "Börülceleri ilave edip 5 dakika renkleri dönene kadar soteleyin.",
+   "Domatesleri ve tuzu ekleyip suyu ilave edin.",
+   "Sebzeler yumuşayana kadar kısık ateşte yaklaşık 30 dakika pişirin."
+  ],
+  "group": "Sebze yemekleri ve zeytinyağlılar"
+ },
+ {
+  "name": "Zeytinyağlı Brokoli",
+  "description": "Limon ve sarımsağın ferahlığıyla buluşan, hafif ve sağlıklı bir zeytinyağlı sebze yemeği.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 25,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "hafif",
+   "zeytinyağlı"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Brokoli",
+    "quantity": 800,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Havuç",
+    "quantity": 80,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Limon",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Brokolileri küçük çiçeklerine ayırıp iyice yıkayın.",
+   "Soğanı yemeklik doğrayın ve havuçları halka şeklinde dilimleyin.",
+   "Geniş bir tencerede zeytinyağı ile soğan ve havuçları hafifçe soteleyin.",
+   "Brokolileri ekleyip üzerine sarımsak, tuz ve limon suyunu ilave edin.",
+   "Tencerenin kapağını kapatıp sebzeler yumuşayana kadar yaklaşık 15 dakika kısık ateşte pişirin.",
+   "Oda sıcaklığına gelene kadar tencerede dinlendirin."
+  ],
+  "group": "Sebze yemekleri ve zeytinyağlılar"
+ },
+ {
+  "name": "Zeytinyağlı Mantar",
+  "description": "Baharatlarla dengelenmiş, yanında yoğurt ile harika giden pratik bir zeytinyağlı mantar sote.",
+  "meal_type": "dinner",
+  "servings": 3,
+  "prep_minutes": 20,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "pratik",
+   "zeytinyağlı"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Mantar",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kırmızı biber",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 40,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 4,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Maydanoz",
+    "quantity": 25,
+    "unit": "g",
+    "optional": true
+   }
+  ],
+  "steps": [
+   "Mantarları nemli bir bezle silin ve dörde bölün.",
+   "Kuru soğanı ve kırmızı biberi ince şeritler halinde kesin.",
+   "Tavada zeytinyağını ısıtıp soğanları pembeleşene kadar kavurun.",
+   "Kırmızı biberleri ekleyip birkaç dakika daha çevirin.",
+   "Mantarları tavaya ekleyin; yüksek ateşte sularını salıp çekene kadar pişirin.",
+   "Tuz ve karabiberini ekleyip ocaktan alın, üzerine ince kıyılmış maydanoz serperek servis yapın."
+  ],
+  "group": "Sebze yemekleri ve zeytinyağlılar"
+ }
+]

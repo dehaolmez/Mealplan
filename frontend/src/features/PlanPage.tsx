@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import { api } from "../api/client";
-import type { MealType, OptimizeResult, PlanEntry, Recipe, Strategy } from "../api/types";
+import type { GenerateResult, MealType, OptimizeResult, PlanEntry, Recipe, Strategy } from "../api/types";
 import { useAsync } from "../hooks/useAsync";
 import { addDays, CATEGORY_EMOJI, dayLabel, isoDate, MEAL_LABELS, STRATEGY_LABELS, tl } from "../lib";
 import { Empty, ErrorBox, Section } from "../components/ui";
@@ -41,6 +41,29 @@ export function PlanPage({ recipes, onChanged }: { recipes: Recipe[]; onChanged:
     }
   };
 
+  const [generated, setGenerated] = useState<GenerateResult | null>(null);
+
+  const autoPlan = async () => {
+    setBusy(true);
+    try {
+      const res = await api.generatePlan({ start, days: 7 });
+      setGenerated(res);
+      refresh();
+    } catch (err) {
+      toast((err as Error).message, "err");
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const setStatus = async (e: PlanEntry, status: "planned" | "skipped" | "ate_out") => {
+    try {
+      await api.setPlanStatus(e.id, status);
+      toast(status === "planned" ? "Geri alındı" : status === "skipped" ? "Öğün atlandı; alışveriş listesinden düşülecek" : "Dışarıda yendi olarak işaretlendi");
+      refresh();
+    } catch (err) { toast((err as Error).message, "err"); }
+  };
+
   const cook = async (e: PlanEntry) => {
     try {
       const r = await api.cook(e.id);
@@ -56,7 +79,24 @@ export function PlanPage({ recipes, onChanged }: { recipes: Recipe[]; onChanged:
         <p className="muted">Planla, eksikleri gör, en uygun marketten listeye ekle.</p>
       </div>
 
-      <AddPlanForm recipes={recipes} days={days} onAdded={refresh} />
+      <div className="card auto-plan">
+        <div>
+          <b>✨ Haftayı otomatik planla</b>
+          <small className="muted">Tercihlerine, buzdolabındakilere ve bütçene göre. Pişirdiğin veya işaretlediğin öğünlere dokunmaz.</small>
+        </div>
+        <button className="btn btn-primary" disabled={busy} onClick={autoPlan}>{busy ? "Hazırlanıyor…" : (data?.some((e) => e.auto_generated) ? "Yeniden oluştur" : "Planla")}</button>
+      </div>
+      {generated && (
+        <div className={`note ${generated.warnings.length ? "" : "note-ok"}`}>
+          {generated.meals.length} öğün planlandı{generated.est_cost > 0 && ` · tahmini eksik alışveriş ${tl(generated.est_cost)}`}
+          {generated.weekly_budget ? ` / bütçe ${tl(generated.weekly_budget)}` : ""}
+          {generated.warnings.map((w) => <div key={w}>⚠️ {w}</div>)}
+        </div>
+      )}
+      <details className="manual-add">
+        <summary>Elle tarif ekle</summary>
+        <AddPlanForm recipes={recipes} days={days} onAdded={refresh} />
+      </details>
       {error && <ErrorBox message={error} onRetry={reload} />}
 
       <div className="week">
@@ -65,13 +105,23 @@ export function PlanPage({ recipes, onChanged }: { recipes: Recipe[]; onChanged:
             <div className="day-head">{dayLabel(d)}</div>
             {(byDay.get(d) ?? []).length === 0 && <div className="muted small day-empty">—</div>}
             {(byDay.get(d) ?? []).map((e) => (
-              <div key={e.id} className={`plan-entry ${e.cooked ? "cooked" : ""}`}>
+              <div key={e.id} className={`plan-entry status-${e.status}`}>
                 <div>
-                  <small className="muted">{MEAL_LABELS[e.meal_type]} · {e.servings} kişilik · {Math.round(e.kcal_per_serving)} kcal/porsiyon</small>
-                  <div>{e.recipe_name}</div>
+                  <small className="muted">
+                    {MEAL_LABELS[e.meal_type]} · {e.servings} porsiyon · {Math.round(e.kcal_per_serving)} kcal/porsiyon
+                  </small>
+                  <div>
+                    {e.recipe_name}
+                    {e.is_leftover && <span className="tag" title="Önceki pişirmeden kalan; malzemesi ayrıca alınmaz">🍱 kalan</span>}
+                    {e.status === "skipped" && <span className="tag">yapılmadı</span>}
+                    {e.status === "ate_out" && <span className="tag">dışarıda</span>}
+                  </div>
                 </div>
                 <div className="inv-actions">
-                  {!e.cooked && <button className="icon-btn" title="Pişirdim (envanterden düş)" onClick={() => cook(e)}>🍳</button>}
+                  {e.status === "planned" && <button className="icon-btn" title={e.is_leftover ? "Yedim" : "Pişirdim (envanterden düş)"} onClick={() => cook(e)}>🍳</button>}
+                  {e.status === "planned" && <button className="icon-btn" title="Yapmadım / atladım" onClick={() => setStatus(e, "skipped")}>⏭️</button>}
+                  {e.status === "planned" && <button className="icon-btn" title="Dışarıda yedim" onClick={() => setStatus(e, "ate_out")}>🍽️</button>}
+                  {(e.status === "skipped" || e.status === "ate_out") && <button className="icon-btn" title="Geri al" onClick={() => setStatus(e, "planned")}>↩️</button>}
                   <button className="icon-btn" title="Sil" onClick={async () => { await api.deletePlan(e.id); refresh(); }}>🗑️</button>
                 </div>
               </div>
@@ -92,7 +142,7 @@ export function PlanPage({ recipes, onChanged }: { recipes: Recipe[]; onChanged:
           <button className="btn btn-ghost" disabled={busy || !data?.length} onClick={() => runOptimize(false)}>{busy ? "Fiyatlar alınıyor…" : "Hesapla"}</button>
           <button className="btn btn-primary" disabled={busy || !data?.length} onClick={() => runOptimize(true)}>🛒 Listeye ekle</button>
         </div>
-        {!data?.length && <Empty icon="📅">Önce plana tarif ekle.</Empty>}
+        {!data?.length && <Empty icon="📅">Önce haftayı planla veya tarif ekle.</Empty>}
         {optimized && <OptimizeView res={optimized} />}
       </Section>
     </div>

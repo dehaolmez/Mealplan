@@ -1,16 +1,16 @@
 # Kullanım Koşulları
 
-**Sürüm:** 2026-11-13.2 · **TASLAK — hukuki incelemeden geçirilmelidir**
+**Sürüm:** 2026-11-13.3 · **TASLAK — hukuki incelemeden geçirilmelidir**
 
 ## 1. Taraflar ve kapsam
 
-Bu koşullar, **[AD SOYAD / ŞİRKET ÜNVANI]** ("Mealbird", "biz") tarafından sunulan Mealbird uygulaması ile
+Bu koşullar, **[AD SOYAD / ŞİRKET ÜNVANI]** ("Meall", "biz") tarafından sunulan Meall uygulaması ile
 kullanıcı ("siz") arasındaki ilişkiyi düzenler. Hesap oluşturarak bu koşulları kabul etmiş olursunuz.
 Uygulamayı kullanmak için 18 yaşını doldurmuş olmanız gerekir.
 
 ## 2. Hizmet
 
-Mealbird; buzdolabı/buzluk envanteri ve son kullanma tarihi takibi, tarif önerisi, yemek planı, alışveriş
+Meall; buzdolabı/buzluk envanteri ve son kullanma tarihi takibi, tarif önerisi, yemek planı, alışveriş
 listesi, market fiyat karşılaştırması ve yakın market bilgisi sunar. Hizmet şu an **ücretsizdir** ve
 "olduğu gibi" sunulur.
 
@@ -54,7 +54,7 @@ düzenleyebilir. Davet kodunu yalnız güvendiğiniz kişilerle paylaşın; Prof
 ## 7. Fikrî haklar ve üçüncü taraf içerik
 
 Harita verisi © OpenStreetMap katkıcıları (ODbL lisansı). Market adları ve logoları ilgili şirketlere aittir;
-Mealbird'ün bu şirketlerle bir ortaklığı veya onları temsil yetkisi yoktur.
+Meall'ün bu şirketlerle bir ortaklığı veya onları temsil yetkisi yoktur.
 
 ## 8. Hesabın silinmesi
 

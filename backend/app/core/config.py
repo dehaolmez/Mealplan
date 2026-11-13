@@ -8,8 +8,8 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 class Settings(BaseSettings):
     model_config = SettingsConfigDict(env_prefix="MEALBIRD_", env_file=".env", extra="ignore")
 
-    app_name: str = "Mealbird API"
-    database_url: str = "sqlite:///./mealbird.db"
+    app_name: str = "Meall API"
+    database_url: str = "sqlite:///./meall.db"
     cors_origins: list[str] = ["http://localhost:5173", "http://127.0.0.1:5173"]
     # Derlenmiş arayüz (frontend/dist) bu klasördeyse API ile aynı adresten sunulur (tek servisli dağıtım)
     static_dir: str = ""
@@ -41,7 +41,7 @@ class Settings(BaseSettings):
     ]
     overpass_timeout_s: int = 25
     # Overpass kullanım kuralları uygulamanın kendini tanıtmasını ister
-    http_user_agent: str = "Mealbird/0.2 (+https://github.com/dehaolmez/mealplan)"
+    http_user_agent: str = "Meall/0.2 (+https://github.com/dehaolmez/mealplan)"
     places_cache_hours: int = 24
     # Dış servise gönderilen / saklanan konumun ondalık hassasiyeti (4 ≈ 11 m)
     location_precision: int = 4
@@ -69,7 +69,7 @@ class Settings(BaseSettings):
     smtp_port: int = 587
     smtp_user: str = ""
     smtp_password: str = ""
-    smtp_from: str = "Mealbird <no-reply@localhost>"
+    smtp_from: str = "Meall <no-reply@localhost>"
 
     # Yapay zekâ. Sağlayıcının anahtarı yoksa kural tabanlı motor çalışır.
     ai_enabled: bool = True

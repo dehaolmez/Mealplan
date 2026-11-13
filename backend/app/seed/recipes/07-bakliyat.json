@@ -1,0 +1,870 @@
+[
+ {
+  "name": "Zeytinyağlı Barbunya",
+  "description": "Tazeliği ve hafifliğiyle sofraların en sevilen zeytinyağlılarından biri olan geleneksel barbunya yemeği.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 50,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "zeytinyağlı",
+   "vejetaryen",
+   "vegan",
+   "hafif",
+   "ekonomik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Barbunya (kuru)",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Havuç",
+    "quantity": 160,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Patates",
+    "quantity": 170,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Barbunyaları bir gece önceden ıslatıp süzün.",
+   "Soğanları yemeklik doğrayıp zeytinyağında pembeleşene kadar kavurun.",
+   "Havuç ve patatesleri küp küp doğrayarak tencereye ekleyin.",
+   "Salçayı ilave edip kokusu çıkana kadar kavurmaya devam edin.",
+   "Barbunyaları ve üzerini geçecek kadar sıcak su ekleyin.",
+   "Kısık ateşte sebzeler ve barbunyalar yumuşayana kadar pişirin."
+  ],
+  "group": "Bakliyat yemekleri (kuru fasulye, nohut, mercimek...)"
+ },
+ {
+  "name": "Yeşil Mercimek Yemeği",
+  "description": "Besleyici ve geleneksel tadıyla enerji veren şifa deposu bir bakliyat yemeği.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 40,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "geleneksel",
+   "yüksek-protein",
+   "ekonomik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Yeşil mercimek",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Ayçiçek yağı",
+    "quantity": 40,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Yeşil mercimekleri diri kalacak şekilde haşlayıp süzün.",
+   "Tencerede yemeklik doğranmış soğanları yağda kavurun.",
+   "Salçayı ekleyip karıştırın.",
+   "Haşlanmış mercimekleri ve üzerini kapatacak kadar su ilave edin.",
+   "Tuz ve baharatları ekleyip kısık ateşte yaklaşık 15 dakika pişirin."
+  ],
+  "group": "Bakliyat yemekleri (kuru fasulye, nohut, mercimek...)"
+ },
+ {
+  "name": "Nohutlu Pilaki",
+  "description": "Soğuk veya sıcak servis edilebilen, domates ve sarımsakla lezzetlenmiş pratik bir tarif.",
+  "meal_type": "lunch",
+  "servings": 3,
+  "prep_minutes": 35,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "pratik",
+   "zeytinyağlı"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Nohut",
+    "quantity": 400,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 40,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Maydanoz",
+    "quantity": 25,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Soğanları yemeklik doğrayıp zeytinyağında sarımsakla birlikte soteleyin.",
+   "Kabuğu soyulup küp doğranmış domatesleri ekleyip pişirin.",
+   "Haşlanmış nohutları tencereye ekleyin.",
+   "Bir miktar su ekleyip kapağı kapalı şekilde 10 dakika pişirin.",
+   "Ocaktan aldıktan sonra üzerine ince kıyılmış maydanoz serperek servis yapın."
+  ],
+  "group": "Bakliyat yemekleri (kuru fasulye, nohut, mercimek...)"
+ },
+ {
+  "name": "Kıymalı Yeşil Mercimek",
+  "description": "Besleyici ve geleneksel lezzetiyle tam bir enerji deposu kıymalı yeşil mercimek yemeği.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 45,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "yüksek-protein",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Yeşil mercimek",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kıyma",
+    "quantity": 200,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 30,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 600,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Yeşil mercimekleri haşlayıp süzün.",
+   "Kuru soğanı yemeklik doğrayıp zeytinyağında kıyma ile kavurun.",
+   "Salçayı ekleyip kokusu çıkana kadar karıştırın.",
+   "Haşlanmış mercimekleri ve sıcak suyu tencereye ilave edin.",
+   "Tuz ve karabiberi ekleyip kısık ateşte kıvam alana kadar yaklaşık 20 dakika pişirin."
+  ],
+  "group": "Bakliyat yemekleri (kuru fasulye, nohut, mercimek...)"
+ },
+ {
+  "name": "Börülce Salatası",
+  "description": "Zeytinyağı ve taze yeşilliklerle ferahlatılmış sağlıklı ve pratik bir börülce salatası.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 30,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "salata",
+   "hafif"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Börülce",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Maydanoz",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Taze Soğan",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kırmızı biber",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 40,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Limon",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kuru börülceleri yumuşayana kadar haşlayın ve süzün.",
+   "Maydanoz ve taze soğanları ince ince doğrayın.",
+   "Kırmızı biberi küp küp doğrayarak yeşilliklere ekleyin.",
+   "Haşlanan börülceleri bir kasede yeşilliklerle harmanlayın.",
+   "Zeytinyağı, limon suyu ve tuzu ekleyip karıştırarak servis edin."
+  ],
+  "group": "Bakliyat yemekleri (kuru fasulye, nohut, mercimek...)"
+ },
+ {
+  "name": "Fırında Kuru Fasulye",
+  "description": "Güveç tadında lokum gibi pişen, ağır ağır demlenmiş enfes fırın kuru fasulye.",
+  "meal_type": "lunch",
+  "servings": 6,
+  "prep_minutes": 90,
+  "equipment": [
+   "stovetop",
+   "oven"
+  ],
+  "tags": [
+   "fırın",
+   "geleneksel",
+   "ekonomik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kuru fasulye",
+    "quantity": 400,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Biber salçası",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 8,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 800,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kuru fasulyeleri bir gece önceden ıslatın ve ertesi gün hafifçe haşlayın.",
+   "Kuru soğanları yemeklik doğrayıp tencerede zeytinyağı ile şeffaflaşana kadar kavurun.",
+   "Salçaları ekleyip birkaç dakika daha çevirin.",
+   "Süzülen fasulyeleri tencereye alın, üzerine suyu ve tuzu ekleyin.",
+   "Karışımı fırın kabına aktarıp 180 derece fırında suyu çekip özleşene kadar pişirin."
+  ],
+  "group": "Bakliyat yemekleri (kuru fasulye, nohut, mercimek...)"
+ },
+ {
+  "name": "Mercimek Yemeği",
+  "description": "Geleneksel lezzeti ve besleyici yapısıyla sofraların baş tacı olan ev yapımı kırmızı mercimek yemeği.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 35,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "ekonomik",
+   "vejetaryen",
+   "yüksek-protein"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kırmızı mercimek",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Havuç",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Patates",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": true
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 40,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 1000,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kırmızı mercimekleri bol suda yıkayıp süzün.",
+   "Kuru soğanı yemeklik doğrayın, havuç ve patatesi küçük küpler halinde kesin.",
+   "Tencerede zeytinyağını ısıtıp soğanları hafifçe pembeleşene kadar kavurun.",
+   "Salçayı ekleyip kokusu çıkana kadar karıştırarak kavurmaya devam edin.",
+   "Havuç, patates ve süzülen mercimekleri tencereye ilave edin.",
+   "Suyunu ekleyin, kaynamaya başlayınca ocağın altını kısın.",
+   "Mercimekler ve sebzeler yumuşayana kadar yaklaşık 25 dakika pişirin.",
+   "Tuz ve karabiberini ekleyip sıcak olarak servis yapın."
+  ],
+  "group": "Bakliyat yemekleri (kuru fasulye, nohut, mercimek...)"
+ },
+ {
+  "name": "Zeytinyağlı Kuru Fasulye",
+  "description": "Zeytinyağının hafifliği ve domates salçasının uyumuyla pişen nefis geleneksel kuru fasulye yemeği.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 50,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "zeytinyağlı",
+   "geleneksel",
+   "vegan",
+   "yüksek-protein"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kuru fasulye",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 25,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Biber salçası",
+    "quantity": 15,
+    "unit": "g",
+    "optional": true
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 1200,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kuru fasulyeleri bir gece önceden bol suda ıslatın.",
+   "Ertesi gün fasulyelerin suyunu süzüp tencereye alın ve üzerini geçecek kadar su ekleyip 15 dakika haşlayın, ardından süzün.",
+   "Ayrı bir tencerede zeytinyağında yemeklik doğranmış kuru soğanı kavurun.",
+   "Salçaları ekleyip birkaç dakika kavurmaya devam edin.",
+   "Haşlanmış fasulyeleri tencereye aktarın ve sıcak suyu ekleyin.",
+   "Kısık ateşte fasulyeler yumuşayana kadar yaklaşık 40 dakika pişirin.",
+   "Pişmeye yakın tuz ve karabiberi ilave edin.",
+   "Dinlendirdikten sonra ılık veya sıcak servis edin."
+  ],
+  "group": "Bakliyat yemekleri (kuru fasulye, nohut, mercimek...)"
+ },
+ {
+  "name": "Taze Börülce Yemeği",
+  "description": "Zeytinyağlı taze börülce, hafif ve ferahlatıcı tadıyla yaz sofralarının vazgeçilmezidir.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 30,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "zeytinyağlı",
+   "vegan",
+   "hafif",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Börülce",
+    "quantity": 400,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 45,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 300,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Taze börülcelerin kılçıklarını temizleyin ve uçlarını kesip ikiye bölün.",
+   "Geniş bir tencerede zeytinyağında yemeklik doğranmış soğanları ve ezilmiş sarımsakları soteleyin.",
+   "Kabukları soyulup küp doğranmış domatesleri tencereye ekleyin.",
+   "Domatesler yumuşayınca taze börülceleri ilave edin ve birkaç dakika karıştırın.",
+   "Suyunu ve tuzunu ekleyip tencerenin kapağını kapatın.",
+   "Kısık ateşte börülceler yumuşayana kadar yaklaşık 20-25 dakika pişirin.",
+   "Ocaktan alıp oda sıcaklığında dinlendirin.",
+   "Zeytinyağlı börülceyi soğuk ya da ılık olarak servis yapın."
+  ],
+  "group": "Bakliyat yemekleri (kuru fasulye, nohut, mercimek...)"
+ },
+ {
+  "name": "Kıymalı Nohut",
+  "description": "Geleneksel lezzeti kıymanın derin aromasıyla zenginleştirilmiş nefis bir nohut yemeği.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 45,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "yüksek-protein",
+   "ekonomik",
+   "toplu-pişirme"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Nohut",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kıyma",
+    "quantity": 200,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 40,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 800,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Nohutları akşamdan bol suyla ıslatın ve haşlayın.",
+   "Tencerede zeytinyağında ince doğranmış soğanı ve kıymayı kavurun.",
+   "Kıymalar renk değiştirince salçayı ekleyip kokusu çıkana kadar soteleyin.",
+   "Haşlanmış nohutları tencereye ilave edin ve karıştırın.",
+   "Suyunu ve baharatlarını ekleyip kısık ateşte nohutlar yumuşayana kadar pişirin."
+  ],
+  "group": "Bakliyat yemekleri (kuru fasulye, nohut, mercimek...)"
+ },
+ {
+  "name": "Mercimek Köftesi",
+  "description": "Çay saatlerinin ve sofraların vazgeçilmezi, nefis baharatlı mercimek köftesi.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 30,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vegan",
+   "vejetaryen",
+   "pratik",
+   "ekonomik",
+   "hafif"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kırmızı mercimek",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Bulgur",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Taze Soğan",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Maydanoz",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Biber salçası",
+    "quantity": 40,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 60,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kimyon",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 600,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kırmızı mercimeği yıkayıp suyla tencerede iyice yumuşayana kadar haşlayın.",
+   "Haşlanan ve suyunu çeken mercimeğin içine ince bulguru ekleyip tencerenin kapağını kapatarak dinlendirin.",
+   "Ayrı bir tavada zeytinyağında doğranmış soğanı ve biber salçasını kavurun.",
+   "Kavrulan salçalı sosu dinlenen mercimek ve bulgur karışımına döküp yoğurun.",
+   "İnce kıyılmış taze soğan, maydanoz, tuz ve kimyonu ekleyip son kez harmanlayın.",
+   "Karışımdan ceviz büyüklüğünde parçalar koparıp elinizle sıkarak şekil verin."
+  ],
+  "group": "Bakliyat yemekleri (kuru fasulye, nohut, mercimek...)"
+ },
+ {
+  "name": "Düdüklüde Nohut",
+  "description": "Zamandan tasarruf sağlayan, lokum gibi yumuşacık pratik nohut yemeği.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 35,
+  "equipment": [
+   "pressure_cooker",
+   "stovetop"
+  ],
+  "tags": [
+   "pratik",
+   "yüksek-protein",
+   "geleneksel",
+   "ekonomik",
+   "toplu-pişirme"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Nohut",
+    "quantity": 400,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 40,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 1000,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 6,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Nohutları önceden suda bekletip süzün.",
+   "Düdüklü tencereye zeytinyağını alın ve yemeklik doğranmış soğanı hafifçe soteleyin.",
+   "Salçayı ekleyip kokusu çıkana kadar kavurmaya devam edin.",
+   "Süzülen nohutları, tuzu, karabiberi ve suyu tencereye aktarın.",
+   "Düdüklü tencerenin kapağını kapatıp buhar çıkmaya başladıktan sonra kısık ateşte 25 dakika pişirin.",
+   "Pişme süresi sonunda buharı tamamen salgılattıktan sonra kapağını açıp servis yapın."
+  ],
+  "group": "Bakliyat yemekleri (kuru fasulye, nohut, mercimek...)"
+ }
+]

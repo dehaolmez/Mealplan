@@ -21,6 +21,9 @@ def entry_out(entry: MealPlanEntry) -> MealPlanOut:
         recipe_name=entry.recipe.name,
         servings=entry.servings,
         cooked=entry.cooked,
+        status=entry.status,
+        is_leftover=entry.is_leftover,
+        auto_generated=entry.auto_generated,
         kcal_per_serving=recipe_macros_per_serving(entry.recipe).kcal,
     )
 
@@ -36,7 +39,7 @@ def list_entries(db: Session, household: Household, start: date, end: date) -> l
 
 
 def add_entry(db: Session, household: Household, data: MealPlanIn) -> MealPlanEntry:
-    recipe_service.get_recipe(db, data.recipe_id)
+    recipe_service.get_recipe(db, data.recipe_id, household)
     entry = MealPlanEntry(household_id=household.id, **data.model_dump())
     db.add(entry)
     db.commit()
@@ -61,6 +64,10 @@ def cook(db: Session, household: Household, entry_id: int) -> CookOut:
     entry = _get(db, household, entry_id)
     if entry.cooked:
         raise BadRequest("Bu öğün zaten pişirildi olarak işaretli")
+    if entry.is_leftover:  # kalan yemek: malzemeler ilk pişirmede düşüldü
+        entry.cooked, entry.status = True, "cooked"
+        db.commit()
+        return CookOut(entry_id=entry.id, consumed=[], shortages=[])
     consumed, shortages = [], []
     for ingredient_id, req in aggregate_requirements([(entry.recipe, entry.servings)]).items():
         if req.ingredient.is_staple:
@@ -72,6 +79,16 @@ def cook(db: Session, household: Household, entry_id: int) -> CookOut:
             consumed.append(f"{req.ingredient.name}: {humanize(used, unit)}")
         if short > 1e-6:
             shortages.append(f"{req.ingredient.name}: {humanize(short, unit)} eksikti")
-    entry.cooked = True
+    entry.cooked, entry.status = True, "cooked"
     db.commit()
     return CookOut(entry_id=entry.id, consumed=consumed, shortages=shortages)
+
+
+def set_status(db: Session, household: Household, entry_id: int, status: str) -> MealPlanEntry:
+    """Öğünü "yapılmadı" / "dışarıda yendi" olarak işaretler (veya geri alır). Pişirilmiş öğün değiştirilemez."""
+    entry = _get(db, household, entry_id)
+    if entry.cooked:
+        raise BadRequest("Pişirilmiş öğünün durumu değiştirilemez")
+    entry.status = status
+    db.commit()
+    return entry

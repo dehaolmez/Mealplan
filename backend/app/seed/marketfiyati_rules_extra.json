@@ -1,0 +1,1690 @@
+{
+ "Pırasa": {
+  "q": "pırasa",
+  "cats": [
+   "Sebze"
+  ],
+  "any": [
+   "Pırasa"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Dereotu": {
+  "q": "dereotu",
+  "cats": [
+   "Sebze"
+  ],
+  "any": [
+   "Dereotu"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Taze Soğan": {
+  "q": "taze soğan",
+  "cats": [
+   "Sebze"
+  ],
+  "any": [
+   "Taze Soğan"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Roka": {
+  "q": "roka",
+  "cats": [
+   "Sebze"
+  ],
+  "any": [
+   "Roka"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Tere": {
+  "q": "tere",
+  "cats": [
+   "Tereyağı ve Margarin"
+  ],
+  "any": [
+   "Tere"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Kereviz": {
+  "q": "kereviz",
+  "cats": [
+   "Sebze"
+  ],
+  "any": [
+   "Kereviz"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Karnabahar": {
+  "q": "karnabahar",
+  "cats": [
+   "Sebze"
+  ],
+  "any": [
+   "Karnabahar"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Turp": {
+  "q": "turp",
+  "cats": [
+   "Sebze"
+  ],
+  "any": [
+   "Turp"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Yer Elması": null,
+ "Taze Fasulye": {
+  "q": "taze fasulye",
+  "cats": [
+   "Hazır Yemekler"
+  ],
+  "any": [
+   "Taze Fasulye"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Börülce": {
+  "q": "börülce",
+  "cats": [
+   "Bakliyat",
+   "Konserve"
+  ],
+  "any": [
+   "Börülce"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Lahana": {
+  "q": "lahana",
+  "cats": [
+   "Sebze"
+  ],
+  "any": [
+   "Lahana"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Pancar": {
+  "q": "pancar",
+  "cats": [
+   "Sebze"
+  ],
+  "any": [
+   "Pancar"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Nar": {
+  "q": "nar",
+  "cats": [
+   "Ketçap Mayonez Sos ve Sirkeler"
+  ],
+  "any": [
+   "Nar"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Ayva": {
+  "q": "ayva",
+  "cats": [
+   "Bal ve Reçel",
+   "Meyve"
+  ],
+  "any": [
+   "Ayva"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Armut": {
+  "q": "armut",
+  "cats": [
+   "Bebek Mamaları",
+   "Meyve"
+  ],
+  "any": [
+   "Armut"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Portakal": {
+  "q": "portakal",
+  "cats": [
+   "Gazlı İçecekler"
+  ],
+  "any": [
+   "Portakal"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Mandalina": {
+  "q": "mandalina",
+  "cats": [
+   "Gazlı İçecekler",
+   "Duş Banyo ve Sabun"
+  ],
+  "any": [
+   "Mandalina"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Greyfurt": {
+  "q": "greyfurt",
+  "cats": [
+   "Meyve"
+  ],
+  "any": [
+   "Greyfurt"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Çilek": {
+  "q": "çilek",
+  "cats": [
+   "Bal ve Reçel"
+  ],
+  "any": [
+   "Çilek"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Kiraz": {
+  "q": "kiraz",
+  "cats": [
+   "Çay ve Bitki Çayları",
+   "Genel Temizlik Ürünleri",
+   "Parfüm ve Deodorant"
+  ],
+  "any": [
+   "Kiraz"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Üzüm": {
+  "q": "üzüm",
+  "cats": [
+   "Helva Tahin ve Pekmez"
+  ],
+  "any": [
+   "Üzüm"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Kavun": {
+  "q": "kavun",
+  "cats": [
+   "Gazsız İçecekler",
+   "Meyve"
+  ],
+  "any": [
+   "Kavun"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Karpuz": {
+  "q": "karpuz",
+  "cats": [
+   "Sakız ve Şekerleme",
+   "Meyve Suyu",
+   "Gazsız İçecekler"
+  ],
+  "any": [
+   "Karpuz"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Şeftali": {
+  "q": "şeftali",
+  "cats": [
+   "Meyve Suyu",
+   "Gazsız İçecekler"
+  ],
+  "any": [
+   "Şeftali"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Erik": {
+  "q": "erik",
+  "cats": [
+   "Meyve",
+   "Kuruyemiş ve Kuru Meyve",
+   "Bal ve Reçel"
+  ],
+  "any": [
+   "Erik"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Bamya": {
+  "q": "bamya",
+  "cats": [
+   "Hazır Yemekler"
+  ],
+  "any": [
+   "Bamya"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Bezelye": {
+  "q": "bezelye",
+  "cats": [
+   "Konserve",
+   "Hazır Yemekler"
+  ],
+  "any": [
+   "Bezelye"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Közlenmiş Biber": {
+  "q": "közlenmiş biber",
+  "cats": [
+   "Konserve"
+  ],
+  "any": [
+   "Közlenmiş Biber"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Mısır": {
+  "q": "mısır",
+  "cats": [
+   "Cips"
+  ],
+  "any": [
+   "Mısır"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Kivi": {
+  "q": "kivi",
+  "cats": [
+   "Meyve"
+  ],
+  "any": [
+   "Kivi"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Yufka": {
+  "q": "yufka",
+  "cats": [
+   "Ekmek ve Unlu Mamüller"
+  ],
+  "any": [
+   "Yufka"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Ton balığı": {
+  "q": "ton balığı",
+  "cats": [
+   "Deniz Ürünleri"
+  ],
+  "any": [
+   "Ton balığı"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Mısır nişastası": {
+  "q": "mısır nişastası",
+  "cats": [
+   "Un ve İrmik"
+  ],
+  "any": [
+   "Mısır nişastası"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "İrmik": {
+  "q": "i̇rmik",
+  "cats": [
+   "Un ve İrmik"
+  ],
+  "any": [
+   "İrmik"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Soya sosu": {
+  "q": "soya sosu",
+  "cats": [
+   "Ketçap Mayonez Sos ve Sirkeler"
+  ],
+  "any": [
+   "Soya sosu"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Pirinç unu": {
+  "q": "pirinç unu",
+  "cats": [
+   "Un ve İrmik"
+  ],
+  "any": [
+   "Pirinç unu"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Galeta unu": {
+  "q": "galeta unu",
+  "cats": [
+   "Un ve İrmik"
+  ],
+  "any": [
+   "Galeta unu"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Dövme buğday": null,
+ "Bakla (kuru)": null,
+ "Barbunya (kuru)": null,
+ "Bezelye (kuru)": null,
+ "Köz patlıcan (konserve)": null,
+ "Haşlanmış mısır (konserve)": null,
+ "Kinoa": {
+  "q": "kinoa",
+  "cats": [
+   "Bakliyat"
+  ],
+  "any": [
+   "Kinoa"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Kus-kus": null,
+ "Keten tohumu": {
+  "q": "keten tohumu",
+  "cats": [
+   "Bakliyat"
+  ],
+  "any": [
+   "Keten tohumu"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Haşhaş tohumu": null,
+ "Tulum peyniri": {
+  "q": "tulum peyniri",
+  "cats": [
+   "Peynir"
+  ],
+  "any": [
+   "Tulum peyniri"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Çeçil peyniri": {
+  "q": "çeçil peyniri",
+  "cats": [
+   "Peynir"
+  ],
+  "any": [
+   "Çeçil peyniri"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Dil peyniri": {
+  "q": "dil peyniri",
+  "cats": [
+   "Peynir"
+  ],
+  "any": [
+   "Dil peyniri"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Lor peyniri": {
+  "q": "lor peyniri",
+  "cats": [
+   "Peynir"
+  ],
+  "any": [
+   "Lor peyniri"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Gravyer": {
+  "q": "gravyer",
+  "cats": [
+   "Peynir"
+  ],
+  "any": [
+   "Gravyer"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Süzme yoğurt": {
+  "q": "süzme yoğurt",
+  "cats": [
+   "Yoğurt"
+  ],
+  "any": [
+   "Süzme yoğurt"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Kefir": {
+  "q": "kefir",
+  "cats": [
+   "Ayran ve Kefir"
+  ],
+  "any": [
+   "Kefir"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Ayran": {
+  "q": "ayran",
+  "cats": [
+   "Ayran ve Kefir"
+  ],
+  "any": [
+   "Ayran"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Labne": {
+  "q": "labne",
+  "cats": [
+   "Peynir"
+  ],
+  "any": [
+   "Labne"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Kaymak": {
+  "q": "kaymak",
+  "cats": [
+   "Diğer Süt Ürünleri",
+   "Dondurmalar"
+  ],
+  "any": [
+   "Kaymak"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Hellim": {
+  "q": "hellim",
+  "cats": [
+   "Peynir"
+  ],
+  "any": [
+   "Hellim"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Koyun Yoğurdu": null,
+ "Keçi Peyniri": null,
+ "Krem Peynir": {
+  "q": "krem peynir",
+  "cats": [
+   "Peynir"
+  ],
+  "any": [
+   "Krem Peynir"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Köy peyniri": null,
+ "Manda yoğurdu": null,
+ "Çedar": null,
+ "Süt tozu": null,
+ "Kuzu pirzola": null,
+ "Dana antrikot": {
+  "q": "dana antrikot",
+  "cats": [
+   "Şarküteri"
+  ],
+  "any": [
+   "Dana antrikot"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Levrek": {
+  "q": "levrek",
+  "cats": [
+   "Taze Deniz Ürünleri"
+  ],
+  "any": [
+   "Levrek"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Salam": {
+  "q": "salam",
+  "cats": [
+   "Şarküteri"
+  ],
+  "any": [
+   "Salam"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Pastırma": {
+  "q": "pastırma",
+  "cats": [
+   "Şarküteri"
+  ],
+  "any": [
+   "Pastırma"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Tahin": {
+  "q": "tahin",
+  "cats": [
+   "Helva Tahin ve Pekmez"
+  ],
+  "any": [
+   "Tahin"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Nar ekşisi": {
+  "q": "nar ekşisi",
+  "cats": [
+   "Ketçap Mayonez Sos ve Sirkeler"
+  ],
+  "any": [
+   "Nar ekşisi"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Ceviz": {
+  "q": "ceviz",
+  "cats": [
+   "Kuruyemiş ve Kuru Meyve"
+  ],
+  "any": [
+   "Ceviz"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Fındık": {
+  "q": "fındık",
+  "cats": [
+   "Sürülebilir Ürünler ve Kahvaltılık Soslar"
+  ],
+  "any": [
+   "Fındık"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Antep fıstığı": {
+  "q": "antep fıstığı",
+  "cats": [
+   "Kuruyemiş ve Kuru Meyve"
+  ],
+  "any": [
+   "Antep fıstığı"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Fesleğen": {
+  "q": "fesleğen",
+  "cats": [
+   "Tuz Baharat ve Harçlar"
+  ],
+  "any": [
+   "Fesleğen"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Hardal": {
+  "q": "hardal",
+  "cats": [
+   "Ketçap Mayonez Sos ve Sirkeler"
+  ],
+  "any": [
+   "Hardal"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Zerdeçal": {
+  "q": "zerdeçal",
+  "cats": [
+   "Tuz Baharat ve Harçlar"
+  ],
+  "any": [
+   "Zerdeçal"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Zencefil (taze)": null,
+ "Hindistan cevizi rendesi": null,
+ "Pekmez": {
+  "q": "pekmez",
+  "cats": [
+   "Helva Tahin ve Pekmez"
+  ],
+  "any": [
+   "Pekmez"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Kuru üzüm": {
+  "q": "kuru üzüm",
+  "cats": [
+   "Kuruyemiş ve Kuru Meyve"
+  ],
+  "any": [
+   "Kuru üzüm"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Kuru kayısı": {
+  "q": "kuru kayısı",
+  "cats": [
+   "Kuruyemiş ve Kuru Meyve"
+  ],
+  "any": [
+   "Kuru kayısı"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Badem": {
+  "q": "badem",
+  "cats": [
+   "Dondurmalar"
+  ],
+  "any": [
+   "Badem"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Soya yağı": null,
+ "İsot": {
+  "q": "i̇sot",
+  "cats": [
+   "Tuz Baharat ve Harçlar"
+  ],
+  "any": [
+   "İsot"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Mahlep": {
+  "q": "mahlep",
+  "cats": [
+   "Bisküvi ve Kraker"
+  ],
+  "any": [
+   "Mahlep"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Dereotu (kuru)": null,
+ "Hindistan cevizi yağı": {
+  "q": "hindistan cevizi yağı",
+  "cats": [
+   "Sıvı Yağlar"
+  ],
+  "any": [
+   "Hindistan cevizi yağı"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Çam fıstığı": null,
+ "Kuş üzümü": {
+  "q": "kuş üzümü",
+  "cats": [
+   "Kuruyemiş ve Kuru Meyve"
+  ],
+  "any": [
+   "Kuş üzümü"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Tavuk kanat": null,
+ "Bütün tavuk": null,
+ "Kuzu kuşbaşı": null,
+ "Hamsi": {
+  "q": "hamsi",
+  "cats": [
+   "Deniz Ürünleri"
+  ],
+  "any": [
+   "Hamsi"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Çipura": {
+  "q": "çipura",
+  "cats": [
+   "Deniz Ürünleri"
+  ],
+  "any": [
+   "Çipura"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Karides": {
+  "q": "karides",
+  "cats": [
+   "Deniz Ürünleri"
+  ],
+  "any": [
+   "Karides"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ },
+ "Kakao": {
+  "q": "kakao",
+  "cats": [
+   "Dondurmalar",
+   "Pasta Malzemeleri"
+  ],
+  "any": [
+   "Kakao"
+  ],
+  "exclude": [
+   "suyu",
+   "aromali",
+   "cips",
+   "sos",
+   "tursu",
+   "kremali",
+   "bebek",
+   "mama",
+   "sampuan",
+   "sabun",
+   "deterjan"
+  ]
+ }
+}

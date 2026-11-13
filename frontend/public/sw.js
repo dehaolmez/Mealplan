@@ -1,7 +1,7 @@
-/* Mealbird servis çalışanı: uygulama kabuğunu ve son görüntülenen verileri çevrimdışı kullanım için önbellekler. */
+/* Meall servis çalışanı: uygulama kabuğunu ve son görüntülenen verileri çevrimdışı kullanım için önbellekler. */
 const VERSION = "v1";
-const SHELL = `mealbird-shell-${VERSION}`;
-const DATA = `mealbird-api-${VERSION}`;
+const SHELL = `meall-shell-${VERSION}`;
+const DATA = `meall-api-${VERSION}`;
 const PRECACHE = ["/", "/manifest.webmanifest", "/icons/icon-192.png", "/icons/icon-512.png"];
 // Kişisel/hassas veya değişken uç noktalar önbelleğe alınmaz
 const NO_CACHE = ["/api/auth/", "/api/geocode", "/api/places/nearby", "/api/prices/"];

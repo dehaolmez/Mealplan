@@ -74,3 +74,44 @@ MARKET_TO_CHAIN = {
     "hakmar": "hakmar",
     "tarim_kredi": "tarim-kredi",
 }
+
+
+# Otomatik çıkarılamayan veya yanlış eşleşen genişletilmiş katalog malzemeleri (elle)
+MANUAL_EXTRA: dict[str, dict] = {
+    "Barbunya (kuru)": {"q": "barbunya", "cats": ["Bakliyat"], "any": ["barbunya"], "exclude": ["konserve", "pilaki"]},
+    "Bakla (kuru)": {"q": "kuru bakla", "cats": ["Bakliyat"], "any": ["bakla"], "exclude": []},
+    "Köz patlıcan (konserve)": {"q": "közlenmiş patlıcan", "cats": ["Konserve"], "any": ["kozlenmis patlican", "koz patlican"], "exclude": []},
+    "Haşlanmış mısır (konserve)": {"q": "mısır konservesi", "cats": ["Konserve"], "any": ["misir"], "exclude": ["patlamis", "cips", "gevrek"]},
+    "Kus-kus": {"q": "kuskus", "cats": ["Mantı Makarna ve Erişte", "Bakliyat"], "any": ["kuskus", "kus kus"], "exclude": []},
+    "Tavuk kanat": {"q": "piliç kanat", "cats": ["Beyaz Et"], "any": ["kanat"], "exclude": ["soslu", "acili", "marine", "pane"]},
+    "Bütün tavuk": {"q": "bütün piliç", "cats": ["Beyaz Et"], "any": ["butun"], "exclude": ["gogus", "soslu"]},
+    "Kuzu kuşbaşı": {"q": "kuzu kuşbaşı", "cats": ["Kırmızı Et"], "any": ["kuzu"], "exclude": ["kofte", "kavurma", "kiyma", "pirzola"]},
+    "Kuzu pirzola": {"q": "kuzu pirzola", "cats": ["Kırmızı Et"], "any": ["pirzola"], "exclude": []},
+    "Kakao": {"q": "kakao", "cats": ["Pasta Malzemeleri"], "any": ["kakao"], "exclude": ["dondurma", "icecek", "sut"]},
+    "Çam fıstığı": {"q": "çam fıstığı", "cats": ["Kuruyemiş ve Kuru Meyve", "Pasta Malzemeleri"], "any": ["cam fistig"], "exclude": []},
+    "Zencefil (taze)": {"q": "zencefil", "cats": ["Sebze"], "any": ["zencefil"], "exclude": ["toz", "cay"]},
+    "Yer Elması": {"q": "yer elması", "cats": ["Sebze"], "any": ["yer elmasi"], "exclude": []},
+    "Dövme buğday": {"q": "dövme", "cats": ["Bakliyat"], "any": ["dovme"], "exclude": []},
+    "Çedar": {"q": "cheddar", "cats": ["Peynir"], "any": ["cheddar", "cedar"], "exclude": []},
+    "Keçi Peyniri": {"q": "keçi peyniri", "cats": ["Peynir"], "any": ["keci"], "exclude": []},
+    "Köy peyniri": {"q": "köy peyniri", "cats": ["Peynir"], "any": ["koy peyniri"], "exclude": []},
+    "Manda yoğurdu": {"q": "manda yoğurdu", "cats": ["Yoğurt"], "any": ["manda"], "exclude": []},
+    "Koyun Yoğurdu": {"q": "koyun yoğurdu", "cats": ["Yoğurt"], "any": ["koyun"], "exclude": []},
+    "Hindistan cevizi rendesi": {"q": "hindistan cevizi", "cats": ["Pasta Malzemeleri", "Kuruyemiş ve Kuru Meyve"], "any": ["hindistan cevizi"], "exclude": ["sut", "yag"]},
+}
+
+
+def _load_extra() -> None:
+    """Genişletilmiş katalog için veriden çıkarılmış kurallar (scripts/generate_mf_rules.py)."""
+    import json
+    from pathlib import Path
+
+    path = Path(__file__).with_name("marketfiyati_rules_extra.json")
+    if path.exists():
+        for name, rule in json.loads(path.read_text(encoding="utf-8")).items():
+            if rule and name not in RULES:
+                RULES[name] = rule
+    RULES.update(MANUAL_EXTRA)
+
+
+_load_extra()

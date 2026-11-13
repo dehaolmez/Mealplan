@@ -20,6 +20,11 @@ class MealPlanEntry(Base):
     recipe_id: Mapped[int] = mapped_column(ForeignKey("recipes.id", ondelete="CASCADE"))
     servings: Mapped[int] = mapped_column(default=2)
     cooked: Mapped[bool] = mapped_column(default=False)
+    # planned | cooked | skipped (yapılmadı) | ate_out (dışarıda yendi)
+    status: Mapped[str] = mapped_column(String(12), default="planned")
+    # Önceki günün yemeğinden kalan (bir kez pişir, iki kez ye) — pişirme sırasında envanterden düşülmez
+    is_leftover: Mapped[bool] = mapped_column(default=False)
+    auto_generated: Mapped[bool] = mapped_column(default=False)
 
     recipe: Mapped[Recipe] = relationship(lazy="joined")
 

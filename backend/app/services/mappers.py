@@ -49,6 +49,9 @@ def recipe_out(recipe: Recipe) -> RecipeOut:
         prep_minutes=recipe.prep_minutes,
         meal_type=recipe.meal_type,
         tags=[t for t in recipe.tags.split(",") if t],
+        equipment=[t for t in (recipe.equipment or "").split(",") if t],
+        source=recipe.source or "seed",
+        own=recipe.household_id is not None,
         per_serving=MacrosOut(**macros.__dict__),
         ingredients=[
             RecipeIngredientOut(

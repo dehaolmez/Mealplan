@@ -11,8 +11,8 @@ const EMPTY: MemberIn = {
   name: "", birth_date: "1990-01-01", sex: "female", height_cm: 165, weight_kg: 65, activity_level: "light", goal: "maintain",
 };
 
-export function ProfilePage({ me, setMe, stores, onChanged }: {
-  me: Me; setMe: (m: Me | null) => void; stores: Store[]; onChanged: () => void;
+export function ProfilePage({ me, setMe, stores, onChanged, onEditPreferences }: {
+  me: Me; setMe: (m: Me | null) => void; stores: Store[]; onChanged: () => void; onEditPreferences: () => void;
 }) {
   const toast = useToast();
   const healthOk = me.consents.find((c) => c.kind === "health_data")?.granted ?? false;
@@ -37,6 +37,12 @@ export function ProfilePage({ me, setMe, stores, onChanged }: {
         <p className="muted">Günlük ihtiyaçlar Mifflin-St Jeor formülüyle hesaplanır.</p>
       </div>
       {targets.error && <ErrorBox message={targets.error} onRetry={targets.reload} />}
+
+      <button className="card pref-entry" onClick={onEditPreferences}>
+        <span className="ob-icon">⚙️</span>
+        <span><b>Planlama tercihleri</b><small className="muted">Marketler, öğünler, diyet, alerjiler, aletler, günler, bütçe, tekrar</small></span>
+        <span>›</span>
+      </button>
 
       {t?.total && (
         <div className="card total-card">
@@ -110,7 +116,7 @@ export function ProfilePage({ me, setMe, stores, onChanged }: {
   );
 }
 
-function MemberForm({ initial, onSave, onCancel }: { initial: MemberIn; onSave: (m: MemberIn) => void; onCancel: () => void }) {
+export function MemberForm({ initial, onSave, onCancel }: { initial: MemberIn; onSave: (m: MemberIn) => void; onCancel: () => void }) {
   const [m, setM] = useState<MemberIn>({
     name: initial.name, birth_date: initial.birth_date, sex: initial.sex, height_cm: initial.height_cm,
     weight_kg: initial.weight_kg, activity_level: initial.activity_level, goal: initial.goal,
@@ -191,7 +197,7 @@ function PriceImport({ onDone }: { onDone: () => void }) {
       <div className="card add-form">
         <p className="muted small">
           Sütunlar: <code>chain, ingredient, package_size, unit, price, brand, date</code>.{" "}
-          <a href={api.priceTemplateUrl} download="mealbird-fiyat-sablonu.csv">Şablonu indir</a>
+          <a href={api.priceTemplateUrl} download="meall-fiyat-sablonu.csv">Şablonu indir</a>
         </p>
         <input type="file" accept=".csv,text/csv" disabled={busy}
           onChange={(e) => { const f = e.target.files?.[0]; if (f) void onFile(f); e.target.value = ""; }} />
@@ -311,7 +317,7 @@ function AccountSection({ me, setMe }: { me: Me; setMe: (m: Me | null) => void }
             <button className="btn btn-ghost" disabled={pw.next.length < 8}>Kaydet</button>
           </form>
           <div className="card-actions">
-            <a className="btn btn-ghost btn-sm" href={api.exportUrl} download="mealbird-verilerim.json">⬇️ Verilerimi indir</a>
+            <a className="btn btn-ghost btn-sm" href={api.exportUrl} download="meall-verilerim.json">⬇️ Verilerimi indir</a>
             <button className="btn btn-ghost btn-sm" onClick={async () => { await api.logout(); setMe(null); }}>Çıkış yap</button>
             <button className="btn btn-danger btn-sm" onClick={async () => {
               if (!confirm("Hesabın ve (başka üyesi yoksa) hanenin tüm verileri kalıcı olarak silinecek. Emin misin?")) return;

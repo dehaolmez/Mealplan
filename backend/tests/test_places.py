@@ -119,7 +119,7 @@ def test_overpass_client_falls_back_to_next_endpoint(monkeypatch):
     monkeypatch.setattr(httpx, "post", fake_post)
     shops = overpass_client.fetch_shops(LAT, LON, 1000)
     assert len(shops) == 6 and len(seen) == 2
-    assert "Mealbird" in get_settings().http_user_agent
+    assert "Meall" in get_settings().http_user_agent
 
 
 def test_chains_listed(client):

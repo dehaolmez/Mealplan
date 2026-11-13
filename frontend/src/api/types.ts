@@ -112,6 +112,9 @@ export interface Recipe {
   prep_minutes: number;
   meal_type: MealType;
   tags: string[];
+  equipment: string[];
+  source: string;
+  own: boolean;
   per_serving: Macros;
   ingredients: { ingredient: Ingredient; quantity: number; quantity_label: string; optional: boolean }[];
 }
@@ -153,6 +156,9 @@ export interface PlanEntry {
   recipe_name: string;
   servings: number;
   cooked: boolean;
+  status: "planned" | "cooked" | "skipped" | "ate_out";
+  is_leftover: boolean;
+  auto_generated: boolean;
   kcal_per_serving: number;
 }
 
@@ -311,4 +317,38 @@ export interface ReceiptDraft {
   chain: { id: number; name: string } | null;
   date: string | null;
   lines: ReceiptLine[];
+}
+
+export type MealSlot = "breakfast" | "lunch" | "dinner" | "snack";
+export type MealMode = "plan" | "skip" | "own";
+export type Diet = "none" | "vegetarian" | "vegan" | "pescatarian";
+export type RepeatPolicy = "variety" | "balanced" | "batch";
+export type Equipment = "stovetop" | "oven" | "microwave" | "airfryer" | "blender" | "grill" | "pressure_cooker";
+export type Exclusion = "pork" | "red_meat" | "gluten" | "dairy" | "egg" | "nuts" | "peanut" | "fish" | "shellfish" | "sesame" | "soy";
+export type GoalKey = "lose" | "muscle" | "decide_less" | "save_money" | "family" | "healthy";
+
+export interface Preferences {
+  preferred_chains: string[];
+  goals: GoalKey[];
+  diet: Diet;
+  low_carb: boolean;
+  exclusions: Exclusion[];
+  disliked_ingredient_ids: number[];
+  equipment: Equipment[];
+  meals: Record<MealSlot, { mode: MealMode; kcal: number; protein: number }>;
+  plan_days: number[];
+  weekly_budget: number | null;
+  repeat_policy: RepeatPolicy;
+  max_prep_minutes: number | null;
+  onboarding_done: boolean;
+}
+
+export interface GenerateResult {
+  meals: { entry_id: number; day: string; meal_type: MealSlot; recipe_id: number; recipe_name: string; servings: number;
+    is_leftover: boolean; est_cost: number; kcal_per_serving: number }[];
+  est_cost: number;
+  weekly_budget: number | null;
+  warnings: string[];
+  candidate_counts: Record<string, number>;
+  seed: number;
 }

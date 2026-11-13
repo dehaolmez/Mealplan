@@ -1,4 +1,4 @@
-# 🐦 Mealbird
+# 🍽️ Meall
 
 Ev içi akıllı yemek planlama, envanter (SKT) takibi ve bütçe optimizasyonu.
 Mealbird tarzı "buzdolabında ne var?" tarif önerisi + Bring! tarzı hızlı, reyonlara ayrılmış alışveriş listesi.
@@ -50,7 +50,7 @@ backend/app/
   schemas/    API giriş/çıkış şemaları (Pydantic)
   api/routes/ HTTP uç noktaları
   seed/       örnek veri
-backend/tests/  85 test (domain, API, harita/fiyat, canlı fiyat, fiş okuma, hesap/KVKK, migrasyon)
+backend/tests/  101 test (domain, API, plan, diyet, harita/fiyat, canlı fiyat, fiş/tarif üretimi, hesap/KVKK, migrasyon)
 
 frontend/src/
   api/        tipli API istemcisi ve tipler
@@ -148,6 +148,20 @@ sunucu tarafı yedek model (`fallbacks: "default"`) devreye girer.
 - **Yalnız yakındaki marketlerle optimizasyon** (`"nearby_only": true`).
 
 Ayrıntılı yol haritası, dinamik kullanım planı ve ihtiyaç listesi: [docs/ROADMAP.md](docs/ROADMAP.md).
+
+## v0.5: Meall — otomatik haftalık plan, 162 tarif, öğün durumu
+
+- **Yeni ad:** Meall (çalışma adı).
+- **Başlangıç akışı (11 adım):** marketler, hedefler, kişiler ve formülle kalori hedefi, öğünler (planla / yemiyorum /
+  kendim hallederim + ayrılan kalori), diyet (vejetaryen/vegan/pesketaryen/düşük karbonhidrat), alerji ve dışlamalar,
+  sevilmeyen malzemeler, mutfak aletleri, günler, haftalık bütçe, tekrar tercihi. Profil'den tekrar açılabilir.
+- **Otomatik haftalık plan:** kurallara uyan tarifler arasından buzdolabındakileri (önce bozulacakları) kullanan,
+  kalori hedefine uyan (porsiyon ölçekleme), bütçeyi gözeten, protein çeşitliliği olan plan. "Bir pişir iki gün ye" ve
+  "haftalık toplu pişirme" seçenekleri; kalan yemekler alışverişte iki kez sayılmaz.
+- **Öğün durumu:** pişirdim / yapmadım / dışarıda yedim; atlanan öğün alışveriş listesinden düşer.
+- **Katalog:** 54 → 170 malzeme, diyet/alerjen etiketleri; 18 → **162 tarif** (Gemini ile özgün yazıldı, malzemeler
+  katalogla kısıtlı, insan eliyle temizlendi). Uygulama içinden "✨ Buzdolabımdakilerle yeni tarif" (haneye özel).
+- **Tüm tarifler** gezgini (arama, öğün filtresi).
 
 ## v0.4: Canlı fiyat, fiş okuma, ücretsiz yayın
 

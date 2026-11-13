@@ -20,7 +20,24 @@ class GeminiError(Exception):
 
 
 def generate_json(system: str, content: list[dict] | str, schema: dict, *, name: str = "result",
-                  timeout: float = 90) -> dict:
+                  timeout: float = 90, rounds: int = 1) -> dict:
+    """`rounds` > 1 ise tüm modeller yoğunken artan beklemeyle yeniden dener (toplu betikler için)."""
+    last_exc: GeminiError | None = None
+    for attempt in range(rounds):
+        try:
+            return _generate_once(system, content, schema, name=name, timeout=timeout)
+        except GeminiError as exc:
+            if "geçersiz" in str(exc) or "çözümlenemedi" in str(exc):
+                raise
+            last_exc = exc
+            if attempt + 1 < rounds:
+                import time
+
+                time.sleep(10 * (attempt + 1))
+    raise last_exc  # type: ignore[misc]
+
+
+def _generate_once(system: str, content: list[dict] | str, schema: dict, *, name: str, timeout: float) -> dict:
     s = get_settings()
     if not s.gemini_api_key:
         raise GeminiError("Gemini API anahtarı yapılandırılmamış (MEALBIRD_GEMINI_API_KEY)")

@@ -30,3 +30,18 @@ def current_household(user: CurrentUser, db: DB) -> Household:
 
 
 CurrentHousehold = Annotated[Household, Depends(current_household)]
+
+
+def optional_household(request: Request, db: DB) -> Household | None:
+    """Oturum varsa hanesi, yoksa None (herkese açık uç noktalar için)."""
+    token = _token(request)
+    if not token:
+        return None
+    try:
+        user = auth_service.user_from_token(db, token)
+        return db.get(Household, auth_service.membership(user).household_id)
+    except auth_service.Unauthorized:
+        return None
+
+
+OptionalHousehold = Annotated[Household | None, Depends(optional_household)]

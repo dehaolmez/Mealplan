@@ -18,7 +18,7 @@ from app.domain.recommender import RecipeMatch
 
 log = logging.getLogger(__name__)
 
-SYSTEM_PROMPT = """Sen Mealbird adlı bir ev yemek planlama uygulamasının mutfak asistanısın.
+SYSTEM_PROMPT = """Sen Meall adlı bir ev yemek planlama uygulamasının mutfak asistanısın.
 Görevin: verilen ADAY tarifler arasından haneye en uygun olanları seçip sıralamak.
 
 Önceliklerin, sırasıyla:

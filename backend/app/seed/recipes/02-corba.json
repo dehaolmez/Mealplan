@@ -1,0 +1,1160 @@
+[
+ {
+  "name": "Ezogelin Çorbası",
+  "description": "Geleneksel lezzetiyle sofraların vazgeçilmezi olan bu nefis çorba, kırmızı mercimek ve bulgurun muazzam uyumunu sunar.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 30,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "çorba",
+   "ekonomik",
+   "vejetaryen"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kırmızı mercimek",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Bulgur",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Pirinç",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 25,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Biber salçası",
+    "quantity": 15,
+    "unit": "g",
+    "optional": true
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Ayçiçek yağı",
+    "quantity": 20,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kekik",
+    "quantity": 5,
+    "unit": "g",
+    "optional": true
+   },
+   {
+    "ingredient": "Nane (kuru)",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 8,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 1200,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Mercimek, bulgur ve pirinci bol suda yıkayıp süzün.",
+   "Tencerede tereyağı ve ayçiçek yağını ısıtıp yemeklik doğranmış soğanı ve sarımsağı kavurun.",
+   "Salçaları ekleyip kokusu çıkana kadar birkaç dakika karıştırın.",
+   "Süzülen bakliyatları tencereye ilave edin ve suyu ekleyin.",
+   "Kaynamaya başlayınca altını kısıp bakliyatlar yumuşayana kadar yaklaşık 20 dakika pişirin.",
+   "Nane, kekik ve tuzunu ekleyip karıştırın, gerekirse sıcak su ilavesi yapın.",
+   "Blenderdan geçirmeden pürüzsüz kıvama yakın bir şekilde sıcak servis yapın."
+  ],
+  "group": "Çorbalar"
+ },
+ {
+  "name": "Yayla Çorbası",
+  "description": "Yoğurt ve pirincin enfes buluşmasıyla yapılan, nane kokulu ferahlatıcı bir geleneksel çorba.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 25,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "çorba",
+   "hafif",
+   "vejetaryen"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Yoğurt",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yumurta",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Un",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Pirinç",
+    "quantity": 60,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Nane (kuru)",
+    "quantity": 8,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 7,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 1000,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Pirinci yıkayıp tencerede su ile yumuşayana kadar haşlayın.",
+   "Bir kapta yoğurt, yumurta sarısı ve unu çırpma teliyle iyice karıştırın.",
+   "Kaynayan pirinç suyundan birkaç kepçe alıp yoğurtlu karışıma ekleyerek terbiyeyi ılıtın.",
+   "Ilınan terbiyeyi yavaş yavaş ve sürekli karıştırarak çorba tenceresine dökün.",
+   "Çorba kaynayana kadar karıştırmaya devam edin, ardından kısık ateşte 10 dakika pişirin.",
+   "Ayrı bir tavada tereyağını eritin ve kuru naneyi hafifçe kızdırın.",
+   "Hazırladığınız sosu çorbaya ekleyin, tuzunu atıp ocaktan alın ve sıcak servis yapın."
+  ],
+  "group": "Çorbalar"
+ },
+ {
+  "name": "Domates Çorbası",
+  "description": "Mis kokulu domatesler ve tereyağı ile hazırlanan, üzeri peynirli sıcacık geleneksel ev çorbası.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 30,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "pratik",
+   "ekonomik",
+   "geleneksel",
+   "çorba"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Domates",
+    "quantity": 600,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Un",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 800,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Kaşar peyniri",
+    "quantity": 50,
+    "unit": "g",
+    "optional": true
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Tereyağını tencerede eritin ve unu kokusu çıkana kadar kavurun.",
+   "Domates salçasını ekleyip birkaç tur karıştırın.",
+   "Rendelenmiş domatesleri tencereye ilave edin ve 5 dakika soteleyin.",
+   "Suyu yavaşça ekleyerek topaklanmaması için hızlıca çırpın.",
+   "Kaynamaya başladıktan sonra altını kısın ve 15 dakika pişmeye bırakın.",
+   "Tuzunu ekleyin, blenderdan geçirip pürüzsüz kıvam alınca sıcak servis yapın.",
+   "İsteğe bağlı üzerine rendelenmiş kaşar peyniri serperek servis edin."
+  ],
+  "group": "Çorbalar"
+ },
+ {
+  "name": "Şehriye Çorbası",
+  "description": "Arpa şehriye ve domatesin muazzam uyumuyla içleri ısıtan hafif ve pratik bir çorba.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 20,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "pratik",
+   "ekonomik",
+   "hafif",
+   "çorba",
+   "çocuk-dostu"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Arpa şehriye",
+    "quantity": 80,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 15,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Ayçiçek yağı",
+    "quantity": 30,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 1000,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Maydanoz",
+    "quantity": 10,
+    "unit": "g",
+    "optional": true
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": true
+   }
+  ],
+  "steps": [
+   "Ayçiçek yağını tencerede ısıtın ve domates salçasını kokusu çıkana kadar kavurun.",
+   "Üzerine suyu ekleyin ve kaynamaya bırakın.",
+   "Kaynayan suya arpa şehriyeleri ilave edin.",
+   "Şehriyeler yumuşayana kadar yaklaşık 10-12 dakika orta ateşte pişirin.",
+   "Tuz ve karabiberi ekleyip karıştırın.",
+   "İnce kıyılmış maydanozları ekledikten sonra sıcak olarak servis yapın."
+  ],
+  "group": "Çorbalar"
+ },
+ {
+  "name": "Düğün Çorbası",
+  "description": "Terbiyeli ve bol etli yapısıyla sofraların vazgeçilmezi olan şifa deposu bir başlangıç.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 50,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "çorba",
+   "geleneksel",
+   "yüksek-protein"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kuzu kuşbaşı",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Süzme yoğurt",
+    "quantity": 200,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yumurta",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Un",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 1200,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kuzu kuşbaşını etler tamamen yumuşayana kadar haşlayın ve ince ince tiftikleyin.",
+   "Yoğurt, yumurta sarısı ve unu pürüzsüz olana kadar bir kapta çırpın.",
+   "Kaynayan et suyundan bir kepçe alarak yoğurtlu karışıma ekleyip ılıştırın.",
+   "Terbiyeyi yavaşça tencereye döküp sürekli karıştırarak pişirin.",
+   "Son olarak tiftiklenmiş etleri ekleyin, tereyağını kızdırıp üzerine gezdirerek servis edin."
+  ],
+  "group": "Çorbalar"
+ },
+ {
+  "name": "Kremalı Mantar Çorbası",
+  "description": "Taze mantarların enfes aromasıyla harmanlanmış, kremsi kıvamıyla iştah açan bir lezzet.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 30,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "çorba",
+   "vejetaryen",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Mantar",
+    "quantity": 400,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Krema",
+    "quantity": 200,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Un",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 40,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 800,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Mantarları yıkayıp dilimleyin, tereyağında suları salıp çekene kadar soteleyin.",
+   "Unu ekleyip hafifçe kavurun, ardından suyu ilave ederek çırpıcıyla karıştırın.",
+   "Çorba kaynamaya başlayınca kısık ateşe alın ve 10 dakika pişirin.",
+   "Kremayı ekleyin, tuz ve karabiber ile tatlandırın.",
+   "Bir taşım daha kaynatıp sıcak olarak servis yapın."
+  ],
+  "group": "Çorbalar"
+ },
+ {
+  "name": "Brokoli Çorbası",
+  "description": "Kış günlerinde içinizi ısıtacak, kremsi dokuya sahip şifalı bir brokoli çorbası tarifi.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 30,
+  "equipment": [
+   "stovetop",
+   "blender"
+  ],
+  "tags": [
+   "vejetaryen",
+   "pratik",
+   "hafif",
+   "çorba"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Brokoli",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 30,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Un",
+    "quantity": 40,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Süt",
+    "quantity": 200,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 750,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kuru soğan ve sarımsakları yemeklik doğrayıp zeytinyağında tencerede hafifçe soteleyin.",
+   "İçine küçük parçalara ayırdığınız brokolileri ve unu ekleyip birkaç dakika kavurun.",
+   "Suyu ilave edin ve sebzeler yumuşayana kadar orta ateşte kaynatın.",
+   "Çorbayı blenderdan geçirerek pürüzsüz bir kıvam elde edin.",
+   "Sütü, tuzu ve karabiberi ekleyip bir taşım daha kaynattıktan sonra sıcak servis yapın."
+  ],
+  "group": "Çorbalar"
+ },
+ {
+  "name": "Kuru Fasulye Çorbası",
+  "description": "Geleneksel lezzetlerin modern yorumu olan, protein dolu doyurucu bir kuru fasulye çorbası.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 40,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "yüksek-protein",
+   "çorba",
+   "ekonomik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kuru fasulye",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Havuç",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 40,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 1000,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kimyon",
+    "quantity": 3,
+    "unit": "g",
+    "optional": true
+   }
+  ],
+  "steps": [
+   "Önceden haşladığınız kuru fasulyeleri hazırlayın.",
+   "Tencerede zeytinyağında yemeklik doğranmış kuru soğan ve küp kesilmiş havucu yumuşayana kadar kavurun.",
+   "Salçayı ekleyip kokusu çıkana kadar kavurmaya devam edin.",
+   "Haşlanmış fasulyeleri ve suyu tencereye aktarıp kaynamaya bırakın.",
+   "Tuz ve kimyonu ekleyip kısık ateşte on dakika pişirdikten sonra sıcak olarak servis edin."
+  ],
+  "group": "Çorbalar"
+ },
+ {
+  "name": "Toyga Çorbası",
+  "description": "Nohut ve dövme buğdayın yoğurtla buluştuğu nefis bir Anadolu çorbası.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 35,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "geleneksel",
+   "çorba"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Dövme buğday",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Nohut",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yoğurt",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Un",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yumurta",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 800,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Nane (kuru)",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Önceden haşlanmış dövme buğday ve nohudu suyla birlikte bir tencerede kaynatın.",
+   "Ayrı bir kapta yoğurt, un ve yumurtayı pürüzsüz olana kadar çırpın.",
+   "Kaynayan çorba suyundan bir kepçe alarak yoğurtlu karışıma ekleyip ılıştırın.",
+   "Ilınan yoğurt karışımını sürekli karıştırarak yavaşça tencereye ilave edin.",
+   "Çorba kaynayana kadar karıştırın, ardından tuzunu atın ve ocaktan alın.",
+   "Sos tavasında tereyağını eritip kuru naneyi kızdırın ve çorbanın üzerine gezdirerek servis yapın."
+  ],
+  "group": "Çorbalar"
+ },
+ {
+  "name": "Analı Kızlı Çorbası",
+  "description": "İçi kıymalı bulgur köfteleri ve nohutla zenginleştirilmiş geleneksel doyurucu bir çorba.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 50,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "yüksek-protein",
+   "çorba"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Bulgur",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kıyma",
+    "quantity": 200,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Nohut",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 40,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Nane (kuru)",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 8,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 1500,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Bulguru sıcak su ile ıslatıp yoğurma kıvamına getirin ve yarım kıymayı ekleyerek köfte hamuru yoğurun.",
+   "Hamurdan hem büyük 'analı' köfteler (ortası oyulup kıymayla doldurulan) hem de küçük 'kızlı' misket köfteler yapın.",
+   "Geniş bir tencerede tereyağını eritin, yemeklik doğranmış soğanı ve salçayı kavurun.",
+   "Tencereye suyu ve haşlanmış nohutları ekleyip kaynamaya bırakın.",
+   "Kaynayan suya önce büyük analı köfteleri, ardından küçük kızlı köfteleri dikkatçe atın.",
+   "Orta ateşte köfteler yumuşayana kadar yaklaşık 25 dakika pişirin.",
+   "Üzerine kuru nane serpip sıcak servis yapın."
+  ],
+  "group": "Çorbalar"
+ },
+ {
+  "name": "Beyran Çorbası",
+  "description": "Kuzu etinin pirinç, sarımsak ve bol baharatla buluştuğu şifa deposu yöresel çorba.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 60,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "yüksek-protein",
+   "çorba"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kuzu kuşbaşı",
+    "quantity": 400,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Pirinç",
+    "quantity": 80,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 4,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Pul biber",
+    "quantity": 10,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 8,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 1200,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kuzu etlerini bol suda yumuşayana kadar haşlayın ve kemiklerinden ayırıp didikleyin.",
+   "Ayrı bir kapta pirinçleri yumuşayana kadar haşlayın.",
+   "Servis tabaklarına haşlanmış pirinçleri ve didiklenmiş etleri paylaştırın.",
+   "Üzerlerine ezilmiş sarımsak, tuz ve karabiber ilave edin.",
+   "Et suyunu kaynatıp tabaklardaki etlerin üzerine kepçeyle dökün.",
+   "Küçük bir tavada tereyağını kızdırıp pul biberi ekleyin ve çorbaların üzerine gezdirerek servis yapın."
+  ],
+  "group": "Çorbalar"
+ },
+ {
+  "name": "Tutmaç Çorbası",
+  "description": "Bakliyat ve erişte ile zenginleştirilmiş geleneksel ve besleyici bir şifa kaynağı.",
+  "meal_type": "lunch",
+  "servings": 6,
+  "prep_minutes": 50,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "çorba",
+   "geleneksel",
+   "vejetaryen"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Yeşil mercimek",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Nohut",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Makarna",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yoğurt",
+    "quantity": 400,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yumurta",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Un",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 1000,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Nane (kuru)",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Önceden haşladığınız nohut ve yeşil mercimeği bir tencerede su ile kaynatın.",
+   "İçerisine küçük parçalara kırılmış makarnaları ekleyip yumuşayana dek pişirin.",
+   "Ayrı bir kasede yoğurt, un ve yumurtayı pürüzsüz olana kadar çırpın.",
+   "Çorbanın sıcak suyundan yoğurtlu karışıma azar azar ekleyerek ılıştırın.",
+   "Ilışan yoğurdu yavaşça tencereye döküp sürekli karıştırarak pişirin.",
+   "Üzerine kuru naneyi yakıp ekleyerek servis yapın."
+  ],
+  "group": "Çorbalar"
+ },
+ {
+  "name": "Arabaşı Çorbası",
+  "description": "Acısı ve tavuk suyu lezzetiyle kış aylarının vazgeçilmezi olan yöresel bir lezzet.",
+  "meal_type": "lunch",
+  "servings": 6,
+  "prep_minutes": 60,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "çorba",
+   "yüksek-protein"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Tavuk göğsü",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Un",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Ayçiçek yağı",
+    "quantity": 40,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 1500,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Limon",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Pul biber",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 10,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Tavuk göğsünü haşlayıp ince ince ditin ve suyunu kenara ayırın.",
+   "Tencerede yağı ve unu kokusu çıkana kadar kavurun.",
+   "Salçayı ekleyip kavurmaya devam edin.",
+   "Ayırdığınız tavuk suyunu ve gerekirse normal suyu ekleyip çırpıcıyla topaklanmaması için karıştırın.",
+   "Didilmiş tavukları çorbaya ilave edin.",
+   "Tuz, pul biber ve limon suyunu ekleyip bir taşım daha kaynatıp ocaktan alın."
+  ],
+  "group": "Çorbalar"
+ },
+ {
+  "name": "Domates Soslu Şehriye Çorbası",
+  "description": "Yaz domateslerinin lezzetiyle zenginleşmiş, içi ısıtan pratik bir çorba.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 25,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "pratik",
+   "ekonomik",
+   "çorba",
+   "vejetaryen"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Tel şehriye",
+    "quantity": 80,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 30,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 1000,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": true
+   },
+   {
+    "ingredient": "Nane (kuru)",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 6,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kuru soğanı ince yemeklik doğrayın ve zeytinyağında tencerede hafifçe kavurun.",
+   "Üzerine domates salçasını ekleyip kokusu çıkana kadar birkaç dakika soteleyin.",
+   "Suyu tencereye ilave edin ve kaynamaya bırakın.",
+   "Su kaynayınca tel şehriyeleri ve tuzu ekleyin.",
+   "Şehriyeler yumuşayana kadar yaklaşık 10 dakika orta ateşte pişirin.",
+   "Ocaktan almadan hemen önce kuru nane serpip karıştırın ve sıcak servis yapın."
+  ],
+  "group": "Çorbalar"
+ },
+ {
+  "name": "Arpa Şehriye Çorbası",
+  "description": "Geleneksel lezzeti ve doyurucu yapısıyla sofraların vazgeçilmezi arpa şehriye çorbası.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 30,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "pratik",
+   "çorba",
+   "vejetaryen",
+   "çocuk-dostu"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Arpa şehriye",
+    "quantity": 90,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 25,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 1000,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Limon",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": true
+   },
+   {
+    "ingredient": "Maydanoz",
+    "quantity": 20,
+    "unit": "g",
+    "optional": true
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Tereyağını çorba tenceresinde eritip arpa şehriyeleri ekleyin.",
+   "Şehriyeler hafifçe renk alıp pembeleşene kadar kavurun.",
+   "Salçayı ekleyip şehriyelerle birlikte 1-2 dakika kavurmaya devam edin.",
+   "Suyu tencereye dökün ve karıştırarak kaynamasını bekleyin.",
+   "Tuz ve karabiberi ekleyip, kısık ateşte şehriyeler şişene kadar pişirin.",
+   "İsteğe bağlı olarak kıyılmış maydanoz ve limon suyu ilave ederek sıcak servis yapın."
+  ],
+  "group": "Çorbalar"
+ }
+]

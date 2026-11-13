@@ -1,0 +1,1071 @@
+[
+ {
+  "name": "Ev Yapımı Pratik Mantı",
+  "description": "İncecik açılan hamur içerisinde lezzetli kıymalı iç harcı ile klasik bir lezzet.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 60,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "ekonomik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Un",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yumurta",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Kıyma",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 10,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yoğurt",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Un, yumurta, tuz ve biraz su ile sert bir hamur yoğurup dinlenmeye bırakın.",
+   "Kıymayı rendelenmiş soğan, tuz ve karabiber ile karıştırıp iç harcını hazırlayın.",
+   "Hamuru açıp küçük kareler halinde kesin ve içine hazırladığınız harcı paylaştırın.",
+   "Hamurları kapatıp kaynayan tuzlu suda yumuşayana kadar haşlayın.",
+   "Süzdüğünüz mantıları sarımsaklı yoğurt ile buluşturun ve üzerine kızdırılmış tereyağı gezdirin."
+  ],
+  "group": "Pilavlar, makarnalar ve hamur işi ana yemekler"
+ },
+ {
+  "name": "Baharatlı İç Pilav",
+  "description": "Kuş üzümü, çam fıstığı ve baharatların mükemmel uyumuyla sofraların vazgeçilmezi.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 40,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "zeytinyağlı"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Pirinç",
+    "quantity": 400,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Çam fıstığı",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuş üzümü",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 40,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tarçın",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 600,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 10,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Pirinçleri ılık tuzlu suda yarım saat bekletip süzün.",
+   "Tereyağında çam fıstıklarını renk alana kadar kavurun.",
+   "Pirinçleri ekleyip şeffaflaşana kadar birkaç dakika daha kavurun.",
+   "Kuş üzümü, tarçın, karabiber ve tuzu ilave edip karıştırın.",
+   "Sıcak suyu ekleyip tencerenin kapağını kapatın ve suyunu çekene kadar kısık ateşte pişirin.",
+   "Demlenen pilavı servis tabağına alın."
+  ],
+  "group": "Pilavlar, makarnalar ve hamur işi ana yemekler"
+ },
+ {
+  "name": "Geleneksel Perde Pilavı",
+  "description": "Çıtır yufka kabuğu içinde saklı, tavuklu ve bademli büyüleyici bir lezzet şöleni.",
+  "meal_type": "lunch",
+  "servings": 6,
+  "prep_minutes": 90,
+  "equipment": [
+   "stovetop",
+   "oven"
+  ],
+  "tags": [
+   "geleneksel",
+   "fırın"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Yufka",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tavuk but",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Pirinç",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Badem",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 60,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 10,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Tavuk etlerini haşlayıp didikleyin, suyunu kenara ayırın.",
+   "Pirinçleri tereyağında kavurup tavuk suyu ve tuz ile yarı pişmiş şekilde hazırlayın.",
+   "Bademleri fırın kabının tabanına dizin ve üzerini yufka ile kaplayın.",
+   "Pirinçli harcı ve tavukları yufkaların içine yerleştirin, üzerini yufka parçalarıyla kapatın.",
+   "Önceden ısıtılmış fırında üzeri kızarana kadar pişirin.",
+   "Fırından çıkarıp servis tabağına ters çevirerek servis edin."
+  ],
+  "group": "Pilavlar, makarnalar ve hamur işi ana yemekler"
+ },
+ {
+  "name": "Klasik Fırın Makarna",
+  "description": "Üzeri nar gibi kızarmış, içi kaşar peyniri ve krema ile yumuşacık olan klasik fırın makarna.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 45,
+  "equipment": [
+   "stovetop",
+   "oven"
+  ],
+  "tags": [
+   "vejetaryen",
+   "fırın",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Makarna",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kaşar peyniri",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Krema",
+    "quantity": 200,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": true
+   }
+  ],
+  "steps": [
+   "Makarnaları bol tuzlu kaynayan suda diriliğini koruyacak şekilde haşlayıp süzün.",
+   "Süzülen makarnaları derin bir kaba alın, içerisine krema, eritilmiş tereyağı ve karabiberi ekleyerek harmanlayın.",
+   "Makarnanın yarısını yağlanmış fırın tepsisine yayın ve üzerine rendelenmiş kaşar peynirinin bir kısmını serpiştirin.",
+   "Kalan makarnayı da tepsiye yayın ve üzerini tamamen kaplayacak şekilde kalan kaşar peynirini dökün.",
+   "Önceden ısıtılmış 200 derece fırında üzeri kızarana kadar yaklaşık 20 dakika pişirin."
+  ],
+  "group": "Pilavlar, makarnalar ve hamur işi ana yemekler"
+ },
+ {
+  "name": "Ev Usulü Pratik Lazanya",
+  "description": "Kıymalı bolonez sos ve beşamel sosun kusursuz uyumuyla hazırlanan doyurucu bir ana yemek.",
+  "meal_type": "lunch",
+  "servings": 6,
+  "prep_minutes": 70,
+  "equipment": [
+   "stovetop",
+   "oven"
+  ],
+  "tags": [
+   "yüksek-protein",
+   "fırın"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Makarna",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kıyma",
+    "quantity": 400,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Süt",
+    "quantity": 500,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Un",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kaşar peyniri",
+    "quantity": 200,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Soğanları ince doğrayıp kıymayla kavurun, rendelenmiş domatesleri ekleyip kıymalı sosu pişirin.",
+   "Ayrı bir tencerede tereyağı ve unu kokusu çıkana kadar kavurun, sütü yavaşça ekleyip pürüzsüz bir beşamel sos elde edin.",
+   "Fırın kabının tabanına biraz beşamel sos sürün, üzerine bir kat lazanya makarnası dizin.",
+   "Sırasıyla kıymalı sos ve beşamel sosu kat kat makarnaların üzerine yayın.",
+   "En üste bolca kaşar peyniri rendesi ekleyip 180 derece fırında makarnalar yumuşayana kadar pişirin."
+  ],
+  "group": "Pilavlar, makarnalar ve hamur işi ana yemekler"
+ },
+ {
+  "name": "Geleneksel Su Böreği",
+  "description": "Kat kat ince açılmış yufka ve kaliteli peynirin tereyağıyla buluştuğu eşsiz lezzet.",
+  "meal_type": "lunch",
+  "servings": 6,
+  "prep_minutes": 90,
+  "equipment": [
+   "stovetop",
+   "oven"
+  ],
+  "tags": [
+   "geleneksel",
+   "fırın"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Yufka",
+    "quantity": 900,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Beyaz peynir",
+    "quantity": 400,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yumurta",
+    "quantity": 3,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Süt",
+    "quantity": 200,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Maydanoz",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Beyaz peyniri çatalla ezin ve ince kıyılmış maydanozla karıştırarak iç harcını hazırlayın.",
+   "Yumurta, süt ve eritilmiş tereyağından oluşan bir sos hazırlayın.",
+   "Fırın tepsisini yağlayın ve bir yufkayı tabana serin.",
+   "Diğer yufkaları soslu karışıma batırıp tepsiye buruşturarak yerleştirin, her iki katta bir peynirli harcı serpin.",
+   "Kalan sosu en üste gezdirin ve 190 derece fırında altın sarısı renk alana kadar yaklaşık 40 dakika pişirin."
+  ],
+  "group": "Pilavlar, makarnalar ve hamur işi ana yemekler"
+ },
+ {
+  "name": "Ev Yapımı Kıymalı Pide",
+  "description": "Çıtır çıtır hamuru ve bol baharatlı kıymalı harcıyla tam bir lezzet şöleni.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 50,
+  "equipment": [
+   "stovetop",
+   "oven"
+  ],
+  "tags": [
+   "geleneksel",
+   "fırın"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Un",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 300,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Kıyma",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sivri biber",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 10,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Un ve suyu yoğurarak yumuşak bir hamur elde edin ve mayalanmaya bırakın.",
+   "Kıymayı, ince doğranmış soğan, domates ve biberle karıştırıp baharatlarla harmanlayın.",
+   "Mayalanan hamurdan bezeler koparıp oval şekilde açın.",
+   "Hazırladığınız kıymalı harcı hamurun orta kısmına yayın.",
+   "Kenarlarını içe doğru kıvırarak pide formunu verin.",
+   "Önceden ısıtılmış 200 derece fırında üzerleri kızarana kadar pişirin."
+  ],
+  "group": "Pilavlar, makarnalar ve hamur işi ana yemekler"
+ },
+ {
+  "name": "Peynirli Kıymalı Tepsi Böreği",
+  "description": "Yufka katları arasında gizlenmiş nefis kıymalı ve peynirli iç harç.",
+  "meal_type": "lunch",
+  "servings": 6,
+  "prep_minutes": 60,
+  "equipment": [
+   "stovetop",
+   "oven"
+  ],
+  "tags": [
+   "geleneksel",
+   "fırın",
+   "toplu-pişirme"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Yufka",
+    "quantity": 450,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kıyma",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Beyaz peynir",
+    "quantity": 200,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yumurta",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Süt",
+    "quantity": 200,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kıymayı tavada suyunu çekene kadar kavurun ve soğumaya bırakın.",
+   "Süt, yumurta ve zeytinyağını bir kapta çırparak sos hazırlayın.",
+   "Fırın tepsisine ilk yufkayı yayın ve üzerine hazırladığınız sostan sürün.",
+   "Kıymalı harcı ve ufalanmış peyniri yufkaların arasına serpiştirerek katları oluşturun.",
+   "Kalan sosu böreğin üzerine gezdirin.",
+   "180 derece fırında altı üstü nar gibi kızarana kadar pişirin."
+  ],
+  "group": "Pilavlar, makarnalar ve hamur işi ana yemekler"
+ },
+ {
+  "name": "Klasik Spagetti Bolonez",
+  "description": "İtalyan usulü yoğun kıymalı sos ve tam kıvamında pişmiş makarnanın uyumu.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 40,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "pratik",
+   "yüksek-protein"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Makarna",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kıyma",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Konserve domates",
+    "quantity": 400,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 40,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 8,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Makarnayı bol tuzlu suda haşlayıp süzün.",
+   "Tavada zeytinyağı ile soğan ve sarımsağı şeffaflaşana kadar kavurun.",
+   "Kıymayı ekleyip rengi dönene kadar pişirmeye devam edin.",
+   "Domates sosunu, tuzu ve karabiberi ilave ederek kısık ateşte yoğunlaşana kadar pişirin.",
+   "Hazırladığınız kıymalı sosu haşlanan makarnalarla birleştirin.",
+   "Sıcak servis yapın."
+  ],
+  "group": "Pilavlar, makarnalar ve hamur işi ana yemekler"
+ },
+ {
+  "name": "Pesto Soslu Makarna",
+  "description": "Taze fesleğen ve kaliteli zeytinyağının birleşimiyle hazırlanan ferahlatıcı ve aromatik bir makarna lezzeti.",
+  "meal_type": "lunch",
+  "servings": 2,
+  "prep_minutes": 20,
+  "equipment": [
+   "stovetop",
+   "blender"
+  ],
+  "tags": [
+   "vejetaryen",
+   "pratik",
+   "hafif"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Makarna",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Fesleğen",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 60,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Badem",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Makarnayı bol tuzlu kaynar suda dişe gelir şekilde haşlayın.",
+   "Blender haznesine fesleğen, sarımsak, badem, zeytinyağı ve tuzu ekleyin.",
+   "Pürüzsüz bir sos elde edene kadar malzemeleri blenderdan geçirin.",
+   "Haşlanan makarnayı süzün ve bir miktar haşlama suyundan ayırın.",
+   "Makarnayı sosla ve ayırdığınız suyla karıştırarak servis edin."
+  ],
+  "group": "Pilavlar, makarnalar ve hamur işi ana yemekler"
+ },
+ {
+  "name": "Kremalı Mantarlı Makarna",
+  "description": "Sote mantarların krema ile dans ettiği, restoran kalitesinde çok doyurucu bir makarna tarifi.",
+  "meal_type": "lunch",
+  "servings": 3,
+  "prep_minutes": 30,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "ekonomik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Makarna",
+    "quantity": 350,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Mantar",
+    "quantity": 400,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Krema",
+    "quantity": 200,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 30,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Makarnaları bol tuzlu suda haşlamaya bırakın.",
+   "Doğranmış mantarları ve küp soğanları zeytinyağında suyunu çekene kadar soteleyin.",
+   "Kremayı ekleyip kısık ateşte hafifçe kıvam alana kadar pişirin.",
+   "Tuz ve karabiber ile sosu lezzetlendirin.",
+   "Haşlanan makarnaları süzüp sosun içerisine alın ve iyice harmanlayın."
+  ],
+  "group": "Pilavlar, makarnalar ve hamur işi ana yemekler"
+ },
+ {
+  "name": "Sebzeli Erişte",
+  "description": "Mevsim sebzeleri ve tereyağının muhteşem uyumuyla hazırlanan ev yapımı lezzetinde bir öğün.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 25,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Makarna",
+    "quantity": 400,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Dondurulmuş karışık sebze",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 40,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Pul biber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 6,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Makarnayı tuzlu kaynar suda haşlayın ve süzün.",
+   "Geniş bir tavada tereyağını eritin ve ezilmiş sarımsakları kokusu çıkana kadar çevirin.",
+   "Dondurulmuş sebzeleri ekleyip sebzeler yumuşayana kadar soteleyin.",
+   "Haşlanmış makarnayı sebzelerin üzerine dökün.",
+   "Pul biber ve tuz ilave edip 2-3 dakika karıştırarak soteledikten sonra servis edin."
+  ],
+  "group": "Pilavlar, makarnalar ve hamur işi ana yemekler"
+ },
+ {
+  "name": "Peynirli Makarna",
+  "description": "Erimeyen peynirin eşsiz dokusuyla zenginleşen, herkesin favorisi klasik bir makarna.",
+  "meal_type": "lunch",
+  "servings": 2,
+  "prep_minutes": 15,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "pratik",
+   "ekonomik",
+   "çocuk-dostu"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Makarna",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Ezine Peyniri",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Derin bir tencerede suyu kaynatıp tuz ekleyin.",
+   "Makarnaları ilave edip yumuşayana kadar haşlayın.",
+   "Haşlanan makarnayı süzün, aynı tencereye tereyağını alıp eritin.",
+   "Makarnaları tencereye geri alın ve tereyağı ile harmanlayın.",
+   "Üzerine ufalanmış Ezine peynirini ekleyerek sıcak servis yapın."
+  ],
+  "group": "Pilavlar, makarnalar ve hamur işi ana yemekler"
+ },
+ {
+  "name": "Sebzeli Kuskus Pilavı",
+  "description": "Renkli sebzelerle zenginleştirilmiş, tane tane dökülen hafif ve doyurucu bir alternatif.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 25,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "vegan",
+   "pratik",
+   "zeytinyağlı"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kus-kus",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Havuç",
+    "quantity": 80,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Bezelye",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 40,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 8,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Havucu küçük küpler halinde doğrayın.",
+   "Tencerede zeytinyağını ısıtıp havuçları hafifçe soteleyin.",
+   "Kuskusu ekleyip birkaç dakika kavurun.",
+   "Üzerini iki parmak geçecek kadar sıcak su ve tuz ekleyin.",
+   "Bezelyeleri ilave edip kısık ateşte suyunu çekene kadar pişirin.",
+   "Demlenmeye bırakıp servis yapın."
+  ],
+  "group": "Pilavlar, makarnalar ve hamur işi ana yemekler"
+ },
+ {
+  "name": "Kıymalı Musakka",
+  "description": "Kızarmış patlıcan ve nefis kıymalı harcın fırında mükemmel uyumu.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 60,
+  "equipment": [
+   "stovetop",
+   "oven"
+  ],
+  "tags": [
+   "geleneksel",
+   "yüksek-protein",
+   "fırın"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Patlıcan",
+    "quantity": 900,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kıyma",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Ayçiçek yağı",
+    "quantity": 100,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 10,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Patlıcanları alacalı soyup halka doğrayın, yağda hafifçe kızartın.",
+   "Ayrı bir tavada kıymayı ve yemeklik doğranmış soğanı kavurun.",
+   "Salçayı ve baharatları ekleyip biraz su ilave ederek pişirin.",
+   "Fırın kabına patlıcanları dizin ve üzerine kıymalı harcı yayın.",
+   "180 derece fırında yaklaşık 20 dakika pişirip servis edin."
+  ],
+  "group": "Pilavlar, makarnalar ve hamur işi ana yemekler"
+ },
+ {
+  "name": "Sebzeli Pratik Börek",
+  "description": "Fırından yeni çıkmış, çıtır çıtır hamuru ve besleyici sebze dolgusuyla çok sevilen bir öğün.",
+  "meal_type": "lunch",
+  "servings": 4,
+  "prep_minutes": 45,
+  "equipment": [
+   "oven",
+   "stovetop"
+  ],
+  "tags": [
+   "vejetaryen",
+   "pratik",
+   "fırın"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Yufka",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Havuç",
+    "quantity": 160,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kabak",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Beyaz peynir",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Yumurta",
+    "quantity": 60,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Havuç ve kabağı rendeleyip suyunu iyice sıkın.",
+   "Soğanı yemeklik doğrayıp tavada zeytinyağı ile hafifçe pembeleşene kadar soteleyin.",
+   "Rendelenmiş sebzeleri ekleyip birkaç dakika çevirin, ardından tuz ve karabiber ilave edip soğumaya bırakın.",
+   "Soğuyan sebze karışımına ufalanmış beyaz peyniri ekleyip harmanlayın.",
+   "Yufkaları üçgen parçalara bölün, sebzeli iç harcı paylaştırıp rulo şeklinde sarın.",
+   "Böreklerin üzerine çırpılmış yumurta sürün ve önceden ısıtılmış 180 derece fırında üzerleri kızarana kadar pişirin."
+  ],
+  "group": "Pilavlar, makarnalar ve hamur işi ana yemekler"
+ }
+]
