@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { api } from "../api/client";
-import type { Activity, Chain, ChainKind, Goal, Member, MemberIn, PriceImportResult, Sex, Store } from "../api/types";
+import type { Activity, Chain, ChainKind, ConsentKind, Goal, Me, Member, MemberIn, PriceImportResult, Sex, Store } from "../api/types";
+import { LegalLink, LegalModal } from "../components/LegalModal";
 import { useAsync } from "../hooks/useAsync";
 import { ACTIVITY_LABELS, GOAL_LABELS, KIND_LABELS } from "../lib";
 import { ErrorBox, Section } from "../components/ui";
@@ -10,8 +11,11 @@ const EMPTY: MemberIn = {
   name: "", birth_date: "1990-01-01", sex: "female", height_cm: 165, weight_kg: 65, activity_level: "light", goal: "maintain",
 };
 
-export function ProfilePage({ stores, onChanged }: { stores: Store[]; onChanged: () => void }) {
+export function ProfilePage({ me, setMe, stores, onChanged }: {
+  me: Me; setMe: (m: Me | null) => void; stores: Store[]; onChanged: () => void;
+}) {
   const toast = useToast();
+  const healthOk = me.consents.find((c) => c.kind === "health_data")?.granted ?? false;
   const targets = useAsync(() => api.targets(), []);
   const household = useAsync(() => api.household(), []);
   const [editing, setEditing] = useState<Member | "new" | null>(null);
@@ -46,7 +50,11 @@ export function ProfilePage({ stores, onChanged }: { stores: Store[]; onChanged:
         </div>
       )}
 
-      <Section title="Bireyler" action={<button className="btn btn-primary btn-sm" onClick={() => setEditing("new")}>+ Kişi</button>}>
+      <Section title="Bireyler" action={healthOk && <button className="btn btn-primary btn-sm" onClick={() => setEditing("new")}>+ Kişi</button>}>
+        {!healthOk && (
+          <p className="note">Kalori hesabı için boy/kilo gibi sağlık verileri gerekir. Aşağıdaki <b>Gizlilik</b> bölümünden
+            sağlık verisi iznini açarsan bireyleri ekleyebilirsin.</p>
+        )}
         {editing && (
           <MemberForm
             initial={editing === "new" ? EMPTY : editing}
@@ -96,6 +104,7 @@ export function ProfilePage({ stores, onChanged }: { stores: Store[]; onChanged:
 
       <PriceImport onDone={onChanged} />
       <ChainList />
+      <AccountSection me={me} setMe={(m) => { setMe(m); void targets.reload(); void household.reload(); onChanged(); }} />
     </div>
   );
 }
@@ -147,7 +156,7 @@ function StorePrefs({ stores, selected, preferred, onSave }: {
             <label>
               <input type="checkbox" checked={on}
                 onChange={() => onSave(on ? selected.filter((x) => x !== s.id) : [...selected, s.id], preferred)} />
-              {s.name}{s.is_demo && <small className="muted"> demo</small>}
+              {s.name}{s.is_demo && <small className="muted"> {s.chain_id ? "test" : "demo"}</small>}
             </label>
             <button className={`star ${preferred === s.id ? "on" : ""}`} title="Tercih edilen market"
               onClick={() => onSave(on ? selected : [...selected, s.id], preferred === s.id ? null : s.id)}>★</button>
@@ -216,14 +225,101 @@ function ChainList() {
               {chains.map((c) => (
                 <span key={c.id} className="chip chain-tag" style={{ ["--chain" as string]: c.color }}
                   title={`${c.parent}${c.in_market_fiyati ? " · TÜBİTAK Market Fiyatı platformunda" : ""}`}>
-                  {c.name}{c.has_prices ? " 💰" : ""}{c.in_market_fiyati ? " ✓" : ""}
+                  {c.name}{c.price_source === "real" ? " 💰" : c.price_source === "test" ? " 🧪" : ""}{c.in_market_fiyati ? " ✓" : ""}
                 </span>
               ))}
             </div>
           </div>
         ))}
       </div>
-      <p className="muted small">✓ TÜBİTAK "Market Fiyatı" platformunda fiyatları yayımlanan zincir · 💰 uygulamada fiyat verisi var</p>
+      <p className="muted small">✓ TÜBİTAK "Market Fiyatı" platformunda fiyatları yayımlanan zincir · 💰 gerçek fiyat verisi var · 🧪 yalnız test fiyatı var</p>
     </Section>
+  );
+}
+
+const CONSENT_LABELS: { kind: ConsentKind; title: string; desc: string }[] = [
+  { kind: "health_data", title: "Sağlık verisi", desc: "Boy, kilo, hedef → kalori hesabı. Kapatınca bireyler silinir." },
+  { kind: "location", title: "Ev konumu", desc: "~11 m hassasiyetle saklanır. Kapatınca konum silinir." },
+  { kind: "ai_transfer", title: "Yapay zekâ önerisi", desc: "Ürün adları yurt dışındaki sağlayıcıya gönderilir (kimlik gönderilmez)." },
+  { kind: "marketing", title: "Ticari ileti", desc: "Kampanya/yenilik e-postaları." },
+];
+
+function AccountSection({ me, setMe }: { me: Me; setMe: (m: Me | null) => void }) {
+  const toast = useToast();
+  const [legal, setLegal] = useState<string | null>(null);
+  const [joinCode, setJoinCode] = useState("");
+  const [pw, setPw] = useState({ current: "", next: "" });
+  const granted = (k: ConsentKind) => me.consents.find((c) => c.kind === k)?.granted ?? false;
+
+  const toggle = async (kind: ConsentKind, value: boolean) => {
+    if (!value && kind === "health_data" && !confirm("Sağlık verisi izni kapatılırsa tüm bireylerin bilgileri silinir. Emin misin?")) return;
+    try { setMe(await api.setConsent(kind, value)); toast(value ? "İzin verildi" : "İzin geri çekildi"); }
+    catch (e) { toast((e as Error).message, "err"); }
+  };
+
+  return (
+    <>
+      <Section title="Hane paylaşımı">
+        <div className="card add-form">
+          <p className="small"><b>{me.household_name}</b> · {me.role === "owner" ? "Sahibi sensin" : "Üyesin"}</p>
+          {me.invite_code && (
+            <div className="row">
+              <span>Davet kodu: <code className="invite">{me.invite_code}</code></span>
+              <button className="btn btn-ghost btn-sm" onClick={() => navigator.clipboard?.writeText(me.invite_code!).then(() => toast("Kopyalandı"))}>Kopyala</button>
+              <button className="btn btn-ghost btn-sm" onClick={async () => setMe(await api.rotateInvite())}>Yenile</button>
+            </div>
+          )}
+          <p className="muted small">Aile üyelerin kayıt olurken bu kodu girerse aynı envanteri ve listeyi paylaşırsınız.</p>
+          <form className="row" onSubmit={async (e) => {
+            e.preventDefault();
+            if (!confirm("Başka bir haneye katılırsan mevcut hanenden ayrılırsın. Devam?")) return;
+            try { setMe(await api.joinHousehold(joinCode)); setJoinCode(""); toast("Haneye katıldın"); }
+            catch (err) { toast((err as Error).message, "err"); }
+          }}>
+            <input placeholder="Başka bir hanenin davet kodu" value={joinCode} onChange={(e) => setJoinCode(e.target.value.toUpperCase())} />
+            <button className="btn btn-ghost" disabled={joinCode.length < 6}>Katıl</button>
+          </form>
+        </div>
+      </Section>
+
+      <Section title="Gizlilik ve izinler (KVKK)">
+        <div className="card consent-list">
+          {CONSENT_LABELS.map((c) => (
+            <label key={c.kind} className="consent-row">
+              <span><b>{c.title}</b><small className="muted">{c.desc}</small></span>
+              <input type="checkbox" role="switch" checked={granted(c.kind)} onChange={(e) => toggle(c.kind, e.target.checked)} />
+            </label>
+          ))}
+          <p className="muted small">
+            <LegalLink slug="aydinlatma" onOpen={setLegal} /> · <LegalLink slug="acik-riza" onOpen={setLegal} /> ·{" "}
+            <LegalLink slug="kullanim-kosullari" onOpen={setLegal} /> · <LegalLink slug="cerez" onOpen={setLegal}>Çerezler</LegalLink>
+          </p>
+        </div>
+      </Section>
+
+      <Section title="Hesap">
+        <div className="card add-form">
+          <p className="small">{me.email} {me.email_verified ? "✓" : "(doğrulanmadı)"} {me.google_linked && "· Google bağlı"}</p>
+          <form className="row" onSubmit={async (e) => {
+            e.preventDefault();
+            try { await api.changePassword(me.has_password ? pw.current : null, pw.next); setPw({ current: "", next: "" }); toast("Şifre güncellendi; diğer cihazlardan çıkış yapıldı"); setMe(await api.me()); }
+            catch (err) { toast((err as Error).message, "err"); }
+          }}>
+            {me.has_password && <input type="password" autoComplete="current-password" placeholder="Mevcut şifre" value={pw.current} onChange={(e) => setPw({ ...pw, current: e.target.value })} />}
+            <input type="password" autoComplete="new-password" minLength={8} placeholder={me.has_password ? "Yeni şifre" : "Şifre belirle"} value={pw.next} onChange={(e) => setPw({ ...pw, next: e.target.value })} />
+            <button className="btn btn-ghost" disabled={pw.next.length < 8}>Kaydet</button>
+          </form>
+          <div className="card-actions">
+            <a className="btn btn-ghost btn-sm" href={api.exportUrl} download="mealbird-verilerim.json">⬇️ Verilerimi indir</a>
+            <button className="btn btn-ghost btn-sm" onClick={async () => { await api.logout(); setMe(null); }}>Çıkış yap</button>
+            <button className="btn btn-danger btn-sm" onClick={async () => {
+              if (!confirm("Hesabın ve (başka üyesi yoksa) hanenin tüm verileri kalıcı olarak silinecek. Emin misin?")) return;
+              await api.deleteAccount(); setMe(null);
+            }}>Hesabı sil</button>
+          </div>
+        </div>
+      </Section>
+      {legal && <LegalModal slug={legal} onClose={() => setLegal(null)} />}
+    </>
   );
 }

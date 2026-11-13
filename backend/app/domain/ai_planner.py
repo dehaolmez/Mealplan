@@ -24,7 +24,7 @@ Görevin: verilen ADAY tarifler arasından haneye en uygun olanları seçip sır
 Önceliklerin, sırasıyla:
 1. Bozulmak üzere olan (days_left küçük) ürünleri tüketerek gıda israfını önlemek.
 2. Eksik malzemesi az olan, evdekilerle yapılabilen tarifleri öne almak.
-3. Hanenin öğün başı kalori/protein hedefine uygunluk ve çeşitlilik (benzer tarifleri arka arkaya önerme).
+3. Hanenin beslenme hedefine uyum (nutrition_fit, 0-1) ve çeşitlilik (benzer tarifleri arka arkaya önerme).
 
 Yalnızca aday listesindeki recipe_id değerlerini kullan. Her öneri için Türkçe, tek cümlelik,
 kullanıcıya hitap eden somut bir gerekçe yaz (ör. hangi ürünü kurtardığını söyle)."""
@@ -57,6 +57,8 @@ def _candidate_payload(matches: list[RecipeMatch]) -> list[dict]:
             "coverage": m.coverage,
             "kcal_per_serving": m.per_serving.kcal,
             "protein_per_serving_g": m.per_serving.protein_g,
+            # Hanenin kişisel hedefine uyum puanı (0-1). Boy/kilo/kalori hedefi gönderilmez (veri minimizasyonu).
+            "nutrition_fit": m.nutrition_fit,
             "uses_expiring": [{"item": e.ingredient_name, "days_left": e.days_left} for e in m.uses_expiring],
             "missing": [m_.ingredient.name for m_ in m.missing],
         }
@@ -68,7 +70,6 @@ def rerank_with_claude(
     matches: list[RecipeMatch],
     *,
     inventory_summary: list[dict],
-    meal_kcal_target: float | None,
     limit: int,
     model: str,
     effort: str,
@@ -83,7 +84,6 @@ def rerank_with_claude(
     user_content = json.dumps(
         {
             "inventory": inventory_summary,
-            "meal_kcal_target": meal_kcal_target,
             "candidates": _candidate_payload(matches),
             "return_at_most": limit,
         },

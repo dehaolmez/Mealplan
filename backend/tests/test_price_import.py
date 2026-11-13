@@ -50,9 +50,25 @@ def test_nearby_only_optimization_uses_nearby_real_prices(client, monkeypatch):
     assert r.status_code == 400 and "fiyat verisi yok" in r.json()["detail"]
 
     client.post("/api/prices/import", content=CSV.encode())
-    # hanenin seçili market listesini temizle ki tüm marketler (gerçekler dahil) aday olsun
-    client.patch("/api/household", json={"selected_store_ids": []})
     out = client.post("/api/shopping/optimize", json=body).json()
     eggplant = next(p for p in out["purchases"] if p["name"] == "Patlıcan")
     assert eggplant["store_name"] == "BİM" and eggplant["cost"] == 29.9
     assert {t["store_name"] for t in out["store_totals"]} == {"BİM", "Migros"}  # demo marketler elendi
+
+
+def test_test_prices_are_loaded_once_and_flagged(client, session_factory):
+    from app.services.price_import import load_test_prices_once
+
+    with session_factory() as s:
+        first = load_test_prices_once(s)
+        assert first is not None and first.created > 200 and not first.errors
+        assert load_test_prices_once(s) is None  # ikinci kez yüklenmez
+    chains = {c["slug"]: c for c in client.get("/api/chains").json()}
+    assert chains["bim"]["price_source"] == "test" and chains["metro"]["price_source"] is None
+    stores = {s["name"]: s for s in client.get("/api/stores").json()}
+    assert stores["BİM (test)"]["is_demo"] is True
+
+    # gerçek veri yüklenince zincir "real" olur, test listesi ayrı kalır
+    client.post("/api/prices/import", content=CSV.encode())
+    chains = {c["slug"]: c for c in client.get("/api/chains").json()}
+    assert chains["bim"]["price_source"] == "real" and chains["a101"]["price_source"] == "test"

@@ -18,15 +18,20 @@ def list_chains(db: Session) -> list[Chain]:
     return list(db.scalars(select(Chain).order_by(Chain.name)))
 
 
-def chains_with_prices(db: Session) -> set[int]:
-    """Gerçek (demo olmayan) fiyat listesi bulunan zincirler."""
-    return {cid for cid in db.scalars(select(Store.chain_id).where(Store.chain_id.is_not(None), Store.is_demo.is_(False)))}
+def chains_with_prices(db: Session) -> dict[int, str]:
+    """Fiyat listesi bulunan zincirler → "real" (gerçek veri) veya "test" (yalnız test verisi)."""
+    out: dict[int, str] = {}
+    for chain_id, is_test in db.execute(select(Store.chain_id, Store.is_demo).where(Store.chain_id.is_not(None))):
+        if not is_test or chain_id not in out:
+            out[chain_id] = "test" if is_test else "real"
+    return out
 
 
-def chain_out(chain: Chain, priced: set[int]) -> ChainOut:
+def chain_out(chain: Chain, priced: dict[int, str]) -> ChainOut:
     return ChainOut(
         id=chain.id, slug=chain.slug, name=chain.name, kind=chain.kind, parent=chain.parent, website=chain.website,
         color=chain.color, in_market_fiyati=chain.in_market_fiyati, has_prices=chain.id in priced,
+        price_source=priced.get(chain.id),
     )
 
 
@@ -81,9 +86,9 @@ def nearby(
     if not in_turkey(lat, lon):
         raise BadRequest("Konum Türkiye sınırları dışında görünüyor")
     radius_m = max(200, min(radius_m, s.places_max_radius_m))
-    # Konumu ~110 m'ye yuvarla: dış servise tam adres göndermeyiz, önbellek isabeti de artar
-    qlat, qlon = round_coord(lat), round_coord(lon)
-    key = cache_key(qlat, qlon, radius_m)
+    # Konumu ayarlı hassasiyete (varsayılan ~11 m) yuvarla: dış servise tam konum gönderilmez
+    qlat, qlon = round_coord(lat, s.location_precision), round_coord(lon, s.location_precision)
+    key = cache_key(qlat, qlon, radius_m, s.location_precision)
 
     places = None if refresh else _cached_area(db, key)
     from_cache = places is not None

@@ -1,5 +1,5 @@
 import type {
-  Chain, Nearby, PriceImportResult,
+  Chain, Me, Nearby, PriceImportResult, RegisterIn, ConsentKind,
   Alerts, Household, HouseholdTargets, Ingredient, InventoryItem, Location, Member, MemberIn, MealType,
   MissingLine, OptimizeResult, PlanEntry, Recipe, Recommendations, ShoppingItem, ShoppingList, Store, Strategy,
 } from "./types";
@@ -18,6 +18,10 @@ async function request<T>(method: string, path: string, body?: unknown, rawCsv?:
     headers: rawCsv !== undefined ? { "Content-Type": "text/csv" } : body !== undefined ? { "Content-Type": "application/json" } : undefined,
     body: rawCsv !== undefined ? rawCsv : body !== undefined ? JSON.stringify(body) : undefined,
   });
+  if (res.status === 401 && !path.startsWith("/auth/")) {
+    // Oturum düştü: uygulama giriş ekranına dönsün
+    window.dispatchEvent(new Event("mealbird:unauthorized"));
+  }
   if (!res.ok) {
     let message = `${res.status} ${res.statusText}`;
     try {
@@ -51,6 +55,38 @@ export interface PlanRange {
 }
 
 export const api = {
+  authConfig: () => request<{ google_client_id: string | null; legal_version: string }>("GET", "/auth/config"),
+  me: () => request<Me>("GET", "/auth/me"),
+  register: (data: RegisterIn) => request<Me>("POST", "/auth/register", data),
+  login: (email: string, password: string) => request<Me>("POST", "/auth/login", { email, password }),
+  google: (data: Record<string, unknown>) => request<Me>("POST", "/auth/google", data),
+  logout: async () => {
+    await request<void>("POST", "/auth/logout");
+    navigator.serviceWorker?.controller?.postMessage("clear-user-data");
+  },
+  forgot: (email: string) => request<void>("POST", "/auth/forgot", { email }),
+  reset: (token: string, new_password: string) => request<Me>("POST", "/auth/reset", { token, new_password }),
+  verifyEmail: (token: string) => request<void>("POST", `/auth/verify${qs({ token })}`),
+  resendVerification: () => request<void>("POST", "/auth/me/resend-verification"),
+  acceptTerms: () => request<Me>("POST", "/auth/me/accept-terms"),
+  setConsent: (kind: ConsentKind, granted: boolean) => request<Me>("POST", "/auth/me/consents", { kind, granted }),
+  changePassword: (current_password: string | null, new_password: string) =>
+    request<void>("POST", "/auth/me/password", { current_password, new_password }),
+  joinHousehold: (invite_code: string) => request<Me>("POST", "/auth/me/household/join", { invite_code }),
+  rotateInvite: () => request<Me>("POST", "/auth/me/household/invite"),
+  exportUrl: `${BASE}/auth/me/export`,
+  deleteAccount: async () => {
+    await request<void>("DELETE", "/auth/me");
+    navigator.serviceWorker?.controller?.postMessage("clear-user-data");
+  },
+  legal: async (slug: string) => {
+    const res = await fetch(`${BASE}/legal/${slug}`);
+    if (!res.ok) throw new ApiError(res.status, "Belge yüklenemedi");
+    return res.text();
+  },
+  geocode: (q: string) => request<{ label: string; lat: number; lon: number }[]>("GET", `/geocode${qs({ q })}`),
+  pilot: () => request<{ name: string; lat: number; lon: number }>("GET", "/places/pilot"),
+
   household: () => request<Household>("GET", "/household"),
   updateHousehold: (data: Partial<Omit<Household, "id" | "home_lat" | "home_lon">> & { home_lat?: number | null; home_lon?: number | null }) => request<Household>("PATCH", "/household", data),
   targets: () => request<HouseholdTargets>("GET", "/household/targets"),

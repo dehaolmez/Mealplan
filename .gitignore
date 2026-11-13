@@ -10,3 +10,6 @@ __pycache__/
 node_modules/
 dist/
 *.tsbuildinfo
+
+# Yerel gizli anahtar
+.secret_key

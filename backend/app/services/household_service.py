@@ -1,6 +1,7 @@
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
+from app.core.config import get_settings
 from app.domain.nutrition import NutritionTargets, age_on, daily_targets
 from app.models import Household, Member, Store
 from app.schemas.household import (
@@ -13,18 +14,6 @@ from app.schemas.household import (
 )
 from app.services import clock
 from app.services.errors import BadRequest, NotFound
-
-DEFAULT_HOUSEHOLD_ID = 1
-
-
-def get_household(db: Session, household_id: int = DEFAULT_HOUSEHOLD_ID) -> Household:
-    """MVP tek haneli çalışır. Kimlik doğrulama eklendiğinde hane, kullanıcıdan çözülecek."""
-    household = db.get(Household, household_id)
-    if household is None:
-        household = Household(id=household_id, name="Evim")
-        db.add(household)
-        db.commit()
-    return household
 
 
 def store_ids(household: Household) -> list[int]:
@@ -43,7 +32,9 @@ def household_out(household: Household) -> HouseholdOut:
     )
 
 
-def update_settings(db: Session, household: Household, data: HouseholdSettingsIn) -> Household:
+def update_settings(
+    db: Session, household: Household, data: HouseholdSettingsIn, location_consent: bool = True
+) -> Household:
     if data.name is not None:
         household.name = data.name
     known = set(db.scalars(select(Store.id)))
@@ -60,9 +51,12 @@ def update_settings(db: Session, household: Household, data: HouseholdSettingsIn
     if "home_lat" in fields or "home_lon" in fields:
         if (data.home_lat is None) != (data.home_lon is None):
             raise BadRequest("Konum için enlem ve boylam birlikte verilmeli")
-        # Gizlilik: ev konumunu ~110 m hassasiyetle sakla
-        household.home_lat = round(data.home_lat, 3) if data.home_lat is not None else None
-        household.home_lon = round(data.home_lon, 3) if data.home_lon is not None else None
+        if data.home_lat is not None and not location_consent:
+            raise BadRequest("Ev konumunu kaydetmek için Profil > Gizlilik bölümünden konum iznini (açık rıza) verin")
+        # Gizlilik: ev konumunu ayarlı hassasiyetle (varsayılan ~11 m) sakla
+        precision = get_settings().location_precision
+        household.home_lat = round(data.home_lat, precision) if data.home_lat is not None else None
+        household.home_lon = round(data.home_lon, precision) if data.home_lon is not None else None
     if data.search_radius_m is not None:
         household.search_radius_m = data.search_radius_m
     db.commit()

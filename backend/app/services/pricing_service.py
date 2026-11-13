@@ -37,7 +37,11 @@ def optimize_missing(
 ) -> OptimizeOut:
     store_rows = list_stores(db)
     all_stores = {s.id: s.name for s in store_rows}
-    chosen_ids = store_ids or household_service.store_ids(household) or list(all_stores)
+    if nearby_chains is not None and not store_ids:
+        # Konum modunda hanenin market seçimi yerine yakındaki tüm zincirler aday olur
+        chosen_ids = list(all_stores)
+    else:
+        chosen_ids = store_ids or household_service.store_ids(household) or list(all_stores)
     unknown = set(chosen_ids) - set(all_stores)
     if unknown:
         raise BadRequest(f"Bilinmeyen market: {sorted(unknown)}")

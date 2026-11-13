@@ -1,6 +1,8 @@
 from fastapi import APIRouter, Query
 
-from app.api.deps import DB, CurrentHousehold
+from app.api.deps import DB, CurrentHousehold, CurrentUser
+from app.models.enums import ConsentKind
+from app.services import auth_service
 from app.models.enums import MealType
 from app.schemas.recipe import MissingOut, MissingRequest, RecipeOut, RecommendationsOut
 from app.services import recipe_service as svc
@@ -18,13 +20,16 @@ def list_recipes(db: DB, meal_type: MealType | None = None):
 def recommendations(
     db: DB,
     household: CurrentHousehold,
+    user: CurrentUser,
     meal_type: MealType | None = None,
     servings: int | None = Query(default=None, ge=1, le=50),
     limit: int = Query(default=8, ge=1, le=30),
     ai: bool = False,
 ):
     """'Buzdolabında ne var?' — evdeki (özellikle bozulmaya yakın) ürünleri kullanan tarifler."""
-    return svc.recommendations(db, household, meal_type=meal_type, servings=servings, limit=limit, use_ai=ai)
+    consent = auth_service.has_consent(db, user, ConsentKind.ai_transfer) if ai else False
+    return svc.recommendations(db, household, meal_type=meal_type, servings=servings, limit=limit, use_ai=ai,
+                               ai_consent=consent)
 
 
 @router.post("/missing", response_model=MissingOut)

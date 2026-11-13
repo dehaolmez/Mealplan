@@ -28,7 +28,8 @@ def test_haversine_and_bbox():
     # Kadıköy - Taksim yaklaşık 5 km
     assert 4_000 < haversine_m(40.9903, 29.0290, 41.0369, 28.9850) < 7_000
     assert in_turkey(39.93, 32.85) and not in_turkey(48.85, 2.35)
-    assert cache_key(40.99031, 29.02904, 1200) == "40.99:29.029:1500"
+    assert cache_key(40.99031, 29.02904, 1200) == "40.9903:29.029:1500"
+    assert cache_key(40.99031, 29.02904, 1200, decimals=3) == "40.99:29.029:1500"
 
 
 def test_normalize_turkish():
@@ -75,8 +76,8 @@ def test_nearby_endpoint_matches_chains_sorts_and_caches(client, fake_overpass):
     assert dists == sorted(dists)
     assert data["chains"][0]["nearest_m"] == dists[0]
     assert data["from_cache"] is False
-    # gönderilen konum ~110 m'ye yuvarlanmış olmalı
-    assert fake_overpass[0][:2] == (40.99, 29.029)
+    # gönderilen konum ~11 m'ye (4 ondalık) yuvarlanmış olmalı
+    assert fake_overpass[0][:2] == (40.9903, 29.029)
 
     again = client.get("/api/places/nearby", params={"lat": LAT, "lon": LON, "radius_m": 1000}).json()
     assert again["from_cache"] is True and len(fake_overpass) == 1
@@ -90,7 +91,7 @@ def test_nearby_requires_location_and_turkey(client, fake_overpass):
     assert client.get("/api/places/nearby", params={"lat": 48.85, "lon": 2.35}).status_code == 400
     client.patch("/api/household", json={"home_lat": 40.990345, "home_lon": 29.029012})
     hh = client.get("/api/household").json()
-    assert (hh["home_lat"], hh["home_lon"]) == (40.99, 29.029)
+    assert (hh["home_lat"], hh["home_lon"]) == (40.9903, 29.029)
     assert client.get("/api/places/nearby").status_code == 200
 
 

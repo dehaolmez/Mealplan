@@ -301,3 +301,43 @@ a.btn { text-decoration: none; color: inherit; }
 .chain-tag { border-left: 4px solid var(--chain); }
 .import-errors { margin: 4px 0 0; padding-left: 18px; color: var(--danger); }
 code { background: var(--surface-2); padding: 1px 5px; border-radius: 5px; font-size: 0.85em; }
+
+/* Giriş / kayıt */
+.splash { min-height: 100vh; display: grid; place-items: center; font-size: 3rem; }
+.auth { min-height: 100vh; display: grid; place-items: start center; padding: 32px 16px; }
+.auth-card { width: 100%; max-width: 440px; display: grid; gap: 12px; }
+.auth-brand { font-size: 1.6rem; font-weight: 800; text-align: center; }
+.auth-tag { text-align: center; margin: -6px 0 4px; }
+.auth-form { display: grid; gap: 10px; }
+.auth-form input:not([type=checkbox]) { width: 100%; }
+.consents { border: 1px solid var(--border); border-radius: 12px; padding: 8px 12px 10px; display: grid; gap: 6px; margin: 0; }
+.consents legend { font-size: 0.8rem; color: var(--muted); padding: 0 4px; }
+.consents .check, .auth-form > .check { align-items: flex-start; padding-bottom: 0; font-size: 0.88rem; }
+.check input { margin-top: 3px; flex: none; }
+.form-error { margin: 0; color: var(--danger); font-size: 0.9rem; }
+.google-wrap { display: grid; justify-items: center; gap: 8px; }
+.auth-links { display: flex; justify-content: space-between; gap: 8px; font-size: 0.88rem; }
+.link { background: none; border: 0; padding: 0; color: var(--primary); cursor: pointer; text-decoration: underline; font: inherit; }
+.btn-danger { background: var(--danger-soft); color: var(--danger); }
+.verify-note { margin: 0 16px 12px; }
+.invite { font-size: 1rem; letter-spacing: 0.08em; }
+.consent-list { display: grid; gap: 4px; }
+.consent-row { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 8px 0; border-bottom: 1px solid var(--border); cursor: pointer; }
+.consent-row > span { display: grid; }
+.consent-row input { width: 40px; height: 22px; accent-color: var(--primary); }
+.geo-results { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; font-size: 0.88rem; }
+
+/* Modal & yasal metin */
+.modal-backdrop { position: fixed; inset: 0; z-index: 1000; background: rgb(0 0 0 / 0.45); display: grid; place-items: center; padding: 16px; }
+.modal { background: var(--surface); border-radius: var(--radius); width: min(720px, calc(100vw - 32px)); min-width: 0; max-height: 88vh; display: flex; flex-direction: column; }
+.modal-head { display: flex; justify-content: space-between; align-items: center; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+.modal-body { overflow: auto; padding: 4px 16px 16px; }
+.markdown h2 { font-size: 1.2rem; margin: 14px 0 6px; }
+.markdown h3 { font-size: 1rem; margin: 14px 0 6px; }
+.markdown p, .markdown li { font-size: 0.92rem; }
+.markdown blockquote { margin: 8px 0; padding: 6px 12px; border-left: 3px solid var(--border); color: var(--muted); }
+.md-table { overflow-x: auto; max-width: 100%; }
+.markdown { min-width: 0; overflow-wrap: break-word; }
+.markdown table { border-collapse: collapse; width: 100%; font-size: 0.85rem; margin: 6px 0; }
+.markdown th, .markdown td { border: 1px solid var(--border); padding: 6px 8px; text-align: left; vertical-align: top; }
+.markdown th { background: var(--surface-2); }

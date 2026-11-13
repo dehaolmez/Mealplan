@@ -19,7 +19,8 @@ npm install && npm run dev
 cd backend && .venv/bin/pytest
 ```
 
-İlk açılışta örnek katalog (54 malzeme), 18 tarif, 3 demo market/fiyat seti ve demo hane (2 kişi + envanter) yüklenir.
+İlk açılışta katalog (54 malzeme), 18 tarif, zincirler, demo ve pilot bölge test fiyatları yüklenir. Kayıt olurken
+"Örnek envanterle başla" seçilirse hesaba örnek envanter eklenir. Veritabanı açılışta otomatik güncellenir.
 
 ## Teknoloji seçimleri
 
@@ -49,7 +50,7 @@ backend/app/
   schemas/    API giriş/çıkış şemaları (Pydantic)
   api/routes/ HTTP uç noktaları
   seed/       örnek veri
-backend/tests/  46 test (domain + uçtan uca API akışı + harita/fiyat içe aktarma)
+backend/tests/  68 test (domain, API akışı, harita/fiyat, hesap/KVKK, migrasyon)
 
 frontend/src/
   api/        tipli API istemcisi ve tipler
@@ -148,13 +149,22 @@ sunucu tarafı yedek model (`fallbacks: "default"`) devreye girer.
 
 Ayrıntılı yol haritası, dinamik kullanım planı ve ihtiyaç listesi: [docs/ROADMAP.md](docs/ROADMAP.md).
 
-> ⚠️ v0.1'den güncellerken şema değişti: `backend/mealbird.db` dosyasını silip yeniden başlatın (Alembic sonraki adımda).
+## v0.3: Hesaplar, KVKK, PWA, otomatik veritabanı
+
+- **Giriş:** e-posta + şifre ve Google ile giriş, davet koduyla aynı haneyi paylaşma, şifre sıfırlama, e-posta doğrulama.
+- **KVKK:** aydınlatma metni, açık rıza metni (sağlık verisi / konum / yapay zekâ / ticari ileti ayrı ayrı),
+  kullanım koşulları, çerez politikası (taslak, `backend/app/legal/`). Rıza kayıtları, verilerimi indir,
+  hesabı sil, rıza geri çekilince ilgili verinin silinmesi.
+- **PWA:** telefona kurulabilir, çevrimdışı açılır.
+- **Pilot bölge Ankara/Etimesgut:** harita merkezi, adres araması, "test" etiketli fiyatlar.
+- **Konum hassasiyeti** ~11 m (`MEALBIRD_LOCATION_PRECISION`).
+- **Veritabanı otomatik:** Alembic migrasyonları açılışta uygulanır; eski şemalı SQLite dosyası yedeklenip yenilenir.
+
+Ayarların tamamı: `backend/.env.example`. Hukuki metinler hakkında: `docs/legal/README.md`.
 
 ## Bilinen sınırlar / sonraki adımlar
 
 - Hazır gelen fiyatlar **demo** veridir ve hayali marketlere aittir. Gerçek zincir fiyatları CSV ile yüklenir;
   otomatik kaynak (ör. TÜBİTAK Market Fiyatı) için izin/erişim gerekir — bkz. docs/ROADMAP.md.
-- Tek hane, kimlik doğrulama yok (`api/deps.py::current_household` tek değiştirilecek nokta).
-- Şema `create_all` ile oluşturuluyor; üretime geçmeden Alembic migrasyonları eklenmeli.
-- Bildirimler tarayıcı bildirimi; mobil push için servis çalışanı (PWA) veya mobil istemci gerekir.
+- Uygulama kapalıyken bildirim (Web Push) henüz yok.
 - Kiler (oda sıcaklığı) saklama alanı yok — kapsam gereği yalnız buzdolabı/buzluk; kuru gıdalar şimdilik buzdolabı altında.

@@ -13,6 +13,7 @@ class ChainOut(BaseModel):
     color: str
     in_market_fiyati: bool
     has_prices: bool
+    price_source: str | None = None  # "real" | "test" | None
 
 
 class PlaceOut(BaseModel):

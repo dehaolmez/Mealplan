@@ -3,7 +3,8 @@ from fastapi.responses import PlainTextResponse
 
 from app.api.deps import DB, CurrentHousehold
 from app.schemas.places import ChainOut, NearbyOut, PriceImportOut
-from app.services import places_service, price_import
+from app.core.config import get_settings
+from app.services import geocoding, places_service, price_import
 from app.services.errors import BadRequest
 
 router = APIRouter(tags=["Marketler, Harita & Fiyat Verisi"])
@@ -62,3 +63,16 @@ def price_template():
 def price_stats(db: DB):
     """Market başına fiyat sayısı ve son güncelleme tarihi (verinin tazeliğini izlemek için)."""
     return price_import.price_stats(db)
+
+
+@router.get("/geocode")
+def geocode(q: str = Query(min_length=3, max_length=200)):
+    """Adres/semt arama (OSM Nominatim). Ör. 'Etimesgut Elvankent'"""
+    return geocoding.search(q)
+
+
+@router.get("/places/pilot")
+def pilot():
+    """Pilot bölge (haritanın varsayılan merkezi)."""
+    s = get_settings()
+    return {"name": s.pilot_name, "lat": s.pilot_lat, "lon": s.pilot_lon}

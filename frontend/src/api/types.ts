@@ -225,6 +225,7 @@ export interface Chain {
   color: string;
   in_market_fiyati: boolean;
   has_prices: boolean;
+  price_source: "real" | "test" | null;
 }
 
 export interface Place {
@@ -255,4 +256,36 @@ export interface PriceImportResult {
   updated: number;
   stores_created: string[];
   errors: { line: number; error: string }[];
+}
+
+export type ConsentKind = "privacy_notice" | "terms" | "health_data" | "location" | "ai_transfer" | "marketing";
+
+export interface Me {
+  id: number;
+  email: string;
+  display_name: string;
+  email_verified: boolean;
+  has_password: boolean;
+  google_linked: boolean;
+  household_id: number;
+  household_name: string;
+  role: "owner" | "member";
+  invite_code: string | null;
+  consents: { kind: ConsentKind; granted: boolean; text_version: string | null; updated_at: string | null }[];
+  legal_version: string;
+  needs_reconsent: boolean;
+}
+
+export interface RegisterIn {
+  email: string;
+  password: string;
+  display_name: string;
+  accept_terms: boolean;
+  acknowledge_privacy_notice: boolean;
+  health_data_consent: boolean;
+  location_consent: boolean;
+  ai_transfer_consent: boolean;
+  marketing_consent: boolean;
+  with_sample_data: boolean;
+  invite_code?: string;
 }

@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import L from "leaflet";
 import "leaflet/dist/leaflet.css";
 import { api } from "../api/client";
-import type { Household, Nearby, Place } from "../api/types";
+import type { Household, Me, Nearby, Place } from "../api/types";
 import { KIND_LABELS } from "../lib";
 import { ErrorBox, Empty, Section } from "../components/ui";
 import { useToast } from "../components/Toast";
@@ -23,8 +23,12 @@ function pin(color: string, label: string) {
 }
 
 /** Konum tabanlı yakın marketler: OpenStreetMap verisi + Leaflet harita. */
-export function NearbyPage() {
+export function NearbyPage({ me }: { me: Me }) {
   const toast = useToast();
+  const locationConsent = me.consents.find((c) => c.kind === "location")?.granted ?? false;
+  const [query, setQuery] = useState("");
+  const [results, setResults] = useState<{ label: string; lat: number; lon: number }[]>([]);
+  const [pilotName, setPilotName] = useState<string | null>(null);
   const [household, setHousehold] = useState<Household | null>(null);
   const [pos, setPos] = useState<{ lat: number; lon: number } | null>(null);
   const [radius, setRadius] = useState(2000);
@@ -44,6 +48,7 @@ export function NearbyPage() {
       setHousehold(h);
       setRadius(h.search_radius_m);
       if (h.home_lat != null && h.home_lon != null) setPos({ lat: h.home_lat, lon: h.home_lon });
+      else api.pilot().then((p) => { setPilotName(p.name); setPos({ lat: p.lat, lon: p.lon }); });
     }).catch((e) => setError((e as Error).message));
   }, []);
 
@@ -101,8 +106,19 @@ export function NearbyPage() {
     );
   };
 
+  const search = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const r = await api.geocode(query);
+      setResults(r);
+      if (r.length === 0) toast("Adres bulunamadı", "err");
+      else if (r.length === 1) { setPos({ lat: r[0].lat, lon: r[0].lon }); setResults([]); }
+    } catch (err) { toast((err as Error).message, "err"); }
+  };
+
   const saveHome = async () => {
     if (!pos) return;
+    if (!locationConsent) { toast("Ev konumunu kaydetmek için Profil › Gizlilik'te konum iznini aç", "err"); return; }
     try {
       const h = await api.updateHousehold({ home_lat: pos.lat, home_lon: pos.lon, search_radius_m: radius });
       setHousehold(h);
@@ -123,7 +139,7 @@ export function NearbyPage() {
     <div className="page">
       <div className="page-intro">
         <h1>Yakındaki marketler</h1>
-        <p className="muted">Konumunu paylaş ya da haritaya dokun. Veriler OpenStreetMap'ten gelir.</p>
+        <p className="muted">Konumunu paylaş, adres ara ya da haritaya dokun. Veriler OpenStreetMap'ten gelir.</p>
       </div>
 
       <div className="toolbar">
@@ -138,6 +154,19 @@ export function NearbyPage() {
           <span>Bakkalları da göster</span>
         </label>
       </div>
+
+      <form className="quick-add" onSubmit={search}>
+        <input value={query} onChange={(e) => setQuery(e.target.value)} placeholder="Adres veya semt ara (ör. Elvankent, Etimesgut)" aria-label="Adres ara" />
+        <button className="btn btn-ghost" disabled={query.trim().length < 3}>Ara</button>
+      </form>
+      {results.length > 1 && (
+        <ul className="geo-results">
+          {results.map((r, i) => (
+            <li key={i}><button className="link" onClick={() => { setPos({ lat: r.lat, lon: r.lon }); setResults([]); }}>{r.label}</button></li>
+          ))}
+        </ul>
+      )}
+      {pilotName && !household?.home_lat && <p className="muted small">Pilot bölge gösteriliyor: {pilotName}</p>}
 
       <div className="map-wrap">
         <div ref={mapEl} className="map" aria-label="Harita" />
@@ -160,7 +189,7 @@ export function NearbyPage() {
                   onClick={() => { const p = data.places.find((x) => x.id === c.nearest_place_id); if (p) focus(p); }}>
                   <b>{c.chain.name}</b>
                   <span>{c.count} şube · en yakın {fmtDistance(c.nearest_m)}</span>
-                  <small>{c.chain.has_prices ? "💰 fiyat verisi var" : "fiyat verisi yok"}</small>
+                  <small>{c.chain.price_source === "real" ? "💰 gerçek fiyat verisi" : c.chain.price_source === "test" ? "🧪 yalnız test fiyatı" : "fiyat verisi yok"}</small>
                 </button>
               ))}
             </div>

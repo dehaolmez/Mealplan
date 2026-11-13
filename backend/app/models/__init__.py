@@ -8,8 +8,12 @@ from app.models.place import Place, PlaceQuery
 from app.models.planning import MealPlanEntry, ShoppingItem
 from app.models.pricing import Store, StorePrice
 from app.models.recipe import Recipe, RecipeIngredient
+from app.models.user import ConsentRecord, HouseholdMembership, User
 
 __all__ = [
+    "ConsentRecord",
+    "HouseholdMembership",
+    "User",
     "Chain",
     "Place",
     "PlaceQuery",

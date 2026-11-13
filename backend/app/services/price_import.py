@@ -16,6 +16,7 @@ Sütunlar (başlık satırı zorunlu, ayraç `,` veya `;`):
 import csv
 import io
 from datetime import date
+from pathlib import Path
 
 from sqlalchemy import func, select
 from sqlalchemy.orm import Session
@@ -40,17 +41,21 @@ def _num(raw: str) -> float:
     return float(raw.strip().replace(" ", "").replace(",", "."))
 
 
-def _store_for_chain(db: Session, chain: Chain, created: list[str]) -> Store:
-    store = db.scalar(select(Store).where(Store.chain_id == chain.id, Store.is_demo.is_(False)))
+def _store_for_chain(db: Session, chain: Chain, created: list[str], is_test: bool) -> Store:
+    """Her zincir için bir gerçek, bir de (isteğe bağlı) test fiyat listesi tutulur; ikisi karışmaz."""
+    store = db.scalar(select(Store).where(Store.chain_id == chain.id, Store.is_demo.is_(is_test)))
     if store is None:
-        store = Store(name=chain.name, color=chain.color, chain_id=chain.id, is_demo=False)
+        name = f"{chain.name} (test)" if is_test else chain.name
+        store = Store(name=name, color=chain.color, chain_id=chain.id, is_demo=is_test)
         db.add(store)
         db.flush()
-        created.append(chain.name)
+        created.append(name)
     return store
 
 
 def import_csv(db: Session, text: str, source: str = "csv") -> PriceImportOut:
+    """source="test" ile yüklenen fiyatlar ayrı "(test)" marketlerine yazılır ve arayüzde test diye işaretlenir."""
+    is_test = source == "test"
     sample = text[:2048]
     delimiter = ";" if sample.count(";") > sample.count(",") else ","
     reader = csv.DictReader(io.StringIO(text.lstrip("﻿")), delimiter=delimiter)
@@ -92,7 +97,7 @@ def import_csv(db: Session, text: str, source: str = "csv") -> PriceImportOut:
             errors.append(PriceImportError(line=line_no, error=str(exc)))
             continue
 
-        store = _store_for_chain(db, chain, stores_created)
+        store = _store_for_chain(db, chain, stores_created, is_test)
         sp = db.scalar(select(StorePrice).where(StorePrice.store_id == store.id, StorePrice.ingredient_id == ing.id))
         if sp is None:
             db.add(StorePrice(store_id=store.id, ingredient_id=ing.id, package_size=size, price=price,
@@ -119,3 +124,14 @@ def price_stats(db: Session) -> list[dict]:
          "last_update": r[5].isoformat() if r[5] else None}
         for r in rows
     ]
+
+
+TEST_PRICES_FILE = Path(__file__).resolve().parents[1] / "seed" / "test_prices_etimesgut.csv"
+
+
+def load_test_prices_once(db: Session) -> PriceImportOut | None:
+    """Pilot bölge test fiyatlarını (yoksa) bir kez yükler."""
+    exists = db.scalar(select(Store.id).where(Store.chain_id.is_not(None), Store.is_demo.is_(True)).limit(1))
+    if exists is not None or not TEST_PRICES_FILE.exists():
+        return None
+    return import_csv(db, TEST_PRICES_FILE.read_text(encoding="utf-8"), source="test")

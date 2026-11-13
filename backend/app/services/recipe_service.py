@@ -39,6 +39,7 @@ def recommendations(
     servings: int | None,
     limit: int,
     use_ai: bool,
+    ai_consent: bool = False,
 ) -> RecommendationsOut:
     stock = inventory_service.current_stock(db, household)
     targets = household_service.household_targets(db, household)
@@ -57,6 +58,8 @@ def recommendations(
     ai_used, ai_error = False, None
     if use_ai and not settings.ai_enabled:
         ai_error = "Yapay zekâ kapalı (MEALBIRD_AI_ENABLED=true ile açılabilir); kural tabanlı sıralama kullanıldı."
+    elif use_ai and not ai_consent:
+        ai_error = "Yapay zekâ önerisi için Profil › Gizlilik bölümünden izin vermelisiniz; kural tabanlı sıralama kullanıldı."
     elif use_ai:
         today = clock.today()
         inventory_summary = [
@@ -71,7 +74,6 @@ def recommendations(
         result = ai_planner.rerank_with_claude(
             candidates,
             inventory_summary=inventory_summary,
-            meal_kcal_target=targets.meal_kcal_target,
             limit=limit,
             model=settings.ai_model,
             effort=settings.ai_effort,

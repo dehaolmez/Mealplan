@@ -16,8 +16,12 @@ def haversine_m(lat1: float, lon1: float, lat2: float, lon2: float) -> float:
     return 2 * EARTH_RADIUS_M * math.asin(math.sqrt(a))
 
 
-def round_coord(value: float, decimals: int = 3) -> float:
-    """3 ondalık ≈ 110 m. Konumu hem gizlilik hem önbellek isabeti için kabalaştırır."""
+# 4 ondalık ≈ 11 m (enlem) — dış servise giden ve saklanan konum hassasiyeti.
+DEFAULT_PRECISION = 4
+
+
+def round_coord(value: float, decimals: int = DEFAULT_PRECISION) -> float:
+    """Konumu kabalaştırır: 3 ondalık ≈ 110 m, 4 ondalık ≈ 11 m, 5 ondalık ≈ 1 m."""
     return round(value, decimals)
 
 
@@ -26,7 +30,7 @@ def in_turkey(lat: float, lon: float) -> bool:
     return s <= lat <= n and w <= lon <= e
 
 
-def cache_key(lat: float, lon: float, radius_m: int) -> str:
+def cache_key(lat: float, lon: float, radius_m: int, decimals: int = DEFAULT_PRECISION) -> str:
     # Yarıçapı 500 m'lik basamaklara yuvarla ki benzer aramalar aynı önbelleği kullansın
     bucket = max(500, int(math.ceil(radius_m / 500) * 500))
-    return f"{round_coord(lat, 3)}:{round_coord(lon, 3)}:{bucket}"
+    return f"{round_coord(lat, decimals)}:{round_coord(lon, decimals)}:{bucket}"

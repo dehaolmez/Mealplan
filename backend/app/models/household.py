@@ -19,6 +19,8 @@ class Household(Base):
     home_lat: Mapped[float | None]
     home_lon: Mapped[float | None]
     search_radius_m: Mapped[int] = mapped_column(default=2000)
+    # Aileyi aynı haneye davet etmek için paylaşılan kod
+    invite_code: Mapped[str | None] = mapped_column(String(16), unique=True)
 
     members: Mapped[list["Member"]] = relationship(back_populates="household", cascade="all, delete-orphan")
 

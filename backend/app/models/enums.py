@@ -62,3 +62,17 @@ class ChainKind(StrEnum):
     wholesale = "wholesale"        # toptan / cash & carry (Metro, Bizim Toptan)
     cooperative = "cooperative"    # kooperatif (Tarım Kredi)
     regional = "regional"          # bölgesel zincir
+
+
+class HouseholdRole(StrEnum):
+    owner = "owner"
+    member = "member"
+
+
+class ConsentKind(StrEnum):
+    privacy_notice = "privacy_notice"   # Aydınlatma metninin okunduğu (rıza değil, bilgilendirme teyidi)
+    terms = "terms"                     # Kullanım koşulları
+    health_data = "health_data"         # Boy/kilo/hedef: özel nitelikli (sağlık) veri — açık rıza
+    location = "location"               # Ev konumunun saklanması — açık rıza
+    ai_transfer = "ai_transfer"         # Yapay zekâ sağlayıcısına (yurt dışı) aktarım — açık rıza
+    marketing = "marketing"             # Ticari ileti (6563 s. Kanun / İYS) — ayrı onay

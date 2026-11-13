@@ -15,15 +15,13 @@ from app.services import clock
 log = logging.getLogger(__name__)
 
 
-def seed(db: Session, with_demo: bool = True) -> None:
+def seed(db: Session) -> None:
+    """Ortak katalog verisi: zincirler, malzemeler, tarifler, demo marketler/fiyatlar."""
     if db.scalar(select(func.count(Chain.id))) == 0:
         _seed_chains(db)
     if db.scalar(select(func.count(Ingredient.id))) == 0:
         _seed_catalog(db)
         log.info("Katalog, tarifler ve fiyatlar yüklendi")
-    if with_demo and db.get(Household, 1) is None:
-        _seed_demo_household(db)
-        log.info("Demo hane ve envanter yüklendi")
     db.commit()
 
 
@@ -64,14 +62,15 @@ def _seed_catalog(db: Session) -> None:
                               price=price, source="demo", updated_on=today))
 
 
-def _seed_demo_household(db: Session) -> None:
-    store_ids = list(db.scalars(select(Store.id).order_by(Store.id)))
-    household = Household(id=1, name="Evim", selected_store_ids=",".join(map(str, store_ids)),
-                          preferred_store_id=store_ids[0] if store_ids else None)
-    db.add(household)
-    for name, birth, sex, height, weight, activity, goal in data.DEMO_MEMBERS:
-        db.add(Member(household=household, name=name, birth_date=date.fromisoformat(birth), sex=Sex(sex),
-                      height_cm=height, weight_kg=weight, activity_level=ActivityLevel(activity), goal=Goal(goal)))
+def seed_sample_household(db: Session, household: Household, with_members: bool = True) -> None:
+    """Yeni hesaba örnek envanter (ve sağlık verisine rıza varsa örnek bireyler) ekler."""
+    store_ids = list(db.scalars(select(Store.id).where(Store.is_demo.is_(True)).order_by(Store.id)))
+    household.selected_store_ids = ",".join(map(str, store_ids))
+    household.preferred_store_id = store_ids[0] if store_ids else None
+    if with_members:
+        for name, birth, sex, height, weight, activity, goal in data.DEMO_MEMBERS:
+            db.add(Member(household_id=household.id, name=name, birth_date=date.fromisoformat(birth), sex=Sex(sex),
+                          height_cm=height, weight_kg=weight, activity_level=ActivityLevel(activity), goal=Goal(goal)))
 
     by_name = {i.name: i for i in db.scalars(select(Ingredient))}
     today = clock.today()
@@ -81,7 +80,7 @@ def _seed_demo_household(db: Session) -> None:
         added = today - timedelta(days=days_ago)
         label = today + timedelta(days=label_days) if label_days is not None else None
         est = resolve_expiry(ing, location, added, label, opened=False)
-        db.add(InventoryItem(household_id=1, ingredient_id=ing.id, location=location, quantity=qty,
+        db.add(InventoryItem(household_id=household.id, ingredient_id=ing.id, location=location, quantity=qty,
                              added_on=added, expiry_date=est.expiry_date, expiry_estimated=est.estimated))
 
 

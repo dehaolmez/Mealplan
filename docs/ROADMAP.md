@@ -1,6 +1,6 @@
 # Mealbird — Yol Haritası, Dinamik Kullanım ve İhtiyaç Listesi
 
-Son güncelleme: 13 Kasım 2026
+Son güncelleme: 13 Kasım 2026 (v0.3)
 
 Bu belge üç şeyi anlatır:
 1. MVP'den sonraki adımların **sabit kod yerine dinamik veriyle** nasıl çalışacağı,
@@ -9,7 +9,60 @@ Bu belge üç şeyi anlatır:
 
 ---
 
-## 1. Şu an çalışanlar (v0.2)
+## 0. Kararlar ve durum (v0.3 — 13 Kasım 2026)
+
+| Konu | Karar | Durum |
+|---|---|---|
+| Fiyat kaynağı | Kurumsal erişim yok. Market Fiyatı'nın belgelenmemiş API'si denendi (bkz. §0.1) | ⏸ Proje sahibinin kararını bekliyor |
+| Pilot bölge | **Ankara / Etimesgut** | ✅ Harita varsayılan merkezi, adres araması, test fiyatları |
+| Test fiyatları | Gerçek veri gelene kadar üretilmiş, **"test" etiketli** fiyatlar | ✅ `backend/scripts/generate_test_prices.py` |
+| Platform | **PWA** (web uygulaması, telefona kurulabilir, çevrimdışı açılır) | ✅ Manifest + servis çalışanı |
+| APK | PWA'nın aynısı, alan adı + HTTPS ile yayına alındıktan sonra paketlenir | ⏭ Barındırmadan sonra (§0.2) |
+| Giriş | **E-posta + Google** | ✅ (Google için istemci kimliği gerekli) |
+| Barındırma | **Türkiye** | ⏭ Sağlayıcı seçimi bekliyor |
+| KVKK | Güncel mevzuata göre taslak metinler + rıza kayıtları + veri dökümü/silme | ✅ Taslak; hukukçu incelemesi bekliyor (`docs/legal/README.md`) |
+| Harita servisleri | **Ücretsiz** (OSM Overpass, Nominatim, karolar); üretimde kendi sunucumuz önerilir | ✅ |
+| Konum hassasiyeti | 110 m → **~11 m** (4 ondalık), ayarlanabilir (`MEALBIRD_LOCATION_PRECISION`) | ✅ |
+| Yapay zekâ | Gemini değerlendirmesi sonraya; sağlayıcı soyutlaması o zaman eklenecek | ⏭ |
+| Veritabanı | Alembic migrasyonları, açılışta otomatik güncelleme, eski SQLite otomatik yedeklenir | ✅ |
+
+### 0.1 Market Fiyatı API'si — ne denendi, ne oldu?
+
+- `https://api.marketfiyati.org.tr/api/v2` **çalışıyor**. `POST /api/v2/search` (anahtar kelime + enlem/boylam +
+  km cinsinden mesafe) ürünleri, şube bazlı fiyatlarıyla döndürüyor. Denemede "süt" araması 474 ürün getirdi.
+  Topluluk projeleri ayrıca `/api/v2/nearest` (yakın şubeler) ve `/api/v2/searchByCategories` kullanıyor.
+- API, standart bir istemciye 404 döndürüyor; yanıt yalnız tarayıcı kimliğiyle (User-Agent) geliyor.
+  **Belgelenmiş, herkese açık bir API değil.**
+- Geliştirme ortamındaki güvenlik denetimi bu nedenle Etimesgut için yapılacak ikinci denemeyi
+  **"yetkisiz erişim"** olarak değerlendirip durdurdu. Bu yüzden entegrasyon kodu **yazılmadı**.
+- Değerlendirme:
+  - **Webhook:** Sitenin webhook'u yok; olsa olsa günde bir kez sorgulama (polling) yapılabilir. Bu da aynı izin sorusunu doğurur.
+  - **Yapay zekâ anahtarı:** Erişim/izin sorununu çözmez. Yapay zekâ ancak gelen ürün adlarını katalogla
+    eşleştirmede işe yarar.
+  - **Market sitelerinden çekmek:** Çoğu sitenin kullanım koşulları otomatik veri toplamayı yasaklar;
+    her site ayrı bakım ister. Önerilmez.
+- **Önerilen yol (kurumsal başvuru gerektirmez):**
+  1. TÜBİTAK BİLGEM / Market Fiyatı iletişim adresine **bireysel bir e-posta** ile kâr amacı gütmeyen
+     kullanım için izin istemek.
+  2. Bu arada **kullanıcı katkılı fiyat**: fiş fotoğrafı → yapay zekâ (ör. Gemini) ile ürün, fiyat ve tarih okuma →
+     hem envantere hem fiyat tablosuna yazma. Hukuken temiz, yereldir ve Gemini anahtarının en verimli kullanımı olur.
+  3. CSV içe aktarma (hazır) her durumda yedek yol olarak kalır.
+
+### 0.2 PWA nedir, APK ne zaman?
+
+**PWA (Progressive Web App):** Tarayıcıda açılan ama telefona **uygulama gibi kurulabilen** web uygulamasıdır.
+- Android'de Chrome'un "Uygulamayı yükle" düğmesiyle, iPhone'da Safari › Paylaş › "Ana Ekrana Ekle" ile kurulur.
+- Kurulunca kendi simgesiyle tam ekran açılır ve internet yokken de son görülen sayfalar açılır.
+- Ayrı bir Android/iOS kodu yazmak gerekmez; güncellemeler mağaza onayı beklemeden herkese anında ulaşır.
+
+**APK:** Aynı PWA, Google'ın "Trusted Web Activity" yöntemiyle (Bubblewrap aracı) Play Store'a konabilen bir
+APK/AAB paketine sarılır. Bunun için uygulamanın **kendi alan adında HTTPS ile yayında** olması gerekir
+(alan adı doğrulaması `assetlinks.json` ile yapılır). Bu yüzden APK **barındırmadan sonra** yapılmalı.
+Kod tarafında ek bir iş yoktur; birkaç saatlik paketleme ve Play Console kaydı (bir kerelik 25 USD) gerekir.
+
+---
+
+## 1. v0.2'de eklenenler
 
 | Özellik | Durum | Nasıl dinamik |
 |---|---|---|
@@ -59,7 +112,7 @@ Bu sayede kaynak değişse de uygulamanın geri kalanı değişmez.
 ### 2.2 Konum ve harita (çalışıyor, genişletilecek)
 
 - **Şu an:** Tarayıcıdan konum (izinli) veya haritaya dokunma → Overpass sorgusu → zincir eşleştirme → mesafeye göre liste + harita.
-- **Gizlilik:** Konum dış servise **~110 m'ye yuvarlanarak** gönderilir; ev konumu da aynı hassasiyetle saklanır.
+- **Gizlilik:** Konum dış servise **~11 m'ye yuvarlanarak** gönderilir; ev konumu da aynı hassasiyetle saklanır (v0.3'te 110 m'den düşürüldü).
 - **Dinamikleştirme:**
   1. **Kendi Overpass sunucumuz** (veya ücretli sağlayıcı): genel Overpass sunucuları hız sınırlıdır; üretimde
      Türkiye OSM özeti (Geofabrik, ~1 GB) ile kendi Overpass/PostGIS kurulumumuz önerilir. Uç noktalar zaten
@@ -69,23 +122,28 @@ Bu sayede kaynak değişse de uygulamanın geri kalanı değişmez.
   4. **Rota:** Birden çok marketli alışverişte sıralı rota (OSRM / GraphHopper).
   5. Açık/kapalı durumu: OSM `opening_hours` alanı ayrıştırılıp "şu an açık" filtresi.
 
-### 2.3 Kimlik doğrulama ve çok haneli yapı
+### 2.3 Kimlik doğrulama ve çok haneli yapı — ✅ v0.3
 
-- `api/deps.py::current_household` tek değişim noktası. Plan: e-posta + şifre veya Google/Apple ile giriş (JWT),
-  `users` ↔ `households` çoka-çok (aile üyeleri aynı listeyi paylaşır).
-- **Paylaşılan alışveriş listesi (Bring! deneyimi):** WebSocket/SSE ile anlık senkron; biri "alındı" deyince diğerinde düşer.
+- E-posta + şifre (scrypt özeti), Google ile giriş (Google ID token doğrulaması), HttpOnly oturum çerezi
+  (APK/mobil istemciler için `Authorization: Bearer` da desteklenir).
+- Şifre sıfırlama ve e-posta doğrulama bağlantıları (SMTP yoksa sunucu günlüğüne yazılır), giriş denemesi sınırı,
+  şifre değişince diğer cihazlardaki oturumların kapanması.
+- Her hesabın kendi hanesi; **davet koduyla** aile üyeleri aynı haneye katılır.
+- Sırada: paylaşılan listede anlık senkron (SSE/WebSocket), Apple ile giriş (iOS'ta gerekirse).
 
 ### 2.4 Veritabanı ve dağıtım
 
-- **PostgreSQL + PostGIS** (konum sorguları için), **Alembic** migrasyonları.
-  ⚠️ v0.1'den v0.2'ye geçişte şema değişti: geliştirme ortamında `backend/mealbird.db` dosyasını silip yeniden başlatın.
-- Docker Compose (api + web + db), CI'da testler (GitHub Actions).
-- Barındırma: Türkiye/AB bölgesi (KVKK açısından veri yerelliği avantajı).
+- ✅ **Alembic** migrasyonları; açılışta otomatik `upgrade`. Migrasyon kaydı olmayan eski SQLite dosyası
+  `mealbird.db.bak-ZAMAN` olarak yedeklenip yenisi oluşturulur. Elle bir şey yapmak gerekmez.
+- Sırada: PostgreSQL (+ PostGIS), Docker Compose, GitHub Actions'ta testler.
+- Barındırma: **Türkiye** (karar verildi). Kendi Overpass/Nominatim sunucumuz da aynı yerde çalıştırılabilir
+  (ücretsiz yazılım; Türkiye OSM verisi için yaklaşık 4–8 GB RAM ve 50 GB disk gerekir).
 
-### 2.5 PWA ve bildirimler
+### 2.5 PWA ve bildirimler — ✅ temel PWA v0.3
 
-- Servis çalışanı + Web Push: SKT bildirimleri uygulama kapalıyken de gelir; çevrimdışı alışveriş listesi.
-- Ana ekrana eklenebilir uygulama (iOS 16.4+ ve Android'de web push destekli).
+- ✅ Manifest, simgeler, servis çalışanı. Uygulama kabuğu ve son görülen veriler çevrimdışı açılır; çıkışta
+  önbellekteki kişisel veriler silinir.
+- Sırada: **Web Push** ile SKT bildirimleri (uygulama kapalıyken de). VAPID anahtarı gerekir, ücretsizdir.
 
 ### 2.6 Yapay zekâ genişletmeleri
 
@@ -99,22 +157,17 @@ Kuru gıdalar için üçüncü saklama alanı; raf ömrü kuralları zaten malze
 
 ---
 
-## 3. Senden gerekenler
+## 3. Senden gerekenler (v0.3 güncel)
 
-Önceliğe göre sıralı. **Kalın** olanlar bir sonraki adımı doğrudan engelliyor.
-
-| # | Ne | Neden | Format / not |
+| # | Ne | Neden | Not |
 |---|---|---|---|
-| 1 | **Fiyat kaynağı kararı ve izni** | Gerçek fiyat olmadan optimizasyon demo kalır | Market Fiyatı için TÜBİTAK BİLGEM'e veri erişimi/API talebi (kurumsal başvuru senden olmalı) veya zincirlerle doğrudan anlaşma. Alternatif: başlangıçta elle CSV |
-| 2 | **Hedef şehir/ilçe(ler)** | Pilot bölge için şube verisini önceden çekmek ve fiyat kapsamını belirlemek | Örn. "İstanbul – Kadıköy, Ataşehir" |
-| 3 | **Örnek gerçek fiyat CSV'si** (20–50 ürün) | Uçtan uca gerçek veriyle test | `GET /api/prices/template.csv` şablonu |
-| 4 | Hedef platform | Mobil uygulama mı, PWA mı? | PWA önerim: tek kod tabanı, mağaza onayı gerekmez |
-| 5 | Kimlik doğrulama tercihi | Çok haneli yapı | E-posta/şifre, Google, Apple — hangileri? |
-| 6 | Barındırma tercihi + alan adı | Dağıtım | Türkiye/AB bölgesi önerilir (KVKK) |
-| 7 | KVKK metinleri | Konum ve sağlık verisi (boy, kilo) işleniyor | Aydınlatma metni + açık rıza akışı; hukuki metin senden/hukuk danışmanından |
-| 8 | Overpass kullanımı | Genel sunucular hız sınırlı | Üretimde kendi sunucumuzu mu kuralım, ücretli sağlayıcı mı? |
-| 9 | (İsteğe bağlı) Anthropic API anahtarı | Yapay zekâ önerileri | Uygulamanın kendi ortamına ortam değişkeni olarak; sohbete yapıştırma |
-| 10 | Marka/tasarım | Logo, renkler, uygulama adı kesinleşti mi? | "Mealbird" çalışma adı |
+| 1 | **Market Fiyatı API'si kararı** | Gerçek fiyat | Seçenekler §0.1'de. Bireysel izin e-postasını gönderebilir veya hazır bir taslak isteyebilirsin |
+| 2 | **Google OAuth istemci kimliği** (ücretsiz) | Google ile giriş | Google Cloud Console › API'ler ve Hizmetler › Kimlik bilgileri › OAuth istemci kimliği (Web uygulaması); "Yetkili JavaScript kaynakları"na sitenin adresi. Kimlik `MEALBIRD_GOOGLE_CLIENT_ID`'ye yazılır (gizli değildir) |
+| 3 | **Barındırma sağlayıcısı + alan adı (Türkiye)** | Yayına çıkış, APK, Google girişi, e-posta | Küçük bir sanal sunucu yeterli |
+| 4 | **E-posta gönderim hesabı (SMTP)** | Doğrulama ve şifre sıfırlama | Alan adınla kurulacak bir e-posta hizmeti |
+| 5 | **KVKK metinlerindeki köşeli parantezli alanlar** ve hukukçu incelemesi | Yayına çıkmadan önce | `docs/legal/README.md` |
+| 6 | Gemini API anahtarı (sonra) | Fiş fotoğrafı okuma, öneriler | Sohbete yapıştırma; sunucuya ortam değişkeni olarak eklenir |
+| 7 | Marka/tasarım onayı | Simge ve ad | Yeni simge `frontend/public/icons/` altında |
 
 ---
 
@@ -156,7 +209,7 @@ Pilot bölgende güçlü bir bölgesel zincir varsa söylemen yeterli.
 - **Sorgu:** `shop=supermarket|convenience|wholesale|greengrocer|department_store`, yarıçap 200 m – 10 km.
 - **Eşleştirme:** `brand` → `name` sırasıyla, Türkçe karakter sadeleştirmeli, tam kelime eşleşmesi
   ("BİM", "Bim", "BIM Birleşik Mağazalar", "A-101", "Şok Market", "Migros Jet"…).
-- **Önbellek:** Aynı ~110 m × 500 m'lik bölge için 24 saat (`MEALBIRD_PLACES_CACHE_HOURS`).
+- **Önbellek:** Aynı ~11 m'lik nokta ve 500 m'lik yarıçap basamağı için 24 saat (`MEALBIRD_PLACES_CACHE_HOURS`).
 - **Uç noktalar:** `GET /api/places/nearby?lat=&lon=&radius_m=&only_chains=`, ev konumu: `PATCH /api/household`.
 - **Optimizasyonla bağlantı:** `POST /api/shopping/optimize` içinde `"nearby_only": true`.
 - **Bilinen sınır:** OSM'de bazı şubeler eksik/yanlış etiketli olabilir; kullanıcılar OSM'de düzeltebilir.
