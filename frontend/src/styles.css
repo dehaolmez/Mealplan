@@ -349,3 +349,8 @@ code { background: var(--surface-2); padding: 1px 5px; border-radius: 5px; font-
 .receipt-name small { color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .receipt-qty { width: 72px; }
 .modal-foot { display: flex; justify-content: flex-end; gap: 8px; padding: 10px 16px; border-top: 1px solid var(--border); }
+.admin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 8px; }
+.admin-grid > div { display: grid; text-align: center; }
+.admin-grid b { font-size: 1.4rem; }
+.admin-grid small { color: var(--muted); }
+.admin-grid + .card p { margin: 0 0 4px; }

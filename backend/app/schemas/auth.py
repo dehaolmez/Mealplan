@@ -70,6 +70,7 @@ class MeOut(BaseModel):
     email: str
     display_name: str
     email_verified: bool
+    is_admin: bool = False
     has_password: bool
     google_linked: bool
     household_id: int

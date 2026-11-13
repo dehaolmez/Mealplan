@@ -44,6 +44,20 @@ const qs = (params: Record<string, string | number | boolean | undefined | null>
   return str ? `?${str}` : "";
 };
 
+export interface AdminStats {
+  users: number;
+  households: number;
+  inventory_items: number;
+  live_products: number;
+  live_products_by_store: Record<string, number>;
+  live_last_fetch: string | null;
+  live_prices_enabled: boolean;
+  ai_available: boolean;
+  ai_provider: string;
+  pilot: string;
+  refresh: { running: boolean; last_result: { queried: number; matched: number } | null; last_error: string | null; finished_at: string | null };
+}
+
 export interface Selection {
   recipe_id: number;
   servings?: number;
@@ -128,6 +142,8 @@ export const api = {
     request<OptimizeResult>("POST", "/shopping/optimize", { selections: [], ...p }),
 
   chains: () => request<Chain[]>("GET", "/chains"),
+  adminStats: () => request<AdminStats>("GET", "/admin/stats"),
+  adminRefreshPrices: () => request<{ started: boolean; message?: string }>("POST", "/admin/live-prices/refresh"),
   health: () => request<{ ai_available: boolean; ai_provider: string; live_prices: boolean }>("GET", "/health"),
   scanReceipt: (image_base64: string, mime_type: string) =>
     request<ReceiptDraft>("POST", "/receipts/scan", { image_base64, mime_type }),

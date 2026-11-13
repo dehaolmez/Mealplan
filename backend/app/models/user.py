@@ -17,6 +17,8 @@ class User(Base):
     password_hash: Mapped[str | None] = mapped_column(String(300))
     google_sub: Mapped[str | None] = mapped_column(String(64), unique=True)
     email_verified: Mapped[bool] = mapped_column(default=False)
+    # Yönetim paneline erişim (sistem durumu, fiyat tazeleme)
+    is_admin: Mapped[bool] = mapped_column(default=False)
     created_at: Mapped[datetime] = mapped_column(default=datetime.now)
     # Şifre değişince eski oturumları geçersiz kılmak için token'a gömülür
     token_version: Mapped[int] = mapped_column(default=0)

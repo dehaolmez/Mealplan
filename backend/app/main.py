@@ -8,7 +8,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from fastapi.staticfiles import StaticFiles
 
-from app.api.routes import auth, catalog, household, inventory, places, plan, receipts, recipes, shopping
+from app.api.routes import admin, auth, catalog, household, inventory, places, plan, receipts, recipes, shopping
 from app.core.config import get_settings
 from app.core.database import SessionLocal, engine
 from app.services.auth_service import Unauthorized
@@ -30,6 +30,12 @@ async def lifespan(_: FastAPI):
 
         with SessionLocal() as db:
             seed(db)
+            if settings.admin_email and settings.admin_password:
+                from app.services.auth_service import ensure_admin
+
+                _, created = ensure_admin(db, settings.admin_email, settings.admin_password)
+                if created:
+                    logging.getLogger(__name__).info("Yönetici hesabı oluşturuldu: %s", settings.admin_email)
             if settings.load_test_prices:
                 from app.services.price_import import load_test_prices_once
 
@@ -79,7 +85,7 @@ def create_app() -> FastAPI:
     async def _bad_request(_: Request, exc: BadRequest):
         return JSONResponse(status_code=400, content={"detail": str(exc)})
 
-    for module in (auth, household, catalog, inventory, recipes, plan, shopping, places, receipts):
+    for module in (auth, household, catalog, inventory, recipes, plan, shopping, places, receipts, admin):
         app.include_router(module.router, prefix="/api")
     app.include_router(auth.legal_router, prefix="/api")
 

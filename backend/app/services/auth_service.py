@@ -247,6 +247,7 @@ def me(db: Session, user: User) -> MeOut:
     needs = any(states[k].text_version != LEGAL_VERSION for k in (ConsentKind.terms, ConsentKind.privacy_notice))
     return MeOut(
         id=user.id, email=user.email, display_name=user.display_name, email_verified=user.email_verified,
+        is_admin=user.is_admin,
         has_password=bool(user.password_hash), google_linked=bool(user.google_sub),
         household_id=hh.id, household_name=hh.name, role=m.role,
         invite_code=hh.invite_code if m.role == HouseholdRole.owner else None,
@@ -354,3 +355,33 @@ def _jsonable(v):
     if hasattr(v, "value"):
         return v.value
     return v
+
+
+# ---- yönetici -------------------------------------------------------------------
+
+def ensure_admin(db: Session, email: str, password: str) -> tuple[User, bool]:
+    """Yönetici hesabını yoksa oluşturur (tüm isteğe bağlı izinler açık, örnek verili hane); varsa yalnız
+    yönetici yetkisini verir — mevcut şifreyi değiştirmez."""
+    from app.schemas.auth import RegisterIn
+
+    email = email.strip().lower()
+    user = db.scalar(select(User).where(func.lower(User.email) == email))
+    if user is not None:
+        if not user.is_admin:
+            user.is_admin = True
+            db.commit()
+        return user, False
+    data = RegisterIn(
+        email=email, password=password, display_name="Yönetici", accept_terms=True, acknowledge_privacy_notice=True,
+        health_data_consent=True, location_consent=True, ai_transfer_consent=True, marketing_consent=False,
+        with_sample_data=True,
+    )
+    _require_legal(data)
+    user = User(email=email, display_name=data.display_name, password_hash=security.hash_password(password),
+                email_verified=True, is_admin=True)
+    db.add(user)
+    db.flush()
+    _attach_household(db, user, None, True, True)
+    _initial_consents(db, user, data)
+    db.commit()
+    return user, True

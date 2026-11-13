@@ -46,6 +46,7 @@ Tabloları uygulama ilk açılışta kendisi kurar; elle bir şey yapmayın.
 | `MEALBIRD_PUBLIC_BASE_URL` | Render'ın verdiği adres, ör. `https://mealbird.onrender.com` (ilk kurulumdan sonra öğrenilir; sonradan girilebilir) |
 | `MEALBIRD_GEMINI_API_KEY` | Gemini anahtarınız (fiş okuma ve yapay zekâ önerileri) |
 | `MEALBIRD_GOOGLE_CLIENT_ID` | Adım 5 (isteğe bağlı) |
+| `MEALBIRD_ADMIN_EMAIL` / `MEALBIRD_ADMIN_PASSWORD` | Yönetici hesabınız (Profil'de "🛠️ Yönetim" bölümü açılır) |
 | `MEALBIRD_SMTP_USER` / `MEALBIRD_SMTP_PASSWORD` / `MEALBIRD_SMTP_FROM` | Adım 4 |
 
 `MEALBIRD_SECRET_KEY` Render tarafından otomatik üretilir. **Apply** deyin; ilk derleme ~5 dk sürer.

@@ -267,6 +267,7 @@ export interface Me {
   email: string;
   display_name: string;
   email_verified: boolean;
+  is_admin: boolean;
   has_password: boolean;
   google_linked: boolean;
   household_id: number;

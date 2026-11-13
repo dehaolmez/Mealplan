@@ -60,6 +60,10 @@ class Settings(BaseSettings):
     cookie_secure: bool = False  # üretimde (HTTPS) True
     google_client_id: str = ""   # Google ile giriş için (Google Cloud Console > OAuth istemci kimliği)
     public_base_url: str = "http://localhost:5173"
+    # Açılışta yoksa oluşturulacak yönetici hesabı (test/ilk kurulum). Şifre yalnız ortam değişkeninde durur.
+    admin_email: str = ""
+    admin_password: str = ""
+
     # E-posta (şifre sıfırlama/doğrulama). Boşsa bağlantılar sunucu günlüğüne yazılır (geliştirme).
     smtp_host: str = ""
     smtp_port: int = 587

@@ -103,6 +103,7 @@ export function ProfilePage({ me, setMe, stores, onChanged }: {
       </Section>
 
       <PriceImport onDone={onChanged} />
+      {me.is_admin && <AdminPanel />}
       <ChainList />
       <AccountSection me={me} setMe={(m) => { setMe(m); void targets.reload(); void household.reload(); onChanged(); }} />
     </div>
@@ -321,5 +322,36 @@ function AccountSection({ me, setMe }: { me: Me; setMe: (m: Me | null) => void }
       </Section>
       {legal && <LegalModal slug={legal} onClose={() => setLegal(null)} />}
     </>
+  );
+}
+
+function AdminPanel() {
+  const toast = useToast();
+  const { data, reload } = useAsync(() => api.adminStats(), []);
+  const fmt = (iso: string | null) => (iso ? new Date(iso).toLocaleString("tr-TR", { timeZone: "Europe/Istanbul" }) : "—");
+  const refresh = async () => {
+    const r = await api.adminRefreshPrices();
+    toast(r.started ? "Fiyat tazeleme başladı (~1-2 dk)" : r.message ?? "Zaten çalışıyor");
+    setTimeout(() => void reload(), 3000);
+  };
+  if (!data) return null;
+  return (
+    <Section title="🛠️ Yönetim" action={<button className="btn btn-ghost btn-sm" onClick={() => void reload()}>Yenile</button>}>
+      <div className="card admin-grid">
+        <div><b>{data.users}</b><small>kullanıcı</small></div>
+        <div><b>{data.households}</b><small>hane</small></div>
+        <div><b>{data.inventory_items}</b><small>envanter kalemi</small></div>
+        <div><b>{data.live_products}</b><small>canlı ürün fiyatı</small></div>
+      </div>
+      <div className="card add-form small">
+        <p>Canlı fiyat: {data.live_prices_enabled ? "açık" : "kapalı"} · Pilot: {data.pilot} · Son çekim: {fmt(data.live_last_fetch)}</p>
+        <p>Marketlere göre: {Object.entries(data.live_products_by_store).map(([k, v]) => `${k} ${v}`).join(" · ") || "—"}</p>
+        <p>Yapay zekâ: {data.ai_available ? `hazır (${data.ai_provider})` : "anahtar yok"}</p>
+        {data.refresh.running && <p className="note">⏳ Fiyatlar tazeleniyor…</p>}
+        {data.refresh.last_result && <p className="muted">Son tazeleme: {data.refresh.last_result.queried} malzeme, {data.refresh.last_result.matched} ürün · {fmt(data.refresh.finished_at)}</p>}
+        {data.refresh.last_error && <p className="form-error">{data.refresh.last_error}</p>}
+        <button className="btn btn-primary btn-sm" disabled={data.refresh.running} onClick={refresh}>Pilot bölge fiyatlarını şimdi tazele</button>
+      </div>
+    </Section>
   );
 }
