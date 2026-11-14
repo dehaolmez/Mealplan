@@ -14,6 +14,14 @@ kurulur ve başlar; size `https://<ad>-8080.app.github.dev` biçiminde bir adres
 > Aileden birinin GitHub girişi olmadan açabilmesi için: Ports sekmesinde 8080'e sağ tık → **Port Visibility → Public**.
 > Bu durumda adresi bilen herkes açabilir; yalnız test için kullanın.
 
+## Ports sekmesinde "Çalışan İşlem" boşsa
+
+Meall başlamamış demektir. **Terminal** sekmesine şunu yazın:
+
+```bash
+bash .devcontainer/start.sh && sleep 6 && tail -20 ~/.meall/server.log
+```
+
 ## Bilmeniz gerekenler
 
 - Kişisel GitHub hesaplarında aylık ücretsiz kota vardır (2 çekirdekli makinede yaklaşık 60 saat).

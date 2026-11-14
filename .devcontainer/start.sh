@@ -3,6 +3,15 @@
 set -euo pipefail
 cd "$(dirname "$0")/../backend"
 mkdir -p "$HOME/.meall"
+# Bağlanınca (postAttach) yalnız çalışmıyorsa başlat
+if [ "${1:-}" = "--if-stopped" ] && curl -fs -o /dev/null http://localhost:8080/api/health; then
+  echo "Meall zaten çalışıyor."
+  exit 0
+fi
+# İlk kurulum yarım kaldıysa tamamla
+if [ ! -x .venv/bin/uvicorn ] || [ ! -f ../frontend/dist/index.html ]; then
+  bash ../.devcontainer/setup.sh
+fi
 pkill -f "uvicorn app.main:app" 2>/dev/null || true
 export MEALBIRD_DATABASE_URL="sqlite:///$HOME/.meall/meall.db"
 export MEALBIRD_STATIC_DIR="$(cd ../frontend/dist && pwd)"

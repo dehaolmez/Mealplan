@@ -6,6 +6,7 @@
   },
   "postCreateCommand": "bash .devcontainer/setup.sh",
   "postStartCommand": "bash .devcontainer/start.sh",
+  "postAttachCommand": "bash .devcontainer/start.sh --if-stopped",
   "forwardPorts": [8080],
   "portsAttributes": {
     "8080": { "label": "Meall", "onAutoForward": "openBrowser" }
