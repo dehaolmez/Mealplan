@@ -1,0 +1,21 @@
+{
+  "name": "Meall",
+  "image": "mcr.microsoft.com/devcontainers/python:3.13",
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": { "version": "22" }
+  },
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "postStartCommand": "bash .devcontainer/start.sh",
+  "forwardPorts": [8080],
+  "portsAttributes": {
+    "8080": { "label": "Meall", "onAutoForward": "openBrowser" }
+  },
+  "secrets": {
+    "MEALBIRD_GEMINI_API_KEY": {
+      "description": "İsteğe bağlı: fiş okuma ve yapay zekâ tarifleri için Gemini API anahtarı"
+    }
+  },
+  "customizations": {
+    "codespaces": { "openFiles": ["docs/CODESPACES.md"] }
+  }
+}
