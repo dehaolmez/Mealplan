@@ -34,6 +34,7 @@ class PreferencesIn(BaseModel):
     plan_days: list[int] = Field(default_factory=lambda: [0, 1, 2, 3, 4, 5, 6])
     weekly_budget: float | None = Field(default=None, ge=0, le=100_000)
     repeat_policy: Literal["variety", "balanced", "batch"] = "variety"
+    meal_structure: Literal["main", "main_side", "full"] = "main_side"
     max_prep_minutes: int | None = Field(default=None, ge=5, le=480)
     onboarding_done: bool = True
 
@@ -59,6 +60,7 @@ class GeneratedMealOut(BaseModel):
     is_leftover: bool
     est_cost: float
     kcal_per_serving: float
+    course: str = "main"
 
 
 class GenerateOut(BaseModel):

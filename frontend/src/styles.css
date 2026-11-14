@@ -425,3 +425,17 @@ code { background: var(--surface-2); padding: 1px 5px; border-radius: 5px; font-
 .recipe-row { width: 100%; display: flex; justify-content: space-between; align-items: center; gap: 10px; background: none; border: 0; padding: 0; font: inherit; color: inherit; text-align: left; cursor: pointer; }
 .recipe-row > span:first-child { display: grid; gap: 2px; }
 .recipe-detail ol { padding-left: 20px; }
+.recipe-modal h3 { margin: 14px 0 6px; font-size: 0.95rem; }
+.ing-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.ing-list li { display: flex; justify-content: space-between; gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--border); }
+.steps { padding-left: 20px; display: grid; gap: 6px; }
+.meal-group { display: grid; gap: 4px; }
+.meal-group > small { font-weight: 700; color: var(--muted); text-transform: uppercase; font-size: 0.7rem; letter-spacing: 0.04em; }
+.plan-entry .recipe-link { background: none; border: 0; padding: 0; font: inherit; color: inherit; text-align: left; cursor: pointer; text-decoration: underline; text-decoration-color: var(--border); text-underline-offset: 3px; }
+.course-tag { font-size: 0.7rem; color: var(--muted); margin-right: 4px; }
+.day-chips { display: flex; flex-wrap: wrap; gap: 6px; }
+.day-chip { border: 1px solid var(--border); background: var(--surface); border-radius: 999px; padding: 6px 12px; cursor: pointer; font: inherit; color: inherit; }
+.day-chip.on { background: var(--primary); color: var(--primary-ink); border-color: var(--primary); }
+.day-chip:disabled { opacity: 0.4; cursor: default; }
+.ob-subtitle { margin: 10px 0 0; font-size: 1.05rem; }
+.ob-mini { margin-left: 4px; }

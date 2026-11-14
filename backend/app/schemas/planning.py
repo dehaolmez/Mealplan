@@ -27,6 +27,7 @@ class MealPlanOut(BaseModel):
     status: str = "planned"
     is_leftover: bool = False
     auto_generated: bool = False
+    course: str = "main"
     kcal_per_serving: float
 
 
@@ -52,6 +53,7 @@ class OptimizeRequest(BaseModel):
     selections: list[RecipeSelection] = []
     plan_from: date | None = None
     plan_to: date | None = None
+    plan_dates: list[date] | None = None
     strategy: Strategy = Strategy.cheapest
     store_ids: list[int] | None = Field(default=None, description="Boşsa hanenin seçili marketleri")
     add_to_list: bool = False

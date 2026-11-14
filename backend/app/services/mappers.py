@@ -51,6 +51,7 @@ def recipe_out(recipe: Recipe) -> RecipeOut:
         tags=[t for t in recipe.tags.split(",") if t],
         equipment=[t for t in (recipe.equipment or "").split(",") if t],
         source=recipe.source or "seed",
+        course=recipe.course or "main",
         own=recipe.household_id is not None,
         per_serving=MacrosOut(**macros.__dict__),
         ingredients=[

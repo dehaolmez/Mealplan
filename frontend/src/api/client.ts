@@ -67,6 +67,7 @@ export interface PlanRange {
   selections?: Selection[];
   plan_from?: string;
   plan_to?: string;
+  plan_dates?: string[];
 }
 
 export const api = {

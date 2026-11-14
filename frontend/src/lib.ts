@@ -89,3 +89,7 @@ export const KIND_LABELS: Record<ChainKind, string> = {
   cooperative: "Kooperatif",
   regional: "Bölgesel",
 };
+
+export const COURSE_LABELS: Record<string, string> = {
+  breakfast: "Kahvaltı", soup: "Çorba", main: "Ana yemek", side: "Yan yemek", salad: "Salata / meze", snack: "Ara öğün",
+};

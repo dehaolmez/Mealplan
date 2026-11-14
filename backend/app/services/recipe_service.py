@@ -102,19 +102,23 @@ def resolve_selections(
     selections: list[RecipeSelection],
     plan_from: date | None,
     plan_to: date | None,
+    plan_dates: list[date] | None = None,
 ) -> list[tuple[Recipe, int | None]]:
     """Açık tarif seçimleri ve/veya bir tarih aralığındaki (pişirilmemiş) plan kayıtlarını birleştirir."""
     resolved: list[tuple[Recipe, int | None]] = [(get_recipe(db, s.recipe_id, household), s.servings) for s in selections]
-    if plan_from or plan_to:
-        start = plan_from or plan_to
-        end = plan_to or plan_from
-        if start > end:
-            raise BadRequest("plan_from, plan_to'dan sonra olamaz")
+    if plan_dates or plan_from or plan_to:
+        if plan_dates:
+            day_filter = MealPlanEntry.day.in_(plan_dates)
+        else:
+            start = plan_from or plan_to
+            end = plan_to or plan_from
+            if start > end:
+                raise BadRequest("plan_from, plan_to'dan sonra olamaz")
+            day_filter = MealPlanEntry.day.between(start, end)
         entries = db.scalars(
             select(MealPlanEntry).where(
                 MealPlanEntry.household_id == household.id,
-                MealPlanEntry.day >= start,
-                MealPlanEntry.day <= end,
+                day_filter,
                 MealPlanEntry.cooked.is_(False),
                 MealPlanEntry.status == "planned",
                 MealPlanEntry.is_leftover.is_(False),
@@ -122,7 +126,7 @@ def resolve_selections(
         )
         resolved.extend((e.recipe, e.servings) for e in entries)
     if not resolved:
-        raise BadRequest("En az bir tarif seçin veya plan tarih aralığı verin")
+        raise BadRequest("Seçilen günlerde alışveriş gerektiren planlı öğün yok")
     return resolved
 
 
@@ -132,7 +136,8 @@ def missing_for(
     selections: list[RecipeSelection],
     plan_from: date | None = None,
     plan_to: date | None = None,
+    plan_dates: list[date] | None = None,
 ) -> list[MissingLine]:
-    resolved = resolve_selections(db, household, selections, plan_from, plan_to)
+    resolved = resolve_selections(db, household, selections, plan_from, plan_to, plan_dates)
     stock = inventory_service.current_stock(db, household)
     return find_missing(aggregate_requirements(resolved), stock)

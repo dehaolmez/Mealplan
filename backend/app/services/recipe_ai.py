@@ -133,6 +133,9 @@ def build_recipe(r: dict, catalog: dict[str, dict], household_id: int | None, so
         tags=",".join(r["tags"]), equipment=",".join(r["equipment"]) or "stovetop", source=source,
         household_id=household_id,
     )
+    from app.domain.courses import classify
+
+    recipe.course = classify(recipe.name, recipe.meal_type.value)
     recipe.ingredients = list(merged.values())
     return recipe
 

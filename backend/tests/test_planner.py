@@ -54,6 +54,7 @@ PREFS = {
     "meals": {"breakfast": {"mode": "skip"}, "lunch": {"mode": "own", "kcal": 800, "protein": 60},
               "dinner": {"mode": "plan"}, "snack": {"mode": "skip"}},
     "plan_days": [0, 1, 2, 3, 4, 5, 6], "weekly_budget": 1800, "repeat_policy": "variety", "onboarding_done": True,
+    "meal_structure": "main",
 }
 MONDAY = "2026-11-16"
 
@@ -139,3 +140,37 @@ def test_portion_factor_and_calorie_fit(client):
     out = client.post("/api/plan/generate", json={"start": MONDAY, "days": 7, "seed": 4}).json()
     kcal = [m["kcal_per_serving"] for m in out["meals"]]
     assert sum(kcal) / len(kcal) > 600  # hafif çorbalar tek başına akşam yemeği olarak seçilmez
+
+
+def test_meal_structures_build_menus(client):
+    client.put("/api/preferences", json={**PREFS, "plan_days": [0, 1, 2], "meal_structure": "full"})
+    meals = client.post("/api/plan/generate", json={"start": MONDAY, "days": 7, "seed": 8}).json()["meals"]
+    by_day = {}
+    for m in meals:
+        by_day.setdefault(m["day"], []).append(m["course"])
+    for day, courses in by_day.items():
+        assert courses[0] == "main" and "soup" in courses and "salad" in courses, (day, courses)
+        assert len(courses) == len(set(courses))  # aynı türden iki tabak yok
+    client.put("/api/preferences", json={**PREFS, "plan_days": [0, 1, 2], "meal_structure": "main_side"})
+    meals = client.post("/api/plan/generate", json={"start": MONDAY, "days": 7, "seed": 8}).json()["meals"]
+    recipes = {r["id"]: r for r in client.get("/api/recipes").json()}
+    for day in {m["day"] for m in meals}:
+        courses = [m["course"] for m in meals if m["day"] == day]
+        assert courses[0] == "main" and len(courses) == 2
+        main = next(m for m in meals if m["day"] == day and m["course"] == "main")
+        carb = any("carb" in l["ingredient"]["diet_tags"].split(",")
+                   for l in recipes[main["recipe_id"]]["ingredients"] if not l["optional"])
+        assert courses[1] == ("salad" if carb else "side"), (main["recipe_name"], courses)
+
+
+def test_shopping_for_selected_days_only(client):
+    recipes = {r["name"]: r["id"] for r in client.get("/api/recipes").json()}
+    client.post("/api/plan", json={"day": "2026-11-16", "recipe_id": recipes["Karnıyarık"], "servings": 2})
+    client.post("/api/plan", json={"day": "2026-11-17", "recipe_id": recipes["Fırında Somon ve Brokoli"], "servings": 2})
+    only_monday = client.post("/api/recipes/missing", json={"plan_dates": ["2026-11-16"]}).json()["lines"]
+    names = {l["ingredient"]["name"] for l in only_monday}
+    assert "Patlıcan" in names and "Somon" not in names
+    both = client.post("/api/recipes/missing", json={"plan_dates": ["2026-11-16", "2026-11-17"]}).json()["lines"]
+    assert "Somon" in {l["ingredient"]["name"] for l in both}
+    r = client.post("/api/recipes/missing", json={"plan_dates": ["2026-11-20"]})
+    assert r.status_code == 400 and "planlı öğün yok" in r.json()["detail"]

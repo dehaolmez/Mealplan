@@ -59,6 +59,7 @@ class PlannedMeal:
     is_leftover: bool = False
     est_cost: float = 0.0
     kcal_per_serving: float = 0.0
+    course: str = "main"
 
 
 @dataclass
@@ -66,6 +67,11 @@ class WeekPlan:
     meals: list[PlannedMeal] = field(default_factory=list)
     est_cost: float = 0.0
     warnings: list[str] = field(default_factory=list)
+
+
+# Menüdeki yan tabakların öğün kalorisinden aldığı pay (geri kalanı ana yemeğin)
+COURSE_SHARE = {"soup": 0.15, "side": 0.25, "salad": 0.10}
+EXTRA_REPEAT_LIMIT = 2  # yan tabaklar haftada en fazla iki kez
 
 
 def meal_targets(daily_kcal: float, meal_modes: dict[str, dict]) -> dict[str, float]:
@@ -90,6 +96,22 @@ def _consume(stock: Stock, recipe: Recipe, servings: int) -> None:
         stock[iid] = [l for l in lots if l.quantity > 1e-9]
 
 
+def has_carb(recipe: Recipe) -> bool:
+    from app.domain.diet import tags_of
+
+    return any("carb" in tags_of(l.ingredient.diet_tags) for l in recipe.ingredients if not l.optional)
+
+
+def menu_courses(structure: str, main: Recipe) -> list[str]:
+    """Ana yemeğin yanına eklenecek tabaklar."""
+    if structure == "main":
+        return []
+    extra = ["salad"] if has_carb(main) else ["side"]
+    if structure == "full":
+        extra = ["soup"] + (["salad"] if has_carb(main) else ["side", "salad"])
+    return extra
+
+
 def plan_week(
     *,
     days: list[date],
@@ -102,8 +124,12 @@ def plan_week(
     weekly_budget: float | None,
     repeat_policy: str = "variety",
     seed: int = 0,
+    meal_structure: str = "main",
+    extras: dict[str, list[Recipe]] | None = None,
 ) -> WeekPlan:
+    """recipes_by_slot: öğün başına ana tabak adayları; extras: "soup"/"side"/"salad" adayları."""
     rng = random.Random(seed)
+    extras = extras or {}
     targets = meal_targets(daily_kcal, meal_modes)
     slots = [m for m in ("breakfast", "lunch", "dinner", "snack") if meal_modes.get(m, {}).get("mode") == "plan"]
     total_meals = len(slots) * len(days) or 1
@@ -111,9 +137,9 @@ def plan_week(
 
     sim = deepcopy(stock)
     used: Counter[int] = Counter()
+    last_day_used: dict[int, int] = {}
     protein_used: Counter[str] = Counter()
     last_protein: dict[str, str] = {}
-    last_day_used: dict[int, int] = {}
     plan = WeekPlan()
     batch_lunch: Recipe | None = None
     leftover_from: dict[str, PlannedMeal] = {}
@@ -122,78 +148,102 @@ def plan_week(
         match = evaluate_recipe(recipe, day_stock, n)
         return sum(m.missing * unit_prices.get(m.ingredient.id, 0.0) for m in match.missing)
 
-    for di, day in enumerate(days):
-        today_ids: set[int] = set()
-        day_stock = _shift(sim, di)
-        for slot in slots:
-            # Kalan yemek (balanced: dünkü öğle yemeği bugün tekrar)
-            prev = leftover_from.pop(slot, None)
-            if prev and repeat_policy == "balanced" and slot == "lunch":
-                plan.meals.append(PlannedMeal(day, slot, prev.recipe, prev.servings // 2, is_leftover=True,
-                                              kcal_per_serving=prev.kcal_per_serving))
-                today_ids.add(prev.recipe.id)
+    def pick(pool: list[Recipe], *, day: date, di: int, slot: str, target: float | None, day_stock: Stock,
+             exclude: set[int], batch_days: int, limit: int, budget_share: float, use_protein: bool) -> PlannedMeal | None:
+        best: tuple[float, PlannedMeal] | None = None
+        for recipe in pool:
+            if recipe.id in exclude or used[recipe.id] >= limit or last_day_used.get(recipe.id) == di - 1:
                 continue
-            if repeat_policy == "batch" and slot == "lunch" and batch_lunch is not None:
-                first = next(m for m in plan.meals if m.recipe is batch_lunch and not m.is_leftover)
-                plan.meals.append(PlannedMeal(day, slot, batch_lunch, first.servings // len(days), is_leftover=True,
-                                              kcal_per_serving=first.kcal_per_serving))
-                continue
-
-            candidates = recipes_by_slot.get(slot, [])
-            best: tuple[float, PlannedMeal] | None = None
-            batch_days = len(days) if (repeat_policy == "batch" and slot == "lunch") else 1
-            for recipe in candidates:
-                if recipe.id in today_ids:
-                    continue
-                # Havuz genişse aynı tarif haftada bir kez (tekrar isteyenler için kalan yemek mekanizması var)
-                limit = 1 if len(candidates) >= 3 * len(days) else 2
-                if used[recipe.id] >= limit or last_day_used.get(recipe.id) == di - 1:
-                    continue
-                base = evaluate_recipe(recipe, {}, recipe.servings)
-                factor = portion_factor(base.per_serving.kcal, targets.get(slot))
-                n = max(1, round(servings * factor)) * batch_days
-                match = evaluate_recipe(recipe, day_stock, n, targets.get(slot))
-                # Öğün başı kişi kalorisi (porsiyon çarpanıyla) hedefe ne kadar yakın?
-                eaten = match.per_serving.kcal * n / batch_days / servings
-                target = targets.get(slot)
-                fit = max(0.0, 1 - abs(eaten - target) / target) if target else 0.5
-                cost = sum(m.missing * unit_prices.get(m.ingredient.id, 0.0) for m in match.missing)
-                score = 0.35 * match.coverage + 0.25 * match.urgency + 0.40 * fit
-                if per_meal_budget:
-                    score -= 0.35 * min(1.5, cost / (per_meal_budget * batch_days))
+            base = evaluate_recipe(recipe, {}, recipe.servings)
+            factor = portion_factor(base.per_serving.kcal, target)
+            n = max(1, round(servings * factor)) * batch_days
+            match = evaluate_recipe(recipe, day_stock, n, target)
+            eaten = match.per_serving.kcal * n / batch_days / servings
+            fit = max(0.0, 1 - abs(eaten - target) / target) if target else 0.5
+            cost = sum(m.missing * unit_prices.get(m.ingredient.id, 0.0) for m in match.missing)
+            score = 0.35 * match.coverage + 0.25 * match.urgency + 0.40 * fit
+            if per_meal_budget:
+                score -= 0.35 * min(1.5, cost / (per_meal_budget * budget_share * batch_days))
+            if use_protein:
                 pk = protein_key(recipe)
                 if pk != "veg" and last_protein.get(slot) == pk:
-                    score -= 0.12  # dün de aynı protein
+                    score -= 0.12
                 if pk != "veg":
-                    score -= 0.06 * protein_used[pk]  # aynı protein türü haftada ne kadar çok, o kadar az tercih
-                score += rng.uniform(0, 0.08)  # çeşitlilik için küçük rastgelelik (aynı tohum = aynı plan)
-                if best is None or score > best[0]:
-                    best = (score, PlannedMeal(day, slot, recipe, n, est_cost=round(cost, 2),
-                                               kcal_per_serving=round(eaten)))
-            if best is None:
-                plan.warnings.append(f"{day.isoformat()} {slot}: kurallara uyan tarif bulunamadı")
-                continue
-            meal = best[1]
-            plan.meals.append(meal)
-            plan.est_cost += meal.est_cost
-            used[meal.recipe.id] += 1
-            last_day_used[meal.recipe.id] = di
-            pk = protein_key(meal.recipe)
-            protein_used[pk] += 1
-            last_protein[slot] = pk
-            today_ids.add(meal.recipe.id)
-            _consume(sim, meal.recipe, meal.servings)
+                    score -= 0.06 * protein_used[pk]
+            score += rng.uniform(0, 0.08)  # çeşitlilik için küçük rastgelelik (aynı tohum = aynı plan)
+            if best is None or score > best[0]:
+                best = (score, PlannedMeal(day, slot, recipe, n, est_cost=round(cost, 2), kcal_per_serving=round(eaten)))
+        return best[1] if best else None
+
+    def commit(meal: PlannedMeal, di: int, today_ids: set[int]) -> None:
+        plan.meals.append(meal)
+        plan.est_cost += meal.est_cost
+        used[meal.recipe.id] += 1
+        last_day_used[meal.recipe.id] = di
+        today_ids.add(meal.recipe.id)
+        _consume(sim, meal.recipe, meal.servings)
+
+    for di, day in enumerate(days):
+        today_ids: set[int] = set()
+        for slot in slots:
             day_stock = _shift(sim, di)
-            # Toplu pişirme: ilk kayıt tüm günlerin porsiyonunu taşır (alışveriş ve envanter ondan hesaplanır),
-            # sonraki günler "kalan yemek" olarak eklenir.
-            if repeat_policy == "batch" and slot == "lunch":
-                batch_lunch = meal.recipe
-            if repeat_policy == "balanced" and slot == "lunch" and di + 1 < len(days):
-                extra = meal.servings
-                _consume(sim, meal.recipe, extra)  # ertesi günün payı da bugün pişer
-                meal.est_cost = round(meal.est_cost + cost_of(meal.recipe, _shift(sim, di), extra), 2)
-                meal.servings = extra * 2
-                leftover_from[slot] = meal
+            target = targets.get(slot)
+            main: PlannedMeal | None = None
+
+            # Kalan yemek (balanced: dünkü öğle yemeği bugün tekrar) / toplu pişirme
+            prev = leftover_from.pop(slot, None)
+            if prev and repeat_policy == "balanced" and slot == "lunch":
+                main = PlannedMeal(day, slot, prev.recipe, prev.servings // 2, is_leftover=True,
+                                   kcal_per_serving=prev.kcal_per_serving)
+                plan.meals.append(main)
+                today_ids.add(prev.recipe.id)
+            elif repeat_policy == "batch" and slot == "lunch" and batch_lunch is not None:
+                first = next(m for m in plan.meals if m.recipe is batch_lunch and not m.is_leftover)
+                main = PlannedMeal(day, slot, batch_lunch, first.servings // len(days), is_leftover=True,
+                                   kcal_per_serving=first.kcal_per_serving)
+                plan.meals.append(main)
+            else:
+                candidates = recipes_by_slot.get(slot, [])
+                # Havuz genişse aynı tarif haftada bir kez (tekrar isteyenler için kalan yemek mekanizması var)
+                limit = 1 if len(candidates) >= 3 * len(days) else 2
+                batch_days = len(days) if (repeat_policy == "batch" and slot == "lunch") else 1
+                courses_for_target = 1.0
+                if slot in ("lunch", "dinner") and meal_structure != "main":
+                    # yan tabakların payı düşülmüş ana yemek hedefi (yaklaşık; karbonhidrat durumuna göre değişir)
+                    courses_for_target = 1 - (0.25 if meal_structure == "main_side" else 0.45)
+                main = pick(candidates, day=day, di=di, slot=slot,
+                            target=target * courses_for_target if target else None, day_stock=day_stock,
+                            exclude=today_ids, batch_days=batch_days, limit=limit, budget_share=courses_for_target,
+                            use_protein=True)
+                if main is None:
+                    plan.warnings.append(f"{day.isoformat()} {slot}: kurallara uyan tarif bulunamadı")
+                    continue
+                commit(main, di, today_ids)
+                pk = protein_key(main.recipe)
+                protein_used[pk] += 1
+                last_protein[slot] = pk
+                if repeat_policy == "batch" and slot == "lunch":
+                    batch_lunch = main.recipe
+                if repeat_policy == "balanced" and slot == "lunch" and di + 1 < len(days):
+                    extra = main.servings
+                    extra_cost = cost_of(main.recipe, _shift(sim, di), extra)
+                    _consume(sim, main.recipe, extra)  # ertesi günün payı da bugün pişer
+                    main.est_cost = round(main.est_cost + extra_cost, 2)
+                    plan.est_cost += extra_cost
+                    main.servings = extra * 2
+                    leftover_from[slot] = main
+
+            # Menü: çorba / yan yemek / salata
+            if slot in ("lunch", "dinner") and main is not None:
+                for course in menu_courses(meal_structure, main.recipe):
+                    pool = extras.get(course, [])
+                    share = COURSE_SHARE[course]
+                    extra_meal = pick(pool, day=day, di=di, slot=slot, target=target * share if target else None,
+                                      day_stock=_shift(sim, di), exclude=today_ids, batch_days=1,
+                                      limit=EXTRA_REPEAT_LIMIT, budget_share=share, use_protein=False)
+                    if extra_meal is not None:
+                        extra_meal.course = course
+                        commit(extra_meal, di, today_ids)
 
     plan.est_cost = round(plan.est_cost, 2)
     if weekly_budget and plan.est_cost > weekly_budget:
@@ -211,8 +261,17 @@ def unit_price_table(offers: dict[int, list]) -> dict[int, float]:
     return table
 
 
+MAIN_COURSES = {"breakfast": {"breakfast"}, "lunch": {"main"}, "dinner": {"main"}, "snack": {"snack", "salad"}}
+
+
 def by_slot(recipes: list[Recipe]) -> dict[str, list[Recipe]]:
+    """Öğün başına ana tabak adayları (öğle/akşam: ana yemekler; kahvaltı: kahvaltılıklar)."""
     out: dict[str, list[Recipe]] = defaultdict(list)
     for slot, kinds in SLOT_RECIPE_TYPES.items():
-        out[slot] = [r for r in recipes if r.meal_type.value in kinds]
+        out[slot] = [r for r in recipes if r.meal_type.value in kinds and r.course in MAIN_COURSES[slot]]
+    out["breakfast"] = [r for r in recipes if r.course == "breakfast"]
     return out
+
+
+def extras_by_course(recipes: list[Recipe]) -> dict[str, list[Recipe]]:
+    return {c: [r for r in recipes if r.course == c] for c in ("soup", "side", "salad")}

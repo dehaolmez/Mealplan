@@ -18,6 +18,7 @@ export interface Ingredient {
   base_unit: BaseUnit;
   emoji: string;
   is_staple: boolean;
+  diet_tags: string;
   grams_per_piece: number | null;
   shelf_life_fridge_days: number | null;
   shelf_life_freezer_days: number | null;
@@ -114,6 +115,7 @@ export interface Recipe {
   tags: string[];
   equipment: string[];
   source: string;
+  course: Course;
   own: boolean;
   per_serving: Macros;
   ingredients: { ingredient: Ingredient; quantity: number; quantity_label: string; optional: boolean }[];
@@ -159,6 +161,7 @@ export interface PlanEntry {
   status: "planned" | "cooked" | "skipped" | "ate_out";
   is_leftover: boolean;
   auto_generated: boolean;
+  course: Course;
   kcal_per_serving: number;
 }
 
@@ -319,6 +322,8 @@ export interface ReceiptDraft {
   lines: ReceiptLine[];
 }
 
+export type Course = "breakfast" | "soup" | "main" | "side" | "salad" | "snack";
+export type MealStructure = "main" | "main_side" | "full";
 export type MealSlot = "breakfast" | "lunch" | "dinner" | "snack";
 export type MealMode = "plan" | "skip" | "own";
 export type Diet = "none" | "vegetarian" | "vegan" | "pescatarian";
@@ -339,6 +344,7 @@ export interface Preferences {
   plan_days: number[];
   weekly_budget: number | null;
   repeat_policy: RepeatPolicy;
+  meal_structure: MealStructure;
   max_prep_minutes: number | null;
   onboarding_done: boolean;
 }

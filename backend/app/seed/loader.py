@@ -29,7 +29,9 @@ def seed(db: Session) -> None:
         _seed_catalog(db)
         log.info("Katalog, tarifler ve fiyatlar yüklendi")
     added_i = _upsert_extra_ingredients(db)
-    added_r = _upsert_generated_recipes(db)
+    added_r = _upsert_manual_recipes(db) + _upsert_generated_recipes(db)
+    _repair_empty_recipes(db)
+    _backfill_courses(db)
     if added_i or added_r:
         log.info("Katalog güncellendi: +%d malzeme, +%d tarif", added_i, added_r)
     db.commit()
@@ -121,15 +123,6 @@ def _seed_catalog(db: Session) -> None:
         ingredients[name] = ing
     db.flush()
 
-    for name, meal, servings, minutes, tags, desc, steps, lines in data.RECIPES:
-        recipe = Recipe(name=name, meal_type=meal, servings=servings, prep_minutes=minutes, tags=tags,
-                        description=desc, instructions=steps,
-                        equipment="oven" if ("fırın" in steps.lower() or "Fırın" in name) else "stovetop")
-        recipe.ingredients = [
-            RecipeIngredient(ingredient_id=ingredients[ing].id, quantity=qty, optional=opt) for ing, qty, opt in lines
-        ]
-        db.add(recipe)
-
     stores = []
     for name, color in data.STORES:
         store = Store(name=name, color=color, is_demo=True)
@@ -189,3 +182,81 @@ def _diet_tags_fixed(tags: list[str], lines: list[RecipeIngredient], by_id: dict
     if not used & DIET_FORBIDS["vegan"]:
         out.append("vegan")
     return out
+
+
+def _backfill_courses(db: Session) -> None:
+    """Ortak katalogdaki tariflerin türünü (çorba/ana/yan/salata...) ada ve kategoriye göre belirler."""
+    from app.domain.courses import classify
+
+    groups: dict[str, str] = {}
+    for f in (Path(__file__).parent / "recipes").glob("*.json"):
+        for r in json.loads(f.read_text(encoding="utf-8")):
+            groups[r["name"].lower()] = r.get("group", "")
+    for recipe in db.scalars(select(Recipe).where(Recipe.household_id.is_(None))):
+        course = classify(recipe.name, recipe.meal_type.value, groups.get(recipe.name.lower()))
+        if recipe.course != course:
+            recipe.course = course
+    db.flush()
+
+
+def _upsert_manual_recipes(db: Session) -> int:
+    """Elle yazılmış tarifler (data.RECIPES): ad bazında eksik olanları ekler."""
+    ingredients = {i.name: i for i in db.scalars(select(Ingredient))}
+    public = {r.name.lower() for r in db.scalars(select(Recipe).where(Recipe.household_id.is_(None)))}
+    added = 0
+    for name, meal, servings, minutes, tags, desc, steps, lines in data.RECIPES:
+        if name.lower() in public or any(ing not in ingredients for ing, _, _ in lines):
+            continue
+        recipe = Recipe(name=name, meal_type=meal, servings=servings, prep_minutes=minutes, tags=tags,
+                        description=desc, instructions=steps,
+                        equipment="oven" if ("fırın" in steps.lower() or "Fırın" in name) else "stovetop")
+        recipe.ingredients = [
+            RecipeIngredient(ingredient_id=ingredients[ing].id, quantity=qty, optional=opt) for ing, qty, opt in lines
+        ]
+        db.add(recipe)
+        added += 1
+    db.flush()
+    return added
+
+
+def _repair_empty_recipes(db: Session) -> int:
+    """Malzemesi kaybolmuş ortak tarifleri kaynak tanımından yeniden kurar (plan kayıtları korunur).
+
+    v0.5 öncesi bir SQLite migrasyonu, dolu veritabanlarında tarif malzemelerini silebiliyordu."""
+    from sqlalchemy import exists
+
+    empty = list(db.scalars(select(Recipe).where(
+        Recipe.household_id.is_(None), ~exists().where(RecipeIngredient.recipe_id == Recipe.id))))
+    if not empty:
+        return 0
+    ingredients = {i.name: i for i in db.scalars(select(Ingredient))}
+    manual = {name.lower(): lines for name, _, _, _, _, _, _, lines in data.RECIPES}
+    generated = {r["name"].lower(): r for f in (Path(__file__).parent / "recipes").glob("*.json")
+                 for r in json.loads(f.read_text(encoding="utf-8"))}
+    fixed = 0
+    for recipe in empty:
+        key = recipe.name.lower()
+        lines: list[RecipeIngredient] = []
+        try:
+            if key in manual:
+                lines = [RecipeIngredient(ingredient_id=ingredients[n].id, quantity=q, optional=o) for n, q, o in manual[key]]
+            elif key in generated:
+                for line in generated[key]["ingredients"]:
+                    ing = ingredients[line["ingredient"]]
+                    lines.append(RecipeIngredient(ingredient_id=ing.id, optional=bool(line.get("optional")),
+                                                  quantity=round(to_base_quantity(ing, line["quantity"], line["unit"]), 2)))
+        except (KeyError, UnitConversionError):
+            continue
+        merged: dict[int, RecipeIngredient] = {}
+        for ln in lines:
+            if ln.ingredient_id in merged:
+                merged[ln.ingredient_id].quantity += ln.quantity
+            else:
+                merged[ln.ingredient_id] = ln
+        if merged:
+            recipe.ingredients = list(merged.values())
+            fixed += 1
+    db.flush()
+    if fixed:
+        log.warning("Malzemesi eksik %d tarif onarıldı", fixed)
+    return fixed

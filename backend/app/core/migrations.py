@@ -47,6 +47,18 @@ def upgrade_database(engine: Engine) -> None:
         log.warning("Eski şemalı veritabanı yedeklendi: %s — yeni veritabanı oluşturuluyor", backup)
 
     cfg = alembic_config(make_url(str(url)).render_as_string(hide_password=False))
-    with engine.begin() as connection:
-        cfg.attributes["connection"] = connection
-        command.upgrade(cfg, "head")
+    is_sqlite = url.get_backend_name() == "sqlite"
+    with engine.connect() as connection:
+        if is_sqlite:
+            # SQLite'ta tablo yeniden kurulurken (batch) eski tablo DROP edilir; yabancı anahtarlar açıksa
+            # ON DELETE CASCADE bağlı satırları (ör. tarif malzemeleri) siler. PRAGMA işlem dışında olmalı.
+            connection.exec_driver_sql("PRAGMA foreign_keys=OFF")
+            connection.commit()
+        try:
+            with connection.begin():
+                cfg.attributes["connection"] = connection
+                command.upgrade(cfg, "head")
+        finally:
+            if is_sqlite:
+                connection.exec_driver_sql("PRAGMA foreign_keys=ON")
+                connection.commit()

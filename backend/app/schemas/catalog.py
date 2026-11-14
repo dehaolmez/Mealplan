@@ -9,6 +9,7 @@ class IngredientOut(ORMModel):
     base_unit: BaseUnit
     emoji: str
     is_staple: bool
+    diet_tags: str = ""
     grams_per_piece: float | None
     shelf_life_fridge_days: int | None
     shelf_life_freezer_days: int | None

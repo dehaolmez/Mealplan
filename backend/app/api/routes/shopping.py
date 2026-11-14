@@ -49,7 +49,7 @@ def checkout(db: DB, household: CurrentHousehold, location: StorageLocation = St
 @router.post("/optimize", response_model=OptimizeOut)
 def optimize(data: OptimizeRequest, db: DB, household: CurrentHousehold):
     """Eksik malzemeleri market fiyatlarıyla eşleştirir; istenirse listeye ekler."""
-    missing = recipe_service.missing_for(db, household, data.selections, data.plan_from, data.plan_to)
+    missing = recipe_service.missing_for(db, household, data.selections, data.plan_from, data.plan_to, data.plan_dates)
     settings = get_settings()
     lat = data.lat if data.lat is not None else household.home_lat
     lon = data.lon if data.lon is not None else household.home_lon

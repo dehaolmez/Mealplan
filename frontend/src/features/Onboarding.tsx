@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useState, type ReactElement } from "react";
 import { api } from "../api/client";
 import type {
-  Chain, Diet, Equipment, Exclusion, GoalKey, HouseholdTargets, Ingredient, Me, MealMode, MealSlot, Preferences, RepeatPolicy,
+  Chain, Diet, Equipment, Exclusion, GoalKey, HouseholdTargets, Ingredient, Me, MealMode, MealSlot, MealStructure, Preferences,
+  RepeatPolicy,
 } from "../api/types";
 import { useToast } from "../components/Toast";
 import { ACTIVITY_LABELS, GOAL_LABELS, tl } from "../lib";
@@ -41,6 +42,11 @@ const EQUIPMENT: { key: Equipment; icon: string; title: string }[] = [
   { key: "blender", icon: "🥤", title: "Blender" }, { key: "grill", icon: "🍢", title: "Izgara / tost makinesi" },
   { key: "pressure_cooker", icon: "🫕", title: "Düdüklü tencere" },
 ];
+const STRUCTURES: { key: MealStructure; icon: string; title: string; desc: string; strip: string[] }[] = [
+  { key: "main", icon: "🍲", title: "Sadece ana yemek", desc: "Tek tabak, en az pişirme", strip: ["🍲"] },
+  { key: "main_side", icon: "🍛", title: "Ana yemek + yanı", desc: "Pilav/makarna ya da salata eşliğinde", strip: ["🍲", "🍚"] },
+  { key: "full", icon: "🍽️", title: "Tam sofra", desc: "Çorba, ana yemek, yan yemek ve salata", strip: ["🥣", "🍲", "🍚", "🥗"] },
+];
 const DAYS = ["Pazartesi", "Salı", "Çarşamba", "Perşembe", "Cuma", "Cumartesi", "Pazar"];
 const REPEATS: { key: RepeatPolicy; icon: string; title: string; desc: string; strip: string[] }[] = [
   { key: "variety", icon: "✨", title: "Her gün farklı", desc: "Aynı yemek haftada en fazla iki kez", strip: ["🍗", "🥦", "🥚", "🍲", "🐟", "🫘", "🍝"] },
@@ -53,7 +59,8 @@ const DEFAULT: Preferences = {
   equipment: ["stovetop", "oven"],
   meals: { breakfast: { mode: "plan", kcal: 0, protein: 0 }, lunch: { mode: "plan", kcal: 0, protein: 0 },
     dinner: { mode: "plan", kcal: 0, protein: 0 }, snack: { mode: "skip", kcal: 0, protein: 0 } },
-  plan_days: [0, 1, 2, 3, 4, 5, 6], weekly_budget: 1800, repeat_policy: "variety", max_prep_minutes: null, onboarding_done: false,
+  plan_days: [0, 1, 2, 3, 4, 5, 6], weekly_budget: 1800, repeat_policy: "variety", meal_structure: "main_side",
+  max_prep_minutes: null, onboarding_done: false,
 };
 
 const toggle = <T,>(list: T[], v: T) => (list.includes(v) ? list.filter((x) => x !== v) : [...list, v]);
@@ -171,6 +178,18 @@ export function Onboarding({ me, ingredients, initial, onDone, onClose }: {
             );
           })}
           {plannedCount === 0 && <p className="form-error">En az bir öğün planlanmalı.</p>}
+          {(p.meals.lunch.mode === "plan" || p.meals.dinner.mode === "plan") && (
+            <>
+              <h3 className="ob-subtitle">Öğle ve akşam yemeği nasıl olsun?</h3>
+              {STRUCTURES.map((st) => (
+                <button key={st.key} className={`ob-option ${p.meal_structure === st.key ? "on" : ""}`} onClick={() => set("meal_structure", st.key)}>
+                  <span className="ob-icon">{st.icon}</span>
+                  <span><b>{st.title}</b><small>{st.desc} <span className="ob-mini">{st.strip.join(" ")}</span></small></span>
+                  <span className="ob-check" />
+                </button>
+              ))}
+            </>
+          )}
         </div>
       ),
     },

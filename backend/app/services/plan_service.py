@@ -24,6 +24,7 @@ def entry_out(entry: MealPlanEntry) -> MealPlanOut:
         status=entry.status,
         is_leftover=entry.is_leftover,
         auto_generated=entry.auto_generated,
+        course=entry.recipe.course,
         kcal_per_serving=recipe_macros_per_serving(entry.recipe).kcal,
     )
 

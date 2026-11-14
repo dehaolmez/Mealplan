@@ -44,6 +44,7 @@ def to_schema(prefs: HouseholdPreferences) -> PreferencesIn:
         disliked_ingredient_ids=[int(x) for x in _split(prefs.disliked_ingredient_ids)],
         equipment=_split(prefs.equipment), meals=meals, plan_days=[int(x) for x in _split(prefs.plan_days)],
         weekly_budget=prefs.weekly_budget, repeat_policy=prefs.repeat_policy, max_prep_minutes=prefs.max_prep_minutes,
+        meal_structure=prefs.meal_structure,
         onboarding_done=prefs.onboarding_done,
     )
 
@@ -66,6 +67,7 @@ def update(db: Session, household: Household, data: PreferencesIn) -> HouseholdP
     prefs.meals_json = json.dumps({k: v.model_dump() for k, v in data.meals.items()})
     prefs.plan_days = _csv(sorted(set(data.plan_days)))
     prefs.weekly_budget, prefs.repeat_policy = data.weekly_budget, data.repeat_policy
+    prefs.meal_structure = data.meal_structure
     prefs.max_prep_minutes, prefs.onboarding_done = data.max_prep_minutes, data.onboarding_done
     db.commit()
     return prefs
@@ -94,9 +96,9 @@ def generate_week(db: Session, household: Household, req: GenerateIn) -> Generat
     from app.domain.diet import allowed
 
     all_recipes = visible_recipes(db, household)
-    slots = {}
-    for slot, kinds in planner.SLOT_RECIPE_TYPES.items():
-        slots[slot] = allowed([r for r in all_recipes if r.meal_type.value in kinds], rules, slot)
+    pools = planner.by_slot(all_recipes)
+    slots = {slot: allowed(pool, rules, slot) for slot, pool in pools.items()}
+    extras = {c: allowed(pool, rules, "lunch") for c, pool in planner.extras_by_course(all_recipes).items()}
 
     targets = household_service.household_targets(db, household)
     members = max(1, len(targets.members))
@@ -117,6 +119,7 @@ def generate_week(db: Session, household: Household, req: GenerateIn) -> Generat
         days=days, meal_modes={k: v.model_dump() for k, v in data.meals.items()}, recipes_by_slot=slots,
         stock=inventory_service.current_stock(db, household), servings=members, daily_kcal=daily,
         unit_prices=unit_prices, weekly_budget=data.weekly_budget, repeat_policy=data.repeat_policy, seed=seed,
+        meal_structure=data.meal_structure, extras=extras,
     )
 
     planned_slots = [MealType(k) for k, v in data.meals.items() if v.mode == "plan"]
@@ -136,10 +139,12 @@ def generate_week(db: Session, household: Household, req: GenerateIn) -> Generat
         db.flush()
         out.append(GeneratedMealOut(entry_id=entry.id, day=m.day.isoformat(), meal_type=m.meal_type,
                                     recipe_id=m.recipe.id, recipe_name=m.recipe.name, servings=m.servings,
-                                    is_leftover=m.is_leftover, est_cost=m.est_cost, kcal_per_serving=m.kcal_per_serving))
+                                    is_leftover=m.is_leftover, est_cost=m.est_cost, kcal_per_serving=m.kcal_per_serving,
+                                    course=m.course))
     db.commit()
     return GenerateOut(meals=out, est_cost=week.est_cost, weekly_budget=data.weekly_budget, warnings=week.warnings,
-                       candidate_counts={k: len(v) for k, v in slots.items() if data.meals[k].mode == "plan"}, seed=seed)
+                       candidate_counts={**{k: len(v) for k, v in slots.items() if data.meals[k].mode == "plan"},
+                                         **{k: len(v) for k, v in extras.items()}}, seed=seed)
 
 
 def preferred_chain_ids(db: Session, household: Household) -> set[int] | None:

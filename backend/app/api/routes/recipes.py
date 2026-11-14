@@ -37,7 +37,7 @@ def recommendations(
 @router.post("/missing", response_model=MissingOut)
 def missing(data: MissingRequest, db: DB, household: CurrentHousehold):
     """Seçili tarifler ve/veya plan aralığı için envanterde olmayan malzemeler."""
-    lines = svc.missing_for(db, household, data.selections, data.plan_from, data.plan_to)
+    lines = svc.missing_for(db, household, data.selections, data.plan_from, data.plan_to, data.plan_dates)
     return MissingOut(lines=[missing_out(m) for m in lines])
 
 
