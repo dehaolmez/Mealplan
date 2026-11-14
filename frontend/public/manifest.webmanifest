@@ -1,0 +1,22 @@
+{
+  "name": "Meall — Akıllı Mutfak",
+  "short_name": "Meall",
+  "description": "Buzdolabı envanteri, son kullanma tarihi takibi, tarif önerisi ve akıllı alışveriş listesi.",
+  "lang": "tr",
+  "start_url": "/#suggest",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f6f7f4",
+  "theme_color": "#15803d",
+  "categories": ["food", "lifestyle", "shopping"],
+  "icons": [
+    { "src": "/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "Alışveriş listesi", "url": "/#shopping", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] },
+    { "name": "Envanter", "url": "/#inventory", "icons": [{ "src": "/icons/icon-192.png", "sizes": "192x192" }] }
+  ]
+}

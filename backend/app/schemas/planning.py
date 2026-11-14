@@ -1,5 +1,7 @@
 from datetime import date, datetime
 
+from typing import Literal
+
 from pydantic import BaseModel, Field
 
 from app.domain.price_optimizer import Strategy
@@ -22,7 +24,15 @@ class MealPlanOut(BaseModel):
     recipe_name: str
     servings: int
     cooked: bool
+    status: str = "planned"
+    is_leftover: bool = False
+    auto_generated: bool = False
+    course: str = "main"
     kcal_per_serving: float
+
+
+class StatusIn(BaseModel):
+    status: Literal["planned", "skipped", "ate_out"]
 
 
 class CookOut(BaseModel):
@@ -35,15 +45,26 @@ class StoreOut(BaseModel):
     id: int
     name: str
     color: str
+    chain_id: int | None = None
+    is_demo: bool = False
 
 
 class OptimizeRequest(BaseModel):
     selections: list[RecipeSelection] = []
     plan_from: date | None = None
     plan_to: date | None = None
+    plan_dates: list[date] | None = None
     strategy: Strategy = Strategy.cheapest
     store_ids: list[int] | None = Field(default=None, description="Boşsa hanenin seçili marketleri")
     add_to_list: bool = False
+    nearby_only: bool = Field(
+        default=False,
+        description="Yalnız ev konumuna (veya lat/lon'a) yakın şubesi olan zincirlerin fiyatlarını kullan",
+    )
+    lat: float | None = None
+    lon: float | None = None
+    radius_m: int | None = Field(default=None, ge=200, le=10_000)
+    live_prices: bool = Field(default=True, description="Konum için Market Fiyatı'ndan canlı fiyat çek")
 
 
 class PurchaseOut(BaseModel):
@@ -77,6 +98,9 @@ class OptimizeOut(BaseModel):
     store_totals: list[StoreTotalOut]
     savings_vs_worst_single_store: float | None
     added_to_list: int
+    # "live": Market Fiyatı canlı verisi · "real": içe aktarılmış gerçek fiyat · "demo": örnek fiyat
+    price_mode: str = "demo"
+    price_note: str | None = None
 
 
 class ShoppingItemIn(BaseModel):

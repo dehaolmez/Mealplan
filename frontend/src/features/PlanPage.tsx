@@ -1,36 +1,53 @@
 import { useMemo, useState } from "react";
 import { api } from "../api/client";
-import type { MealType, OptimizeResult, PlanEntry, Recipe, Strategy } from "../api/types";
+import type { GenerateResult, MealType, OptimizeResult, PlanEntry, Recipe, Strategy } from "../api/types";
 import { useAsync } from "../hooks/useAsync";
-import { addDays, CATEGORY_EMOJI, dayLabel, isoDate, MEAL_LABELS, STRATEGY_LABELS, tl } from "../lib";
+import { addDays, CATEGORY_EMOJI, COURSE_LABELS, dayLabel, isoDate, MEAL_LABELS, STRATEGY_LABELS, tl } from "../lib";
+import { RecipeModal } from "../components/RecipeModal";
 import { Empty, ErrorBox, Section } from "../components/ui";
 import { useToast } from "../components/Toast";
 
 const MEAL_ORDER: MealType[] = ["breakfast", "lunch", "dinner", "snack"];
+const COURSE_ORDER = ["breakfast", "soup", "main", "side", "salad", "snack"];
 
 export function PlanPage({ recipes, onChanged }: { recipes: Recipe[]; onChanged: () => void }) {
   const toast = useToast();
   const start = isoDate(new Date());
-  const end = isoDate(addDays(new Date(), 6));
   const days = useMemo(() => Array.from({ length: 7 }, (_, i) => isoDate(addDays(new Date(), i))), []);
   const { data, error, reload } = useAsync(() => api.plan(start, 7), [start]);
   const [optimized, setOptimized] = useState<OptimizeResult | null>(null);
   const [strategy, setStrategy] = useState<Strategy>("cheapest");
   const [busy, setBusy] = useState(false);
+  const [nearbyOnly, setNearbyOnly] = useState(false);
 
   const byDay = useMemo(() => {
     const map = new Map<string, PlanEntry[]>();
     for (const e of data ?? []) map.set(e.day, [...(map.get(e.day) ?? []), e]);
-    for (const list of map.values()) list.sort((a, b) => MEAL_ORDER.indexOf(a.meal_type) - MEAL_ORDER.indexOf(b.meal_type));
+    for (const list of map.values()) {
+      list.sort((a, b) => MEAL_ORDER.indexOf(a.meal_type) - MEAL_ORDER.indexOf(b.meal_type)
+        || COURSE_ORDER.indexOf(a.course) - COURSE_ORDER.indexOf(b.course));
+    }
     return map;
   }, [data]);
+  const recipeById = useMemo(() => new Map(recipes.map((r) => [r.id, r])), [recipes]);
+  const [openEntry, setOpenEntry] = useState<PlanEntry | null>(null);
+
+  // Alışveriş günleri: varsayılan olarak alışveriş gerektiren öğünü olan tüm günler
+  const shoppableDays = useMemo(() => days.filter((d) => (byDay.get(d) ?? []).some((e) => e.status === "planned" && !e.is_leftover)), [days, byDay]);
+  const [shopDays, setShopDays] = useState<string[] | null>(null);
+  const selectedDays = shopDays ?? shoppableDays;
+  const toggleShopDay = (d: string) => {
+    setOptimized(null);
+    setShopDays(selectedDays.includes(d) ? selectedDays.filter((x) => x !== d) : [...selectedDays, d].sort());
+  };
 
   const refresh = () => { setOptimized(null); void reload(); onChanged(); };
 
   const runOptimize = async (addToList: boolean) => {
     setBusy(true);
     try {
-      const res = await api.optimize({ plan_from: start, plan_to: end, strategy, add_to_list: addToList });
+      if (selectedDays.length === 0) { toast("Alışveriş için en az bir gün seç", "err"); return; }
+      const res = await api.optimize({ plan_dates: selectedDays, strategy, add_to_list: addToList, nearby_only: nearbyOnly });
       setOptimized(res);
       if (addToList) { toast(`${res.added_to_list} ürün alışveriş listesine eklendi`); onChanged(); }
     } catch (e) {
@@ -38,6 +55,29 @@ export function PlanPage({ recipes, onChanged }: { recipes: Recipe[]; onChanged:
     } finally {
       setBusy(false);
     }
+  };
+
+  const [generated, setGenerated] = useState<GenerateResult | null>(null);
+
+  const autoPlan = async () => {
+    setBusy(true);
+    try {
+      const res = await api.generatePlan({ start, days: 7 });
+      setGenerated(res);
+      refresh();
+    } catch (err) {
+      toast((err as Error).message, "err");
+    } finally {
+      setBusy(false);
+    }
+  };
+
+  const setStatus = async (e: PlanEntry, status: "planned" | "skipped" | "ate_out") => {
+    try {
+      await api.setPlanStatus(e.id, status);
+      toast(status === "planned" ? "Geri alındı" : status === "skipped" ? "Öğün atlandı; alışveriş listesinden düşülecek" : "Dışarıda yendi olarak işaretlendi");
+      refresh();
+    } catch (err) { toast((err as Error).message, "err"); }
   };
 
   const cook = async (e: PlanEntry) => {
@@ -55,7 +95,24 @@ export function PlanPage({ recipes, onChanged }: { recipes: Recipe[]; onChanged:
         <p className="muted">Planla, eksikleri gör, en uygun marketten listeye ekle.</p>
       </div>
 
-      <AddPlanForm recipes={recipes} days={days} onAdded={refresh} />
+      <div className="card auto-plan">
+        <div>
+          <b>✨ Haftayı otomatik planla</b>
+          <small className="muted">Tercihlerine, buzdolabındakilere ve bütçene göre. Pişirdiğin veya işaretlediğin öğünlere dokunmaz.</small>
+        </div>
+        <button className="btn btn-primary" disabled={busy} onClick={autoPlan}>{busy ? "Hazırlanıyor…" : (data?.some((e) => e.auto_generated) ? "Yeniden oluştur" : "Planla")}</button>
+      </div>
+      {generated && (
+        <div className={`note ${generated.warnings.length ? "" : "note-ok"}`}>
+          {generated.meals.length} öğün planlandı{generated.est_cost > 0 && ` · tahmini eksik alışveriş ${tl(generated.est_cost)}`}
+          {generated.weekly_budget ? ` / bütçe ${tl(generated.weekly_budget)}` : ""}
+          {generated.warnings.map((w) => <div key={w}>⚠️ {w}</div>)}
+        </div>
+      )}
+      <details className="manual-add">
+        <summary>Elle tarif ekle</summary>
+        <AddPlanForm recipes={recipes} days={days} onAdded={refresh} />
+      </details>
       {error && <ErrorBox message={error} onRetry={reload} />}
 
       <div className="week">
@@ -63,33 +120,73 @@ export function PlanPage({ recipes, onChanged }: { recipes: Recipe[]; onChanged:
           <div key={d} className="day">
             <div className="day-head">{dayLabel(d)}</div>
             {(byDay.get(d) ?? []).length === 0 && <div className="muted small day-empty">—</div>}
-            {(byDay.get(d) ?? []).map((e) => (
-              <div key={e.id} className={`plan-entry ${e.cooked ? "cooked" : ""}`}>
-                <div>
-                  <small className="muted">{MEAL_LABELS[e.meal_type]} · {e.servings} kişilik · {Math.round(e.kcal_per_serving)} kcal/porsiyon</small>
-                  <div>{e.recipe_name}</div>
+            {MEAL_ORDER.map((meal) => {
+              const items = (byDay.get(d) ?? []).filter((e) => e.meal_type === meal);
+              if (!items.length) return null;
+              return (
+                <div key={meal} className="meal-group">
+                  <small>{MEAL_LABELS[meal]}</small>
+                  {items.map((e) => (
+                    <div key={e.id} className={`plan-entry status-${e.status}`}>
+                      <div>
+                        <small className="muted">
+                          {e.course !== "main" && e.course !== "breakfast" && <span className="course-tag">{COURSE_LABELS[e.course]} ·</span>}
+                          {e.servings} porsiyon · {Math.round(e.kcal_per_serving)} kcal/porsiyon
+                        </small>
+                        <div>
+                          <button className="recipe-link" onClick={() => setOpenEntry(e)} title="Tarifi aç">{e.recipe_name}</button>
+                          {e.is_leftover && <span className="tag" title="Önceki pişirmeden kalan; malzemesi ayrıca alınmaz">🍱 kalan</span>}
+                          {e.status === "skipped" && <span className="tag">yapılmadı</span>}
+                          {e.status === "ate_out" && <span className="tag">dışarıda</span>}
+                        </div>
+                      </div>
+                      <div className="inv-actions">
+                        {e.status === "planned" && <button className="icon-btn" title={e.is_leftover ? "Yedim" : "Pişirdim (envanterden düş)"} onClick={() => cook(e)}>🍳</button>}
+                        {e.status === "planned" && <button className="icon-btn" title="Yapmadım / atladım" onClick={() => setStatus(e, "skipped")}>⏭️</button>}
+                        {e.status === "planned" && <button className="icon-btn" title="Dışarıda yedim" onClick={() => setStatus(e, "ate_out")}>🍽️</button>}
+                        {(e.status === "skipped" || e.status === "ate_out") && <button className="icon-btn" title="Geri al" onClick={() => setStatus(e, "planned")}>↩️</button>}
+                        <button className="icon-btn" title="Sil" onClick={async () => { await api.deletePlan(e.id); refresh(); }}>🗑️</button>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <div className="inv-actions">
-                  {!e.cooked && <button className="icon-btn" title="Pişirdim (envanterden düş)" onClick={() => cook(e)}>🍳</button>}
-                  <button className="icon-btn" title="Sil" onClick={async () => { await api.deletePlan(e.id); refresh(); }}>🗑️</button>
-                </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         ))}
       </div>
 
-      <Section title="Eksikler & fiyat karşılaştırma">
+      <Section title="Alışveriş listesi oluştur">
+        <p className="muted small">Hangi günlerin alışverişini yapacaksın?</p>
+        <div className="day-chips">
+          <button className="day-chip" onClick={() => { setOptimized(null); setShopDays(shoppableDays.slice(0, 1)); }}>Bugün</button>
+          <button className="day-chip" onClick={() => { setOptimized(null); setShopDays(shoppableDays.slice(0, 2)); }}>İlk 2 gün</button>
+          <button className="day-chip" onClick={() => { setOptimized(null); setShopDays(null); }}>Tüm hafta</button>
+        </div>
+        <div className="day-chips">
+          {days.map((d) => (
+            <button key={d} className={`day-chip ${selectedDays.includes(d) ? "on" : ""}`} disabled={!shoppableDays.includes(d)}
+              onClick={() => toggleShopDay(d)}>{dayLabel(d)}</button>
+          ))}
+        </div>
         <div className="toolbar">
           <select value={strategy} onChange={(e) => { setStrategy(e.target.value as Strategy); setOptimized(null); }} aria-label="Strateji">
             {(Object.keys(STRATEGY_LABELS) as Strategy[]).map((s) => <option key={s} value={s}>{STRATEGY_LABELS[s]}</option>)}
           </select>
-          <button className="btn btn-ghost" disabled={busy || !data?.length} onClick={() => runOptimize(false)}>Hesapla</button>
-          <button className="btn btn-primary" disabled={busy || !data?.length} onClick={() => runOptimize(true)}>🛒 Listeye ekle</button>
+          <label className="check" title="Ev konumuna yakın şubesi olan zincirlerin gerçek fiyatlarını kullan">
+            <input type="checkbox" checked={nearbyOnly} onChange={(e) => { setNearbyOnly(e.target.checked); setOptimized(null); }} />
+            📍 Yalnız yakındakiler
+          </label>
+          <button className="btn btn-ghost" disabled={busy || !selectedDays.length} onClick={() => runOptimize(false)}>{busy ? "Fiyatlar alınıyor…" : "Hesapla"}</button>
+          <button className="btn btn-primary" disabled={busy || !selectedDays.length} onClick={() => runOptimize(true)}>🛒 Listeye ekle</button>
         </div>
-        {!data?.length && <Empty icon="📅">Önce plana tarif ekle.</Empty>}
+        {!shoppableDays.length && <Empty icon="📅">Alışveriş gerektiren planlı öğün yok. Önce haftayı planla veya tarif ekle.</Empty>}
         {optimized && <OptimizeView res={optimized} />}
       </Section>
+      {openEntry && recipeById.get(openEntry.recipe_id) && (
+        <RecipeModal recipe={recipeById.get(openEntry.recipe_id)!} servings={openEntry.servings}
+          onClose={() => setOpenEntry(null)} onChanged={onChanged} />
+      )}
     </div>
   );
 }
@@ -131,8 +228,10 @@ function AddPlanForm({ recipes, days, onAdded }: { recipes: Recipe[]; days: stri
 
 function OptimizeView({ res }: { res: OptimizeResult }) {
   if (res.purchases.length === 0) return <p className="ok-line">✅ Plan için eksik malzeme yok.</p>;
+  const modeLabel = { live: "🟢 Canlı fiyat · Market Fiyatı (TÜBİTAK)", real: "Yüklenen gerçek fiyatlar", demo: "⚠️ Örnek (demo) fiyatlar" }[res.price_mode];
   return (
     <div className="card optimize">
+      <p className={`note ${res.price_mode === "demo" ? "" : "note-ok"}`}>{modeLabel}{res.price_note && ` — ${res.price_note}`}</p>
       <div className="opt-total">
         <span>Tahmini toplam</span>
         <b>{tl(res.total)}</b>
@@ -146,7 +245,7 @@ function OptimizeView({ res }: { res: OptimizeResult }) {
           <li key={p.ingredient_id}>
             <span>{p.emoji || CATEGORY_EMOJI[p.category]} {p.name} <small className="muted">eksik {p.missing_label}</small></span>
             <span className="muted small">
-              {p.store_name ? `${p.packages}× ${p.package_label} · ${p.store_name}` : "bulunamadı"}
+              {p.store_name ? `${p.packages}× ${p.brand && res.price_mode !== "demo" ? p.brand : p.package_label} · ${p.store_name}` : "bulunamadı"}
             </span>
             <b>{p.cost ? tl(p.cost) : "—"}</b>
           </li>

@@ -1,4 +1,4 @@
-# 🐦 Mealbird
+# 🍽️ Meall
 
 Ev içi akıllı yemek planlama, envanter (SKT) takibi ve bütçe optimizasyonu.
 Mealbird tarzı "buzdolabında ne var?" tarif önerisi + Bring! tarzı hızlı, reyonlara ayrılmış alışveriş listesi.
@@ -19,7 +19,8 @@ npm install && npm run dev
 cd backend && .venv/bin/pytest
 ```
 
-İlk açılışta örnek katalog (54 malzeme), 18 tarif, 3 demo market/fiyat seti ve demo hane (2 kişi + envanter) yüklenir.
+İlk açılışta katalog (54 malzeme), 18 tarif, zincirler, demo ve pilot bölge test fiyatları yüklenir. Kayıt olurken
+"Örnek envanterle başla" seçilirse hesaba örnek envanter eklenir. Veritabanı açılışta otomatik güncellenir.
 
 ## Teknoloji seçimleri
 
@@ -49,7 +50,7 @@ backend/app/
   schemas/    API giriş/çıkış şemaları (Pydantic)
   api/routes/ HTTP uç noktaları
   seed/       örnek veri
-backend/tests/  33 test (domain + uçtan uca API akışı)
+backend/tests/  101 test (domain, API, plan, diyet, harita/fiyat, canlı fiyat, fiş/tarif üretimi, hesap/KVKK, migrasyon)
 
 frontend/src/
   api/        tipli API istemcisi ve tipler
@@ -137,11 +138,56 @@ export MEALBIRD_AI_ENABLED=true
 Varsayılan model `claude-opus-5-5`, yapılandırılmış çıktı (Pydantic) ile. Güvenlik sınıflandırıcısı bir isteği reddederse
 sunucu tarafı yedek model (`fallbacks: "default"`) devreye girer.
 
+## v0.2: Market zincirleri, harita ve gerçek fiyat verisi
+
+- **Zincir kataloğu** (`GET /api/chains`): BİM, A101, ŞOK, Migros, Macrocenter, CarrefourSA, Hakmar Express,
+  Tarım Kredi, File, Metro, Bizim Toptan, Onur, Happy Center.
+- **Yakındaki marketler** (`GET /api/places/nearby`, arayüzde 📍 Yakında): OpenStreetMap/Overpass verisi, Leaflet harita,
+  zincir eşleştirme, mesafe sıralama, yol tarifi bağlantısı, 24 saat önbellek. Konum ~110 m'ye yuvarlanır.
+- **Gerçek fiyat içe aktarma** (`POST /api/prices/import`, `GET /api/prices/template.csv`, Profil ekranında dosya yükleme).
+- **Yalnız yakındaki marketlerle optimizasyon** (`"nearby_only": true`).
+
+Ayrıntılı yol haritası, dinamik kullanım planı ve ihtiyaç listesi: [docs/ROADMAP.md](docs/ROADMAP.md).
+
+## v0.5: Meall — otomatik haftalık plan, 162 tarif, öğün durumu
+
+- **Yeni ad:** Meall (çalışma adı).
+- **Başlangıç akışı (11 adım):** marketler, hedefler, kişiler ve formülle kalori hedefi, öğünler (planla / yemiyorum /
+  kendim hallederim + ayrılan kalori), diyet (vejetaryen/vegan/pesketaryen/düşük karbonhidrat), alerji ve dışlamalar,
+  sevilmeyen malzemeler, mutfak aletleri, günler, haftalık bütçe, tekrar tercihi. Profil'den tekrar açılabilir.
+- **Otomatik haftalık plan:** kurallara uyan tarifler arasından buzdolabındakileri (önce bozulacakları) kullanan,
+  kalori hedefine uyan (porsiyon ölçekleme), bütçeyi gözeten, protein çeşitliliği olan plan. "Bir pişir iki gün ye" ve
+  "haftalık toplu pişirme" seçenekleri; kalan yemekler alışverişte iki kez sayılmaz.
+- **Öğün durumu:** pişirdim / yapmadım / dışarıda yedim; atlanan öğün alışveriş listesinden düşer.
+- **Katalog:** 54 → 170 malzeme, diyet/alerjen etiketleri; 18 → **162 tarif** (Gemini ile özgün yazıldı, malzemeler
+  katalogla kısıtlı, insan eliyle temizlendi). Uygulama içinden "✨ Buzdolabımdakilerle yeni tarif" (haneye özel).
+- **Tüm tarifler** gezgini (arama, öğün filtresi).
+
+## v0.4: Canlı fiyat, fiş okuma, ücretsiz yayın
+
+- **Canlı fiyat:** TÜBİTAK Market Fiyatı verisi; yakın şubelerdeki gerçek ürün ve fiyatlarla optimizasyon.
+- **Fiş tara (Gemini):** fiş fotoğrafı → ürünler katalogla eşlenir → kontrol edip envantere ekle.
+- **Yapay zekâ önerileri** Gemini ile (Claude seçeneği duruyor).
+- **PostgreSQL** desteği; testler SQLite ve PostgreSQL'de koşar.
+- **Tek Docker imajı** (API + arayüz), **Render blueprint**, **GitHub Actions CI**.
+- Yayına alma rehberi: [docs/DEPLOY.md](docs/DEPLOY.md).
+
+## v0.3: Hesaplar, KVKK, PWA, otomatik veritabanı
+
+- **Giriş:** e-posta + şifre ve Google ile giriş, davet koduyla aynı haneyi paylaşma, şifre sıfırlama, e-posta doğrulama.
+- **KVKK:** aydınlatma metni, açık rıza metni (sağlık verisi / konum / yapay zekâ / ticari ileti ayrı ayrı),
+  kullanım koşulları, çerez politikası (taslak, `backend/app/legal/`). Rıza kayıtları, verilerimi indir,
+  hesabı sil, rıza geri çekilince ilgili verinin silinmesi.
+- **PWA:** telefona kurulabilir, çevrimdışı açılır.
+- **Pilot bölge Ankara/Etimesgut:** harita merkezi, adres araması, "test" etiketli fiyatlar.
+- **Konum hassasiyeti** ~11 m (`MEALBIRD_LOCATION_PRECISION`).
+- **Veritabanı otomatik:** Alembic migrasyonları açılışta uygulanır; eski şemalı SQLite dosyası yedeklenip yenilenir.
+
+Ayarların tamamı: `backend/.env.example`. Hukuki metinler hakkında: `docs/legal/README.md`.
+
 ## Bilinen sınırlar / sonraki adımlar
 
-- Fiyatlar **demo** veridir ve hayali marketlere aittir. Gerçek market fiyatları için `StorePrice.source` alanı üzerinden
-  bir içe aktarma (CSV / market API'si / scraper) işi eklenmeli.
-- Tek hane, kimlik doğrulama yok (`api/deps.py::current_household` tek değiştirilecek nokta).
-- Şema `create_all` ile oluşturuluyor; üretime geçmeden Alembic migrasyonları eklenmeli.
-- Bildirimler tarayıcı bildirimi; mobil push için servis çalışanı (PWA) veya mobil istemci gerekir.
+- Hazır gelen fiyatlar **demo** veridir ve hayali marketlere aittir. Gerçek zincir fiyatları CSV ile yüklenir;
+  otomatik kaynak (ör. TÜBİTAK Market Fiyatı) için izin/erişim gerekir — bkz. docs/ROADMAP.md.
+- Uygulama kapalıyken bildirim (Web Push) henüz yok.
 - Kiler (oda sıcaklığı) saklama alanı yok — kapsam gereği yalnız buzdolabı/buzluk; kuru gıdalar şimdilik buzdolabı altında.

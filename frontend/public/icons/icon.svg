@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <rect width="512" height="512" rx="112" fill="#15803d"/>
+  <circle cx="256" cy="268" r="160" fill="#dcfce7"/>
+  <circle cx="256" cy="268" r="118" fill="#ffffff"/>
+  <!-- çatal -->
+  <rect x="76" y="140" width="16" height="250" rx="8" fill="#ffffff"/>
+  <rect x="62" y="110" width="10" height="90" rx="5" fill="#ffffff"/>
+  <rect x="96" y="110" width="10" height="90" rx="5" fill="#ffffff"/>
+  <!-- bıçak -->
+  <path d="M424 110 Q456 180 432 250 L432 390 Q432 400 424 400 Q416 400 416 390 L416 110 Z" fill="#ffffff"/>
+  <!-- M -->
+  <text x="256" y="318" font-family="Arial, Helvetica, sans-serif" font-size="150" font-weight="800" fill="#15803d" text-anchor="middle">M</text>
+</svg>

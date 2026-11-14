@@ -32,4 +32,7 @@ class Ingredient(Base):
 
     # Tuz, karabiber, su gibi "her evde var" kabul edilen temel ürünler eksik listesine girmez
     is_staple: Mapped[bool] = mapped_column(default=False)
+    # Diyet/alerjen etiketleri (virgüllü): red_meat, poultry, fish, shellfish, pork, dairy, egg, gluten, nuts,
+    # peanut, sesame, soy, honey, carb. Vejetaryen/vegan/pesketaryen uygunluğu bunlardan türetilir.
+    diet_tags: Mapped[str] = mapped_column(String(120), default="")
     emoji: Mapped[str] = mapped_column(String(8), default="🛒")

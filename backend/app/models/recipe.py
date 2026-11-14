@@ -10,13 +10,20 @@ class Recipe(Base):
     __tablename__ = "recipes"
 
     id: Mapped[int] = mapped_column(primary_key=True)
-    name: Mapped[str] = mapped_column(String(120), unique=True)
+    name: Mapped[str] = mapped_column(String(120), index=True)
     description: Mapped[str] = mapped_column(Text, default="")
     instructions: Mapped[str] = mapped_column(Text, default="")
     servings: Mapped[int] = mapped_column(default=2)
     prep_minutes: Mapped[int] = mapped_column(default=30)
     meal_type: Mapped[MealType] = mapped_column(Enum(MealType, native_enum=False), default=MealType.dinner)
     tags: Mapped[str] = mapped_column(String(200), default="")  # "vejetaryen,pratik"
+    # Gereken mutfak aletleri (virgüllü): stovetop, oven, microwave, airfryer, blender, grill, pressure_cooker
+    equipment: Mapped[str] = mapped_column(String(120), default="stovetop")
+    source: Mapped[str] = mapped_column(String(20), default="seed")  # seed | gemini | user
+    # Sofradaki yeri: breakfast | soup | main | side | salad | snack (app/domain/courses.py)
+    course: Mapped[str] = mapped_column(String(12), default="main")
+    # Kullanıcının Gemini ile ürettiği tarifler yalnız kendi hanesine görünür (None = herkese açık katalog)
+    household_id: Mapped[int | None] = mapped_column(ForeignKey("households.id", ondelete="CASCADE"), index=True)
 
     ingredients: Mapped[list["RecipeIngredient"]] = relationship(
         back_populates="recipe", cascade="all, delete-orphan", lazy="selectin"

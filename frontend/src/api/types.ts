@@ -18,6 +18,7 @@ export interface Ingredient {
   base_unit: BaseUnit;
   emoji: string;
   is_staple: boolean;
+  diet_tags: string;
   grams_per_piece: number | null;
   shelf_life_fridge_days: number | null;
   shelf_life_freezer_days: number | null;
@@ -60,6 +61,9 @@ export interface Household {
   name: string;
   preferred_store_id: number | null;
   selected_store_ids: number[];
+  home_lat: number | null;
+  home_lon: number | null;
+  search_radius_m: number;
 }
 
 export interface InventoryItem {
@@ -109,6 +113,10 @@ export interface Recipe {
   prep_minutes: number;
   meal_type: MealType;
   tags: string[];
+  equipment: string[];
+  source: string;
+  course: Course;
+  own: boolean;
   per_serving: Macros;
   ingredients: { ingredient: Ingredient; quantity: number; quantity_label: string; optional: boolean }[];
 }
@@ -150,6 +158,10 @@ export interface PlanEntry {
   recipe_name: string;
   servings: number;
   cooked: boolean;
+  status: "planned" | "cooked" | "skipped" | "ate_out";
+  is_leftover: boolean;
+  auto_generated: boolean;
+  course: Course;
   kcal_per_serving: number;
 }
 
@@ -157,6 +169,8 @@ export interface Store {
   id: number;
   name: string;
   color: string;
+  chain_id: number | null;
+  is_demo: boolean;
 }
 
 export interface Purchase {
@@ -182,6 +196,8 @@ export interface OptimizeResult {
   store_totals: { store_id: number; store_name: string; total: number; available_items: number; missing_items: string[] }[];
   savings_vs_worst_single_store: number | null;
   added_to_list: number;
+  price_mode: "live" | "real" | "demo";
+  price_note: string | null;
 }
 
 export interface ShoppingItem {
@@ -206,4 +222,139 @@ export interface ShoppingList {
   estimated_total: number;
   categories: { category: Category; items: ShoppingItem[] }[];
   recently_bought: ShoppingItem[];
+}
+
+export type ChainKind = "discount" | "supermarket" | "hypermarket" | "premium" | "wholesale" | "cooperative" | "regional";
+
+export interface Chain {
+  id: number;
+  slug: string;
+  name: string;
+  kind: ChainKind;
+  parent: string;
+  website: string;
+  color: string;
+  in_market_fiyati: boolean;
+  has_prices: boolean;
+  price_source: "real" | "test" | null;
+}
+
+export interface Place {
+  id: number;
+  name: string;
+  brand: string;
+  shop: string;
+  lat: number;
+  lon: number;
+  address: string;
+  opening_hours: string;
+  distance_m: number;
+  chain: Chain | null;
+  osm_url: string;
+}
+
+export interface Nearby {
+  lat: number;
+  lon: number;
+  radius_m: number;
+  from_cache: boolean;
+  chains: { chain: Chain; count: number; nearest_m: number; nearest_place_id: number }[];
+  places: Place[];
+}
+
+export interface PriceImportResult {
+  created: number;
+  updated: number;
+  stores_created: string[];
+  errors: { line: number; error: string }[];
+}
+
+export type ConsentKind = "privacy_notice" | "terms" | "health_data" | "location" | "ai_transfer" | "marketing";
+
+export interface Me {
+  id: number;
+  email: string;
+  display_name: string;
+  email_verified: boolean;
+  is_admin: boolean;
+  has_password: boolean;
+  google_linked: boolean;
+  household_id: number;
+  household_name: string;
+  role: "owner" | "member";
+  invite_code: string | null;
+  consents: { kind: ConsentKind; granted: boolean; text_version: string | null; updated_at: string | null }[];
+  legal_version: string;
+  needs_reconsent: boolean;
+}
+
+export interface RegisterIn {
+  email: string;
+  password: string;
+  display_name: string;
+  accept_terms: boolean;
+  acknowledge_privacy_notice: boolean;
+  health_data_consent: boolean;
+  location_consent: boolean;
+  ai_transfer_consent: boolean;
+  marketing_consent: boolean;
+  with_sample_data: boolean;
+  invite_code?: string;
+}
+
+export interface ReceiptLine {
+  raw_text: string;
+  ingredient_id: number | null;
+  ingredient_name: string | null;
+  emoji: string;
+  quantity: number | null;
+  unit: string | null;
+  quantity_label: string | null;
+  line_total: number | null;
+  location: Location;
+  selected: boolean;
+}
+
+export interface ReceiptDraft {
+  store_name: string | null;
+  chain: { id: number; name: string } | null;
+  date: string | null;
+  lines: ReceiptLine[];
+}
+
+export type Course = "breakfast" | "soup" | "main" | "side" | "salad" | "snack";
+export type MealStructure = "main" | "main_side" | "full";
+export type MealSlot = "breakfast" | "lunch" | "dinner" | "snack";
+export type MealMode = "plan" | "skip" | "own";
+export type Diet = "none" | "vegetarian" | "vegan" | "pescatarian";
+export type RepeatPolicy = "variety" | "balanced" | "batch";
+export type Equipment = "stovetop" | "oven" | "microwave" | "airfryer" | "blender" | "grill" | "pressure_cooker";
+export type Exclusion = "pork" | "red_meat" | "gluten" | "dairy" | "egg" | "nuts" | "peanut" | "fish" | "shellfish" | "sesame" | "soy";
+export type GoalKey = "lose" | "muscle" | "decide_less" | "save_money" | "family" | "healthy";
+
+export interface Preferences {
+  preferred_chains: string[];
+  goals: GoalKey[];
+  diet: Diet;
+  low_carb: boolean;
+  exclusions: Exclusion[];
+  disliked_ingredient_ids: number[];
+  equipment: Equipment[];
+  meals: Record<MealSlot, { mode: MealMode; kcal: number; protein: number }>;
+  plan_days: number[];
+  weekly_budget: number | null;
+  repeat_policy: RepeatPolicy;
+  meal_structure: MealStructure;
+  max_prep_minutes: number | null;
+  onboarding_done: boolean;
+}
+
+export interface GenerateResult {
+  meals: { entry_id: number; day: string; meal_type: MealSlot; recipe_id: number; recipe_name: string; servings: number;
+    is_leftover: boolean; est_cost: number; kcal_per_serving: number }[];
+  est_cost: number;
+  weekly_budget: number | null;
+  warnings: string[];
+  candidate_counts: Record<string, number>;
+  seed: number;
 }

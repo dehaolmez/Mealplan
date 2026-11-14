@@ -1,0 +1,1396 @@
+[
+ {
+  "name": "Kuru Fasulye",
+  "description": "Geleneksel lezzetiyle sofraların baş tacı olan etli ve nefis kuru fasulye yemeği.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 50,
+  "equipment": [
+   "stovetop",
+   "pressure_cooker"
+  ],
+  "tags": [
+   "geleneksel",
+   "yüksek-protein",
+   "ekonomik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kuru fasulye",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuşbaşı et",
+    "quantity": 200,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Biber salçası",
+    "quantity": 15,
+    "unit": "g",
+    "optional": true
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 40,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 800,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kuru fasulyeleri bir gece önceden suya koyarak ıslatın ve süzün.",
+   "Düdüklü tencereye zeytinyağını alın ve kuşbaşı etleri renk alana kadar kavurun.",
+   "İnce doğranmış kuru soğanı ekleyip pembeleşinceye kadar soteleyin.",
+   "Domates ve biber salçalarını ilave edip kokusu çıkana kadar karıştırın.",
+   "Süzülen kuru fasulyeleri, tuzu, karabiberi ve suyu ekleyip tencerenin kapağını kapatın.",
+   "Düdüklü tencerede yaklaşık 30-35 dakika pişmeye bırakın.",
+   "Pişen yemeği sıcak olarak servis edin."
+  ],
+  "group": "Kırmızı etli ana yemekler (kıyma, kuşbaşı, köfte, güveç)"
+ },
+ {
+  "name": "İzmir Köfte",
+  "description": "Fırında domates ve biber sosuyla pişen nefis patatesli İzmir köfte tarifi.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 45,
+  "equipment": [
+   "stovetop",
+   "oven"
+  ],
+  "tags": [
+   "geleneksel",
+   "fırın",
+   "çocuk-dostu"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kıyma",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Ekmek",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yumurta",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Patates",
+    "quantity": 3,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Sivri biber",
+    "quantity": 3,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Ayçiçek yağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kimyon",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 300,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Derin bir kapta kıymayı, rendelenmiş soğanı, ufalanmış ekmeği, yumurtayı, tuzu, karabiberi ve kimyonu iyice yoğurun.",
+   "Köfte harcından parmak şeklinde parçalar koparıp şekil verin.",
+   "Patatesleri soyun ve elma dilimi şeklinde doğrayın.",
+   "Köfteleri ve patatesleri ayçiçek yağında hafifçe kızartarak bir fırın tepsisine sıra sıra dizin.",
+   "Üzerlerine dilimlenmiş domatesleri ve sivri biberleri yerleştirin.",
+   "Ayrı bir kapta salçayı suyla karıştırarak sos elde edin ve tepsinin üzerine gezdirin.",
+   "Önceden ısıtılmış 190 derece fırında patatesler yumuşayana kadar pişirin."
+  ],
+  "group": "Kırmızı etli ana yemekler (kıyma, kuşbaşı, köfte, güveç)"
+ },
+ {
+  "name": "Tas Kebap",
+  "description": "Lokum gibi yumuşacık eti ve sebzeleriyle geleneksel tas kebabı.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 60,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "yüksek-protein",
+   "zeytinyağlı"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kuzu kuşbaşı",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Patates",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Havuç",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Bezelye",
+    "quantity": 100,
+    "unit": "g",
+    "optional": true
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 25,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 40,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 400,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Geniş bir tencerede tereyağını eritin ve kuzu kuşbaşı etleri ekleyip suyunu salıp çekene kadar kavurun.",
+   "İnce doğranmış soğanları ekleyip etlerle birlikte birkaç dakika soteleyin.",
+   "Domates salçasını ilave edin ve kokusu çıkana kadar karıştırın.",
+   "Küp doğranmış havucu ve patatesleri tencereye ekleyin.",
+   "Sıcak suyu, tuzu ve karabiberi ilave edip tencerenin kapağını kapatın.",
+   "Kısık ateşte etler ve sebzeler iyice yumuşayana kadar yaklaşık 40 dakika pişirin.",
+   "Sıcak olarak servis tabağına alıp servis yapın."
+  ],
+  "group": "Kırmızı etli ana yemekler (kıyma, kuşbaşı, köfte, güveç)"
+ },
+ {
+  "name": "Hünkar Beğendi",
+  "description": "Közlenmiş patlıcanlı kremsi beğendi yatağında lokum gibi yumuşak kuzu kuşbaşı eti ile enfes bir Osmanlı klasiği.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 50,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "yüksek-protein"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kuzu kuşbaşı",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Köz patlıcan (konserve)",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Un",
+    "quantity": 40,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Süt",
+    "quantity": 250,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Kaşar peyniri",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 30,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kuşbaşı etleri zeytinyağında suyunu salıp çekene kadar soteleyin, ardından doğranmış soğan ve domatesi ekleyip pişmeye bırakın.",
+   "Ayrı bir tencerede tereyağını eritin ve unu kokusu çıkana kadar kavurun.",
+   "Közlenmiş patlıcanları ince ince kıyıp kavurduğunuz unun üzerine ilave edin.",
+   "Sütü yavaşça ekleyerek patlıcanlı karışımı sürekli karıştırıp koyulaştırın.",
+   "Ocaktan almadan hemen önce rendelenmiş kaşar peyniri, tuz ve karabiberi ekleyip karıştırın.",
+   "Servis tabağına aldığınız beğendinin ortasına sıcak kuzu etlerini yerleştirerek servis yapın."
+  ],
+  "group": "Kırmızı etli ana yemekler (kıyma, kuşbaşı, köfte, güveç)"
+ },
+ {
+  "name": "Ali Nazik",
+  "description": "Sarımsaklı yoğurtla harmanlanmış köz patlıcan üzerinde nefis tereyağlı kuzu eti buluşması.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 40,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "yüksek-protein"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kuzu kuşbaşı",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Köz patlıcan (konserve)",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yoğurt",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 40,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Pul biber",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kuzu etlerini tavada kendi suyunda yumuşayana kadar pişirin, tuz ve karabiberle tatlandırın.",
+   "Köz patlıcanları ince bir şekilde bıçakla kıyın.",
+   "Bir kapta yoğurdu ve ezilmiş sarımsakları çırpın.",
+   "Kıyılmış patlıcanları sarımsaklı yoğurtla karıştırarak servis tabağına yayın.",
+   "Ayrı bir tavada tereyağını eritin ve pul biberi hafifçe kızdırın.",
+   "Pişen etleri yoğurtlu patlıcanın üzerine yerleştirin, kızdırılmış tereyağını gezdirerek servis yapın."
+  ],
+  "group": "Kırmızı etli ana yemekler (kıyma, kuşbaşı, köfte, güveç)"
+ },
+ {
+  "name": "Kıymalı Patates Oturtma",
+  "description": "Fırında nar gibi kızaran, kıymalı harçla lezzetlenen ev usulü nefis patates oturtma yemeği.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 45,
+  "equipment": [
+   "oven",
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "pratik",
+   "fırın"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Patates",
+    "quantity": 800,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kıyma",
+    "quantity": 350,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Sivri biber",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Ayçiçek yağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 300,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 6,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Patatesleri soyun ve yuvarlak dilimler halinde doğrayıp hafifçe sıvı yağda kızartın.",
+   "Ayrı bir tavada kıymayı, doğranmış soğanı ve sivri biberleri kavurun.",
+   "Kıymalı harca salça, tuz ve karabiber ekleyip birkaç dakika daha soteleyin.",
+   "Fırın tepsisine kızarmış patateslerin yarısını tabana dizin.",
+   "Üzerine kıymalı harcı yayın ve kalan patatesleri en üste yerleştirin.",
+   "Salçalı suyu hazırlayıp yemeğin üzerine gezdirin ve önceden ısıtılmış fırında kızarana kadar pişirin."
+  ],
+  "group": "Kırmızı etli ana yemekler (kıyma, kuşbaşı, köfte, güveç)"
+ },
+ {
+  "name": "Kadınbudu Köfte",
+  "description": "Pirinçle zenginleştirilmiş yumuşacık dokusuyla geleneksel bir lezzet.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 50,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "yüksek-protein"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kıyma",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Pirinç",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yumurta",
+    "quantity": 3,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Un",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Ayçiçek yağı",
+    "quantity": 100,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Pirinci yıkayıp yumuşayana kadar haşlayın ve süzün.",
+   "Kıymanın yarısını tavada soğanla kavurun, soğumaya bırakın.",
+   "Çiğ kıymayı, haşlanmış pirinci, kavrulmuş kıymayı, bir yumurtayı ve baharatları yoğurun.",
+   "Köftelere oval şekil verin, önce una sonra çırpılmış yumurtaya bulayın.",
+   "Kızgın yağda her iki tarafı da altın sarısı olana dek kızartın."
+  ],
+  "group": "Kırmızı etli ana yemekler (kıyma, kuşbaşı, köfte, güveç)"
+ },
+ {
+  "name": "Kıymalı Kabak Dolması",
+  "description": "Hafif ve besleyici, yoğurtla servis edilen klasik bir ev yemeği.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 60,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "hafif"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kabak",
+    "quantity": 1000,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kıyma",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Pirinç",
+    "quantity": 80,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Dereotu",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yoğurt",
+    "quantity": 200,
+    "unit": "g",
+    "optional": true
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kabakların içini oyun ve yıkayın.",
+   "Kıyma, pirinç, ince kıyılmış soğan, salça, dereotu ve tuzu karıştırarak iç harcı hazırlayın.",
+   "Hazırladığınız harcı kabakların içine çok sıkışık olmayacak şekilde doldurun.",
+   "Tencereye dizdiğiniz kabakların yarısına kadar sıcak su ekleyin.",
+   "Kabaklar yumuşayana kadar kısık ateşte pişirin ve servis edin."
+  ],
+  "group": "Kırmızı etli ana yemekler (kıyma, kuşbaşı, köfte, güveç)"
+ },
+ {
+  "name": "Orman Kebabı",
+  "description": "Sebzelerle ağır ağır pişmiş yumuşacık kuşbaşı etin en lezzetli hali.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 60,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "yüksek-protein"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kuzu kuşbaşı",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Patates",
+    "quantity": 340,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Havuç",
+    "quantity": 160,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Bezelye",
+    "quantity": 200,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 40,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kuzu etlerini tencereye alın ve suyunu salıp çekene kadar kavurun.",
+   "Yemeklik doğradığınız soğanları ekleyip pembeleşene kadar soteleyin.",
+   "Doğranmış havuç ve küp doğranmış patatesleri ilave ederek birkaç dakika daha pişirin.",
+   "Salçayı, tuzu, karabiberi ve bezelyeleri ekleyip karıştırın.",
+   "Üzerini geçecek kadar sıcak su ilave edin ve kısık ateşte sebzeler yumuşayana kadar pişirin."
+  ],
+  "group": "Kırmızı etli ana yemekler (kıyma, kuşbaşı, köfte, güveç)"
+ },
+ {
+  "name": "Fırında Köfte Patates",
+  "description": "Herkesin severek tüketeceği klasik anne usulü fırın lezzeti.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 50,
+  "equipment": [
+   "oven"
+  ],
+  "tags": [
+   "pratik",
+   "çocuk-dostu",
+   "fırın"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kıyma",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Patates",
+    "quantity": 680,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Galeta unu",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sivri biber",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 6,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kıymayı, rendelenmiş soğanı, galeta ununu, tuzu ve karabiberi yoğurarak köfte harcını hazırlayın.",
+   "Hazırladığınız harçtan parçalar koparıp yassı şekiller verin.",
+   "Patatesleri elma dilim şeklinde doğrayın.",
+   "Fırın tepsisine köfteleri ve patatesleri dizin, üzerlerine dilimlenmiş domates ve biberleri yerleştirin.",
+   "200 derece fırında patatesler kızarana kadar yaklaşık 30-35 dakika pişirin."
+  ],
+  "group": "Kırmızı etli ana yemekler (kıyma, kuşbaşı, köfte, güveç)"
+ },
+ {
+  "name": "Kıymalı Biber Dolması",
+  "description": "Zeytinyağlı ve kıymalı iç harçla doldurulmuş, tam kıvamında biber dolması.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 55,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "yüksek-protein"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kırmızı biber",
+    "quantity": 750,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kıyma",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Pirinç",
+    "quantity": 200,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Maydanoz",
+    "quantity": 25,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Biberlerin tepelerini kesin ve iç kısımlarını temizleyin.",
+   "Kıyma, yıkanmış pirinç, ince kıyılmış soğan, maydanoz, salça, yağ ve tuzu karıştırarak iç harcı hazırlayın.",
+   "Hazırladığınız harcı biberlerin içine çok sıkıştırmadan doldurun.",
+   "Tencereye dizdiğiniz dolmaların yarısına gelecek kadar sıcak su ekleyin.",
+   "Kısık ateşte pirinçler yumuşayana kadar yaklaşık 40 dakika pişirin."
+  ],
+  "group": "Kırmızı etli ana yemekler (kıyma, kuşbaşı, köfte, güveç)"
+ },
+ {
+  "name": "İnegöl Köfte",
+  "description": "Dışı çıtır içi yumuşacık, tam kıvamında geleneksel bir lezzet.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 45,
+  "equipment": [
+   "stovetop",
+   "grill"
+  ],
+  "tags": [
+   "geleneksel",
+   "yüksek-protein",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kıyma",
+    "quantity": 600,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 10,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kıymayı geniş bir kapta soğan rendesi, tuz ve karabiber ile en az 15 dakika yoğurun.",
+   "Yoğurduğunuz harcı streç filme sararak buzdolabında en az 2 saat dinlendirin.",
+   "Dinlenen harcı rulo şekline getirin ve yaklaşık 5 cm uzunluğunda parçalar kesin.",
+   "Izgarayı orta ateşte ısıtıp köftelerin her iki tarafını eşit şekilde pişirin.",
+   "Sıcak servis yaparak lezzetini koruyun."
+  ],
+  "group": "Kırmızı etli ana yemekler (kıyma, kuşbaşı, köfte, güveç)"
+ },
+ {
+  "name": "Kıymalı Pırasa",
+  "description": "Pırasanın hafif tatlılığını kıymanın doyurucu gücüyle buluşturan sağlıklı bir akşam yemeği.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 40,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "hafif",
+   "ekonomik",
+   "geleneksel"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Pırasa",
+    "quantity": 750,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kıyma",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Havuç",
+    "quantity": 80,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 40,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 8,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Pırasaları yıkayıp verev şekilde dilimleyin, havucu halka halka doğrayın.",
+   "Zeytinyağında kıymayı rengi dönene kadar kavurun.",
+   "Salçayı ekleyip kokusu çıkana kadar karıştırın.",
+   "Pırasa ve havuçları ilave edip sebzeler hafif yumuşayana kadar çevirin.",
+   "Üzerine sıcak su ekleyip kısık ateşte pırasalar pişene kadar yaklaşık 20 dakika pişirin."
+  ],
+  "group": "Kırmızı etli ana yemekler (kıyma, kuşbaşı, köfte, güveç)"
+ },
+ {
+  "name": "Kıymalı Taze Fasulye",
+  "description": "Yaz aylarının vazgeçilmezi olan kıymalı taze fasulye ile sofralarınıza ferahlık getirin.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 50,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "zeytinyağlı",
+   "geleneksel",
+   "hafif"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Taze Fasulye",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kıyma",
+    "quantity": 200,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 7,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Soğanları yemeklik doğrayıp zeytinyağında pembeleşinceye kadar kavurun.",
+   "Kıymayı ekleyip suyunu salıp çekene dek pişirmeye devam edin.",
+   "Ayıklanmış taze fasulyeleri tencereye ilave edin ve 5 dakika bu şekilde kavurun.",
+   "Rendelenmiş domatesleri ve tuzu ekleyip tencerenin kapağını kapatın.",
+   "Kısık ateşte sebzeler yumuşayana kadar yaklaşık 35 dakika kendi suyunda pişirin."
+  ],
+  "group": "Kırmızı etli ana yemekler (kıyma, kuşbaşı, köfte, güveç)"
+ },
+ {
+  "name": "Kıymalı Bamya",
+  "description": "Ekşili ve nefis lezzetiyle geleneksel kıymalı bamya yemeği akşam sofralarınızın baş tacı olacak.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 45,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "ekonomik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Bamya",
+    "quantity": 400,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kıyma",
+    "quantity": 200,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 40,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Limon",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": true
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 400,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Bamyaları yıkayıp başlarını hafifçe koni şeklinde kesin ve saldırmaması için limonlu suda bekletin.",
+   "Geniş bir tencerede zeytinyağında küp doğranmış kuru soğanı ve kıymayı kavurun.",
+   "Kıymalar renk değiştirince domates salçasını ekleyip kokusu çıkana kadar soteleyin.",
+   "Süzülen bamyaları tencereye alın ve üzerine sıcak suyu ilave edin.",
+   "Limon suyunu ve tuzu ekleyip kısık ateşte bamyalar yumuşayana kadar yaklaşık 30 dakika pişirin.",
+   "Sıcak olarak servis yapın."
+  ],
+  "group": "Kırmızı etli ana yemekler (kıyma, kuşbaşı, köfte, güveç)"
+ },
+ {
+  "name": "Kıymalı Kapuska",
+  "description": "Kış aylarının vazgeçilmezi olan kıymalı kapuska, hem doyurucu hem de çok besleyici bir ev yemeğidir.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 50,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "ekonomik",
+   "hafif"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Lahana",
+    "quantity": 750,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kıyma",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Pirinç",
+    "quantity": 60,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Ayçiçek yağı",
+    "quantity": 45,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 6,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Pul biber",
+    "quantity": 4,
+    "unit": "g",
+    "optional": true
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 500,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Lahanayı ince ince doğrayın ve bol suda yıkayıp süzün.",
+   "Geniş bir tencerede ayçiçek yağında yemeklik doğranmış soğanı ve kıymayı kavurun.",
+   "Salçayı ekleyip kavurmaya devam edin, ardından yıkanmış pirinçleri ilave edin.",
+   "Doğranmış lahanaları tencereye kat kat yerleştirip üzerine tuz ve pul biber serpин.",
+   "Suyunu ekleyin, tencerenin kapağını kapatıp kaynayana kadar orta ateşte pişirin.",
+   "Kaynayınca altını kısıp lahana ve pirinçler yumuşayana dek yaklaşık 35 dakika pişmeye bırakın."
+  ],
+  "group": "Kırmızı etli ana yemekler (kıyma, kuşbaşı, köfte, güveç)"
+ },
+ {
+  "name": "Çiftlik Kebabı",
+  "description": "Kuşbaşı etin patates, bezelye ve havuç gibi sebzelerle fırında muazzam uyumu.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 60,
+  "equipment": [
+   "stovetop",
+   "oven"
+  ],
+  "tags": [
+   "geleneksel",
+   "fırın",
+   "yüksek-protein"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kuşbaşı et",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Patates",
+    "quantity": 340,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Havuç",
+    "quantity": 160,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Dondurulmuş bezelye",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 25,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 40,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 6,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 300,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kuşbaşı etleri tencerede kendi suyunu salıp çekene kadar soteleyin.",
+   "İçine tereyağı, yemeklik doğranmış soğan ve sarımsağı ekleyip pembeleşene kadar kavurun.",
+   "Küp doğranmış patatesleri, havuçları ve bezelyeleri etlere ilave edin.",
+   "Salçayı sıcak suda eritip sebzelerin üzerine dökün, tuz ve karabiberi ekleyip karıştırın.",
+   "Yemeği fırın kabına aktarın ve önceden ısıtılmış 200 derece fırında sebzeler yumuşayana kadar pişirin.",
+   "Sıcak servis yapın."
+  ],
+  "group": "Kırmızı etli ana yemekler (kıyma, kuşbaşı, köfte, güveç)"
+ },
+ {
+  "name": "Etli Ekmek",
+  "description": "Incecik acilan hamur uzerine lezzetli kiyma harci yayılan nefis bir geleneksel lezzettir.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 45,
+  "equipment": [
+   "stovetop",
+   "oven"
+  ],
+  "tags": [
+   "geleneksel",
+   "ekonomik",
+   "fırın"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Un",
+    "quantity": 400,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 250,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kıyma",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Sivri biber",
+    "quantity": 3,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Un, su ve tuzu yogurma kabinda birlestirerek yumusak bir hamur yogurun ve dinlenmeye birakin.",
+   "Kuru sogan, domates ve sivri biberi cok ince olacak sekilde dograyin veya rondodan gecirin.",
+   "Kiyma ve baharatlari sebzelere ekleyip iyice karistirarak etli harci hazirlayin.",
+   "Dinlenen hamuru mandalina buyuklugunde bezelere ayirin.",
+   "Her bir bezeyi merdane yardimiyla uzun ve ince olacak sekilde acin.",
+   "Açtiginiz hamurlarin uzerine hazirladiginiz kiyma harcini ince bir tabaka halinde yayin.",
+   "Onceden isitilmis yuksek derece firinda etli ekmekler kizrana kadar pisirin.",
+   "Dilimleyerek sicak servis yapin."
+  ],
+  "group": "Kırmızı etli ana yemekler (kıyma, kuşbaşı, köfte, güveç)"
+ }
+]

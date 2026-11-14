@@ -1,0 +1,1162 @@
+[
+ {
+  "name": "Tavuklu Hünkar Beğendi",
+  "description": "Köz patlıcan ve peynirli enfes yatağın üzerinde yumuşacık tavuk sote.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 45,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "yüksek-protein"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Tavuk göğsü",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Köz patlıcan (konserve)",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kaşar peyniri",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Un",
+    "quantity": 40,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Süt",
+    "quantity": 250,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kuşbaşı doğranmış tavuk göğsünü kuru soğan ile birlikte tavada suyunu salıp çekene kadar soteleyin.",
+   "İçine küp doğranmış domatesleri ekleyip tavuklar yumuşayana kadar pişirin.",
+   "Ayrı bir tencerede tereyağını eritip unu kokusu çıkana kadar hafifçe kavurun.",
+   "Kavrulan una sütü yavaşça çırparak ekleyin ve kıvam almasını sağlayın.",
+   "Beşamel sosun içerisine kıyılmış köz patlıcanları ve rendelenmiş kaşar peynirini ilave edip karıştırın.",
+   "Tuz ve karabiberle lezzetlendirdiğiniz patlıcanlı begendiyi tabağa alın.",
+   "Üzerine hazırladığınız sıcak tavuk soteyi yerleştirerek servis edin."
+  ],
+  "group": "Tavuk yemekleri"
+ },
+ {
+  "name": "Körili Tavuk",
+  "description": "Kremalı ve baharatlı sosuyla damak çatlatan pratik bir dünya lezzeti.",
+  "meal_type": "dinner",
+  "servings": 3,
+  "prep_minutes": 30,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "pratik",
+   "yüksek-protein"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Tavuk göğsü",
+    "quantity": 450,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Krema",
+    "quantity": 200,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Ayçiçek yağı",
+    "quantity": 30,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Kırmızı biber",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Kekik",
+    "quantity": 4,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Tavuk göğsünü jülyen şekilde doğrayın ve sıvı yağda yüksek ateşte soteleyin.",
+   "İçine ince kıyılmış kuru soğan, sarımsak ve jülyen doğranmış kırmızı biberi ekleyin.",
+   "Sebzeler yumuşayana kadar karıştırarak kavurmaya devam edin.",
+   "Üzerine kremayı dökün ve sosun hafifçe kıvam almasını bekleyin.",
+   "Köri baharatını, tuzu ve karabiberi ekleyip iyice harmanlayın.",
+   "Sosuyla bütünleşen körili tavuğu sıcak olarak servis tabağına alın."
+  ],
+  "group": "Tavuk yemekleri"
+ },
+ {
+  "name": "Tavuklu Krep",
+  "description": "İncecik krep hamuruna sarılmış lezzetli tavuk ve peynir dolgulu fırın yemeği.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 50,
+  "equipment": [
+   "stovetop",
+   "oven"
+  ],
+  "tags": [
+   "fırın",
+   "çocuk-dostu"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Un",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Süt",
+    "quantity": 300,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Yumurta",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Ayçiçek yağı",
+    "quantity": 30,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tavuk göğsü",
+    "quantity": 400,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Kaşar peyniri",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 100,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Un, süt, yumurta ve biraz tuzu çırparak pürüzsüz bir krep hamuru elde edin.",
+   "Tavayı hafifçe yağlayın ve kepçeyle dökerek ince krepler pişirin.",
+   "Ayrı bir tavada küçük doğranmış tavuk göğsü ve soğanı soteleyin, salça ekleyip kavurun.",
+   "Hazırladığınız tavuklu harcı kreplerin ortasına paylaştırıp rulo şeklinde sarın.",
+   "Krepleri fırın kabına yan yana dizin ve üzerlerine rendelenmiş kaşar peyniri serpiştirin.",
+   "Önceden ısıtılmış fırında peynirler eriyip kızarana kadar yaklaşık 15 dakika pişirin."
+  ],
+  "group": "Tavuk yemekleri"
+ },
+ {
+  "name": "Fırında Sebzeli Tavuk",
+  "description": "Renkli sebzelerle ağır ağır pişmiş, içi sulu dışı çıtır enfes bir tavuk ziyafeti.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 60,
+  "equipment": [
+   "oven"
+  ],
+  "tags": [
+   "fırın",
+   "pratik",
+   "yüksek-protein"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Tavuk but",
+    "quantity": 800,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Patates",
+    "quantity": 340,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Havuç",
+    "quantity": 160,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Kekik",
+    "quantity": 5,
+    "unit": "g",
+    "optional": true
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 10,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Tavuk butlarını yıkayıp kurulayın ve derin bir fırın kabına yerleştirin.",
+   "Patatesleri ve havuçları elma dilimi şeklinde, soğanları ise piyazlık doğrayın.",
+   "Tüm sebzeleri tavukların yanına ekleyerek karıştırın.",
+   "Zeytinyağı, tuz, kekik ve karabiberi küçük bir kapta karıştırıp tavukların üzerine gezdirin.",
+   "Önceden ısıtılmış 200 derece fırında tavuklar kızarana kadar yaklaşık 45 dakika pişirin."
+  ],
+  "group": "Tavuk yemekleri"
+ },
+ {
+  "name": "Tavuklu Türlü",
+  "description": "Tazecik mevsim sebzelerinin tavukla buluştuğu, tam bir vitamin deposu geleneksel yemek.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 50,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "yüksek-protein",
+   "ekonomik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Tavuk göğsü",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Patlıcan",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kabak",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 40,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 8,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Soğanları yemeklik doğrayıp zeytinyağında hafifçe pembeleşene kadar kavurun.",
+   "Küp doğranmış tavuk göğüslerini ekleyip renkleri değişene kadar soteleyin.",
+   "Salçayı ilave edip kokusu çıkana kadar 1-2 dakika çevirin.",
+   "Doğranmış patlıcan, kabak ve domatesleri tencereye ekleyin.",
+   "Tuzunu ve yarım su bardağı suyu ilave edip kısık ateşte sebzeler yumuşayana kadar pişirin."
+  ],
+  "group": "Tavuk yemekleri"
+ },
+ {
+  "name": "Tavuk Kapama",
+  "description": "Demini almış lezzetli tavuk suyuyla pişen, sofraların baş tacı tavuklu pilav.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 60,
+  "equipment": [
+   "stovetop",
+   "oven"
+  ],
+  "tags": [
+   "geleneksel",
+   "yüksek-protein",
+   "fırın"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Bütün tavuk",
+    "quantity": 1000,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Pirinç",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 12,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 600,
+    "unit": "ml",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Bütün tavuğu bir tencerede üzerini geçecek kadar su ile haşlayın.",
+   "Haşlanan tavukları fırın tepsisine alın ve üzerine biraz tereyağı sürerek fırında kızartın.",
+   "Pirinçleri yıkayıp süzdükten sonra başka bir kapta tereyağı ile hafifçe kavurun.",
+   "Kavrulan pirinçleri tavuğu pişirdiğiniz tepsiye yayın ve haşlama suyundan üzerine dökün.",
+   "Tuz ve karabiberi ekledikten sonra fırında pirinçler suyunu çekene kadar pişirmeye devam edin."
+  ],
+  "group": "Tavuk yemekleri"
+ },
+ {
+  "name": "Tavuklu Bezelye",
+  "description": "Tavuk etiyle zenginleştirilmiş, sebzelerin uyumuyla sofranıza sağlık getiren nefis bir sulu yemek.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 45,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "pratik",
+   "ekonomik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Tavuk göğsü",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Dondurulmuş bezelye",
+    "quantity": 400,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 1,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Havuç",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 30,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": true
+   }
+  ],
+  "steps": [
+   "Küp doğradığınız kuru soğanı zeytinyağında pembeleşene kadar kavurun.",
+   "Kuşbaşı doğranmış tavuk göğüslerini ekleyip renkleri değişene kadar soteleyin.",
+   "Doğranmış havuçları ve salçayı ilave ederek bir iki dakika daha çevirin.",
+   "Dondurulmuş bezelyeleri ve üzerini geçecek kadar sıcak suyu ekleyin.",
+   "Sebzeler yumuşayana kadar kısık ateşte yaklaşık 25 dakika pişirin.",
+   "Tuz ve karabiberi ekleyip servis yapın."
+  ],
+  "group": "Tavuk yemekleri"
+ },
+ {
+  "name": "Tavuklu Çökertme Kebabı",
+  "description": "Çıtır patateslerin üzerine yerleşen yumuşak tavuklar ve yoğurt sosuyla tam bir ziyafet.",
+  "meal_type": "dinner",
+  "servings": 3,
+  "prep_minutes": 50,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "yüksek-protein"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Tavuk göğsü",
+    "quantity": 600,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Patates",
+    "quantity": 4,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Yoğurt",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 2,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 10,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 8,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Patatesleri ince kibrit çöpü şeklinde doğrayıp kızgın yağda altın sarısı olana kadar kızartın.",
+   "Tavuk göğüslerini şeritler halinde kesin ve tereyağında suyunu çekene kadar soteleyin.",
+   "Tavuklara tuz ve baharatları ekleyip kenara alın.",
+   "Yoğurdu rendelenmiş sarımsakla karıştırarak pürüzsüz bir sos elde edin.",
+   "Küçük bir tavada salçayı az yağla kavurarak sos hazırlayın.",
+   "Servis tabağının tabanına kızarmış patatesleri, üzerine yoğurdu ve en üste tavukları dizip salçalı sosu gezdirin."
+  ],
+  "group": "Tavuk yemekleri"
+ },
+ {
+  "name": "Tavuklu Şehriye Çorbası",
+  "description": "Soğuk günlerin vazgeçilmezi, şifa dolu, doyurucu ve klasik bir başlangıç.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 40,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "çorba",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Tavuk göğsü",
+    "quantity": 200,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Arpa şehriye",
+    "quantity": 80,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 1000,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Un",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Limon",
+    "quantity": 0.5,
+    "unit": "adet",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 6,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Tavuk göğsünü haşlayıp didikleyin, haşlama suyunu bir kenara ayırın.",
+   "Tencerede tereyağını eritin ve unu kokusu çıkana kadar hafifçe kavurun.",
+   "Tavuk suyunu tencereye ekleyip çırpma teliyle karıştırarak unun açılmasını sağlayın.",
+   "Kaynayan suya arpa şehriyeleri ekleyip şehriyeler yumuşayana kadar pişirin.",
+   "Didiklenmiş tavukları ve tuzu ilave edin.",
+   "Limon suyunu ekleyip bir taşım daha kaynattıktan sonra ocaktan alın."
+  ],
+  "group": "Tavuk yemekleri"
+ },
+ {
+  "name": "Tavuklu Patlıcan Oturtma",
+  "description": "Kızarmış patlıcan dilimlerinin nefis tavuk kıymasıyla buluştuğu doyurucu ve geleneksel bir ana yemek.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 50,
+  "equipment": [
+   "stovetop",
+   "oven"
+  ],
+  "tags": [
+   "geleneksel",
+   "fırın",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Patlıcan",
+    "quantity": 900,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tavuk göğsü",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 120,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 50,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Patlıcanları alacalı soyup halka doğrayın ve az yağda hafifçe kızartın.",
+   "Ayrı bir tavada yemeklik doğranmış soğanları ve tavuk göğsünü soteleyin.",
+   "Tavukların üzerine ince kıyılmış sarımsak ve doğranmış domatesleri ekleyip pişirin.",
+   "Fırın tepsisine patlıcanları dizin, üzerine hazırladığınız tavuklu harcı yayın.",
+   "Salçayı biraz suyla açıp tepsinin üzerine gezdirin.",
+   "Önceden ısıtılmış 200 derece fırında sebzeler yumuşayana kadar 20 dakika pişirin."
+  ],
+  "group": "Tavuk yemekleri"
+ },
+ {
+  "name": "Tavuk Şiş",
+  "description": "Baharatlı yoğurt sosuyla marine edilmiş yumuşacık tavuk göğsü parçaları.",
+  "meal_type": "dinner",
+  "servings": 3,
+  "prep_minutes": 40,
+  "equipment": [
+   "grill",
+   "stovetop"
+  ],
+  "tags": [
+   "yüksek-protein",
+   "pratik",
+   "glutensiz"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Tavuk göğsü",
+    "quantity": 600,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yoğurt",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 40,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Biber salçası",
+    "quantity": 15,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kekik",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Tavuk göğsünü eşit büyüklükte küpler halinde kesin.",
+   "Yoğurt, zeytinyağı, salça, sarımsak ve baharatları bir kapta karıştırın.",
+   "Tavukları bu sosa bulayıp en az 30 dakika buzdolabında bekletin.",
+   "Tavuk parçalarını şişlere dizin.",
+   "Izgarada veya yüksek ateşli tavada her tarafı altın sarısı olana kadar pişirin."
+  ],
+  "group": "Tavuk yemekleri"
+ },
+ {
+  "name": "Tavuklu Yalancı Mantı",
+  "description": "Lavaşın çıtırlığı ile tavuk göğsünün lezzetini birleştiren, oldukça pratik bir ana yemek.",
+  "meal_type": "dinner",
+  "servings": 2,
+  "prep_minutes": 30,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "pratik",
+   "ekonomik",
+   "çocuk-dostu"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Lavaş",
+    "quantity": 140,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tavuk göğsü",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Yoğurt",
+    "quantity": 200,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Sarımsak",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Pul biber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Tavuk göğsünü haşlayıp didikleyin.",
+   "Lavaşları küçük kareler halinde kesin ve tavada hafifçe kıtırlaşana kadar çevirin.",
+   "Kıtırlaşan lavaşları servis tabağına alın.",
+   "Üzerine sarımsaklı yoğurdu yayın.",
+   "Didiklenmiş tavukları yoğurdun üzerine yerleştirin.",
+   "Tereyağını pul biberle kızdırıp yemeğin üzerine dökerek servis yapın."
+  ],
+  "group": "Tavuk yemekleri"
+ },
+ {
+  "name": "Tavuklu Kabak Sandal",
+  "description": "Fırında nar gibi kızarmış kabakların içinde lezzetli ve hafif tavuklu bir ziyafet.",
+  "meal_type": "dinner",
+  "servings": 2,
+  "prep_minutes": 45,
+  "equipment": [
+   "stovetop",
+   "oven"
+  ],
+  "tags": [
+   "hafif",
+   "fırın",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Kabak",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tavuk göğsü",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kuru soğan",
+    "quantity": 60,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Kaşar peyniri",
+    "quantity": 100,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 30,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Kabakları ortadan ikiye bölüp içlerini oyun ve hafifçe yağlayarak fırında 15 dakika pişirin.",
+   "Tavuk göğsünü küp küp doğrayın ve soğanla birlikte tavada soteleyin.",
+   "Doğranmış domatesleri ekleyip tavuklar pişene kadar çevirmeye devam edin.",
+   "Hazırladığınız harcı kabakların içine paylaştırın.",
+   "Üzerlerine kaşar peyniri serpiştirip fırında peynirler eriyene kadar pişirin."
+  ],
+  "group": "Tavuk yemekleri"
+ },
+ {
+  "name": "Tavuklu Brokoli Graten",
+  "description": "Krema ve peynirin mükemmel uyumuyla buluşan besleyici bir akşam yemeği.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 50,
+  "equipment": [
+   "stovetop",
+   "oven"
+  ],
+  "tags": [
+   "yüksek-protein",
+   "fırın",
+   "çocuk-dostu"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Brokoli",
+    "quantity": 800,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tavuk but",
+    "quantity": 500,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Krema",
+    "quantity": 200,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Kaşar peyniri",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 3,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Brokolileri çiçeklerine ayırıp hafif diri kalacak şekilde haşlayın.",
+   "Tavuk butları küçük parçalara kesin ve tereyağında soteleyin.",
+   "Fırın kabına haşlanmış brokolileri ve tavukları yerleştirin.",
+   "Üzerine krema, tuz ve karabiber karışımını dökün.",
+   "En üste kaşar peyniri rendesini serpin ve fırında üzeri kızarana dek pişirin."
+  ],
+  "group": "Tavuk yemekleri"
+ },
+ {
+  "name": "Tavuklu Arpa Şehriye",
+  "description": "Tane tane dökülen, tavuk suyuyla lezzeti katlanmış doyurucu bir geleneksel lezzet.",
+  "meal_type": "dinner",
+  "servings": 4,
+  "prep_minutes": 30,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "geleneksel",
+   "ekonomik",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Arpa şehriye",
+    "quantity": 250,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tavuk göğsü",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tereyağı",
+    "quantity": 30,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Su",
+    "quantity": 500,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates salçası",
+    "quantity": 20,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Tavuk göğsünü küçük küpler halinde kesin ve suyunu çekene kadar soteleyin.",
+   "Tencereye tereyağını ekleyip arpa şehriyeleri renkleri hafif değişene kadar kavurun.",
+   "Salçayı ekleyip kokusu çıkana kadar karıştırın.",
+   "Sıcak suyu ve tuzu ilave edip şehriyeler yumuşayana kadar kısık ateşte pişirin.",
+   "Pişen yemeği demlenmesi için bir süre kenara alıp servis yapın."
+  ],
+  "group": "Tavuk yemekleri"
+ },
+ {
+  "name": "Tavuk Göğsü Salatası",
+  "description": "Taze sebzeler ve ızgara tavuk göğsü ile hazırlanan, hem hafif hem de oldukça doyurucu bir öğün.",
+  "meal_type": "dinner",
+  "servings": 2,
+  "prep_minutes": 25,
+  "equipment": [
+   "stovetop"
+  ],
+  "tags": [
+   "hafif",
+   "yüksek-protein",
+   "salata",
+   "pratik"
+  ],
+  "ingredients": [
+   {
+    "ingredient": "Tavuk göğsü",
+    "quantity": 300,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Marul",
+    "quantity": 200,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Domates",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Salatalık",
+    "quantity": 150,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Zeytinyağı",
+    "quantity": 30,
+    "unit": "ml",
+    "optional": false
+   },
+   {
+    "ingredient": "Limon",
+    "quantity": 50,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Tuz",
+    "quantity": 5,
+    "unit": "g",
+    "optional": false
+   },
+   {
+    "ingredient": "Karabiber",
+    "quantity": 2,
+    "unit": "g",
+    "optional": false
+   }
+  ],
+  "steps": [
+   "Tavuk göğsünü küçük kuşbaşı parçalar halinde doğrayın.",
+   "Tavaları ısıtıp tavukları zeytinyağında her iki tarafı kızarana kadar pişirin.",
+   "Marulu, domatesi ve salatalığı yıkayıp dilediğiniz büyüklükte doğrayın.",
+   "Doğranan sebzeleri geniş bir kasede birleştirin.",
+   "Ayrı bir kapta limon suyu, zeytinyağı, tuz ve karabiberi çırparak sos hazırlayın.",
+   "Pişen tavukları sebzelerin üzerine ekleyin ve sosla harmanlayarak servis yapın."
+  ],
+  "group": "Tavuk yemekleri"
+ }
+]

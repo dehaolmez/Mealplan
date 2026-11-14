@@ -1,21 +1,52 @@
 import { useState } from "react";
 import { api } from "../api/client";
-import type { MealType, Recommendation } from "../api/types";
+import type { Me, MealType, Recipe, Recommendation } from "../api/types";
+import { RecipeBrowser } from "./RecipeBrowser";
 import { useAsync } from "../hooks/useAsync";
 import { isoDate, MEAL_LABELS } from "../lib";
 import { Empty, ErrorBox, MacroRow, Meter } from "../components/ui";
 import { useToast } from "../components/Toast";
 
-export function RecommendationsPage({ onChanged }: { onChanged: () => void }) {
+export function RecommendationsPage({ onChanged, recipes, me, aiAvailable, onRecipesChanged }: {
+  onChanged: () => void; recipes: Recipe[]; me: Me; aiAvailable: boolean; onRecipesChanged: () => void;
+}) {
+  const toast = useToast();
+  const [view, setView] = useState<"suggest" | "all">("suggest");
   const [mealType, setMealType] = useState<MealType | "">("");
   const [ai, setAi] = useState(false);
+  const [genBusy, setGenBusy] = useState(false);
+  const [generated, setGenerated] = useState<Recipe | null>(null);
+  const aiConsent = me.consents.find((c) => c.kind === "ai_transfer")?.granted ?? false;
   const { data, error, loading, reload } = useAsync(
     () => api.recommendations({ meal_type: mealType || undefined, limit: 8, ai }),
     [mealType, ai],
   );
 
+  const generate = async () => {
+    setGenBusy(true);
+    try {
+      const r = await api.generateRecipe(mealType || undefined);
+      setGenerated(r);
+      onRecipesChanged();
+      toast(`✨ ${r.name} tariflerine eklendi`);
+    } catch (e) {
+      toast((e as Error).message, "err");
+    } finally {
+      setGenBusy(false);
+    }
+  };
+
+  const tabs = (
+    <div className="seg seg-wide">
+      <button className={view === "suggest" ? "on" : ""} onClick={() => setView("suggest")}>🍳 Öneriler</button>
+      <button className={view === "all" ? "on" : ""} onClick={() => setView("all")}>📖 Tüm tarifler ({recipes.length})</button>
+    </div>
+  );
+  if (view === "all") return <div className="page">{tabs}<RecipeBrowser recipes={recipes} onChanged={onChanged} /></div>;
+
   return (
     <div className="page">
+      {tabs}
       <div className="page-intro">
         <h1>Buzdolabında ne var?</h1>
         <p className="muted">Evdeki ürünlerle — önce bozulmak üzere olanlarla — yapabileceğin tarifler.</p>
@@ -34,6 +65,20 @@ export function RecommendationsPage({ onChanged }: { onChanged: () => void }) {
           <span>✨ Yapay zekâ</span>
         </label>
       </div>
+
+      <div className="card auto-plan">
+        <div>
+          <b>✨ Buzdolabımdakilerle yeni tarif</b>
+          <small className="muted">{aiAvailable && aiConsent ? "Gemini, önce bozulacak ürünleri kullanan ve diyet kurallarına uyan bir tarif yazar."
+            : !aiAvailable ? "Sunucuda Gemini anahtarı tanımlı değil." : "Profil › Gizlilik'ten yapay zekâ iznini aç."}</small>
+        </div>
+        <button className="btn btn-primary" disabled={genBusy || !aiAvailable || !aiConsent} onClick={generate}>
+          {genBusy ? "Yazılıyor…" : "Üret"}
+        </button>
+      </div>
+      {generated && (
+        <RecipeBrowser recipes={[generated]} onChanged={onChanged} />
+      )}
 
       {data?.ai_requested && (
         <p className={`note ${data.ai_used ? "note-ok" : ""}`}>
@@ -74,6 +119,7 @@ function RecipeCard({ rec, onChanged }: { rec: Recommendation; onChanged: () => 
   };
 
   const addMissing = async () => {
+    toast("Güncel fiyatlar alınıyor…");
     setBusy(true);
     try {
       const res = await api.optimize({

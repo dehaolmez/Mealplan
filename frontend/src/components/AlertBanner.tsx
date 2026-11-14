@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import type { Alerts } from "../api/types";
 
-const NOTIFIED_KEY = "mealbird:lastNotified";
+const NOTIFIED_KEY = "meall:lastNotified";
 
 /** SKT uyarıları: uygulama içi şerit + (izin verildiyse) günde bir tarayıcı bildirimi. */
 export function AlertBanner({ alerts, onOpen }: { alerts: Alerts | null; onOpen: () => void }) {
@@ -17,7 +17,7 @@ export function AlertBanner({ alerts, onOpen }: { alerts: Alerts | null; onOpen:
     try { last = localStorage.getItem(NOTIFIED_KEY); } catch { /* depolama kapalı */ }
     if (last === today) return;
     const top = alerts.alerts.slice(0, 3).map((a) => a.message).join("\n");
-    new Notification("Mealbird: bozulmak üzere olan ürünler", { body: top });
+    new Notification("Meall: bozulmak üzere olan ürünler", { body: top });
     try { localStorage.setItem(NOTIFIED_KEY, today); } catch { /* yoksay */ }
   }, [alerts, urgent, permission]);
 

@@ -1,0 +1,36 @@
+# Render "Blueprint": GitHub deposunu bağlayınca bu dosyaya göre ücretsiz servis kurulur.
+# Veritabanı olarak Neon (ücretsiz PostgreSQL) önerilir; bağlantı adresi MEALBIRD_DATABASE_URL'ye girilir.
+services:
+  - type: web
+    name: meall
+    runtime: docker
+    plan: free
+    region: frankfurt
+    branch: main
+    autoDeploy: true
+    healthCheckPath: /api/health
+    envVars:
+      - key: MEALBIRD_DATABASE_URL
+        sync: false            # Neon bağlantı adresi (postgresql://...)
+      - key: MEALBIRD_SECRET_KEY
+        generateValue: true    # Render rastgele üretir
+      - key: MEALBIRD_PUBLIC_BASE_URL
+        sync: false            # ör. https://meall.onrender.com
+      - key: MEALBIRD_GEMINI_API_KEY
+        sync: false
+      - key: MEALBIRD_ADMIN_EMAIL
+        sync: false            # ilk açılışta oluşturulacak yönetici hesabı
+      - key: MEALBIRD_ADMIN_PASSWORD
+        sync: false
+      - key: MEALBIRD_GOOGLE_CLIENT_ID
+        sync: false
+      - key: MEALBIRD_SMTP_HOST
+        value: smtp.gmail.com
+      - key: MEALBIRD_SMTP_PORT
+        value: "587"
+      - key: MEALBIRD_SMTP_USER
+        sync: false            # Gmail adresi
+      - key: MEALBIRD_SMTP_PASSWORD
+        sync: false            # Gmail uygulama şifresi (16 karakter)
+      - key: MEALBIRD_SMTP_FROM
+        sync: false            # ör. Meall <adresiniz@gmail.com>

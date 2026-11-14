@@ -23,6 +23,10 @@ class RecipeOut(BaseModel):
     prep_minutes: int
     meal_type: MealType
     tags: list[str]
+    equipment: list[str] = []
+    source: str = "seed"
+    course: str = "main"
+    own: bool = False  # hanenin kendi ürettiği tarif
     per_serving: MacrosOut
     ingredients: list[RecipeIngredientOut]
 
@@ -70,6 +74,7 @@ class MissingRequest(BaseModel):
     selections: list[RecipeSelection] = []
     plan_from: date | None = None
     plan_to: date | None = None
+    plan_dates: list[date] | None = Field(default=None, description="Yalnız bu günlerin plan kayıtları (ör. bugün ve yarın)")
 
 
 class MissingOut(BaseModel):
